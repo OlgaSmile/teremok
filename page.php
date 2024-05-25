@@ -16,6 +16,21 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
+  <section class="section">
+    <div class="container">
+      <div class="section_title">
+        <svg class="section_title--icon">
+          <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#trees"></use>
+        </svg>
+        <h2 class="section_title--text">Tеремок</h2>
+        <svg class="section_title--icon">
+          <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#trees"></use>
+        </svg>
+      </div>
+      <button class="_button primary_button">Додати відгук</button>
+      <button class="_button secondary_button">Забронювати проживання</button>
+    </div>
+  </section>
 
   <?php
 		the_content();

@@ -1,3 +1,112 @@
-.global {
-    color: green;
+// containers
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  padding-bottom: 11.25rem;
+  @media screen and (max-width: $tablet) {
+  }
+  @media screen and (max-width: $mobile) {
+  }
+}
+
+.container {
+  width: 76.25rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  @media screen and (max-width: $tablet) {
+  }
+  @media screen and (max-width: $mobile) {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.inner-container {
+  width: 52.25rem;
+  @media screen and (max-width: $tablet) {
+    width: 100%;
+  }
+}
+
+//buttons
+._button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  width: fit-content;
+  min-width: 18.75rem;
+  min-height: 2.75rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: transparent;
+  border-radius: $big-border-radius;
+  transition: all $transition-function;
+
+  @media screen and (max-width: $tablet) {
+  }
+  @media screen and (max-width: $mobile) {
+    width: 100%;
+  }
+  &:hover,
+  &:focus {
+  }
+}
+
+.primary_button {
+  color: $orange;
+  border: 0.0625rem solid $orange;
+}
+
+.secondary_button {
+  border: 0.0625rem solid $main_text;
+  color: $main_text;
+}
+
+//section title
+.section_title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2.625rem;
+  &--text {
+    color: $orange;
+    font-family: $font_inter;
+    font-weight: 200;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+  &--icon {
+    width: 5.625rem;
+    height: 4.125rem;
+    & use {
+      width: 5.625rem;
+      height: 4.125rem;
+    }
+  }
+  @media screen and (max-width: $tablet) {
+  }
+  @media screen and (max-width: $mobile) {
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  margin: -0.0625rem;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }

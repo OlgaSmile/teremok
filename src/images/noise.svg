@@ -1,0 +1,29 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <filter id="noiseFilter">
+    <feTurbulence 
+      type="fractalNoise" 
+      baseFrequency="0.2" 
+      numOctaves="3" 
+      seed="2" 
+      stitchTiles="stitch" 
+      result="turb1"/>
+    <feTurbulence 
+      type="fractalNoise" 
+      baseFrequency="0.5" 
+      numOctaves="4" 
+      seed="5" 
+      stitchTiles="stitch" 
+      result="turb2"/>
+    <feTurbulence 
+      type="fractalNoise" 
+      baseFrequency="0.8" 
+      numOctaves="6" 
+      seed="7" 
+      stitchTiles="stitch" 
+      result="turb3"/>
+    <feDisplacementMap in="turb1" in2="turb2" scale="8" result="disp1"/>
+    <feDisplacementMap in="disp1" in2="turb3" scale="6" />
+  </filter>
+  
+  <rect width="100%" height="100%" filter="url(#noiseFilter)" fill="#f5f5f5"/>
+</svg>
