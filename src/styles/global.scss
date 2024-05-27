@@ -69,34 +69,6 @@
   color: $main_text;
 }
 
-//section title
-.section_title {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 2.625rem;
-  &--text {
-    color: $orange;
-    font-family: $font_inter;
-    font-weight: 200;
-    font-size: 2.5rem;
-    line-height: 1.2;
-    text-transform: uppercase;
-  }
-  &--icon {
-    width: 5.625rem;
-    height: 4.125rem;
-    & use {
-      width: 5.625rem;
-      height: 4.125rem;
-    }
-  }
-  @media screen and (max-width: $tablet) {
-  }
-  @media screen and (max-width: $mobile) {
-  }
-}
-
 .visually-hidden {
   position: absolute;
   width: 0.0625rem;
