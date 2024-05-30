@@ -20,6 +20,8 @@ $testimonial_title = get_field('testimonial_title');
       <?php  
     get_template_part( "template-parts/section-title", null, array('title' => $testimonial_title )); ?>
 
+      <!-- <?php acf_form('new-feedback'); ?> -->
+
     </div>
   </div>
 </section>

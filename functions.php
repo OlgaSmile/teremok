@@ -96,3 +96,6 @@ require_once get_template_directory(  ) . "/blocks/blocks_init.php";
 
 /** add custom post types */
 require get_template_directory() . '/services/custom-post-feedbacks.php';
+
+/** acf form registration */
+require get_template_directory() . '/services/feedback-form-register.php';

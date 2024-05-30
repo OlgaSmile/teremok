@@ -1,30 +1,11 @@
 {
-    "key": "group_665383cf0dbf6",
-    "title": "Блок Відгуки",
+    "key": "group_665628f09f158",
+    "title": "Поля форми відгуку",
     "fields": [
         {
-            "key": "field_665383e4d413b",
-            "label": "Заголовок блоку",
-            "name": "testimonial_title",
-            "type": "text",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "відгуки",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_6656276bbb025",
-            "label": "Поля форми",
-            "name": "testimonial_group",
+            "key": "field_665628fcba890",
+            "label": "",
+            "name": "feedbacks_full_name",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -37,7 +18,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_665627adbb026",
+                    "key": "field_6656292eba891",
                     "label": "Ім'я",
                     "name": "name",
                     "type": "text",
@@ -56,12 +37,12 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_665627ccbb027",
+                    "key": "field_66562940ba892",
                     "label": "Прізвище",
                     "name": "surname",
                     "type": "text",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -80,9 +61,9 @@
     "location": [
         [
             {
-                "param": "block",
+                "param": "post_type",
                 "operator": "==",
-                "value": "acf\/testimonial-block"
+                "value": "feedbacks"
             }
         ]
     ],
@@ -94,5 +75,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1716922342
+    "modified": 1716923755
 }

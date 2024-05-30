@@ -1,3 +1,4 @@
+<?php acf_form_head()?>
 <?php
 /**
  * The template for displaying all pages
