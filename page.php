@@ -19,7 +19,14 @@ get_header();
 <main id="primary" class="site-main">
   <!-- <section class="section">
     <div class="container">
-      
+      <div style="width: 500px;
+  height: 500px;
+  background-color: #99b7a2;
+  display: flex;
+  justify-content: center;
+  align-items: center;">
+        <?php get_template_part( "template-parts/logo"); ?></div>
+
       <button class="_button primary_button">Додати відгук</button>
       <button class="_button secondary_button">Забронювати проживання</button>
     </div>

@@ -40,7 +40,11 @@ function wp_teremok_scripts() {
   }
 
   if (is_singular() && locate_template('template-parts/section-title.php')) {
-      wp_enqueue_style('one-activity', get_template_directory_uri() . '/assets/styles/template-parts-styles/section-title.css', array('main'));
+      wp_enqueue_style('section-title', get_template_directory_uri() . '/assets/styles/template-parts-styles/section-title.css', array('main'));
+    }
+
+  if (is_singular() && locate_template('template-parts/logo.php')) {
+      wp_enqueue_style('logo', get_template_directory_uri() . '/assets/styles/template-parts-styles/logo.css', array('main'));
     }
  
 }
