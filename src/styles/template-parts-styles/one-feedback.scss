@@ -1,40 +1,66 @@
 @import "../variables.scss";
 
-.one__feedback {
+.onefeedback {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 29.125rem;
   border: 0.0625rem solid $grey_green;
   border-radius: 0.125rem;
   padding: 1.5rem;
 
-  &-rate {
+  &__rate {
     display: flex;
     gap: 0.5rem;
     margin-bottom: 1rem;
   }
-  &-star {
+  &__star {
     color: $yellow;
     text-shadow: 0.025rem 0.025rem 0.025rem $main_text;
     font-size: 1.5rem;
   }
 
-  &-box {
+  &__box {
     //height: 15rem;
     margin-bottom: 2rem;
+    &-description {
+      margin-bottom: 1rem;
+    }
+    &-photos {
+      display: flex;
+      gap: 0.5rem;
+    }
+    &-image {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
   }
 
-  &-description {
-    margin-bottom: 1rem;
-  }
-
-  &-photos {
-    display: flex;
-    gap: 0.5rem;
-  }
-  &-box_image {
-    width: 3.5rem;
-    height: 3.5rem;
-  }
-  &-image {
+  &__image {
     object-fit: cover;
+  }
+
+  &__user {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    &-image_wrap {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &_name {
+        font-weight: 500;
+        font-size: 1.25rem;
+        letter-spacing: 0.06em;
+      }
+    }
   }
 }
