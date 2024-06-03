@@ -51,12 +51,12 @@ body {
   }
 
   &::-webkit-scrollbar {
-    width: 14px;
+    width: 0.875rem;
   }
 
   &::-webkit-scrollbar-thumb {
     background-color: $grey_green;
-    border-radius: 4px;
+    border-radius: 0.25rem;
   }
 
   &::-webkit-scrollbar-thumb:hover {
@@ -116,7 +116,7 @@ button,
 }
 
 :-moz-focusring {
-  outline: 1px dotted ButtonText;
+  outline: 0.0625rem dotted ButtonText;
 }
 
 :-moz-ui-invalid {
@@ -139,7 +139,7 @@ progress {
 [type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  outline-offset: -2px;
+  outline-offset: -0.125rem;
   /* 2 */
 }
 
@@ -172,7 +172,7 @@ optgroup,
 textarea {
   color: $main_text;
   font-family: $primary_font;
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: 0.04em;
   font-style: normal;
   font-weight: 400;

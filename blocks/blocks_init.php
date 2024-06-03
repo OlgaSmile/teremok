@@ -21,14 +21,6 @@ add_action( 'init', 'register_acf_blocks' );
 function register_acf_blocks() {
 
     acf_register_block_type(array(
-        'name'              => 'testimonial_block',
-        'title'             => __('Testimonial_block'),
-        'description'       => __('A testimonial block.'),
-        'render_template'   => '/blocks/testimonial_block/testimonial_block.php',
-        'category'          => 'custom-blocks',
-    ));
-
-    acf_register_block_type(array(
         'name'              => 'test_block2',
         'title'             => __('Test_block2'),
         'description'       => __('A test block 2.'),

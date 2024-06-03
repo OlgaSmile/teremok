@@ -2,8 +2,8 @@
 
 .animation-box {
   position: relative;
-  width: fit-content;
-  height: fit-content;
+  width: 4.5rem;
+  height: 3.25rem;
   & .moon,
   & .tree {
     position: absolute;
@@ -40,13 +40,15 @@
       }
     }
   }
-}
-.animation {
-  fill: $white;
+  .animation {
+    width: 4.5rem;
+    height: 3.25rem;
+    fill: $white;
 
-  & .blue,
-  & .yellow {
-    transition: $transition-function;
+    & .blue,
+    & .yellow {
+      transition: $transition-function;
+    }
   }
   &:hover {
     cursor: pointer;

@@ -12,7 +12,6 @@ function my_acf_form_init() {
                 'post_type'   => 'feedbacks',
                 'post_status' => 'draft'
             ),
-            'post_title' => true,
             'field_groups' => ['group_665628f09f158'],
             'updated_message' => false,
             'submit_value'  => __('Залишити відгук')

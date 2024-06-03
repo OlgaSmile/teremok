@@ -1,5 +1,5 @@
 <div class="animation-box">
-  <svg width="73" height="52" viewBox="0 0 73 52" fill="none" xmlns="http://www.w3.org/2000/svg" class="animation">
+  <svg viewBox="0 0 73 52" fill="none" xmlns="http://www.w3.org/2000/svg" class="animation">
     <path class="yellow" fill-rule="evenodd" clip-rule="evenodd"
       d="M63.9204 23.5L62.233 27.1917H65.9733L64.2859 23.5H63.9204ZM61.7759 28.1917L60.2889 31.4451H67.9174L66.4304 28.1917H61.7759ZM58.0423 36.3603L59.8318 32.4451H68.3745L70.164 36.3603H58.0423ZM56 40.8286L57.5853 37.3603H70.621L72.2063 40.8286H56Z" />
     <path class="blue" fill-rule="evenodd" clip-rule="evenodd"
@@ -28,7 +28,7 @@
     <path d="M1 45.7034V44.5938H8.69513V45.7034H5.71409V51.9008H3.98104V45.7034H1Z" fill="#fff" />
   </svg>
 
-  <svg width="73" height="52" viewBox="0 0 73 52" fill="none" xmlns="http://www.w3.org/2000/svg" class="tree">
+  <svg viewBox="0 0 73 52" fill="none" xmlns="http://www.w3.org/2000/svg" class="tree">
     <path d="M7.64258 40.4217V17.5195" stroke="#fff" stroke-width="1.5" />
     <path
       d="M7.64277 17.6895C7.20862 19.3742 5.70208 22.7562 3.14916 22.8057M7.64277 24.5519C7.14348 26.1323 5.28524 29.1932 1.84664 28.794M7.64277 32.0379C6.4271 33.8054 3.3966 37.1409 1 36.3423"
@@ -45,7 +45,7 @@
       stroke="#fff" stroke-width="1.5" />
   </svg>
 
-  <svg width="73" height="52" viewBox="0 0 73 52" fill="none" xmlns="http://www.w3.org/2000/svg" class="moon">
+  <svg viewBox="0 0 73 52" fill="none" xmlns="http://www.w3.org/2000/svg" class="moon">
     <path
       d="M40.0721 5.40871C40.0721 7.95157 37.9107 10.0674 35.1757 10.0674C32.4408 10.0674 30.2793 7.95157 30.2793 5.40871C30.2793 2.86585 32.4408 0.75 35.1757 0.75C37.9107 0.75 40.0721 2.86585 40.0721 5.40871Z"
       fill="#fff" stroke="#fff" stroke-width="1.5" />
