@@ -22,6 +22,9 @@ add_action( 'wp_enqueue_scripts', 'wp_teremok_scripts' );
 function wp_teremok_scripts() {
   wp_enqueue_style( 'main', get_stylesheet_uri() );
   wp_enqueue_style( 'wp-teremok-style', get_template_directory_uri() . '/assets/styles/main.css', array('main') );
+  wp_enqueue_style('swiper-style', "https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css", array('main'));
+
+  wp_enqueue_script('swiper-scripts', 'https://cdn.jsdelivr.net/npm/swiper@10.0.0/swiper-bundle.min.js', array(), false, true);
   wp_enqueue_script( 'wp-teremok-scripts', get_template_directory_uri() . '/assets/scripts/main.js', array(), false, true );
 
   if ( is_page_template('templates/home.php') ) {
@@ -34,59 +37,52 @@ function wp_teremok_scripts() {
     wp_enqueue_script( 'about-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/about.js', array(), false, true );
   }
 
-  if ( is_page_template('templates/contacts.php') ) {
-    wp_enqueue_style( 'contacts-style', get_template_directory_uri() . '/assets/styles/template-styles/contacts.css', array('main') );
-    wp_enqueue_script( 'contacts-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/contacts.js', array(), false, true );
-  }
-
   if (is_singular() && locate_template('template-parts/section-title.php')) {
-      wp_enqueue_style('one-activity', get_template_directory_uri() . '/assets/styles/template-parts-styles/section-title.css', array('main'));
+      wp_enqueue_style('section-title-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/section-title.css', array('main'));
+    }
+
+  if (is_singular() && locate_template('template-parts/logo.php')) {
+      wp_enqueue_style('logo-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/logo.css', array('main'));
+    }
+
+  if (is_singular() && locate_template('template-parts/read-more-btn.php')) {
+      wp_enqueue_style('read-more-btn-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/read-more-btn.css', array('main'));
+    }
+    
+  if (is_singular() && locate_template('template-parts/feedbacks-section.php')) {
+      wp_enqueue_style('feedbacks-section-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/feedbacks-section.css', array('main'));
+      wp_enqueue_script( 'feedbacks-section-script', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/feedbacks-section.js', array(), false, true );
+      //  wp_localize_script('feedbacks-section-script', 'feedbackAjax', array(
+      //       'ajaxUrl' => admin_url('admin-ajax.php'),
+      //       'nonce'   => wp_create_nonce('feedbacks_nonce'),
+      //       'hide_btn'=> get_field("hide_btn", "option"),
+      //       'read_btn'=> get_field("read_more_btn", "option")
+      //     ));
+    }
+
+    if (is_singular() && locate_template('template-parts/one-feedback.php')) {
+      wp_enqueue_style('one-feedback-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/one-feedback.css', array('main'));
+      wp_enqueue_script( 'one-feedback-script', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/one-feedback.js', array(), false, true );
+    }
+
+    if (is_singular() && locate_template('template-parts/loader.php')) {
+      wp_enqueue_style('loader-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/loader.css', array('main'));
+    }
+
+  if (is_singular() && locate_template('template-parts/feedback-form.php')) {
+      wp_enqueue_style('feedback-form-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/feedback-form.css', array('main'));
+      wp_enqueue_script( 'feedback-form-script', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/feedback-form.js', array(), false, true );
     }
  
 }
 /** add fonts */
-function add_google_fonts() {
-  wp_enqueue_style( 'google_web_fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600&family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap', [], null );
-}
- 
-add_action( 'wp_enqueue_scripts', 'add_google_fonts' );
+require get_template_directory() . '/services/fonts-register.php';
 
 /** Register menus */
-function wp_teremok_menus() {
-  $locations = array(
-    'header' => __( 'Header Menu', 'wp-teremok' ),
-    'footer' => __( 'Footer Menu', 'wp-teremok' ),
-  );
-
-  register_nav_menus( $locations );
-}
-
-add_action( 'init', 'wp_teremok_menus');
-
+require get_template_directory() . '/services/menu-register.php';
 
 /** ACF add options page */
-if( function_exists('acf_add_options_page') ) {
-
-  acf_add_options_page(array(
-      'page_title'    => 'Theme General Settings',
-      'menu_title'    => 'Theme Settings',
-      'menu_slug'     => 'theme-general-settings',
-      'capability'    => 'edit_posts',
-      'redirect'      => false
-  ));
-
-  acf_add_options_sub_page(array(
-      'page_title'    => 'Theme Header Settings',
-      'menu_title'    => 'Header',
-      'parent_slug'   => 'theme-general-settings',
-  ));
-
-  acf_add_options_sub_page(array(
-      'page_title'    => 'Theme Footer Settings',
-      'menu_title'    => 'Footer',
-      'parent_slug'   => 'theme-general-settings',
-  ));
-}
+require get_template_directory() . '/services/acf-options.php';
 
 /** add thumbnail to each page */
 add_theme_support( 'post-thumbnails' );
@@ -96,3 +92,9 @@ require_once get_template_directory(  ) . "/blocks/blocks_init.php";
 
 /** add custom post types */
 require get_template_directory() . '/services/custom-post-feedbacks.php';
+
+/** acf form registration */
+require get_template_directory() . '/services/feedback-form-register.php';
+
+/** transliteration */
+require get_template_directory() . '/services/transliteration.php';

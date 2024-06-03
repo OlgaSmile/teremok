@@ -1,3 +1,4 @@
+<?php acf_form_head()?>
 <?php
 /**
  * The template for displaying all pages
@@ -16,13 +17,23 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-  <!-- <section class="section">
+  <section class="section">
     <div class="container">
-      
+      <div style="width: 200px;
+  height: 100px;
+  background-color: #99b7a2;
+  display: flex;
+  justify-content: center;
+  align-items: center;">
+        <?php get_template_part( "template-parts/logo"); ?></div>
+
       <button class="_button primary_button">Додати відгук</button>
       <button class="_button secondary_button">Забронювати проживання</button>
+
+      <?php get_template_part( "template-parts/read-more-btn"); ?>
     </div>
-  </section> -->
+    </div>
+  </section>
 
   <?php
 		the_content();

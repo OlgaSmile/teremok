@@ -1,0 +1,10 @@
+@import "../variables.scss";
+
+.feedbacks__section {
+  &-title {
+    margin-bottom: 3rem;
+  }
+  & .swiper-pagination.feedbacks__swiper-pagination {
+    position: static;
+  }
+}

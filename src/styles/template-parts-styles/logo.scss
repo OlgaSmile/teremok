@@ -1,0 +1,62 @@
+@import "../variables.scss";
+
+.animation-box {
+  position: relative;
+  width: 4.5rem;
+  height: 3.25rem;
+  & .moon,
+  & .tree {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+  & .tree {
+    transform-origin: bottom;
+  }
+  &:hover {
+    & .moon {
+      animation: moveup 1s ease-in-out forwards;
+    }
+    & .tree {
+      animation: stretch 1s ease-in-out forwards;
+    }
+    @keyframes moveup {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10%);
+      }
+    }
+    @keyframes stretch {
+      0%,
+      100% {
+        transform: scaleY(1);
+      }
+      50% {
+        transform: scaleY(1.08);
+      }
+    }
+  }
+  .animation {
+    width: 4.5rem;
+    height: 3.25rem;
+    fill: $white;
+
+    & .blue,
+    & .yellow {
+      transition: $transition-function;
+    }
+  }
+  &:hover {
+    cursor: pointer;
+    & .blue {
+      fill: #2162f7;
+    }
+    & .yellow {
+      fill: #fcd85b;
+    }
+  }
+}
