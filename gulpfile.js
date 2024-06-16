@@ -58,15 +58,15 @@ function scriptsTemplateParts() {
 }
 
 function watching() {
-  watch("src/styles/*.scss", styles);
+  watch("src/styles/**/*.scss", styles);
   watch("blocks/**/*.scss", styles);
-  watch("src/styles/template-styles/*.scss", stylesTemplates);
-  watch("src/styles/template-parts-styles/*.scss", stylesTemplatesParts);
+  watch("src/styles/template-styles/**/*.scss", stylesTemplates);
+  watch("src/styles/template-parts-styles/**/*.scss", stylesTemplatesParts);
   watch(["src/images"], images);
-  watch("src/scripts/*.js", scripts);
+  watch("src/scripts/**/*.js", scripts);
   watch("blocks/**/*.js", scripts);
-  watch("src/scripts/template-scripts/*.js", scriptsTemplates);
-  watch("src/scripts/template-parts-scripts/*.js", scriptsTemplateParts);
+  watch("src/scripts/template-scripts/**/*.js", scriptsTemplates);
+  watch("src/scripts/template-parts-scripts/**/*.js", scriptsTemplateParts);
 }
 
 exports.styles = styles;
