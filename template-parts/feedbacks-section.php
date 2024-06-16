@@ -2,10 +2,18 @@
   <div class="container">
 
     <div class="feedbacks__section-title">
+
+
+
+
       <?php
     $feedback_title = get_field('feedback_title', 'options');
     
-    get_template_part( "template-parts/section-title", null, array('title' => $feedback_title )); ?>
+    get_template_part( "template-parts/section-title", null, ['title' => $feedback_title ]); ?>
+
+
+
+
     </div>
 
     <div class="swiper feedback__section-swiper">
