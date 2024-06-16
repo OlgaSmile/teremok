@@ -2,10 +2,24 @@
   <div>
     <div class="onefeedback__rate rate-js" data-num="<?php the_field("feedback_astimation", $post->ID) ?>"></div>
     <div class="onefeedback__box">
-      <div class="onefeedback__box-description"><?php the_field('feedback_text', $post->ID) ?></div>
+      <div class="onefeedback__box-description"><?php 
+      $text = get_field('feedback_text', $post->ID);
+      $characterAmount = 380;
+
+      $add_photos = get_field('feedback_add_photos', $post->ID);
+      if($add_photos){
+      foreach ($add_photos as $key => $image) {
+          if ($image) {
+            $characterAmount= 230;
+          }
+        }
+       } 
+
+
+      echo wp_html_excerpt( $text, $characterAmount, '...' ); 
+      ?></div>
 
       <?php
-      $add_photos = get_field('feedback_add_photos', $post->ID);
 
       if($add_photos){?>
 
@@ -25,7 +39,7 @@
           //$medium_large = $image['sizes']['medium_large'];
           $counter++;
       ?>
-        <li class="onefeedback__box-image">
+        <li class="onefeedback__box-image <?php echo 'more';?>">
           <img class="onefeedback__image" src="<?= $thumbnail ?>" alt="<?= $alt ?>">
         </li>
         <?php 

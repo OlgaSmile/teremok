@@ -91,9 +91,21 @@ input#acf-field_665b1c1ee07a5-alt {
 }
 
 .star {
-  color: #ccc;
-  text-shadow: 0.025rem 0.025rem 0.025rem $main_text;
+  color: #e7e7e7;
+  position: relative;
   font-size: 1.5rem;
+}
+
+.star::before {
+  content: "★";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  -webkit-text-stroke: 0.025rem $main_text;
+  text-stroke: 0.025rem $main_text;
 }
 
 .star:hover,
