@@ -9,19 +9,18 @@
 
 .section {
   padding-bottom: 11.25rem;
-
-  @media screen and (max-width: $tablet) {}
-
-  @media screen and (max-width: $mobile) {}
+  @media screen and (max-width: $tablet) {
+  }
+  @media screen and (max-width: $mobile) {
+  }
 }
 
 .container {
   width: 76.25rem;
   margin: 0 auto;
   padding: 0 1rem;
-
-  @media screen and (max-width: $tablet) {}
-
+  @media screen and (max-width: $tablet) {
+  }
   @media screen and (max-width: $mobile) {
     width: 100%;
     max-width: none;
@@ -30,7 +29,6 @@
 
 .inner-container {
   width: 52.25rem;
-
   @media screen and (max-width: $tablet) {
     width: 100%;
   }
@@ -51,14 +49,14 @@
   border-radius: $big-border-radius;
   transition: all $transition-function;
 
-  @media screen and (max-width: $tablet) {}
-
+  @media screen and (max-width: $tablet) {
+  }
   @media screen and (max-width: $mobile) {
     width: 100%;
   }
-
   &:hover,
-  &:focus {}
+  &:focus {
+  }
 }
 
 .primary_button {
