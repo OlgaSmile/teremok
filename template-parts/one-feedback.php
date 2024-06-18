@@ -53,7 +53,7 @@
   </div>
 
   <div>
-    <?php get_template_part( "template-parts/read-more-btn"); ?>
+    <?php get_template_part( "template-parts/watch-more-btn"); ?>
 
     <div class="onefeedback__user">
 

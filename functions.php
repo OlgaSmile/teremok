@@ -48,6 +48,10 @@ function wp_teremok_scripts() {
   if (is_singular() && locate_template('template-parts/read-more-btn.php')) {
       wp_enqueue_style('read-more-btn-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/read-more-btn.css', array('main'));
     }
+
+  if (is_singular() && locate_template('template-parts/watch-more-btn.php')) {
+      wp_enqueue_style('read-more-btn-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/read-more-btn.css', array('main'));
+    }
     
   if (is_singular() && locate_template('template-parts/feedbacks-section.php')) {
       wp_enqueue_style('feedbacks-section-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/feedbacks-section.css', array('main'));

@@ -6,5 +6,21 @@
   }
   & .swiper-pagination.feedbacks__swiper-pagination {
     position: static;
+    display: flex;
+    gap: 1rem;
+    width: fit-content;
+    margin: 2rem auto 0;
+    & .swiper-pagination-bullet {
+      margin: 0;
+      width: .5rem;
+      height: 0.5rem;
+      background-color: transparent;
+      opacity: 1;
+      border-radius: 100%;
+      border: 1px solid $grey_green;
+      &.swiper-pagination-bullet-active {
+        border-color: #3c4839;
+      }
+    }
   }
 }

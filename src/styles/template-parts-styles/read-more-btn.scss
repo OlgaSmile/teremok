@@ -33,6 +33,9 @@
       height: 1.125rem;
       width: 0.75rem;
     }
+    &.right {
+      transform: rotate(-90deg);
+    }
   }
   &:hover {
     text-shadow: 0.01rem 0px 0px $orange, -0.01rem 0px 0px $orange,

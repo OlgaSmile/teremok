@@ -12,8 +12,6 @@
     get_template_part( "template-parts/section-title", null, ['title' => $feedback_title ]); ?>
 
 
-
-
     </div>
 
     <div class="swiper feedback__section-swiper">

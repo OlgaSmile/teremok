@@ -40,6 +40,7 @@ body {
       rgba(255, 255, 255, 0.8)
     ),
     url("../../assets/images/noise.svg");
+    background: url('../../assets/images/bg.jpg');
 
   &.modal-open {
     overflow: hidden;
