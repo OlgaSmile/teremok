@@ -1,5 +1,6 @@
 <section class="proposition-section">
-
+    <img class="proposition-section__image"
+        src="<?php echo get_template_directory_uri() ?>/assets/images/proposition_bg.jpg" />
     <div class="proposition-section__container">
         <?php get_template_part("template-parts/section-title", null, array('title' => "спецпропозиція"));?>
         <div class="proposition-section__content">
