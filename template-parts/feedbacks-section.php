@@ -1,4 +1,5 @@
 <section class="section feedbacks__section">
+
   <div class="container">
 
     <div class="feedbacks__section-title">
@@ -14,7 +15,7 @@
 
     </div>
 
-    <div class="swiper feedback__section-swiper">
+    <div class="swiper feedbacks__section-swiper">
       <div class="swiper-wrapper feedback__section-wrapper">
         <?php
         $args = array(
@@ -38,5 +39,12 @@
       </div>
       <div class="swiper-pagination feedbacks__swiper-pagination"></div>
     </div>
+
+    <button id="add_comment-js" class="_button primary_button"
+      type="button"><?php the_field('add_feedback_btn', 'options') ?></button>
+
   </div>
+
+  <?php get_template_part( "template-parts/feedback-form"); ?>
+
 </section>

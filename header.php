@@ -45,3 +45,7 @@
         </div>
       </div>
     </header>
+
+    <div class="body__background">
+      <img src="<?php echo get_template_directory_uri()?>/assets/images/bg.jpg" loading="lazy" alt="background" />
+    </div>

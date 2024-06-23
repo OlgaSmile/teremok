@@ -43,9 +43,9 @@
           <img class="onefeedback__image" src="<?= $thumbnail ?>" alt="<?= $alt ?>">
         </li>
         <?php 
-    }
-  }
-  ?>
+        }
+      }
+      ?>
       </ul>
       <?php } ?>
 
@@ -53,7 +53,12 @@
   </div>
 
   <div>
-    <?php get_template_part( "template-parts/watch-more-btn"); ?>
+
+    <div class="watchmore_button">
+      <?php
+      $btn_name = get_field('watch_all', 'options');
+      get_template_part( "template-parts/read-more-btn", null, ['btn_name' => $btn_name ]); ?>
+    </div>
 
     <div class="onefeedback__user">
 
@@ -65,7 +70,7 @@
         <?php 
                 echo wp_get_attachment_image( $image, $size ); ?>
         <?php } 
-      else { ?>
+        else { ?>
         <img src="<?php the_field('user_placeholder', "options") ?>" alt="плейсхолдер фотографії користувача">
         <?php } ?>
       </div>

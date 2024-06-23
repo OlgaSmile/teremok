@@ -4,6 +4,12 @@
   &-title {
     margin-bottom: 3rem;
   }
+
+  &-swiper {
+    margin-bottom: 48px;
+    width: initial;
+  }
+
   & .swiper-pagination.feedbacks__swiper-pagination {
     position: static;
     display: flex;
@@ -12,7 +18,7 @@
     margin: 2rem auto 0;
     & .swiper-pagination-bullet {
       margin: 0;
-      width: .5rem;
+      width: 0.5rem;
       height: 0.5rem;
       background-color: transparent;
       opacity: 1;

@@ -1,147 +1,211 @@
 @import "../variables.scss";
 
-input#acf-field_665b1c1ee07a5-alt {
-  display: none;
-}
+.feedback {
+  &__backdrop {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity $transition-function;
+  }
 
-.acf-form {
-  width: 50rem;
-  & .acf-fields .acf-field {
-    padding: 0;
-    margin: 0;
+  &__backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
   }
-  & .acf-fields > .acf-field {
-    border: 0;
-  }
-  & .acf-fields.-border {
-    border: none;
-    background-color: transparent;
-  }
-  & .acf-field .acf-label {
-    margin: 0;
-    & label {
-      margin: 0;
-      font-weight: 400;
+
+  &__backdrop.is-hidden .feedback-modal {
+    transform: translate(-50%, -50%) translateX(-100%);
+    @media screen and (max-width: $mobile) {
+      transform: translateX(-100%);
     }
   }
-  & .form-images .acf-fields {
-    display: flex;
-    gap: 0.5rem;
-  }
-  & .acf-image-uploader .image-wrap img {
-    max-width: 3.5rem;
-    max-height: 3.5rem;
-  }
 
-  // image close button
-  & a.acf-icon {
+  &__modal {
     position: absolute;
-    width: 1.5rem;
-    height: 1.5rem;
-    top: -0.75rem;
-    right: -0.75rem;
-    border: none;
-  }
-  & .acf-icon.dark {
-    background: transparent url("../../../assets/images/cancel.svg") no-repeat
-      center / contain;
-    color: transparent;
-    &:hover {
-      background: transparent url("../../../assets/images/cancel.svg") no-repeat
-        center / contain;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateX(0);
+    width: 75rem;
+    padding: 2.375rem 12.5rem;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: $white;
+    border-radius: $small-border-radius;
+    box-shadow: 0px 4px 122px 40px rgba(0, 0, 0, 0.25);
+    transition: transform $transition-function;
+    @media screen and (max-width: $mobile) {
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      transform: translateX(0);
     }
-    &.-cancel:hover {
-      color: transparent;
-    }
-  }
 
-  //image add button
-  & .custom-acf-btn {
-    display: block;
-    position: relative;
-    width: 3.5rem;
-    height: 3.5rem;
-    border: 0.0625rem solid $grey_green;
-
-    & .acf-basic-uploader {
-      display: block;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    &-close {
       position: absolute;
+      top: 2rem;
+      right: 2rem;
+      width: 2rem;
+      height: 2rem;
+      & .icon__cross {
+        stroke: $green_light;
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+
+    &-title {
+      margin-bottom: 5.5rem;
+    }
+
+    input#acf-field_665b1c1ee07a5-alt {
+      display: none;
+    }
+
+    .acf-form {
+      width: 50rem;
+      & .acf-fields .acf-field {
+        padding: 0;
+        margin: 0;
+      }
+      & .acf-fields > .acf-field {
+        border: 0;
+      }
+      & .acf-fields.-border {
+        border: none;
+        background-color: transparent;
+      }
+      & .acf-field .acf-label {
+        margin: 0;
+        & label {
+          margin: 0;
+          font-weight: 400;
+        }
+      }
+      & .form-images .acf-fields {
+        display: flex;
+        gap: 0.5rem;
+      }
+      & .acf-image-uploader .image-wrap img {
+        max-width: 3.5rem;
+        max-height: 3.5rem;
+      }
+
+      // image close button
+      & a.acf-icon {
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        top: -0.75rem;
+        right: -0.75rem;
+        border: none;
+      }
+      & .acf-icon.dark {
+        background: transparent url("../../../assets/images/cancel.svg")
+          no-repeat center / contain;
+        color: transparent;
+        &:hover {
+          background: transparent url("../../../assets/images/cancel.svg")
+            no-repeat center / contain;
+        }
+        &.-cancel:hover {
+          color: transparent;
+        }
+      }
+
+      //image add button
+      & .custom-acf-btn {
+        display: block;
+        position: relative;
+        width: 3.5rem;
+        height: 3.5rem;
+        border: 0.0625rem solid $grey_green;
+
+        & .acf-basic-uploader {
+          display: block;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          cursor: pointer;
+
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            background-color: $grey_green;
+          }
+
+          &::before {
+            top: 50%;
+            left: 50%;
+            width: 50%;
+            height: 0.0625rem;
+            transform: translate(-50%, -50%);
+          }
+
+          &::after {
+            top: 50%;
+            left: 50%;
+            width: 0.0625rem;
+            height: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+
+    .acf-required {
+      display: none;
+    }
+
+    .form-row .acf-fields,
+    .acf-field-date-picker {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 10rem;
+    }
+
+    //range
+    .star-rating {
+      unicode-bidi: bidi-override;
+      direction: rtl;
+      display: inline-flex;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+
+    .star {
+      color: #e7e7e7;
+      position: relative;
+      font-size: 1.5rem;
+    }
+
+    .star::before {
+      content: "★";
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      cursor: pointer;
+      color: transparent;
+      -webkit-text-stroke: 0.025rem $main_text;
+      text-stroke: 0.025rem $main_text;
+    }
 
-      &::before,
-      &::after {
-        content: "";
-        position: absolute;
-        background-color: $grey_green;
-      }
+    .star:hover,
+    .star:hover ~ .star {
+      color: $yellow;
+    }
 
-      &::before {
-        top: 50%;
-        left: 50%;
-        width: 50%;
-        height: 0.0625rem;
-        transform: translate(-50%, -50%);
-      }
-
-      &::after {
-        top: 50%;
-        left: 50%;
-        width: 0.0625rem;
-        height: 50%;
-        transform: translate(-50%, -50%);
-      }
+    .star.selected {
+      color: $yellow;
     }
   }
-}
-
-.acf-required {
-  display: none;
-}
-
-.form-row .acf-fields,
-.acf-field-date-picker {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 10rem;
-}
-
-//range
-.star-rating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
-  display: inline-flex;
-  gap: 0.5rem;
-  cursor: pointer;
-}
-
-.star {
-  color: #e7e7e7;
-  position: relative;
-  font-size: 1.5rem;
-}
-
-.star::before {
-  content: "★";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  color: transparent;
-  -webkit-text-stroke: 0.025rem $main_text;
-  text-stroke: 0.025rem $main_text;
-}
-
-.star:hover,
-.star:hover ~ .star {
-  color: $yellow;
-}
-
-.star.selected {
-  color: $yellow;
 }
