@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",(function(){window.onload=function(){if(document.getElementById("enter-parallax")){document.querySelectorAll(".enter-parallax-bg").forEach((e=>{e.classList.add("parallax")}))}}}));

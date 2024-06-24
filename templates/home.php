@@ -5,13 +5,13 @@ Template Name: home
 get_header();
 ?>
 
-<?php get_template_part("template-parts/feedbacks-section");?>
-<?php get_template_part("template-parts/feedback-form");?>
-<?php
-get_template_part("template-parts/main-page/services-section");
-get_template_part("template-parts/main-page/proposition-section");
-get_template_part("template-parts/main-page/blog-section");
+<?php get_template_part( "template-parts/hero");
+get_template_part("template-parts/services-section");
+get_template_part("template-parts/proposition-section");
+get_template_part("template-parts/feedbacks-section");
+get_template_part("template-parts/blog-section");
 get_template_part("template-parts/location-section");
 ?>
+
 
 <?php get_footer();?>

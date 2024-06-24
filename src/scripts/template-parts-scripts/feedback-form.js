@@ -1,19 +1,58 @@
 document.addEventListener("DOMContentLoaded", function () {
   //image input
-  const imageInputs = document.querySelectorAll(".hide-if-value p");
+  const imageInputs = document.querySelectorAll(".hide-if-value input");
+  const imageTexts = document.querySelectorAll(".hide-if-value p");
 
   if (imageInputs) {
+    // hide default tags
     imageInputs.forEach((inp) => {
       inp.classList.add("visually-hidden");
     });
+    imageTexts.forEach((inp) => {
+      inp.classList.add("visually-hidden");
+    });
+
+    // add custom class
     const imageWrap = document.querySelectorAll(".hide-if-value");
     imageWrap.forEach((wrap) => {
-      wrap.insertAdjacentHTML(
-        "beforeend",
-        `<p><a data-name="add" class="acf-button button custom-acf-btn" href="#"><span class="plus-sign"></span></a></p>`
-      );
+      wrap.classList.add("custom-acf-btn");
     });
   }
+
+  (function ($) {
+    $(document).ready(function () {
+      $('input[type="file"]').on("change", function () {
+        var $input = $(this);
+        var $parent = $input.closest(".acf-image-uploader");
+        var file = $input[0].files[0];
+
+        if (file) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            $parent.find(".show-if-value img").attr("src", e.target.result);
+            $parent.find(".show-if-value").show();
+            $parent.find(".hide-if-value").hide();
+          };
+
+          reader.readAsDataURL(file);
+        } else {
+          $parent.find(".show-if-value img").attr("src", "");
+          $parent.find(".show-if-value").hide();
+          $parent.find(".hide-if-value").show();
+        }
+      });
+
+      $(".acf-icon.-cancel").on("click", function (e) {
+        e.preventDefault();
+        var $parent = $(this).closest(".acf-image-uploader");
+        $parent.find('input[type="file"]').val("");
+        $parent.find(".show-if-value img").attr("src", "");
+        $parent.find(".show-if-value").hide();
+        $parent.find(".hide-if-value").show();
+      });
+    });
+  })(jQuery);
 
   //range
   const hiddenInput = document.getElementById("acf-field_665b1c1ee07a5");
