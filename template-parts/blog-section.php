@@ -17,7 +17,7 @@ get_template_part("template-parts/section-title", null, array('title' => "бло
 if ($query->have_posts()) {
     while ($query->have_posts()) {
         $query->the_post();
-        get_template_part("template-parts/main-page/blog-card", null, array('blog' => $query));
+        get_template_part("template-parts/blog-card", null, array('blog' => $query));
 
     }
 }

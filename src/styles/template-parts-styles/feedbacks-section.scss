@@ -1,12 +1,17 @@
 @import "../variables.scss";
 
 .feedbacks__section {
+  & .container {
+    padding-right: 0.625rem;
+  }
+
   &-title {
     margin-bottom: 3rem;
   }
 
   &-swiper {
-    margin-bottom: 48px;
+    padding-right: 0.375rem;
+    margin-bottom: 3rem;
     width: initial;
   }
 

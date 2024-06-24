@@ -1,0 +1,76 @@
+@import "../variables.scss";
+
+.services-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 11.25rem;
+
+  &__image {
+    width: 100%;
+    height: 1300px;
+    background-color: green;
+    flex-grow: 1;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 3.75rem;
+    width: 52.25rem;
+  }
+
+  &__content {
+    margin-top: 2.5rem;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  &__subtitle {
+    align-self: center;
+    font-family: $font_inter;
+    font-weight: 400;
+    font-size: 1.875rem;
+    margin-bottom: 3.75rem;
+  }
+
+  &__free {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.4375rem;
+  }
+
+  &__additional {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.4375rem;
+  }
+
+  &__service-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    width: 12.625rem;
+    height: 4.5rem;
+
+    &-additional {
+      width: 21.125rem;
+      height: 5.75rem;
+    }
+  }
+
+  &__service-icon {
+    width: 2.6875rem;
+    height: 2.75rem;
+  }
+
+  &__service-name {
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+}

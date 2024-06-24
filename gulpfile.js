@@ -65,8 +65,8 @@ function watching() {
   watch(["src/images"], images);
   watch("src/scripts/**/*.js", scripts);
   watch("blocks/**/*.js", scripts);
-  watch("src/scripts/template-scripts/**/*.js", scriptsTemplates);
-  watch("src/scripts/template-parts-scripts/**/*.js", scriptsTemplateParts);
+  watch("src/scripts/template-scripts/*.js", scriptsTemplates);
+  watch("src/scripts/template-parts-scripts/*.js", scriptsTemplateParts);
 }
 
 exports.styles = styles;

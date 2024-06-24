@@ -19,5 +19,5 @@ if (isset($args['variant'])) {
 
 
 <button class="<?php echo $variant; ?>">
-    <span class="<?php echo $variant; ?>__content"><?php echo $text; ?></span>
+  <span class="<?php echo $variant; ?>__content"><?php echo $text; ?></span>
 </button>
