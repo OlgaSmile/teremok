@@ -10,6 +10,7 @@
   }
   &__bg {
     position: absolute;
+    will-change: transform;
     transition: $transition-parallax;
     & img {
       object-fit: cover;
