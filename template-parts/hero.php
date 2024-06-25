@@ -18,17 +18,17 @@ $viber = get_field('viber', 'option');
 <section class="hero__section">
 
   <div id="enter-parallax">
+    <div class="enter-parallax-bg hero__bg hero__bg--fourth">
+      <?php echo wp_get_attachment_image( $fourth_bg, 'large'); ?>
+    </div>
+    <div class="enter-parallax-bg hero__bg hero__bg--third">
+      <?php echo wp_get_attachment_image( $third_bg, 'medium_large'); ?>
+    </div>
     <div class="enter-parallax-bg hero__bg hero__bg--main">
       <?php echo wp_get_attachment_image( $main_bg, 'medium_large'); ?>
     </div>
     <div class="enter-parallax-bg hero__bg hero__bg--secondary">
       <?php echo wp_get_attachment_image( $secondary_bg, 'medium_large'); ?>
-    </div>
-    <div class="enter-parallax-bg hero__bg hero__bg--third">
-      <?php echo wp_get_attachment_image( $third_bg, 'medium_large'); ?>
-    </div>
-    <div class="enter-parallax-bg hero__bg hero__bg--fourth">
-      <?php echo wp_get_attachment_image( $fourth_bg, 'large'); ?>
     </div>
     <div class="enter-parallax-bg hero__bg hero__title">
       <img src="<?php echo esc_url($title_bg['sizes']['medium_large']); ?>"
