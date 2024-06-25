@@ -1,8 +1,12 @@
-@import './variables.scss';
+@import "./variables.scss";
 
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
   display: flex;
-  background-color: #6998e6;
   color: $white;
   font-weight: 400;
   font-size: 1rem;
