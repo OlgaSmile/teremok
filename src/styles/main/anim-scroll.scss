@@ -1,0 +1,10 @@
+.anim-items {
+  will-change: transform;
+  transform: translateY(4rem);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+.anim-items.active {
+  transform: translateX(0);
+  opacity: 1;
+}

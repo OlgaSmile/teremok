@@ -6,7 +6,9 @@
   cursor: pointer;
   font-weight: 600;
   color: $orange;
-  transition: $transition-function;
+  & button {
+    transition: $transition-function;
+  }
   &--box {
     position: relative;
     height: 1.125rem;
@@ -33,8 +35,10 @@
     }
   }
   &:hover {
-    text-shadow: 0.01rem 0px 0px $orange, -0.01rem 0px 0px $orange,
-      0px 0.01rem 0px $orange, 0px -0.01rem 0px $orange;
+    & button {
+      text-shadow: 0.001rem 0px 0px $orange, -0.001rem 0px 0px $orange,
+        0px 0.001rem 0px $orange, 0px -0.001rem 0px $orange;
+    }
     .readmore_button--icon {
       top: 0;
     }
