@@ -79,9 +79,6 @@ require get_template_directory() . '/services/acf-options.php';
 /** add thumbnail to each page */
 add_theme_support('post-thumbnails');
 
-/** add guttenberg blocks support */
-require_once get_template_directory() . "/blocks/blocks_init.php";
-
 /** add custom post types */
 require get_template_directory() . '/services/custom-post-feedbacks.php';
 
