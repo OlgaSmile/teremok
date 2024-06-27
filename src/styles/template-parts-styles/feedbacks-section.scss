@@ -34,4 +34,18 @@
       }
     }
   }
+  &-btns {
+    position: relative;
+    & .learnmore_button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 1rem;
+      &:hover {
+        & button {
+          margin-right: 0.625rem;
+        }
+      }
+    }
+  }
 }

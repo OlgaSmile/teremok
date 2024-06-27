@@ -23,7 +23,9 @@
         нашого міста – відомого ресторану-музею “Деца у Нотаря”.
       </p>
 
-      <?php get_template_part("template-parts/buttons", null, array('text' => "Дізнатися більше", 'variant' => 'find_more_btn'));?>
+      <?php
+      $learn_more = get_field('learn_more', 'options');
+      get_template_part("template-parts/learn-more-btn", null, array('btn_name' => $learn_more));?>
     </div>
   </div>
 </section>
