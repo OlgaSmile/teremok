@@ -43,42 +43,6 @@
   }
 }
 
-//buttons
-._button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  width: fit-content;
-  min-width: 18.75rem;
-  min-height: 2.75rem;
-  margin: 0 auto;
-  font-size: 1.25rem;
-  font-weight: 500;
-  background-color: transparent;
-  border-radius: $big-border-radius;
-  transition: all $transition-function;
-
-  @media screen and (max-width: $tablet) {
-  }
-  @media screen and (max-width: $mobile) {
-    width: 100%;
-  }
-  &:hover,
-  &:focus {
-  }
-}
-
-.primary_button {
-  color: $orange;
-  border: 0.0625rem solid $orange;
-}
-
-.secondary_button {
-  border: 0.0625rem solid $main_text;
-  color: $main_text;
-}
-
 .visually-hidden {
   position: absolute;
   width: 0.0625rem;

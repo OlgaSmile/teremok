@@ -40,8 +40,14 @@
       <div class="swiper-pagination feedbacks__swiper-pagination"></div>
     </div>
 
-    <button id="add_comment-js" class="_button primary_button"
-      type="button"><?php the_field('add_feedback_btn', 'options') ?></button>
+    <div class="feedbacks__section-btns">
+      <button id="add_comment-js" class="_button primary_button"
+        type="button"><?php the_field('add_feedback_btn', 'options') ?></button>
+
+      <?php
+      $watch_all_feedbacks = get_field('watch_all_feedbacks', 'options');
+      get_template_part( "template-parts/learn-more-btn", null, ['btn_name' => $watch_all_feedbacks ]); ?>
+    </div>
 
   </div>
 

@@ -1,0 +1,25 @@
+.learnmore_button {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding: 1rem 0;
+  color: $orange;
+  font-weight: 600;
+  cursor: pointer;
+  & button {
+    transition: $transition-function;
+    margin-right: 0.625rem;
+  }
+  &--icon {
+    width: 3.125rem;
+    height: 1.125rem;
+    stroke: $orange;
+  }
+  &:hover {
+    & button {
+      margin-right: 1.9375rem;
+      text-shadow: 0.001rem 0px 0px $orange, -0.001rem 0px 0px $orange,
+        0px 0.001rem 0px $orange, 0px -0.001rem 0px $orange;
+    }
+  }
+}

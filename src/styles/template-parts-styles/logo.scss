@@ -10,6 +10,10 @@
     top: 0;
     left: 0;
     pointer-events: none;
+    stroke: $white;
+  }
+  & .moon {
+    fill: $white;
   }
   & .tree {
     transform-origin: bottom;

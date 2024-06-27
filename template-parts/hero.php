@@ -67,7 +67,8 @@ $viber = get_field('viber', 'option');
     <ul class="hero__socials">
       <?php if($facebook) { ?>
       <li class="">
-        <a class="" href="<?php echo esc_attr($facebook ); ?>" target="_blank" aria-label="Facebook">
+        <a class="" href="<?php echo esc_attr($facebook['url'] ); ?>"
+          target="<?php echo esc_attr($facebook['target'] ); ?>" aria-label="Facebook">
           <svg class="" width="28" height="28">
             <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#facebook"></use>
           </svg>
@@ -76,7 +77,8 @@ $viber = get_field('viber', 'option');
       <?php } ?>
       <?php if($instagram) { ?>
       <li class="">
-        <a class="" href="<?php echo esc_attr($instagram ); ?>" target="_blank" aria-label="instagram">
+        <a class="" href="<?php echo esc_attr($instagram['url']); ?>" target="<?php echo $instagram['target']; ?>"
+          aria-label="instagram">
           <svg class="" width="28" height="28">
             <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#instagram"></use>
           </svg>
@@ -85,7 +87,8 @@ $viber = get_field('viber', 'option');
       <?php } ?>
       <?php if($telegram) { ?>
       <li class="">
-        <a class="" href="<?php echo esc_attr($telegram ); ?>" target="_blank" aria-label="telegram">
+        <a class="" href="<?php echo esc_attr($telegram['url']); ?>" target="<?php echo $telegram['target']; ?>"
+          aria-label="telegram">
           <svg class="" width="28" height="28">
             <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#telegram"></use>
           </svg>
@@ -94,7 +97,8 @@ $viber = get_field('viber', 'option');
       <?php } ?>
       <?php if($viber) { ?>
       <li class="viber_item">
-        <a class="" href="<?php echo esc_attr($viber ); ?>" target="_blank" aria-label="viber">
+        <a class="" href="<?php echo esc_attr($viber['url']); ?>" target="<?php echo $viber['target']; ?>"
+          aria-label="viber">
           <svg class="hero__socials--viber" width="28" height="28">
             <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#viber">
             </use>

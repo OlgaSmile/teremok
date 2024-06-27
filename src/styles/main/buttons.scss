@@ -1,59 +1,53 @@
-@import "./variables.scss";
-
-.find_more_btn {
+._button {
   display: flex;
+  justify-content: center;
   align-items: center;
-  border-radius: 0.5rem;
-  padding: 0.9375rem 0rem;
-  height: 3.125rem;
+  padding: 0.5rem 1rem;
+  width: fit-content;
+  min-width: 18.75rem;
+  min-height: 2.75rem;
+  margin: 0 auto;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-color: transparent;
+  transition: all $transition-function;
 
-  &__content {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    font-weight: 600;
-    font-size: 1rem;
-    letter-spacing: 0.04em;
-    color: $orange;
-
-    &::after {
-      display: inline-flex;
-      align-self: center;
-      content: url("../../assets/images/long-arrow.svg");
-      stroke-width: 1.8px;
-      stroke: $orange;
-      width: 3.1875rem;
-      height: 1.0625rem;
-    }
+  @media screen and (max-width: $tablet) {
+  }
+  @media screen and (max-width: $mobile) {
+    width: 100%;
+  }
+  &:disabled {
+    color: $disabled_text;
+    border-color: $disabled_text;
   }
 }
 
-.read_more_btn {
-  display: flex;
-  align-items: center;
-  border-radius: 0.5rem;
-  padding: 0.9375rem 0rem;
-  height: 3.125rem;
+.primary_button {
+  border: 0.0625rem solid $orange;
+  border-radius: $big-border-radius;
+  color: $orange;
+  &:hover,
+  &:focus {
+    color: $main_text;
+    border-color: $main_text;
+  }
+  &:focus {
+    border-width: 0.1062rem;
+  }
+}
 
-  &__content {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    font-weight: 400;
-    font-size: 0.875rem;
-    line-height: 1.3;
-    letter-spacing: 0.04em;
+.secondary_button {
+  border: 0.0625rem solid $main_text;
+  border-radius: $medium-border-radius;
+  color: $main_text;
+  &:hover,
+  &:focus {
     color: $orange;
-
-    &::after {
-      display: inline-flex;
-      align-self: center;
-      content: url("../../assets/images/short-arrow.svg");
-      stroke-width: 1.8px;
-      stroke: $orange;
-      width: 3.1875rem;
-      height: 1.0625rem;
-    }
+    border-color: $orange;
+  }
+  &:focus {
+    border-width: 0.1062rem;
   }
 }
 
