@@ -2,7 +2,9 @@
   <div class="services-section__image"></div>
 
   <div class="services-section__container">
-    <?php get_template_part("template-parts/section-title", null, array('title' => "послуги"));?>
+    <?php
+    $services_title = get_field('services_title', 'options');
+    get_template_part("template-parts/section-title", null, array('title' => $services_title));?>
 
     <div class="services-section__content">
       <h2 class="services-section__subtitle">Безкоштовні</h2>
