@@ -10,7 +10,8 @@ $args = array(
 
 $query = new WP_Query($args);
 
-get_template_part("template-parts/section-title", null, array('title' => "блог"));?>
+$blog_title = get_field('blog_title', 'options');
+get_template_part("template-parts/section-title", null, array('title' => $blog_title));?>
   <div class="blog-section__content">
 
     <?php

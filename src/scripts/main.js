@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const animItems = document.querySelectorAll(".anim-items");
 
   if (animItems.length > 0) {
-    window.addEventListener("scroll", throttle(animOnScroll, 200));
+    window.addEventListener("scroll", throttle(animOnScroll, 150));
 
     function animOnScroll() {
       for (let index = 0; index < animItems.length; index++) {
@@ -42,11 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function offset(el) {
       const rect = el.getBoundingClientRect(),
-        // scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
         scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       return {
         top: rect.top + scrollTop,
-        // left: rect.left + scrollLeft,
       };
     }
   }
