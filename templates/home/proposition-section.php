@@ -6,6 +6,12 @@
   };
   ?>
   <div class="proposition-section__container">
+    <?php 
+  $proposition_bg = get_field('proposition_bg');
+  if($proposition_bg) {
+    echo wp_get_attachment_image( $proposition_bg, 'large' );
+  };
+  ?>
     <div class="proposition-section__content">
       <?php
       $proposition_title = get_field('proposition_title', 'options');
