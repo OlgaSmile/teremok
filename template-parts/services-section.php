@@ -1,5 +1,14 @@
 <section class="services-section">
-    <div class="services-section__image"></div>
+    <div class="services-section__image">
+        <?php if (get_field('services-section-left-photos')): ?>
+        <?php while (has_sub_field('services-section-left-photo')): ?>
+
+        <div class="">
+            <img class="services-section__service-icon" src="<?php the_sub_field('services-section-left-photo');?>" />
+        </div>
+        <?php endwhile;?>
+        <?php endif;?>
+    </div>
 
     <div class="services-section__container">
         <?php get_template_part("template-parts/section-title", null, array('title' => "послуги"));?>

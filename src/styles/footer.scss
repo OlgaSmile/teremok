@@ -16,8 +16,6 @@
         margin-bottom: 2.5rem;
     }
 
-
-
     &__menu {
         display: flex;
         flex-wrap: wrap;
@@ -85,6 +83,15 @@
             }
         }
     }
+
+}
+
+footer .footer__dev-link {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18.2px;
+    text-decoration: underline;
 }
 
 // footer .animation-box {
