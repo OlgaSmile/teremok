@@ -6,7 +6,8 @@
   color: $orange;
   font-weight: 600;
   cursor: pointer;
-  & button {
+  & button,
+  & a {
     transition: $transition-function;
     margin-right: 0.625rem;
   }
