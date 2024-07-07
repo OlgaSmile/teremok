@@ -5,6 +5,7 @@ $third_bg = get_field('third_bg');
 $fourth_bg = get_field('fourth_bg');
 $title_bg = get_field('title_bg');
 
+$google_maps_address = get_field('google_maps_address', 'option');
 $hero_subtitle = get_field('hero_subtitle');
 $location = get_field('location');
 
@@ -45,12 +46,13 @@ $viber = get_field('viber', 'option');
     <?php } ?>
   </div>
   <div class="hero__content">
-    <div class="hero__location">
+    <a href="<?php echo esc_url( $google_maps_address['url'] ); ?>"
+      target="<?php echo $google_maps_address['target']; ?>" class="hero__location">
       <svg width="24" height="24">
         <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#point_map"></use>
       </svg>
       <p><?php if($location) echo $location; ?></p>
-    </div>
+    </a>
     <div class="hero__route">
       <svg class="hero__route--one" width="14" height="14">
         <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#point_map"></use>
