@@ -1,4 +1,5 @@
 @import "./variables.scss";
+@import "./mixins.scss";
 
 .footer {
   color: pink;
@@ -9,53 +10,114 @@
   padding-top: 2.5rem;
   padding-bottom: 1.5rem;
 
+
+
   &__content {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 2.5rem;
+
+    @include media_rule($desktop) {
+      flex-direction: row;
+    }
   }
 
   &__menu {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: flex-end;
     row-gap: 1.5rem;
     column-gap: 2.5rem;
     width: 17.75rem;
+
+    @include media_rule($desktop) {
+      display: flex;
+    }
   }
 
   & .footer__logo {
-    width: 10.31rem;
-    height: 7.5rem;
+    width: 84px;
+    height: 60px;
+
+    // width: 5.25rem;
+    // height: 3.75rem;
+
+    @include media_rule($desktop) {
+      width: 10.31rem;
+      height: 7.5rem;
+    }
+
 
     &-block {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 1.875rem;
+      gap: 5.29rem;
+      margin-bottom: 32px;
+      width: 100%;
+
+      @include media_rule($desktop) {
+        margin-bottom: 0;
+        gap: 1.875rem;
+      }
     }
   }
 
   &__contacts {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    align-items: center;
+
+    @include media_rule($desktop) {
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+
+  }
+
+  &__email {
+    order: 3;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 20px;
+
+    @include media_rule($desktop) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__phone {
+    order: 5;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
   }
 
   &__socials {
     display: flex;
     gap: 1rem;
+    order: 1;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 32px;
+
+    @include media_rule($desktop) {
+      order: 7;
+      margin-bottom: 0;
+    }
 
     &-item {
-      width: 1.75rem;
-      height: 1.75rem;
+      width: 28px;
+      height: 28px;
     }
 
     &-icon {
-      width: 1.75rem;
-      height: 1.75rem;
+      width: 28px;
+      height: 28px;
       stroke: black;
     }
   }
@@ -67,45 +129,85 @@
   }
 
   &__policy {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 0 1.25rem;
+    gap: 32px;
+
+    @include media_rule($desktop) {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
 
     &-item {
+      font-size: 10px;
+      font-weight: 400;
+
+      @include media_rule($desktop) {
+        font-size: 1rem;
+      }
+
+      &_wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      &_policy {
+        text-align: center;
+        text-decoration: underline;
+      }
+
       &_date {
-        justify-self: center;
+        @include media_rule($desktop) {
+          justify-self: center;
+        }
+
       }
 
       &_country {
         justify-self: end;
       }
+
+
+      & a {
+        font-family: Montserrat;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.1375rem;
+        text-decoration: underline;
+
+        @include media_rule($desktop) {
+          font-size: .875rem;
+        }
+      }
     }
+
   }
 }
 
-// footer .animation-box {
-//     width: 164.96px;
-//     height: 120px;
-
-//     // & .logo_svg {
-//     //     width: 165px;
-//     //     height: 120px;
-//     // }
-
-// }
-
-.booking_btn {
+.booking_btn-footer {
   display: flex;
+  flex-grow: 1;
   align-items: center;
   justify-content: center;
-  border: 0.0625rem solid $main_text;
-  border-radius: 0.25rem;
-  padding: 0.5rem 3.5rem;
-  // width: 20.625rem;
-  height: 3rem;
+  border: 1px solid $main_text;
+  border-radius: 4px;
+  width: 56.69rem;
+  max-width: 343px;
+  height: 7.93rem;
+  max-height: 48px;
 
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 2.644rem;
   letter-spacing: 0.06em;
   color: $main_text;
+
+  @include media_rule($desktop) {
+    font-size: 1rem;
+    max-width: 20.625rem;
+    width: 20.625rem;
+    height: 3rem;
+    max-height: 48px;
+  }
 }
