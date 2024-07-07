@@ -6,7 +6,7 @@
     <?php
 $location_title = get_field('location_title', 'options');
 get_template_part("template-parts/section-title", null, array('title' => $location_title));?>
-    <p class="location-section__subtitle"><?php the_field('location_subtitle');?></p>
+    <h2 class="location-section__subtitle"><?php the_field('location_subtitle');?></h2>
     <p class="location-section__address"><?php the_field('location_address');?></p>
     <div class="location-section__map">
         <?php

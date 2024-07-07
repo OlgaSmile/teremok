@@ -17,7 +17,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 
     @include media_rule($desktop) {
       flex-direction: row;
@@ -38,11 +38,8 @@
   }
 
   & .footer__logo {
-    width: 84px;
-    height: 60px;
-
-    // width: 5.25rem;
-    // height: 3.75rem;
+    width: 5.25rem;
+    height: 3.75rem;
 
     @include media_rule($desktop) {
       width: 10.31rem;
@@ -55,8 +52,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 5.29rem;
-      margin-bottom: 32px;
+      gap: 2rem;
+      margin-bottom: 2rem;
       width: 100%;
 
       @include media_rule($desktop) {
@@ -81,9 +78,9 @@
   &__email {
     order: 3;
     font-family: Montserrat;
-    font-size: 14px;
+    font-size: .875rem;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 
     @include media_rule($desktop) {
       margin-bottom: 0;
@@ -93,7 +90,7 @@
   &__phone {
     order: 5;
     font-family: Montserrat;
-    font-size: 14px;
+    font-size: .875rem;
     font-weight: 400;
   }
 
@@ -103,7 +100,7 @@
     order: 1;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 32px;
+    margin-bottom: 2rem;
 
     @include media_rule($desktop) {
       order: 7;
@@ -111,13 +108,13 @@
     }
 
     &-item {
-      width: 28px;
-      height: 28px;
+      width: 1.75rem;
+      height: 1.75rem;
     }
 
     &-icon {
-      width: 28px;
-      height: 28px;
+      width: 1.75rem;
+      height: 1.75rem;
       stroke: black;
     }
   }
@@ -132,8 +129,8 @@
     display: flex;
     flex-direction: column;
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 0 1.25rem;
-    gap: 32px;
+    padding: 0 1rem;
+    gap: 2rem;
 
     @include media_rule($desktop) {
       display: grid;
@@ -141,7 +138,7 @@
     }
 
     &-item {
-      font-size: 10px;
+      font-size: .625rem;
       font-weight: 400;
 
       @include media_rule($desktop) {
@@ -172,9 +169,9 @@
 
       & a {
         font-family: Montserrat;
-        font-size: 12px;
+        font-size: .75rem;
         font-weight: 700;
-        line-height: 1.1375rem;
+        line-height: .975rem;
         text-decoration: underline;
 
         @include media_rule($desktop) {
@@ -191,23 +188,19 @@
   flex-grow: 1;
   align-items: center;
   justify-content: center;
-  border: 1px solid $main_text;
-  border-radius: 4px;
-  width: 56.69rem;
-  max-width: 343px;
-  height: 7.93rem;
-  max-height: 48px;
+  border: .0625rem solid $main_text;
+  border-radius: .25rem;
+  width: 21.4375rem;
+  height: 3rem;
 
   font-weight: 500;
-  font-size: 2.644rem;
+  font-size: 1rem;
   letter-spacing: 0.06em;
   color: $main_text;
 
   @include media_rule($desktop) {
     font-size: 1rem;
-    max-width: 20.625rem;
     width: 20.625rem;
     height: 3rem;
-    max-height: 48px;
   }
 }
