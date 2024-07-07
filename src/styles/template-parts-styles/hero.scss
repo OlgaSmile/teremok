@@ -110,6 +110,7 @@
   }
   &__location {
     position: absolute;
+    z-index: 8;
     top: 23.375rem;
     left: 2.375rem;
     display: flex;

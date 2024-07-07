@@ -1,20 +1,10 @@
 <section class="section feedbacks__section">
-
   <div class="container">
-
     <div class="feedbacks__section-title">
-
-
-
-
       <?php
-    $feedback_title = get_field('feedback_title', 'options');
-    
+    $feedback_title = get_field('feedback_title', 'options'); 
     get_template_part( "template-parts/section-title", null, ['title' => $feedback_title ]); ?>
-
-
     </div>
-
     <div class="swiper feedbacks__section-swiper">
       <div class="swiper-wrapper feedback__section-wrapper">
         <?php
@@ -39,18 +29,13 @@
       </div>
       <div class="swiper-pagination feedbacks__swiper-pagination"></div>
     </div>
-
     <div class="feedbacks__section-btns">
       <button id="add_comment-js" class="_button primary_button"
         type="button"><?php the_field('add_feedback_btn', 'options') ?></button>
-
       <?php
       $watch_all_feedbacks = get_field('watch_all_feedbacks', 'options');
       get_template_part( "template-parts/learn-more-btn", null, ['btn_name' => $watch_all_feedbacks ]); ?>
     </div>
-
   </div>
-
   <?php get_template_part( "template-parts/feedback-form"); ?>
-
 </section>
