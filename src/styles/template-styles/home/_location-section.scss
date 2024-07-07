@@ -1,0 +1,39 @@
+@import "../../main/variables.scss";
+@import "../../main/mixins.scss";
+
+.location-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__subtitle {
+    font-size: .875rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+
+    @include media_rule($desktop) {
+      font-size: 1.25rem;
+      letter-spacing: 0.06em;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__address {
+    font-size: .875rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    @include media_rule($desktop) {
+      font-size: 1rem;
+      letter-spacing: 0.04rem;
+    }
+  }
+
+  &__map {
+    width: 600px;
+    height: 160px;
+  }
+}
