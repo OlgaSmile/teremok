@@ -3,6 +3,9 @@
   transform: translateY(4rem);
   opacity: 0;
   transition: all 1s ease-in-out;
+  @media screen and (max-width: $mobile) {
+    transform: translateY(2.5rem);
+  }
 }
 .anim-items.active {
   transform: translateX(0);

@@ -19,9 +19,8 @@
 
 .section {
   padding-bottom: 11.25rem;
-  @media screen and (max-width: $tablet) {
-  }
   @media screen and (max-width: $mobile) {
+    padding-bottom: 7.5rem;
   }
 }
 
@@ -31,8 +30,6 @@
   padding: 0 1rem;
   @media screen and (max-width: $tablet) {
     width: 100%;
-  }
-  @media screen and (max-width: $mobile) {
   }
 }
 
