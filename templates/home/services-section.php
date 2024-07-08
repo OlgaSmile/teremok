@@ -55,7 +55,7 @@ get_template_part("template-parts/section-title", null, array('title' => $servic
             </div>
             <ul class="services-section__additional">
                 <?php if (get_field('additional_service')): ?>
-                <?php while (has_sub_field('additional_service')): ?>
+                <?php while (has_sub_field('additional_service') and get_row_index() <= 2): ?>
 
                 <li class="services-section__service-item services-section__service-item-additional">
                     <img class="services-section__service-icon"
@@ -76,7 +76,7 @@ get_template_part("template-parts/learn-more-btn", null, array('btn_name' => $le
     </div>
     <div class="services-section__image">
         <?php if (get_field('services-section-right-photos')): ?>
-        <?php while (has_sub_field('services-section-right-photos') and get_row_index() <= 2): ?>
+        <?php while (has_sub_field('services-section-right-photos')): ?>
         <img class="services-section__image-item" src="<?php the_sub_field('services-section-right-photo');?>" />
         <?php endwhile;?>
         <?php endif;?>

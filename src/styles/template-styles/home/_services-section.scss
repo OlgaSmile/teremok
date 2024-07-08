@@ -47,7 +47,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 52.25rem;
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding: 0 3.875rem;
+
+    @include media_rule_max($mobile) {
+      width: 100%;
+      padding: 0;
+    }
   }
 
   &__content {

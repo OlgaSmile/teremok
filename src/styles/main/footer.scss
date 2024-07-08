@@ -2,7 +2,6 @@
 @import "./mixins.scss";
 
 .footer {
-  color: pink;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.2;
@@ -27,6 +26,8 @@
   &__menu {
     display: none;
     flex-wrap: wrap;
+    flex-grow: 1;
+    flex-shrink: 0;
     justify-content: flex-end;
     row-gap: 1.5rem;
     column-gap: 2.5rem;
