@@ -8,16 +8,26 @@
   border: 0.0625rem solid $grey_green;
   border-radius: 0.125rem;
   padding: 1.5rem;
-
+  @media screen and (max-width: $mobile) {
+    height: 22.75rem;
+    padding: 1rem;
+  }
   &__rate {
     display: flex;
     gap: 0.5rem;
     margin-bottom: 1rem;
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 0.5rem;
+    }
   }
   &__star {
     color: $yellow;
     position: relative;
     font-size: 1.5rem;
+    line-height: 1;
+    @media screen and (max-width: $mobile) {
+      font-size: 1.25rem;
+    }
     &::before {
       content: "★";
       position: absolute;
@@ -37,14 +47,40 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 2rem;
+    @media screen and (max-width: $mobile) {
+      height: 10.875rem;
+    }
+
+    &-description {
+      letter-spacing: 0.04em;
+      @media screen and (max-width: $mobile) {
+        display: none;
+        font-size: 0.875rem;
+      }
+    }
+    &-description--mobile {
+      letter-spacing: 0.04em;
+      display: none;
+      @media screen and (max-width: $mobile) {
+        display: block;
+        font-size: 0.875rem;
+      }
+    }
 
     &-photos {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.625rem;
+      @media screen and (max-width: $mobile) {
+        gap: 0.325rem;
+      }
     }
     &-image {
       width: 3.5rem;
       height: 3.5rem;
+      @media screen and (max-width: $mobile) {
+        width: 3.625rem;
+        height: 3.625rem;
+      }
       &.more:nth-child(5) {
         .onefeedback__image {
           filter: blur(0.125rem);
@@ -67,16 +103,32 @@
       height: 3.5rem;
       border-radius: 50%;
       overflow: hidden;
+      @media screen and (max-width: $mobile) {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
     }
 
     &-info {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      @media screen and (max-width: $mobile) {
+        gap: 0;
+        justify-content: center;
+      }
       &_name {
         font-weight: 500;
         font-size: 1.25rem;
         letter-spacing: 0.06em;
+        @media screen and (max-width: $mobile) {
+          font-size: 1.125rem;
+        }
+      }
+      &_date {
+        @media screen and (max-width: $mobile) {
+          font-size: 0.875rem;
+        }
       }
     }
   }

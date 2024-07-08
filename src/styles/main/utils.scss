@@ -36,6 +36,7 @@ html.modal__opened {
 
 body {
   margin: 0;
+  background: url("../../assets/images/bg.jpg") repeat;
 
   &.modal-open {
     overflow: hidden;

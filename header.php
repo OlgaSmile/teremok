@@ -43,9 +43,6 @@
 <?php the_field('phone', "option");?>" class="header__phone"><?php the_field('phone', "option");?></a>
     </header>
 
-    <div class="body__background">
-      <img src="<?php echo get_template_directory_uri()?>/assets/images/bg.jpg" alt="background" />
-    </div>
     <!-- title trees -->
     <svg style="display: none;">
       <symbol id="tree" viewBox="0 0 18 32">

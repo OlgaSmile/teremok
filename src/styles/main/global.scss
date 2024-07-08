@@ -8,15 +8,6 @@
   flex-direction: column;
 }
 
-//background
-.body__background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-}
-
 .section {
   padding-bottom: 11.25rem;
   @media screen and (max-width: $mobile) {
