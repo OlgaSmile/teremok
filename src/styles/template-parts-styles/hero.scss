@@ -7,6 +7,10 @@
     width: 100%;
     height: 42.25rem;
     overflow: hidden;
+    @media screen and (max-width: $mobile) {
+      height: 50.75rem;
+      margin-bottom: 7.5rem;
+    }
   }
   &__bg {
     position: absolute;
@@ -30,6 +34,10 @@
       left: -20%;
       width: 180%;
     }
+    @media screen and (max-width: $mobile) {
+      left: -100%;
+      width: 180%;
+    }
   }
   &__bg--main.parallax {
     bottom: 0;
@@ -37,6 +45,11 @@
     @media screen and (max-width: $tablet) {
       left: -20%;
       width: 150%;
+    }
+    @media screen and (max-width: $mobile) {
+      top: -3%;
+      left: -150%;
+      width: 100%;
     }
   }
 
@@ -94,10 +107,16 @@
       @media screen and (max-width: $tablet) {
         width: 36rem;
       }
+      @media screen and (max-width: $tablet) {
+        width: 21.4375rem;
+      }
     }
   }
   &__title.parallax {
     top: 7.5rem;
+    @media screen and (max-width: $tablet) {
+      top: 15rem;
+    }
   }
 
   &__content {
@@ -153,6 +172,12 @@
         top: 17.25rem;
         left: 3.75rem;
       }
+      @media screen and (max-width: $mobile) {
+        top: 23.5625rem;
+        left: 16.9375rem;
+        width: 1.5rem;
+        height: 1.5rem;
+      }
     }
     &--line {
       position: absolute;
@@ -165,6 +190,10 @@
       @media screen and (max-width: $tablet) {
         left: -11rem;
         top: 18rem;
+      }
+      @media screen and (max-width: $mobile) {
+        top: 19.75rem;
+        left: -26.875rem;
       }
       & use {
         width: 45.75rem;
@@ -186,6 +215,9 @@
     @media screen and (max-width: $tablet) {
       top: 22rem;
       right: 1rem;
+    }
+    @media screen and (max-width: $mobile) {
+      display: none;
     }
     & svg {
       width: 1.75rem;
@@ -211,6 +243,9 @@
     left: 50%;
     width: max-content;
     transform: translateX(-50%);
+    @media screen and (max-width: $mobile) {
+      top: 31.4375rem;
+    }
   }
 
   &__subtitle {
@@ -221,5 +256,9 @@
     font-size: 2.5rem;
     letter-spacing: 0.07em;
     color: $white;
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 1.5rem;
+      font-size: 1.625rem;
+    }
   }
 }

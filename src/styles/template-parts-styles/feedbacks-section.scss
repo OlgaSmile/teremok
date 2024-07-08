@@ -7,12 +7,18 @@
 
   &-title {
     margin-bottom: 3rem;
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 2.5rem;
+    }
   }
 
   &-swiper {
     padding-right: 0.375rem;
     margin-bottom: 3rem;
     width: initial;
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 1.5rem;
+    }
   }
 
   & .swiper-pagination.feedbacks__swiper-pagination {
@@ -41,6 +47,11 @@
       top: 50%;
       transform: translateY(-50%);
       right: 1rem;
+      @media screen and (max-width: $mobile) {
+        position: static;
+        margin: 0 auto 2.5rem;
+        transform: none;
+      }
       &:hover {
         & button {
           margin-right: 0.625rem;

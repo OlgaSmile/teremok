@@ -2,21 +2,26 @@
   <div>
     <div class="onefeedback__rate rate-js" data-num="<?php the_field("feedback_astimation", $post->ID) ?>"></div>
     <div class="onefeedback__box">
-      <div class="onefeedback__box-description"><?php 
+      <?php 
       $text = get_field('feedback_text', $post->ID);
       $characterAmount = 380;
+      $characterAmountMobile = 300;
 
       $add_photos = get_field('feedback_add_photos', $post->ID);
       if($add_photos){
       foreach ($add_photos as $key => $image) {
           if ($image) {
             $characterAmount= 230;
+            $characterAmountMobile= 130;
           }
         }
-       } 
+       }; ?>
 
-
-      echo wp_html_excerpt( $text, $characterAmount, '...' ); 
+      <div class="onefeedback__box-description">
+        <?php echo wp_html_excerpt( $text, $characterAmount, '...' ); 
+      ?></div>
+      <div class="onefeedback__box-description--mobile">
+        <?php echo wp_html_excerpt( $text, $characterAmountMobile, '...' ); 
       ?></div>
 
       <?php
@@ -80,11 +85,12 @@
 
         <?php 
       $nameGroup = get_field('feedbacks_full_name',$post->ID);
-      if($nameGroup) {
-        echo "<p class='onefeedback__user-info_name'>" . $nameGroup['name'] . "</p>";
-      }?>
+      if($nameGroup) { ?>
+        <p class='onefeedback__user-info_name'><?php echo  $nameGroup['name']; ?>
+        </p>
+        <?php }?>
 
-        <?php the_time('d.m.Y'); ?>
+        <div class='onefeedback__user-info_date'><?php the_time('d.m.Y'); ?></div>
       </div>
     </div>
   </div>
