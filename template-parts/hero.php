@@ -30,7 +30,7 @@ $viber = get_field('viber', 'option');
     <?php } ?>
     <?php if($main_bg) {?>
     <div class="enter-parallax-bg hero__bg hero__bg--main">
-      <?php echo wp_get_attachment_image( $main_bg, 'medium_large'); ?>
+      <?php echo wp_get_attachment_image( $main_bg, 'large'); ?>
     </div>
     <?php } ?>
     <?php if($secondary_bg) {?>
