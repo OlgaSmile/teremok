@@ -7,6 +7,7 @@
   gap: 2.625rem;
   @media screen and (max-width: $mobile) {
     gap: 1.25rem;
+    align-items: baseline;
   }
   &--text {
     color: $orange;

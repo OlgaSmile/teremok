@@ -25,9 +25,6 @@
     position: relative;
     font-size: 1.5rem;
     line-height: 1;
-    @media screen and (max-width: $mobile) {
-      font-size: 1.25rem;
-    }
     &::before {
       content: "★";
       position: absolute;
