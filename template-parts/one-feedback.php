@@ -11,7 +11,7 @@
       if($add_photos){
       foreach ($add_photos as $key => $image) {
           if ($image) {
-            $characterAmount= 230;
+            $characterAmount= 220;
             $characterAmountMobile= 130;
           }
         }
