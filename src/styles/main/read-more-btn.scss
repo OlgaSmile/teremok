@@ -4,7 +4,8 @@
   gap: 1rem;
   width: fit-content;
   cursor: pointer;
-  font-weight: 600;
+  font-size: 0.875rem;
+  font-weight: 400;
   letter-spacing: 0.04em;
   color: $orange;
   & button {
@@ -29,6 +30,7 @@
     height: 1.125rem;
     width: 0.75rem;
     stroke: $orange;
+    stroke-width: 0.1rem;
     transition: $transition-function;
     & use {
       height: 1.125rem;
@@ -42,6 +44,7 @@
     }
     .readmore_button--icon {
       top: 0;
+      stroke-width: 0.16rem;
     }
   }
 }
