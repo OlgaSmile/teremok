@@ -99,10 +99,6 @@
           height: 1.25rem;
           stroke: $main_text;
         }
-        &.swiper-button-disabled {
-          opacity: 0.6;
-          cursor: auto;
-        }
         @media screen and (max-width: $mobile) {
           display: none;
         }

@@ -18,6 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
         slidesPerView: 3,
         slidesPerGroup: 3,
         spaceBetween: 16,
+        navigation: {
+          nextEl: ".feedbacks-custom-next-icon",
+          prevEl: ".feedbacks-custom-prev-icon",
+        },
       },
     },
   });

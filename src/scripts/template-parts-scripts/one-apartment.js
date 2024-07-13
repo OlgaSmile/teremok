@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const apartmentSwiper = new Swiper(".one-apartment__gallery", {
     slidesPerView: 1,
     spaceBetween: 10,
+    loop: true,
     lazy: {
       loadOnTransitionStart: true,
       loadPrevNext: true,
