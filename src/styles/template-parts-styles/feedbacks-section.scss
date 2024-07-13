@@ -27,6 +27,9 @@
     gap: 1rem;
     width: fit-content;
     margin: 2rem auto 0;
+    @media screen and (max-width: $mobile) {
+      margin-top: 24px;
+    }
     & .swiper-pagination-bullet {
       margin: 0;
       width: 0.5rem;
@@ -34,7 +37,7 @@
       background-color: transparent;
       opacity: 1;
       border-radius: 100%;
-      border: 1px solid $grey_green;
+      border: 0.0625rem solid $grey_green;
       &.swiper-pagination-bullet-active {
         border-color: #3c4839;
       }
@@ -91,11 +94,12 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      right: 4rem;
+      right: 0;
       @media screen and (max-width: $mobile) {
-        position: static;
+        position: relative;
         margin: 0 auto 2.5rem;
         transform: none;
+        right: initial;
       }
     }
   }
