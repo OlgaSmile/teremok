@@ -16,8 +16,14 @@ if ($proposition_bg) {
 ?>
         <div class="proposition-section__content">
             <?php
-$proposition_title = get_field('proposition_title', 'options');
-get_template_part("template-parts/section-title", null, array('title' => $proposition_title));?>
+$proposition_title = get_field('proposition_title', 'options');?>
+            <div class="proposition-section__title-desktop">
+                <?php get_template_part("template-parts/section-title", null, array('title' => $proposition_title));?>
+            </div>
+            <div class="proposition-section__title-mobile">
+                <? get_template_part("template-parts/section-title_small", null, array('title' => $proposition_title));?>
+
+            </div>
             <div class="proposition-section__subtitle-wrapper">
                 <svg class="proposition-section__subtitle-icon">
                     <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#mountain"></use>
