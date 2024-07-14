@@ -30,7 +30,7 @@ $viber = get_field('viber', 'option');
     <?php } ?>
     <?php if($main_bg) {?>
     <div class="enter-parallax-bg hero__bg hero__bg--main">
-      <?php echo wp_get_attachment_image( $main_bg, 'medium_large'); ?>
+      <?php echo wp_get_attachment_image( $main_bg, 'large'); ?>
     </div>
     <?php } ?>
     <?php if($secondary_bg) {?>
@@ -68,44 +68,55 @@ $viber = get_field('viber', 'option');
     </div>
     <ul class="hero__socials">
       <?php if($facebook) { ?>
-      <li class="">
-        <a class="" href="<?php echo esc_attr($facebook['url'] ); ?>"
-          target="<?php echo esc_attr($facebook['target'] ); ?>" aria-label="Facebook">
+      <li class="hero__socials--item">
+        <a href="<?php echo esc_attr($facebook['url'] ); ?>" target="<?php echo esc_attr($facebook['target'] ); ?>"
+          aria-label="Facebook">
           <svg class="" width="28" height="28">
             <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#facebook"></use>
           </svg>
         </a>
+        <div class="hero__socials--title-wrap">
+          <p class="hero__socials--title"><?php echo esc_attr($facebook['title'] ); ?></p>
+        </div>
       </li>
       <?php } ?>
       <?php if($instagram) { ?>
-      <li class="">
-        <a class="" href="<?php echo esc_attr($instagram['url']); ?>" target="<?php echo $instagram['target']; ?>"
+      <li class="hero__socials--item">
+        <a href="<?php echo esc_attr($instagram['url']); ?>" target="<?php echo $instagram['target']; ?>"
           aria-label="instagram">
           <svg class="" width="28" height="28">
             <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#instagram"></use>
           </svg>
         </a>
+        <div class="hero__socials--title-wrap">
+          <p class="hero__socials--title"><?php echo esc_attr($instagram['title'] ); ?></p>
+        </div>
       </li>
       <?php } ?>
       <?php if($telegram) { ?>
-      <li class="">
-        <a class="" href="<?php echo esc_attr($telegram['url']); ?>" target="<?php echo $telegram['target']; ?>"
+      <li class="hero__socials--item">
+        <a href="<?php echo esc_attr($telegram['url']); ?>" target="<?php echo $telegram['target']; ?>"
           aria-label="telegram">
           <svg class="" width="28" height="28">
             <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#telegram"></use>
           </svg>
         </a>
+        <div class="hero__socials--title-wrap">
+          <p class="hero__socials--title"><?php echo esc_attr($telegram['title'] ); ?></p>
+        </div>
       </li>
       <?php } ?>
       <?php if($viber) { ?>
-      <li class="viber_item">
-        <a class="" href="<?php echo esc_attr($viber['url']); ?>" target="<?php echo $viber['target']; ?>"
-          aria-label="viber">
+      <li class="hero__socials--item viber_item">
+        <a href="<?php echo esc_attr($viber['url']); ?>" target="<?php echo $viber['target']; ?>" aria-label="viber">
           <svg class="hero__socials--viber" width="28" height="28">
             <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#viber">
             </use>
           </svg>
         </a>
+        <div class="hero__socials--title-wrap">
+          <p class="hero__socials--title"><?php echo esc_attr($viber['title'] ); ?></p>
+        </div>
       </li>
       <?php } ?>
     </ul>

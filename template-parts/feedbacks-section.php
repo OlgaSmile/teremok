@@ -8,26 +8,39 @@ get_template_part("template-parts/section-title", null, ['title' => $feedback_ti
     <div class="swiper feedbacks__section-swiper">
       <div class="swiper-wrapper feedback__section-wrapper">
         <?php
-$args = array(
-    'post_type' => 'feedbacks',
-    'numberposts' => 12,
-    'orderby' => 'modified',
-    'post_status' => 'publish',
-);
+          $args = array(
+              'post_type' => 'feedbacks',
+              'numberposts' => 12,
+              'orderby' => 'modified',
+              'post_status' => 'publish',
+          );
 
-$query = new WP_Query($args);
+          $query = new WP_Query($args);
 
-if ($query->have_posts()):
-    while ($query->have_posts()): $query->the_post();?>
+          if ($query->have_posts()):
+              while ($query->have_posts()): $query->the_post();?>
 
         <?php get_template_part('template-parts/one-feedback');?>
         <?php endwhile;
-endif;
+          endif;
 
-wp_reset_postdata();?>
+          wp_reset_postdata();?>
 
       </div>
       <div class="swiper-pagination feedbacks__swiper-pagination"></div>
+
+      <div class="feedbacks__swiper--navigation">
+        <div class="feedbacks-custom-prev-icon feedbacks__swiper--navigation--prev">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="" xmlns="http://www.w3.org/2000/svg">
+            <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#left_arrow"></use>
+          </svg>
+        </div>
+        <div class="feedbacks-custom-next-icon feedbacks__swiper--navigation--next">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="" xmlns="http://www.w3.org/2000/svg">
+            <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#left_arrow"></use>
+          </svg>
+        </div>
+      </div>
     </div>
     <div class="feedbacks__section-btns">
       <?php

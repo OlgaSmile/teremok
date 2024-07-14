@@ -27,6 +27,9 @@
     gap: 1rem;
     width: fit-content;
     margin: 2rem auto 0;
+    @media screen and (max-width: $mobile) {
+      margin-top: 24px;
+    }
     & .swiper-pagination-bullet {
       margin: 0;
       width: 0.5rem;
@@ -34,28 +37,69 @@
       background-color: transparent;
       opacity: 1;
       border-radius: 100%;
-      border: 1px solid $grey_green;
+      border: 0.0625rem solid $grey_green;
       &.swiper-pagination-bullet-active {
         border-color: #3c4839;
       }
     }
   }
+
+  .feedbacks__swiper--navigation {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-100%);
+    display: flex;
+    justify-content: space-between;
+    &--prev,
+    &--next {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 3rem;
+      height: 3rem;
+      background-color: $white;
+      border-radius: 50%;
+      cursor: pointer;
+      opacity: 0;
+      transition: $transition-function;
+      &:hover {
+        opacity: 1;
+      }
+      &.swiper-button-disabled {
+        opacity: 0;
+        pointer-events: 0;
+        cursor: auto;
+      }
+      & svg {
+        width: 1.6875rem;
+        height: 1.25rem;
+        stroke: $main_text;
+        pointer-events: none;
+      }
+    }
+    &--next {
+      transform: rotate(180deg);
+    }
+    @media screen and (max-width: $tablet) {
+      display: none;
+    }
+  }
+
   &-btns {
     position: relative;
     & .learnmore_button {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      right: 1rem;
+      right: 0;
       @media screen and (max-width: $mobile) {
-        position: static;
+        position: relative;
         margin: 0 auto 2.5rem;
         transform: none;
-      }
-      &:hover {
-        & button {
-          margin-right: 0.625rem;
-        }
+        right: initial;
       }
     }
   }

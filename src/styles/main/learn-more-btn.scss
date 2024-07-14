@@ -5,23 +5,27 @@
   padding: 1rem 0;
   color: $orange;
   font-weight: 600;
-  letter-spacing: 0.04em;
   cursor: pointer;
   & button,
   & a {
     transition: $transition-function;
     margin-right: 0.625rem;
+    letter-spacing: 0.04em;
   }
   &--icon {
     width: 3.125rem;
     height: 1.125rem;
     stroke: $orange;
+    transition: $transition-function;
   }
   &:hover {
-    & button {
-      margin-right: 1.9375rem;
+    & button,
+    & a {
       text-shadow: 0.001rem 0px 0px $orange, -0.001rem 0px 0px $orange,
         0px 0.001rem 0px $orange, 0px -0.001rem 0px $orange;
+    }
+    .learnmore_button--icon {
+      transform: translateX(1.375rem);
     }
   }
 }

@@ -219,11 +219,41 @@
     @media screen and (max-width: $mobile) {
       display: none;
     }
+    &--item {
+      position: relative;
+      &:hover,
+      &:focus {
+        .hero__socials--title {
+          bottom: 0.55rem;
+        }
+        & svg {
+          scale: 1.1;
+        }
+      }
+    }
+    &--title-wrap {
+      position: absolute;
+      overflow: hidden;
+      right: 100%;
+      bottom: 0;
+      height: 2rem;
+      width: 10rem;
+    }
+    &--title {
+      position: absolute;
+      bottom: -100%;
+      right: 0.5rem;
+      font-weight: 200;
+      color: $white;
+      transition: 700ms ease-in-out;
+    }
+
     & svg {
       width: 1.75rem;
       height: 1.75rem;
       stroke: $white;
       fill: $white;
+      transition: $transition-function;
       &.hero__socials--viber {
         stroke: transparent;
       }
