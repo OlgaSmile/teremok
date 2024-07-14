@@ -1,8 +1,5 @@
 <section class="location-section">
 
-  <!-- <svg>
-        <use href="<?php echo get_template_directory_uri() ?>/assets/images/bg.svg#fff64"></use>
-    </svg> -->
   <?php
 $location_title = get_field('location_title', 'options');
 get_template_part("template-parts/section-title", null, array('title' => $location_title));?>

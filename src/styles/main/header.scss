@@ -11,6 +11,14 @@
   font-weight: 400;
   font-size: 1rem;
   height: 5rem;
+  transition: all 500ms ease-in-out;
+
+
+  &__active {
+    position: fixed;
+    background-color: black;
+    opacity: 0.5;
+  }
 }
 
 .header__content {

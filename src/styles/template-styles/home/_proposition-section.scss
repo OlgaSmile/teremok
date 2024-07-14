@@ -8,12 +8,29 @@
   overflow: hidden;
   margin-bottom: 7.5rem;
 
-  @include media_rule($desktop) {
+  @include media_rule($tablet) {
     height: 50rem;
   }
 
+  &__title-desktop {
+    display: none;
+    margin-bottom: 2rem;
+
+    @include media_rule($tablet) {
+      display: block;
+    }
+  }
+
+  &__title-mobile {
+    margin-bottom: 1.5rem;
+
+    @include media_rule($tablet) {
+      display: none;
+    }
+  }
+
   & img {
-    object-fit: contain;
+    object-fit: cover;
     min-width: 100%;
     min-height: 100%;
     width: initial;
@@ -37,7 +54,7 @@
     background-color: $white;
     padding: 1rem;
 
-    @include media_rule($desktop) {
+    @include media_rule($tablet) {
       width: 57.5rem;
       height: auto;
       border-radius: 0.125rem;
@@ -68,7 +85,7 @@
     font-weight: 600;
     letter-spacing: 0.04em;
 
-    @include media_rule($desktop) {
+    @include media_rule($tablet) {
       font-weight: 500;
       font-size: 1.5rem;
       letter-spacing: 0.04em;
@@ -78,9 +95,9 @@
       width: 1.875rem;
       height: 1.25rem;
       padding: .1725rem .0437rem .0862rem 0rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.5rem;
 
-      @include media_rule($desktop) {
+      @include media_rule($tablet) {
         margin-bottom: 0.5rem;
         width: 2.3125rem;
         height: 1.5625rem;
@@ -98,7 +115,7 @@
     text-align: center;
     margin-bottom: 1.5rem;
 
-    @include media_rule($desktop) {
+    @include media_rule($tablet) {
       margin-bottom: 2rem;
     }
   }
@@ -112,7 +129,7 @@
       display: none;
     }
 
-    @include media_rule($desktop) {
+    @include media_rule($tablet) {
       font-size: 0.875rem;
 
       &-next {
@@ -120,7 +137,7 @@
       }
     }
 
-    @include media_rule($desktop) {
+    @include media_rule($tablet) {
       &:not(:last-child) {
         margin-bottom: 1rem;
       }

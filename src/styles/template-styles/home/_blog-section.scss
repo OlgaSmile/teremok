@@ -28,10 +28,6 @@
 
 .blog__section {
   &-content {
-    @include media_rule_max($mobile) {
-      display: none;
-    }
-
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 2.5625rem;
@@ -39,12 +35,16 @@
 
     margin-top: 2.125rem;
     margin-bottom: 1.25rem;
+
+    @include media_rule_max($tablet) {
+      display: none;
+    }
   }
 
   &-mobile-swiper {
     margin-top: 2.5rem;
 
-    @include media_rule($desktop) {
+    @include media_rule($tablet) {
       display: none;
     }
 
