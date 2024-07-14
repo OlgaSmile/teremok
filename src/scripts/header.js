@@ -1,4 +1,4 @@
-const prevScrollpos = window.scrollY;
+let prevScrollpos = window.scrollY;
 
 const headerDiv = document.querySelector("header");
 const headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
@@ -17,6 +17,6 @@ window.onscroll = function () {
   prevScrollpos = currentScrollPos;
 
   if (currentScrollPos === 0) {
-    headerDiv.classList.remove("header__active");
+    document.querySelector(".header").classList.remove("header__active");
   }
 };
