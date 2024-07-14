@@ -1,3 +1,22 @@
+const prevScrollpos = window.scrollY;
 
+const headerDiv = document.querySelector("header");
+const headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
 
-console.log("header");
+window.onscroll = function () {
+  const currentScrollPos = window.scrollY;
+
+  if (prevScrollpos <= currentScrollPos) {
+    headerDiv.classList.remove("header__active");
+    headerDiv.style.top = "-7.2rem";
+  } else {
+    headerDiv.classList.add("header__active");
+    headerDiv.style.top = "0";
+  }
+
+  prevScrollpos = currentScrollPos;
+
+  if (currentScrollPos === 0) {
+    headerDiv.classList.remove("header__active");
+  }
+};
