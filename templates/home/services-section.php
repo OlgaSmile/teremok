@@ -45,10 +45,13 @@ get_template_part("template-parts/section-title", null, array('title' => $servic
             <h2 class="services-section__subtitle">Додаткові</h2>
             <div class="services-section__image-mobile">
                 <?php if (get_field('services-section-right-photos')): ?>
-                <?php while (has_sub_field('services-section-right-photos') and get_row_index() <= 2): ?>
+                <?php while (has_sub_field('services-section-right-photos')): ?>
+                <?php if (get_row_index() <= 2): ?>
 
                 <img class="services-section__image-mobile-item"
                     src="<?php the_sub_field('services-section-right-photo');?>" />
+                <?php endif;?>
+
                 <?php endwhile;?>
                 <?php endif;?>
 

@@ -18,7 +18,7 @@
     justify-content: space-between;
     margin-bottom: 2rem;
 
-    @include media_rule($desktop) {
+    @include media_rule($tablet) {
       flex-direction: row;
     }
   }
@@ -33,7 +33,11 @@
     column-gap: 2.5rem;
     width: 17.75rem;
 
-    @include media_rule($desktop) {
+    & a:hover {
+      color: $orange;
+    }
+
+    @include media_rule($tablet) {
       display: flex;
     }
   }
@@ -42,7 +46,7 @@
     width: 5.25rem;
     height: 3.75rem;
 
-    @include media_rule($desktop) {
+    @include media_rule($tablet) {
       width: 10.31rem;
       height: 7.5rem;
     }
@@ -83,6 +87,10 @@
     font-weight: 400;
     margin-bottom: 1.25rem;
 
+    &-link:hover {
+      color: $orange;
+    }
+
     @include media_rule($desktop) {
       margin-bottom: 0;
     }
@@ -103,9 +111,14 @@
     width: 100%;
     margin-bottom: 2rem;
 
-    @include media_rule($desktop) {
+    & img:hover {
+      fill: $orange;
+    }
+
+    @include media_rule($tablet) {
       order: 7;
       margin-bottom: 0;
+      justify-content: flex-start;
     }
 
     &-item {
@@ -143,7 +156,7 @@
       font-weight: 400;
 
       @include media_rule($desktop) {
-        font-size: 1rem;
+        font-size: .75rem;
       }
 
       &_wrapper {
@@ -164,7 +177,10 @@
       }
 
       &_country {
+        display: flex;
+        align-items: center;
         justify-self: end;
+        gap: 1rem;
       }
 
 
@@ -175,7 +191,7 @@
         line-height: .975rem;
         text-decoration: underline;
 
-        @include media_rule($desktop) {
+        @include media_rule($tablet) {
           font-size: .875rem;
         }
       }
@@ -199,7 +215,7 @@
   letter-spacing: 0.06em;
   color: $main_text;
 
-  @include media_rule($desktop) {
+  @include media_rule($tablet) {
     font-size: 1rem;
     width: 20.625rem;
     height: 3rem;

@@ -12,8 +12,7 @@ get_template_part("templates/home/services-section");
 get_template_part("templates/home/proposition-section");
 get_template_part("template-parts/feedbacks-section");
 get_template_part("templates/home/blog-section");
-// get_template_part("templates/home/blog-section-mobile");
-get_template_part("templates/home/location-section");
+get_template_part("template-parts/location-section");
 ?>
 
 
