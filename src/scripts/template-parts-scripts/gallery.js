@@ -11,14 +11,12 @@
         columnWidth: ".masonry-item",
         percentPosition: true,
       })
-      mobileMasonry.masonry("destroy")
     } else {
       mobileMasonry.masonry({
         itemSelector: ".masonry-mobile-item",
         columnWidth: ".sizer",
         percentPosition: true,
       })
-      desktopMasonry.masonry("destroy")
     }
   }
 
