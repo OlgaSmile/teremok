@@ -1,18 +1,76 @@
 <?php
 
-$img_gallery_1 = get_field('img_gallery_1');
-$img_gallery_2 = get_field('img_gallery_2');
-$img_gallery_3 = get_field('img_gallery_3');
-$img_gallery_4 = get_field('img_gallery_4');
-$img_gallery_5 = get_field('img_gallery_5');
-$img_gallery_6 = get_field('img_gallery_6');
-$img_gallery_7 = get_field('img_gallery_7');
+
+$gallery = get_field('gallery');
+
+
+$video_url = get_field('video');
 
 ?>
 <section class="section-gallery">
 
   <div class="masonry">
-    <?php if (!empty($img_gallery_1)) : ?>
+    <?php if (!empty($gallery)) : ?>
+      <?php foreach ($gallery as $index => $image) : ?>
+        <div class="masonry-item 
+        <?php
+        if ($index == 0 || $index == 2) echo 'masonry-item-size2';
+        if ($index == 3) echo 'masonry-item-height2';
+        if ($index == 4 || $index == 6) echo 'masonry-item-height';
+        if ($index == 5) echo 'masonry-item-height2';
+        ?>">
+
+          <?php if (!empty($video_url) && $index == 3) : ?>
+            <video class="custom-video-player" controls>
+              <source src="<?php echo $video_url ?>" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          <?php else : ?>
+            <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+          <?php endif; ?>
+
+          <!-- <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /> -->
+        </div>
+
+      <?php endforeach; ?>
+    <?php endif; ?>
+
+
+  </div>
+
+
+
+
+
+  <?php if (!empty($gallery)) : ?>
+    <div class="masonry-mobile">
+      <?php foreach ($gallery as $index => $image) : ?>
+        <div class="masonry-mobile-item 
+        <?php if ($index == 2) : ?>masonry-mobile-item masonry-mobile-item---height masonry-mobile-item-width2<?php endif ?> 
+        <?php if ($index == 3) : ?>masonry-mobile-item---long sizer<?php endif ?>  
+        <?php if ($index == 4) : ?>masonry-mobile-item-width2 masonry-mobile-item-height2<?php endif ?>">
+
+          <?php if (!empty($video_url) && $index == 2) : ?>
+            <video class="custom-video-player" controls>
+              <source src="<?php echo $video_url ?>" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+
+          <?php else : ?>
+            <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+          <?php endif; ?>
+
+
+          <!-- <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /> -->
+        </div>
+      <?php endforeach; ?>
+    <?php endif; ?>
+
+</section>
+
+
+<!-- <div class="masonry">
+  <?php if (!empty($img_gallery_1)) : ?>
       <div class="masonry-item masonry-item-size2"><img src="<?php echo esc_attr($img_gallery_1['url']) ?>" alt="<?php echo esc_attr($img_gallery_1['alt']); ?>" /></div>
     <?php endif; ?>
     <?php if (!empty($img_gallery_2)) : ?>
@@ -35,9 +93,9 @@ $img_gallery_7 = get_field('img_gallery_7');
     <?php endif; ?>
 
 
-  </div>
+  </div> -->
 
-  <div class="masonry-mobile">
+<!-- <div class="masonry-mobile">
     <?php if (!empty($img_gallery_1)) : ?>
       <div class="masonry-mobile-item"><img src="<?php echo esc_attr($img_gallery_1['url']) ?>" alt="<?php echo esc_attr($img_gallery_1['alt']); ?>" /></div>
     <?php endif; ?>
@@ -59,7 +117,4 @@ $img_gallery_7 = get_field('img_gallery_7');
     <?php if (!empty($img_gallery_5)) : ?>
       <div class="masonry-mobile-item"><img src="<?php echo esc_attr($img_gallery_5['url']) ?>" alt="<?php echo esc_attr($img_gallery_5['alt']); ?>" /></div>
     <?php endif; ?>
-  </div>
-
-
-</section>
+  </div> -->
