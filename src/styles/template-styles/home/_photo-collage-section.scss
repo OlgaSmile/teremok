@@ -11,8 +11,22 @@
 
   &__img {
     object-fit: cover;
-    width: 16.666%;
+    width: 18.666%;
+
     animation: fadeInOut 24s infinite;
+    @media screen and (max-width: $mobile) {
+      width: 8rem;
+      &:nth-child(4) {
+        display: none !important;
+      }
+      &:nth-child(5) {
+        display: none !important;
+      }
+
+      &:nth-child(6) {
+        display: none !important;
+      }
+    }
   }
 }
 
@@ -28,7 +42,6 @@
   }
 }
 
-/* Add a delay for each image to stagger the animation */
 .collage img:nth-child(1) {
   animation-delay: 0s;
 }
