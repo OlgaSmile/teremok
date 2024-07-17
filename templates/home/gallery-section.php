@@ -21,7 +21,7 @@ $video_url = get_field('video');
         ?>">
 
           <?php if (!empty($video_url) && $index == 3) : ?>
-            <video class="custom-video-player" controls>
+            <video class="custom-video-player" controls autoplay muted>
               <source src="<?php echo $video_url ?>" type="video/mp4">
               Your browser does not support the video tag.
             </video>
