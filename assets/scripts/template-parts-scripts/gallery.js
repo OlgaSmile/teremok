@@ -1,0 +1,1 @@
+!function(o){const n=o(".masonry"),i=o(".masonry-mobile");function e(){o(window).width()>575?n.masonry({itemSelector:".masonry-item",columnWidth:".masonry-item",percentPosition:!0}):i.masonry({itemSelector:".masonry-mobile-item",columnWidth:".sizer",percentPosition:!0})}e(),o(window).resize((function(){e()}))}(window.jQuery);
