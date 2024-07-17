@@ -26,7 +26,7 @@ $video_url = get_field('video');
               Your browser does not support the video tag.
             </video>
           <?php else : ?>
-            <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt'] ? $image['alt'] : 'Галерея'); ?>" />
           <?php endif; ?>
 
         </div>
@@ -51,7 +51,7 @@ $video_url = get_field('video');
             </video>
 
           <?php else : ?>
-            <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt'] ? $image['alt'] : 'Галерея');  ?>" />
           <?php endif; ?>
 
         </div>
