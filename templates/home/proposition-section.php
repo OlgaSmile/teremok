@@ -21,7 +21,7 @@ $proposition_title = get_field('proposition_title', 'options');?>
                 <?php get_template_part("template-parts/section-title", null, array('title' => $proposition_title));?>
             </div>
             <div class="proposition-section__title-mobile">
-                <? get_template_part("template-parts/section-title_small", null, array('title' => $proposition_title));?>
+                <?php get_template_part("template-parts/section-title_small", null, array('title' => $proposition_title));?>
 
             </div>
             <div class="proposition-section__subtitle-wrapper">
