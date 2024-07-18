@@ -19,11 +19,7 @@
                     </div>
                 </div>
                 <div class="menu__nav">
-                    <!-- <?php
-if (has_custom_logo()) {
-    echo get_custom_logo();
-}
-?> -->
+
                     <nav class="menu__body">
                         <div class=" menu__container">
                             <?php wp_nav_menu([
