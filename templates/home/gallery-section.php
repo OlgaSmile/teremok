@@ -21,12 +21,12 @@ $video_url = get_field('video');
         ?>">
 
           <?php if (!empty($video_url) && $index == 3) : ?>
-            <video class="custom-video-player" controls autoplay muted>
+            <video class="custom-video-player" controls autoplay muted loop>
               <source src="<?php echo $video_url ?>" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           <?php else : ?>
-            <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt'] ? $image['alt'] : 'Галерея'); ?>" />
+            <img class="masonry-item__img" src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt'] ? $image['alt'] : 'Галерея'); ?>" />
           <?php endif; ?>
 
         </div>
