@@ -11,7 +11,10 @@
 ]);
 ?>
         <div class="footer__logo-block">
-            <?php get_template_part("template-parts/logo_footer");?>
+            <a href="/">
+                <?php get_template_part("template-parts/logo_footer");?>
+            </a>
+
             <button class="_button secondary_button booking_btn-footer">Забронювати проживання</button>
             <!-- <?php get_template_part("template-parts/booking-btn", null, array('text' => "Забронювати проживання"));?> -->
         </div>
