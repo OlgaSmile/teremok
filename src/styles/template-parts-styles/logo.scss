@@ -4,6 +4,7 @@
   position: relative;
   width: 4.5rem;
   height: 3.25rem;
+
   & .moon,
   & .tree {
     position: absolute;
@@ -12,38 +13,49 @@
     pointer-events: none;
     stroke: $white;
   }
+
   & .moon {
     fill: $white;
   }
+
   & .tree {
     transform-origin: bottom;
   }
+
   &:hover {
     & .moon {
       animation: moveup 1s ease-in-out forwards;
     }
+
     & .tree {
       animation: stretch 1s ease-in-out forwards;
     }
+
     @keyframes moveup {
+
       0%,
       100% {
         transform: translateY(0);
       }
+
       50% {
         transform: translateY(-10%);
       }
     }
+
     @keyframes stretch {
+
       0%,
       100% {
         transform: scaleY(1);
       }
+
       50% {
         transform: scaleY(1.08);
       }
     }
   }
+
   .animation {
     width: 4.5rem;
     height: 3.25rem;
@@ -54,13 +66,21 @@
       transition: $transition-function;
     }
   }
+
   &:hover {
     cursor: pointer;
+
     & .blue {
       fill: #2162f7;
     }
+
     & .yellow {
       fill: #fcd85b;
     }
   }
+}
+
+.animation-footer {
+  width: 5.25rem !important;
+  height: 3.75rem !important;
 }
