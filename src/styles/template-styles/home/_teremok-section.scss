@@ -71,6 +71,10 @@
   &__owner-block {
     margin-top: 2.5rem;
 
+    @media screen and (max-width: $mobile) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
     @media screen and (min-width: $mobile) {
       margin-top: 7.12rem;
     }
