@@ -1,7 +1,4 @@
-  <?php
-
-$args = array(
-    'post_type' => 'blogs',
+  <?php $args = array('post_type' => 'blogs',
     'orderby' => 'id',
     'order' => 'ASC',
     'post_per_page' => -1,
@@ -25,10 +22,12 @@ $learn_more = get_field('learn_more', 'options');
               <?php
 if ($query->have_posts()) {
     while ($query->have_posts()) {
-        $query->the_post();
-        get_template_part("templates/home/blog-card", null, array('blog' => $query));
-
-    }
+        $query->the_post();?>
+              <div class="blog__section-card swiper-slide">
+                  <?php get_template_part("templates/home/blog-card", null, array('blog' => $query));?>
+              </div>
+              <?php
+}
 }
 ;
 
@@ -44,10 +43,13 @@ wp_reset_postdata();
           <?php
 if ($query->have_posts()) {
     while ($query->have_posts()) {
-        $query->the_post();
-        get_template_part("templates/home/blog-card", null, array('blog' => $query));
+        $query->the_post();?>
+          <div class="blog__section-card swiper-slide">
 
-    }
+              <?php get_template_part("templates/home/blog-card", null, array('blog' => $query));?>
+          </div>
+          <?php
+}
 }
 ;
 wp_reset_postdata();

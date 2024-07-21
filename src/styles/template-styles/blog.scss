@@ -1,0 +1,55 @@
+.blog-page {
+    &__hero {
+        height: 27.875rem;
+        margin-bottom: 5rem;
+
+        @include media_rule($mobile) {
+            position: absolute;
+            height: 39.125rem;
+        }
+
+        // width: 1505.15px;
+        //     height: 626.85px;
+        //     top: -4px;
+        //     left: -32.15px;
+        //     gap: 0px;
+        //     opacity: 0px;
+
+        &-image {
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+
+    &__blogs {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        margin-top: 2.125rem;
+
+        @include media_rule($mobile) {
+            grid-template-columns: 1fr 1fr;
+            margin-top: 1.25rem;
+        }
+
+        @include media_rule($tablet) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        &-section {
+            @include media_rule($mobile) {
+                position: relative;
+                z-index: 100;
+                margin-top: 28.25rem;
+                background-color: #fff;
+
+                &-container {
+                    width: 1321px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    padding: 25px 50px;
+                }
+            }
+        }
+    }
+}

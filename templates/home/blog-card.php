@@ -5,7 +5,7 @@ if (isset($args['blog'])) {
 ?>
 
 
-<div class="blog-card swiper-slide">
+<div class="blog-card ">
     <div class="blog-card__image-wrapper">
         <img class="blog-card__image" src="<?php the_field('blog_image', $blog->ID);?>">
     </div>

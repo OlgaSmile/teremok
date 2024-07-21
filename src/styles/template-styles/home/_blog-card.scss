@@ -1,19 +1,6 @@
-@import "../../main/variables.scss";
-@import "../../main/mixins.scss";
-
 .blog-card {
   display: flex;
   flex-direction: column;
-
-  @include media_rule($tablet) {
-    &:nth-child(4n + 2) {
-      grid-column: span 2;
-    }
-
-    &:nth-child(4n + 3) {
-      grid-column: span 2;
-    }
-  }
 
   &__image {
     object-fit: cover;

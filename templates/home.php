@@ -6,7 +6,7 @@ get_header();
 ?>
 
 <?php
-get_template_part("template-parts/hero");
+// get_template_part("template-parts/hero");
 get_template_part("templates/home/gallery-section");
 get_template_part("template-parts/apartments");
 get_template_part("templates/home/food-section");
@@ -16,7 +16,7 @@ get_template_part("templates/home/photo-collage-section");
 get_template_part("template-parts/feedbacks-section");
 get_template_part("templates/home/blog-section");
 get_template_part("template-parts/location-section");
-// ?>
+?>
 
 
 <?php get_footer();?>

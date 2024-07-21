@@ -1,7 +1,16 @@
-@import "../../main/variables.scss";
-@import "../../main/mixins.scss";
-
 .blog__section {
+  &-card {
+    @include media_rule($tablet) {
+      &:nth-child(4n + 2) {
+        grid-column: span 2;
+      }
+
+      &:nth-child(4n + 3) {
+        grid-column: span 2;
+      }
+    }
+  }
+
   &-content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
