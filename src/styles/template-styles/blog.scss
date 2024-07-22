@@ -1,0 +1,51 @@
+@import "../main/mixins.scss";
+@import "../main/variables.scss";
+
+.blog-page {
+    &__hero {
+        height: 27.875rem;
+        margin-bottom: 5rem;
+
+        @include media_rule($mobile) {
+            position: absolute;
+            height: 39.125rem;
+        }
+
+        &-image {
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+
+    &__blogs {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        margin-top: 2.125rem;
+
+        @include media_rule($mobile) {
+            grid-template-columns: 1fr 1fr;
+            margin-top: 1.25rem;
+        }
+
+        @include media_rule($tablet) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        &-section {
+            @include media_rule($mobile) {
+                position: relative;
+                z-index: 100;
+                margin-top: 28.25rem;
+                background-color: #fff;
+
+                &-container {
+                    width: 82.5625rem;
+                    margin-left: auto;
+                    margin-right: auto;
+                    padding: 1.5625rem 3.125rem;
+                }
+            }
+        }
+    }
+}
