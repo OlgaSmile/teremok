@@ -21,18 +21,12 @@ if (!function_exists('wp_teremok_setup')) {
  */
 add_action('wp_enqueue_scripts', 'wp_teremok_scripts');
 
-
-
 function wp_teremok_scripts()
 {
-
-
-
 
     wp_enqueue_style('main', get_stylesheet_uri());
     wp_enqueue_style('wp-teremok-style', get_template_directory_uri() . '/assets/styles/main.css', array('main'));
     wp_enqueue_style('swiper-style', "https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css", array('main'));
-
 
     wp_enqueue_script('jquery');
     wp_enqueue_script('swiper-scripts', 'https://cdn.jsdelivr.net/npm/swiper@10.0.0/swiper-bundle.min.js', array(), false, true);

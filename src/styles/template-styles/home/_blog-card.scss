@@ -9,10 +9,12 @@
 
     &-wrapper {
       margin-bottom: 0.5rem;
+      width: 24.75rem;
+      height: 16.5rem;
 
-      @include media_rule_max($tablet) {
-        height: 11.25rem;
-      }
+      // @include media_rule_max($tablet) {
+      //   height: 11.25rem;
+      // }
 
       @include media_rule($mobile) {
         padding: 0 1rem;

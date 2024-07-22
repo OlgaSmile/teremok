@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: blog
+Template Name: blogs
  */
 get_header();
 
@@ -28,7 +28,9 @@ $query = new WP_Query($args);
             <?php
 if ($query->have_posts()) {
     while ($query->have_posts()) {
-        $query->the_post();?>
+        $query->the_post();
+        $link = get_permalink($query->ID);
+        ?>
             <div class="blog-card">
                 <div class="blog-card__image-wrapper">
                     <img class="blog-card__image" src="<?php the_field('blog_image', $query->ID);?>">
@@ -38,7 +40,7 @@ if ($query->have_posts()) {
                     <div class="blog-card__text"><?php the_content();?></div>
                     <div class="blog-card__read-more-btn">
                         <div class="watchmore_button">
-                            <?php get_template_part("template-parts/read-more-btn", null, ['btn_name' => $read_more]);?>
+                            <?php get_template_part("template-parts/read-more-btn", null, ['btn_name' => $read_more, 'link_name' => $link]);?>
                         </div>
                     </div>
                 </div>

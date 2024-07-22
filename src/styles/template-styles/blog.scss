@@ -1,3 +1,6 @@
+@import "../main/mixins.scss";
+@import "../main/variables.scss";
+
 .blog-page {
     &__hero {
         height: 27.875rem;
@@ -7,13 +10,6 @@
             position: absolute;
             height: 39.125rem;
         }
-
-        // width: 1505.15px;
-        //     height: 626.85px;
-        //     top: -4px;
-        //     left: -32.15px;
-        //     gap: 0px;
-        //     opacity: 0px;
 
         &-image {
             object-fit: cover;
@@ -44,10 +40,10 @@
                 background-color: #fff;
 
                 &-container {
-                    width: 1321px;
+                    width: 82.5625rem;
                     margin-left: auto;
                     margin-right: auto;
-                    padding: 25px 50px;
+                    padding: 1.5625rem 3.125rem;
                 }
             }
         }
