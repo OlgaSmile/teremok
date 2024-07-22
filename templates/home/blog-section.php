@@ -22,9 +22,12 @@ $learn_more = get_field('learn_more', 'options');
               <?php
 if ($query->have_posts()) {
     while ($query->have_posts()) {
-        $query->the_post();?>
+        $query->the_post();
+        $link = get_permalink($query->ID);
+
+        ?>
               <div class="blog__section-card swiper-slide">
-                  <?php get_template_part("templates/home/blog-card", null, array('blog' => $query));?>
+                  <?php get_template_part("templates/home/blog-card", null, array('blog' => $query, 'link_name' => $link));?>
               </div>
               <?php
 }
