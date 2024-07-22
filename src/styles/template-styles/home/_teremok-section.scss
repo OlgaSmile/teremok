@@ -1,0 +1,160 @@
+.teremok-section {
+  padding-bottom: 7.5rem;
+  width: 100%;
+  @media screen and (min-width: $mobile) {
+    padding-bottom: 11.25rem;
+  }
+
+  &__title {
+    margin-bottom: 2.5rem;
+
+    @media screen and (min-width: $mobile) {
+      padding-top: 3.68rem;
+      margin-bottom: 5rem;
+    }
+  }
+  &__list {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @media screen and (min-width: $mobile) {
+      width: 28.12rem;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    @media screen and (min-width: $tablet) {
+      width: 31.12rem;
+    }
+  }
+
+  &__item {
+    margin-bottom: 2.5rem;
+
+    margin-bottom: 3.75rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    img {
+      margin: 0 auto;
+      width: 1.5rem;
+      height: auto;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      text-align: center;
+    }
+  }
+
+  &__Image {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+
+    @media screen and (min-width: $mobile) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    img {
+      height: 12.5rem;
+      @media screen and (min-width: $mobile) {
+        height: 35.12rem;
+      }
+      @media screen and (min-width: $tablet) {
+        width: 25.14rem;
+      }
+
+      object-fit: cover;
+    }
+  }
+
+  &__owner-block {
+    margin-top: 2.5rem;
+
+    @media screen and (max-width: $mobile) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    @media screen and (min-width: $mobile) {
+      margin-top: 7.12rem;
+    }
+
+    p {
+      font-family: $font_cursive;
+      font-size: 1.25rem;
+      text-align: center;
+      letter-spacing: 0.05rem;
+      @media screen and (min-width: $mobile) {
+        font-size: 1.5rem;
+        letter-spacing: 0.059375rem;
+
+        width: 29.93rem;
+      }
+    }
+  }
+  &__owner-block-img-box {
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 10.2rem;
+    margin-bottom: 1.25rem;
+    @media screen and (min-width: $mobile) {
+      height: 15rem;
+    }
+    svg {
+      width: 10.2rem;
+      height: 10.2rem;
+
+      @media screen and (min-width: $mobile) {
+        width: 15rem;
+        height: 15rem;
+      }
+
+      position: absolute;
+    }
+    img {
+      position: absolute;
+      object-fit: cover;
+      width: 8.2rem;
+      height: 8.2rem;
+      @media screen and (min-width: $mobile) {
+        width: 12.5rem;
+        height: 12.5rem;
+      }
+
+      border-radius: 100%;
+    }
+  }
+
+  &__box {
+    @media screen and (min-width: $mobile) {
+      width: calc(100% / 2.2);
+    }
+    @media screen and (min-width: $tablet) {
+      width: max-content;
+    }
+  }
+
+  &__box---center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.teremok-section__desktop-wrapper {
+  display: none;
+  @media screen and (min-width: $mobile) {
+    display: flex;
+  }
+}
+.teremok-section__mobile-wrapper {
+  display: block;
+  @media screen and (min-width: $mobile) {
+    display: none;
+  }
+}
