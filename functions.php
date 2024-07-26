@@ -122,3 +122,34 @@ function register_post_types()
 }
 
 add_action('init', 'register_post_types');
+
+
+function calculate_nights_and_format_checkin($checkin_date, $checkout_date)
+{
+    // Перетворюємо дати з рядка у форматі 'd/m/Y' до об'єктів DateTime
+    $checkin = DateTime::createFromFormat('d/m/Y', $checkin_date);
+    $checkout = DateTime::createFromFormat('d/m/Y', $checkout_date);
+
+    // Перевіряємо, чи обидві дати правильно створені
+    if ($checkin === false || $checkout === false) {
+        return false;
+    }
+
+    // Перевіряємо, чи дата виїзду більша за дату заїзду
+    if ($checkout <= $checkin) {
+        return false;
+    }
+
+    // Рахуємо різницю між датами у кількості ночей
+    $interval = $checkin->diff($checkout);
+    $nights = $interval->days;
+
+    // Форматуємо дату заїзду
+    $formatted_checkin = date_i18n('F Y', $checkin->getTimestamp());
+
+    // Повертаємо результат як масив
+    return [
+        'nights' => $nights,
+        'checkin_date_formatted' => $formatted_checkin
+    ];
+}
