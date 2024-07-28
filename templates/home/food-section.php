@@ -1,6 +1,8 @@
 <?php
+global $wp;
 $food_title = get_field('food_title', 'options');
 $learn_more = get_field('learn_more', 'options');
+$link = add_query_arg($wp->query_vars, home_url()) . '/food';
 
 ?>
 
@@ -39,7 +41,7 @@ $learn_more = get_field('learn_more', 'options');
             <?php endif;?>
 
         </div>
-        <?php get_template_part("template-parts/learn-more-btn", null, array('btn_name' => $learn_more));?>
+        <?php get_template_part("template-parts/learn-more-btn", null, array('btn_name' => $learn_more, 'link_name' => $link));?>
 
         <div class="food-section__images-mobile food-section__images-mobile-bottom">
             <?php if (get_field('bottom_images')): ?>

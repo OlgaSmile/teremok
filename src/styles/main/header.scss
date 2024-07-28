@@ -1,4 +1,5 @@
 @import "./variables.scss";
+@import "./mixins.scss";
 
 .header {
   position: absolute;
@@ -19,16 +20,31 @@
     background-color: black;
     opacity: 0.5;
   }
+
+
+  @include media_rule_max($mobile) {
+    display: none;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &_list {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
 }
 
-.header__content {
+.header-mobile {
+  margin-top: 50px;
+
+
+  position: absolute;
+  padding: .625rem 1rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
-
-.header_list {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
 }

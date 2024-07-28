@@ -7,7 +7,6 @@
         margin-bottom: 5rem;
 
         @include media_rule($mobile) {
-            position: absolute;
             height: 39.125rem;
         }
 
@@ -33,14 +32,13 @@
         }
 
         &-section {
+
             @include media_rule($mobile) {
                 position: relative;
                 z-index: 100;
-                margin-top: 28.25rem;
-                background-color: #fff;
+                background-color: $white;
 
                 &-container {
-                    width: 82.5625rem;
                     margin-left: auto;
                     margin-right: auto;
                     padding: 1.5625rem 3.125rem;
@@ -48,4 +46,157 @@
             }
         }
     }
+
+    &_blog {
+        display: flex;
+        flex-direction: column;
+        padding: 0 1rem;
+
+        &__image {
+            object-fit: cover;
+            height: 100%;
+
+
+            &-wrapper {
+                margin-bottom: 0.5rem;
+                height: 16.5rem;
+                flex-shrink: 0;
+
+                @include media_rule($tablet) {
+                    padding: 0;
+                }
+
+            }
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        &__title {
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.5rem;
+        }
+
+        &__text {
+            font-weight: 400;
+            font-size: 0.875rem;
+            line-height: 1.0669rem;
+            margin-bottom: auto;
+            flex-shrink: 0;
+            height: 4.8rem;
+            overflow: hidden;
+
+            & p {
+                display: -webkit-box;
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 4;
+
+                &:not(:first-child) {
+                    display: none;
+                }
+            }
+
+            @include media_rule($mobile) {
+                height: 5.3rem;
+                margin-bottom: .25rem;
+            }
+
+            @include media_rule($tablet) {
+                height: 5rem;
+                overflow: hidden;
+                margin-bottom: .25rem;
+            }
+
+            &-mb {
+                height: 100%;
+                flex-grow: 1;
+            }
+        }
+
+        &__read-more-btn {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+
+.single-blog {
+    &__svg {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.25rem;
+
+        @include media_rule($tablet) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__hero {
+        height: 27.875rem;
+        margin-bottom: 5rem;
+
+        @include media_rule($mobile) {
+            height: 39.125rem;
+        }
+
+        &-image {
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+
+
+
+    &__section {
+        padding: 0 1rem;
+        margin-bottom: 7.5rem;
+        margin-right: auto;
+        margin-left: auto;
+
+        @include media_rule($tablet) {
+            width: 944px;
+        }
+
+        &-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.5237rem;
+            letter-spacing: 0.04em;
+            text-align: center;
+            margin-bottom: 1.25rem;
+
+            @include media_rule($tablet) {
+                font-size: 1.5rem;
+                line-height: 1.8288rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        &-text {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            line-height: 1.0669rem;
+            letter-spacing: 0.04em;
+            text-align: left;
+
+            @include media_rule($tablet) {
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.2188rem;
+            }
+
+            & p {
+                text-indent: 1.5rem;
+            }
+        }
+
+    }
+
 }

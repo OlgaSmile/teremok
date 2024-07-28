@@ -19,7 +19,6 @@
                     </div>
                 </div>
                 <div class="menu__nav">
-
                     <nav class="menu__body">
                         <div class=" menu__container">
                             <?php wp_nav_menu([
@@ -37,6 +36,17 @@
                 </div>
                 <a type="phone" href="tel:
 <?php the_field('phone', "option");?>" class="header__phone"><?php the_field('phone', "option");?></a>
+        </header>
+
+        <header class="header-mobile">
+            <div class="menu__icon icon-menu menu__round">
+                <?php get_template_part("template-parts/logo");?>
+            </div>
+            <div class="header-mobile__menu-btn">
+            </div>
+            <div class="header-mobile__phone">
+                <a href="tel:<?php the_field('phone', "option");?>"></a>
+            </div>
         </header>
 
         <!-- title trees -->
