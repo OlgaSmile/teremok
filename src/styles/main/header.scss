@@ -33,18 +33,133 @@
   }
 
   &_list {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 2rem;
+
+    & .menu-item {
+      overflow: hidden;
+
+      &:hover {
+        & .menu__list-trees {
+          transform: translateY(0);
+          opacity: 1;
+          height: 1.75rem;
+        }
+      }
+    }
+
+    & .sub-menu {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      max-height: 0rem;
+      overflow: hidden;
+      background-color: rgb(152, 139, 139);
+      transition: all 1s linear;
+
+      & a {
+        color: white;
+        font-size: .875rem;
+      }
+
+      & .menu-item {
+        cursor: pointer;
+        max-height: 0;
+        transition: all 0.5s ease-in;
+        padding: 0 0.5rem;
+
+        &:hover {
+          background-color: black;
+
+          & a {
+            color: $white;
+          }
+
+        }
+
+        & .menu__list-trees {
+          display: none;
+        }
+      }
+
+    }
+
+    .menu-item-68:hover {
+      & .sub-menu {
+        max-height: 12.5rem;
+        height: auto;
+
+        & .menu-item {
+          max-height: 6.25rem;
+          padding: 0.5rem .5rem;
+          height: auto;
+        }
+      }
+    }
   }
 }
 
-.header-mobile {
-  margin-top: 50px;
-
-
+.menu__list-trees {
+  display: flex;
+  align-items: end;
+  width: 1.75rem;
+  height: 0;
   position: absolute;
-  padding: .625rem 1rem;
+  transform: translateY(2rem);
+  opacity: 0;
+  will-change: transform;
+  transition: all 0.5s ease-in-out;
+  fill: $white;
+
+  & svg {
+    &:last-child {
+      position: relative;
+      left: -5px;
+    }
+  }
+}
+
+
+.header-mobile {
+  position: absolute;
   display: flex;
   justify-content: space-between;
+  padding: .625rem 1rem;
+  width: 23.4375rem;
+  height: 3.5rem;
+
+  @include media_rule($mobile) {
+    display: none;
+  }
+
+  &_logo {
+    width: 63px;
+    height: 36px;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      padding-top: 3.5rem;
+      width: 100%;
+      height: 100%;
+
+    }
+
+    & .menu-item {
+      color: aqua;
+
+    }
+  }
 }

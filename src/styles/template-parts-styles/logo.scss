@@ -78,9 +78,16 @@
       fill: #fcd85b;
     }
   }
+
+
 }
 
-.animation-footer {
-  width: 5.25rem !important;
-  height: 3.75rem !important;
+.header-mobile .logo-mobile {
+  width: 3.9375rem;
+  height: 2.25rem;
+
+  &__animation {
+    width: 3.9375rem;
+    height: 2.25rem;
+  }
 }

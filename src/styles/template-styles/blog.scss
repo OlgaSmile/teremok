@@ -44,6 +44,7 @@
                     padding: 1.5625rem 3.125rem;
                 }
             }
+
         }
     }
 
@@ -163,6 +164,8 @@
             width: 944px;
         }
 
+
+
         &-title {
             font-size: 1.25rem;
             font-weight: 700;
@@ -194,6 +197,12 @@
 
             & p {
                 text-indent: 1.5rem;
+            }
+        }
+
+        &-location {
+            @include media_rule($mobile) {
+                display: none;
             }
         }
 

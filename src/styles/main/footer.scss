@@ -28,6 +28,10 @@
     column-gap: 2.5rem;
     width: 17.75rem;
 
+    & .sub-menu {
+      display: none;
+    }
+
     & a:hover {
       color: $orange;
     }
@@ -237,12 +241,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     &:hover {
       svg {
         transform: translateY(-0.4rem);
         transition: 300ms ease-in-out;
       }
     }
+
     svg {
       width: 1.62rem;
       height: 1.25rem;
