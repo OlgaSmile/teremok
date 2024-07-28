@@ -1,6 +1,9 @@
 <?php /* Template Name: reviews */ get_header();
 $hero_reviews_image = get_field('reviews_main_photo');
-$feedbacks_full_name = get_field('feedbacks_full_name'); ?>
+$feedbacks_full_name = get_field('feedbacks_full_name');
+$current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
+
+?>
 
 
 <main>
@@ -24,10 +27,11 @@ $feedbacks_full_name = get_field('feedbacks_full_name'); ?>
     <?php
     $args = array(
       'post_type' => 'feedbacks',
+      'numberposts' => -1,
       'posts_per_page' => 8,
-      'numberposts' => 2,
       'orderby' => 'modified',
       'post_status' => 'publish',
+      'paged' => $current_page
     );
 
     $query = new WP_Query($args);
@@ -140,16 +144,16 @@ $feedbacks_full_name = get_field('feedbacks_full_name'); ?>
                 </p>
               </div>
 
-              <?php
-              get_template_part("template-parts/images_review_feedback_swiper", null, array('post_id' =>  $post->ID));
-              ?>
 
 
 
               <div class=" reviews-section__button-wrapper">
-                <?php if ($feedback_text_length > 132) : ?>
+                <?php
+
+                $btn_name = get_field('read_all', 'options');
+                if ($feedback_text_length > 132) : ?>
                   <button id="btn-<?php echo $post->ID ?>" type="button" class="reviews-btn-watch-more" data-target="<?php echo $post->ID ?>">
-                    <span>Читати все</span>
+                    <span><?php echo $btn_name ? $btn_name : "Читати все" ?></span>
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
                       <path d="M12 5.48431C9.83647 5.99923 5.5094 8.02326 5.5094 12M5.5094 12C3.25648 5.80609 0.385307 5.15897 -4.26734e-07 5.15897M5.5094 12L5.5094 -2.83713e-07" stroke="#E67739" stroke-width="1.8" />
@@ -160,15 +164,49 @@ $feedbacks_full_name = get_field('feedbacks_full_name'); ?>
             </div>
           </li>
 
-
         <?php endwhile;
-        wp_reset_postdata(); ?>
+        ?>
       </ul>
+
+
+
+      <?php
+      $left = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+<path d="M7.51569 12C7.00077 9.83647 4.97674 5.5094 1 5.5094M1 5.5094C7.1939 3.25649 7.84103 0.385307 7.84103 2.49783e-07M1 5.5094L13 5.5094" stroke="" stroke-width="1.8" />
+</svg>';
+      $right = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+<path d="M5.48431 12C6.99923 9.83647 9.02326 5.5094 13 5.5094M13 5.5094C6.8061 3.25649 6.15897 0.385307 6.15897 2.49783e-07M13 5.5094L1 5.5094" stroke="" stroke-width="1.8" />
+</svg>';
+
+      $pagination =  paginate_links(array(
+        'base' => get_pagenum_link() . '%_%',
+        'format' => '?paged=%#%',
+        'total' => $query->max_num_pages,
+        'current' => max(1, get_query_var('paged')),
+        'prev_text' => $left,
+        'next_text' => $right,
+      ));
+
+
+
+      ?>
+
+      <?php
+      if (!empty($pagination)) :
+      ?>
+
+        <div class="pagination">
+          <?php echo  $pagination ?>
+        </div>
+      <?php endif ?>
+
+
+      <?php
+      wp_reset_postdata();
+      ?>
     <?php endif ?>
 
-
-
-
+    <button id="add_comment-js" class="_button primary_button" type="button"><?php the_field('add_feedback_btn', 'options') ?></button>
 
   </section>
 </main>

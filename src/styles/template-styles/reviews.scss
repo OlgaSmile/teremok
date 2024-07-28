@@ -38,6 +38,10 @@
 .reviews-section {
   position: relative;
 
+  padding-bottom: 5rem;
+  @include media_rule($mobile) {
+    padding-bottom: 11.25rem;
+  }
   &__item-top-box {
     @include media_rule($mobile) {
       min-width: 19.12rem;
@@ -55,6 +59,12 @@
   &__list {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+
+    margin-bottom: 4rem;
+
+    @include media_rule($mobile) {
+      margin-bottom: 5rem;
+    }
   }
 
   &__item {
@@ -66,12 +76,13 @@
       padding: 2rem;
     }
 
-    &:last-child {
-      margin-bottom: 0;
-    }
     padding: 1rem;
     border-radius: 0.12rem;
     border: 0.06rem solid $grey_green;
+
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
   }
 
   &__item-top-wrapper {
@@ -107,6 +118,12 @@
       display: flex;
       align-items: center;
 
+      @include media_rule($mobile) {
+        margin-bottom: 0.5rem;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
       .date-box-icon-wrapper {
         padding: 8px;
         border: 1px solid $green_light;
@@ -220,4 +237,53 @@
     rotate: 180deg;
     transition: 1s rotate;
   }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .prev,
+  .next {
+    svg {
+      stroke: $grey_green;
+    }
+    @include media_rule($mobile) {
+      &:hover {
+        svg {
+          transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+          stroke: $main_text;
+        }
+      }
+    }
+  }
+
+  a {
+    &:hover {
+      transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+      color: $main_text;
+    }
+  }
+
+  .page-numbers {
+    font-size: 1.12rem;
+    margin-right: 1rem;
+    color: $green_light;
+    &:last-child {
+      margin-right: 0;
+    }
+    letter-spacing: 0.72px;
+  }
+
+  span {
+    color: $main_text !important;
+    font-size: 1.12rem;
+    margin-right: 1rem;
+    &:last-child {
+      margin-right: 0;
+    }
+    letter-spacing: 0.72px;
+  }
+
+  margin-bottom: 5rem;
 }

@@ -20,11 +20,15 @@
         if ($query->have_posts()) :
           while ($query->have_posts()) : $query->the_post(); ?>
 
+
             <?php get_template_part('template-parts/one-feedback'); ?>
+
+
         <?php endwhile;
         endif;
 
         wp_reset_postdata(); ?>
+
 
       </div>
       <div class="swiper-pagination feedbacks__swiper-pagination"></div>
@@ -43,14 +47,20 @@
       </div>
     </div>
     <div class="feedbacks__section-btns">
-      <a href="<?php echo home_url() . '/vidguky'; ?>">
-        <?php
-        $watch_all_feedbacks = get_field('watch_all_feedbacks', 'options');
-        get_template_part("template-parts/learn-more-btn", null, ['btn_name' => $watch_all_feedbacks,]); ?>
 
-      </a>
+      <?php
+      $link_next_page =  home_url() . '/vidguky';
+      $watch_all_feedbacks = get_field('watch_all_feedbacks', 'options');
+      get_template_part("template-parts/learn-more-btn", null, ['btn_name' => $watch_all_feedbacks, "link_name" => $link_next_page]); ?>
+
+
       <button id="add_comment-js" class="_button primary_button" type="button"><?php the_field('add_feedback_btn', 'options') ?></button>
     </div>
   </div>
+
+
   <?php get_template_part("template-parts/feedback-form"); ?>
+
+
+
 </section>
