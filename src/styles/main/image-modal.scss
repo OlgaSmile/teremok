@@ -1,0 +1,261 @@
+.images-box-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__img-box {
+    overflow: hidden;
+    position: relative;
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 0.12rem;
+    margin-right: 0.37rem;
+    &:last-child {
+      margin-right: 0;
+    }
+    @include media_rule($mobile) {
+      width: 6.25rem;
+      height: 6.25rem;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      transition: transform 1s ease;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include media_rule($mobile) {
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.3) translate(10%, 10%);
+
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тінь для створення глибини */
+        }
+      }
+    }
+  }
+}
+
+.close-modal {
+  &:hover {
+    svg {
+      stroke: $orange;
+    }
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-swiper-backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
+  background-color: rgba(64, 60, 60, 0.5);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.modal-swiper {
+  position: absolute;
+
+  z-index: 125;
+  width: 100%;
+  height: 100%;
+
+  @include media_rule($tablet) {
+    top: 5%;
+  }
+}
+
+.active {
+  display: block;
+  overflow: hidden;
+}
+
+.swiper {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.button-swiper-wrapper {
+  display: flex;
+}
+
+.swiper-reviews-top {
+  height: 100%;
+  @include media_rule($tablet) {
+    display: block !important;
+    height: 78%;
+  }
+
+  .swiper-slide {
+    img {
+      @include media_rule($tablet) {
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.swiper-reviews-bottom {
+  display: none !important;
+
+  @include media_rule($tablet) {
+    display: block !important;
+
+    width: 37rem;
+    height: 6.25rem;
+  }
+}
+
+.swiper-reviews-bottom .swiper-slide-thumb-active {
+  opacity: 1;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 60px;
+  z-index: 99;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  @include media_rule($tablet) {
+    top: -5%;
+    right: 0;
+  }
+  svg {
+    stroke: $white;
+    width: 26px;
+    height: 20px;
+  }
+}
+
+.swiper-button-prev {
+  &:after {
+    display: none;
+  }
+
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 80%;
+
+  background-color: $white;
+
+  @include media_rule($tablet) {
+    opacity: 0.6;
+    left: 5% !important;
+    &:hover {
+      opacity: 1;
+      transition: opacity 1s;
+
+      svg {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  svg {
+    width: 26px !important;
+    height: 20px !important;
+    transform: rotate(0deg);
+  }
+}
+
+.swiper-button-next {
+  &:after {
+    display: none;
+  }
+
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 80%;
+
+  background-color: $white;
+
+  @include media_rule($tablet) {
+    right: 5% !important;
+    opacity: 0.6;
+
+    &:hover {
+      opacity: 1;
+      transition: opacity 1s;
+
+      svg {
+        transform: rotate(180deg) scale(1.2);
+      }
+    }
+  }
+
+  svg {
+    width: 26px !important;
+    height: 20px !important;
+    transform: rotate(180deg);
+  }
+}
+
+.blur-slide {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    filter: blur(4px);
+  }
+
+  span {
+    position: absolute;
+    z-index: 1;
+
+    color: $white;
+
+    font-size: 1.12rem;
+
+    letter-spacing: 0.04rem;
+  }
+}

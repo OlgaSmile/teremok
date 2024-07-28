@@ -1,5 +1,6 @@
 @import "./main/mixins.scss";
 @import "./main/variables.scss";
+@import "./main/image-modal.scss";
 
 @import "./main/utils.scss";
 @import "./main/global.scss";
@@ -13,5 +14,7 @@
 @import "./main/location-section.scss";
 @import "./template-styles/home.scss";
 @import "./template-styles/blog.scss";
+@import "./template-styles/home/teremok-section.scss";
 @import "./template-styles/home/gallery-section.scss";
 @import "./template-styles/home/photo-collage-section.scss";
+@import "./template-styles/reviews.scss";

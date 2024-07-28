@@ -24,7 +24,8 @@ html {
 html,
 body {
   scroll-behavior: auto;
-  overflow-x: hidden;
+
+  /*  overflow-x: hidden; навіщо це давати і на html ? */
 }
 
 html.modal__opened {
@@ -225,4 +226,8 @@ p {
   @media screen and (min-width: $mobile) {
     font-size: 1rem;
   }
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
