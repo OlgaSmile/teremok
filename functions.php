@@ -38,6 +38,11 @@ function wp_teremok_scripts()
         wp_enqueue_script('home-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/home.js', array(), false, true);
         wp_enqueue_script('blog-section-script', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/blog-section.js', array(), false, true);
     }
+    if (is_page_template('templates/blogs.php')) {
+        wp_enqueue_style('blogs-style', get_template_directory_uri() . '/assets/styles/template-styles/blogs.css', array('main'));
+        wp_enqueue_script('blogs-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/blogs.js', array(), false, true);
+        wp_enqueue_script('blog-section-script', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/blog-section.js', array(), false, true);
+    }
     if (is_singular() && locate_template('template-parts/logo.php')) {
         wp_enqueue_style('logo-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/logo.css', array('main'));
     }
@@ -95,34 +100,9 @@ require get_template_directory() . '/services/feedback-form-register.php';
 require get_template_directory() . '/services/transliteration.php';
 
 /** register post types */
-
-function register_post_types()
-{
-    register_post_type(
-        'blogs',
-        array(
-            'label' => 'Blogs',
-            'labels' => array(
-                'name' => 'Blogs',
-                'singular_name' => 'Blog',
-                'add_new' => 'Add new blog',
-                'add_new_item' => 'Add new blog',
-                'edit_item' => 'Edit blog',
-                'new_item' => 'New blog',
-                'view_item' => 'View blog',
-                'search_items' => 'Search blogs',
-                'not_found' => 'No blogs found',
-            ),
-            'public' => true,
-            'show_in_rest' => false,
-            'rewrite' => array('slug' => 'blogs'),
-            'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
-        )
-    );
-}
+require get_template_directory() . '/services/blogs-post-types.php';
 
 add_action('init', 'register_post_types');
-
 
 function calculate_nights_and_format_checkin($checkin_date, $checkout_date)
 {
@@ -150,6 +130,6 @@ function calculate_nights_and_format_checkin($checkin_date, $checkout_date)
     // Повертаємо результат як масив
     return [
         'nights' => $nights,
-        'checkin_date_formatted' => $formatted_checkin
+        'checkin_date_formatted' => $formatted_checkin,
     ];
 }

@@ -45,8 +45,11 @@ $proposition_title = get_field('proposition_title', 'options');?>
             </div>
 
             <?php
+global $wp;
 $learn_more = get_field('learn_more', 'options');
-get_template_part("template-parts/learn-more-btn", null, array('btn_name' => $learn_more));?>
+$link = add_query_arg($wp->query_vars, home_url()) . '/activity';
+
+get_template_part("template-parts/learn-more-btn", null, array('btn_name' => $learn_more, 'link_name' => $link));?>
         </div>
     </div>
 </section>

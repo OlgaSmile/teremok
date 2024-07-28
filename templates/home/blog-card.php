@@ -1,6 +1,7 @@
 <?php
 if (isset($args['blog'])) {
     $blog = $args['blog'];
+    $link = $args['link_name'];
 }
 ?>
 
@@ -16,7 +17,7 @@ if (isset($args['blog'])) {
             <div class="watchmore_button">
                 <?php
 $read_more = get_field('read_more', 'options');
-get_template_part("template-parts/read-more-btn", null, ['btn_name' => $read_more]);?>
+get_template_part("template-parts/read-more-btn", null, ['btn_name' => $read_more, 'link_name' => $link]);?>
             </div>
         </div>
     </div>

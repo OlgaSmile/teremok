@@ -8,7 +8,7 @@ get_template_part("template-parts/section-title", null, array('title' => $locati
     <div class="location-section__map">
         <a href="<?php echo get_field('google_maps_address', 'options'); ?>">
             <?php
-$location_image = get_field('location_image');
+$location_image = get_field('location_map', 'options');
 if ($location_image) {
     echo wp_get_attachment_image($location_image, 'large');
 }

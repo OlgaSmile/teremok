@@ -22,9 +22,12 @@ $learn_more = get_field('learn_more', 'options');
               <?php
 if ($query->have_posts()) {
     while ($query->have_posts()) {
-        $query->the_post();?>
+        $query->the_post();
+        $link = get_permalink($query->ID);
+
+        ?>
               <div class="blog__section-card swiper-slide">
-                  <?php get_template_part("templates/home/blog-card", null, array('blog' => $query));?>
+                  <?php get_template_part("templates/home/blog-card", null, array('blog' => $query, 'link_name' => $link));?>
               </div>
               <?php
 }
@@ -43,10 +46,13 @@ wp_reset_postdata();
           <?php
 if ($query->have_posts()) {
     while ($query->have_posts()) {
-        $query->the_post();?>
+        $query->the_post();
+        $link = get_permalink($query->ID);
+
+        ?>
           <div class="blog__section-card swiper-slide">
 
-              <?php get_template_part("templates/home/blog-card", null, array('blog' => $query));?>
+              <?php get_template_part("templates/home/blog-card", null, array('blog' => $query, 'link_name' => $link));?>
           </div>
           <?php
 }
@@ -57,6 +63,6 @@ wp_reset_postdata();
       </div>
       <!-- Desktop version  END -->
       <div class="blog__section-reed-more-btn">
-          <?php get_template_part("template-parts/learn-more-btn", null, array('btn_name' => $learn_more));?>
+          <?php get_template_part("template-parts/learn-more-btn", null, array('btn_name' => $learn_more, 'link_name' => 'http://teremok.local/blogs'));?>
       </div>
   </section>
