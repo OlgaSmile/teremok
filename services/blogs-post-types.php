@@ -8,7 +8,7 @@ function register_post_types()
             'label' => 'Blogs',
             'labels' => array(
                 'name' => 'Blogs',
-                'singular_name' => 'blog',
+                'singular_name' => 'Blog',
                 'add_new' => 'Add new blog',
                 'add_new_item' => 'Add new blog',
                 'edit_item' => 'Edit blog',
@@ -24,3 +24,4 @@ function register_post_types()
         )
     );
 }
+add_action('init', 'register_post_types');

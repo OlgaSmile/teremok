@@ -1,5 +1,7 @@
 .blog__section {
   &-card {
+    height: 100%;
+
     @include media_rule($tablet) {
       &:nth-child(4n + 2) {
         grid-column: span 2;
