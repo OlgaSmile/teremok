@@ -20,11 +20,15 @@
         if ($query->have_posts()) :
           while ($query->have_posts()) : $query->the_post(); ?>
 
+
             <?php get_template_part('template-parts/one-feedback'); ?>
+
+
         <?php endwhile;
         endif;
 
         wp_reset_postdata(); ?>
+
 
       </div>
       <div class="swiper-pagination feedbacks__swiper-pagination"></div>
@@ -52,5 +56,10 @@
       <button id="add_comment-js" class="_button primary_button" type="button"><?php the_field('add_feedback_btn', 'options') ?></button>
     </div>
   </div>
+
+
   <?php get_template_part("template-parts/feedback-form"); ?>
+
+
+
 </section>

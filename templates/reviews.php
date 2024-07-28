@@ -140,16 +140,16 @@ $feedbacks_full_name = get_field('feedbacks_full_name'); ?>
                 </p>
               </div>
 
-              <?php
-              get_template_part("template-parts/images_review_feedback_swiper", null, array('post_id' =>  $post->ID));
-              ?>
 
 
 
               <div class=" reviews-section__button-wrapper">
-                <?php if ($feedback_text_length > 132) : ?>
+                <?php
+
+                $btn_name = get_field('read_all', 'options');
+                if ($feedback_text_length > 132) : ?>
                   <button id="btn-<?php echo $post->ID ?>" type="button" class="reviews-btn-watch-more" data-target="<?php echo $post->ID ?>">
-                    <span>Читати все</span>
+                    <span><?php echo $btn_name ? $btn_name : "Читати все" ?></span>
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
                       <path d="M12 5.48431C9.83647 5.99923 5.5094 8.02326 5.5094 12M5.5094 12C3.25648 5.80609 0.385307 5.15897 -4.26734e-07 5.15897M5.5094 12L5.5094 -2.83713e-07" stroke="#E67739" stroke-width="1.8" />

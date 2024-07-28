@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-start;
   height: 29.125rem;
   border: 0.0625rem solid $grey_green;
   border-radius: 0.125rem;
@@ -47,7 +48,7 @@
     @media screen and (max-width: $mobile) {
       height: 10.875rem;
     }
-
+    text-align: start;
     &-description {
       letter-spacing: 0.04em;
       @media screen and (max-width: $mobile) {
@@ -115,6 +116,7 @@
         justify-content: center;
       }
       &_name {
+        text-align: start;
         font-weight: 500;
         font-size: 1.25rem;
         letter-spacing: 0.06em;
@@ -123,6 +125,7 @@
         }
       }
       &_date {
+        text-align: start;
         @media screen and (max-width: $mobile) {
           font-size: 0.875rem;
         }
