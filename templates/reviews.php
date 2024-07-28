@@ -1,6 +1,9 @@
 <?php /* Template Name: reviews */ get_header();
 $hero_reviews_image = get_field('reviews_main_photo');
-$feedbacks_full_name = get_field('feedbacks_full_name'); ?>
+$feedbacks_full_name = get_field('feedbacks_full_name');
+$current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
+
+?>
 
 
 <main>
@@ -24,10 +27,11 @@ $feedbacks_full_name = get_field('feedbacks_full_name'); ?>
     <?php
     $args = array(
       'post_type' => 'feedbacks',
-      'posts_per_page' => 8,
-      'numberposts' => 2,
+      'numberposts' => -1,
+      'posts_per_page' => 2,
       'orderby' => 'modified',
       'post_status' => 'publish',
+      'paged' => $current_page
     );
 
     $query = new WP_Query($args);
@@ -160,15 +164,38 @@ $feedbacks_full_name = get_field('feedbacks_full_name'); ?>
             </div>
           </li>
 
-
         <?php endwhile;
-        wp_reset_postdata(); ?>
+        ?>
       </ul>
+      <div class="pagination">
+
+
+        <?php
+        $left = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+<path d="M7.51569 12C7.00077 9.83647 4.97674 5.5094 1 5.5094M1 5.5094C7.1939 3.25649 7.84103 0.385307 7.84103 2.49783e-07M1 5.5094L13 5.5094" stroke="" stroke-width="1.8" />
+</svg>';
+        $right = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+<path d="M5.48431 12C6.99923 9.83647 9.02326 5.5094 13 5.5094M13 5.5094C6.8061 3.25649 6.15897 0.385307 6.15897 2.49783e-07M13 5.5094L1 5.5094" stroke="" stroke-width="1.8" />
+</svg>';
+
+        echo paginate_links(array(
+          'base' => get_pagenum_link() . '%_%',
+          'format' => '?paged=%#%',
+          'total' => $query->max_num_pages,
+          'current' => max(1, get_query_var('paged')),
+          'prev_text' => $left,
+          'next_text' => $right,
+        ));
+        ?>
+
+      </div>
+
+      <?php
+      wp_reset_postdata();
+      ?>
     <?php endif ?>
 
-
-
-
+    <button id="add_comment-js" class="_button primary_button" type="button"><?php the_field('add_feedback_btn', 'options') ?></button>
 
   </section>
 </main>
