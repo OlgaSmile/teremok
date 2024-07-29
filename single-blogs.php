@@ -33,8 +33,9 @@ get_header();
         <h1 class="single-blog__section-title"><?php the_title();?></h1>
         <div class="single-blog__section-text"><?php the_content();?></div>
     </section>
-
-    <?php get_template_part("template-parts/location-section");?>
+    <div class="single-blog__section-location">
+        <?php get_template_part("template-parts/location-section");?>
+    </div>
 </main>
 
 <?php get_footer();

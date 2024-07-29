@@ -8,6 +8,8 @@ $query = new WP_Query($args);
 
 $blog_title = get_field('blog_title', 'options');
 $learn_more = get_field('learn_more', 'options');
+$blogs_link = add_query_arg($wp->query_vars, home_url()) . '/blogs';
+
 ?>
 
 
@@ -63,6 +65,6 @@ wp_reset_postdata();
       </div>
       <!-- Desktop version  END -->
       <div class="blog__section-reed-more-btn">
-          <?php get_template_part("template-parts/learn-more-btn", null, array('btn_name' => $learn_more, 'link_name' => 'http://teremok.local/blogs'));?>
+          <?php get_template_part("template-parts/learn-more-btn", null, array('btn_name' => $learn_more, 'link_name' => $blogs_link));?>
       </div>
   </section>
