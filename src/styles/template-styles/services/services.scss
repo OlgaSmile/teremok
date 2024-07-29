@@ -1,13 +1,13 @@
 .section-desc-services {
   padding-bottom: 7.5rem;
 
+  @include media_rule($mobile) {
+    padding-bottom: 10rem;
+  }
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  @include media_rule($mobile) {
-    padding-bottom: 10rem;
-  }
 
   &__icon {
     width: 3.12rem;
@@ -45,5 +45,71 @@
     padding-right: 1rem;
     width: 100%;
     max-width: 28.85rem;
+  }
+}
+
+.section-services-page {
+  padding-bottom: 7.5rem;
+
+  @include media_rule($mobile) {
+    padding-bottom: 10rem;
+  }
+  &__list {
+    @include media_rule($tablet) {
+      width: 39.12rem;
+    }
+  }
+
+  &__item {
+    img {
+      width: 2.25rem;
+      @include media_rule($mobile) {
+        width: 2.68rem !important;
+      }
+    }
+    h3 {
+      margin: 0 auto;
+      text-align: center;
+      font-weight: 500;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.07rem;
+      @include media_rule($mobile) {
+        margin-bottom: 1.5rem;
+        max-width: 18.75rem;
+      }
+    }
+
+    @include media_rule($mobile) {
+      margin-bottom: 5rem;
+
+      :last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__image {
+    @include media_rule($mobile) {
+      img {
+        height: 24.43rem;
+      }
+    }
+  }
+
+  @include media_rule($tablet) {
+    img {
+      width: 19.14rem;
+    }
+  }
+
+  &__learn-more {
+    margin-top: 1rem;
+    @include media_rule($mobile) {
+      margin-top: 1.5rem;
+    }
+
+    display: flex;
+    justify-content: center;
   }
 }
