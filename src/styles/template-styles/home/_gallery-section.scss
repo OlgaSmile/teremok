@@ -1,4 +1,3 @@
-// @import '../main/variables.scss';
 .section-gallery {
   padding-bottom: 7.5rem;
   @media screen and (min-width: $mobile) {
@@ -20,7 +19,7 @@
     height: 32.5rem;
   }
 
-  @media screen and (min-width: 1199px) {
+  /*   @media screen and (min-width: 1199px) {
     // &:hover {
     //   img {
     //     transform: scale(1.1);
@@ -32,7 +31,7 @@
     //     // w
     //   }
     // }
-  }
+  } */
 }
 .masonry-item-size2 {
   @media screen and (min-width: $mobile) {
@@ -100,8 +99,90 @@
   width: 25%;
 }
 
+.player-wrapper {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__btn {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 15;
+
+    svg {
+      width: 50px;
+      height: 50px;
+      stroke: $green_light;
+      fill: $green;
+    }
+  }
+}
+
 .custom-video-player {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.player-wrapper__btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.player-wrapper {
+  position: relative;
+}
+
+#btn-pause {
+  display: none; /* сховати кнопку паузи за замовчуванням */
+}
+
+.player-play-active {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  z-index: 10;
+}
+
+.custom-video-player::-webkit-media-controls {
+  display: none !important; /* приховування всіх елементів керування */
+}
+
+.custom-video-player::-webkit-media-controls-enclosure {
+  display: none !important; /* приховування контейнера елементів керування */
+}
+
+.custom-video-player::-webkit-media-controls-panel {
+  display: none !important; /* приховування панелі елементів керування */
+}
+
+.custom-video-player::-webkit-media-controls-play-button {
+  @media screen and (min-width: $mobile) {
+    display: none !important; /* приховування кнопки відтворення */
+  }
+}
+
+.custom-video-player::-webkit-media-controls-volume-control {
+  display: none !important; /* приховування елементів керування гучністю */
+}
+
+.custom-video-player::-webkit-media-controls-timeline {
+  display: none !important; /* приховування таймлінії */
+}
+
+.custom-video-player::-webkit-media-controls-fullscreen-button {
+  display: none !important; /* приховування кнопки повного екрану */
+}
+
+.custom-video-player::-webkit-media-controls-current-time-display,
+.custom-video-player::-webkit-media-controls-time-remaining-display {
+  display: none !important; /* приховування відображення часу */
 }
