@@ -145,6 +145,8 @@ $current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
               </div>
 
 
+              <?php
+              get_template_part("template-parts/images_review_feedback_swiper", null, ['post_id' =>  $post->ID]); ?>
 
 
               <div class=" reviews-section__button-wrapper">
