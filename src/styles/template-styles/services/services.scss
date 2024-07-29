@@ -1,0 +1,49 @@
+.section-desc-services {
+  padding-bottom: 7.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include media_rule($mobile) {
+    padding-bottom: 10rem;
+  }
+
+  &__icon {
+    width: 3.12rem;
+  }
+
+  &__title {
+    font-size: 2.12rem;
+    font-weight: 600;
+    line-height: 2.89rem;
+    margin-bottom: 2.5rem;
+  }
+
+  &__desc {
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  &__photo-box {
+    margin-bottom: 1.6rem;
+  }
+
+  &__title---margin-hidden {
+    margin: 0;
+  }
+
+  &__slogan {
+    margin-top: 0.75rem;
+    font-family: $font_cursive;
+    font-size: 1.12rem;
+    text-align: center;
+    letter-spacing: 0.04rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    max-width: 28.85rem;
+  }
+}
