@@ -51,7 +51,6 @@ $video_url = get_field('video');
                 <source src="<?php echo $video_url ?>" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
-
               <button id="btn-play" class="player-wrapper__btn player-play-active">
                 <svg fill="#000000" height="200px" width="200px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60 60" xml:space="preserve">
                   <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -64,9 +63,7 @@ $video_url = get_field('video');
                   </g>
                 </svg>
               </button>
-
               <button id="btn-pause" class="player-wrapper__btn">
-
               </button>
             </div>
 
