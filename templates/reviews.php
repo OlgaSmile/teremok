@@ -7,16 +7,19 @@ $current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
 
 
 <main>
-  <section class="hero-reviews-section">
+  <!-- <section class="secondary-hero-section">
     <?php
     $image = get_field('image');
     if (!empty($hero_reviews_image)) : ?>
-      <img class="hero-reviews-section__img" src="<?php echo esc_url($hero_reviews_image['url']); ?>" alt="<?php echo esc_attr($hero_reviews_image['alt']) ? esc_attr($hero_reviews_image['alt']) : 'hero image'; ?>" />
+      <img class="secondary-hero-section__img" src="<?php echo esc_url($hero_reviews_image['url']); ?>" alt="<?php echo esc_attr($hero_reviews_image['alt']) ? esc_attr($hero_reviews_image['alt']) : 'hero image'; ?>" />
     <?php endif; ?>
-    <h2 class="hero-reviews-section__title">
+    <h2 class="secondary-hero-section__title">
       <?php the_title() ?>
     </h2>
-  </section>
+  </section> -->
+  <?php
+  get_template_part("template-parts/secondary-hero-section", null, ['img_array' => $hero_reviews_image, "title_section" => get_the_title()]); ?>
+
   <section class="reviews-section">
     <div class="reviews-section__title">
       <?php
@@ -148,7 +151,8 @@ $current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
               <?php
               get_template_part("template-parts/images_review_feedback_swiper", null, ['post_id' =>  $post->ID]); ?>
 
-
+              <?php
+              get_template_part("template-parts/images_review_feedback_swiper", null, ['post_id' =>  $post->ID]); ?>
               <div class=" reviews-section__button-wrapper">
                 <?php
 
