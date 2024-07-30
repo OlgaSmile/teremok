@@ -48,9 +48,10 @@
       -webkit-line-clamp: 4;
       text-align: start;
 
-      &:not(:first-child) {
-        display: none;
-      }
+    }
+
+    & *:not(:first-child) {
+      display: none;
     }
 
 

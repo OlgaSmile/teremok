@@ -6,7 +6,7 @@ get_header();
 ?>
 
 <?php
-get_template_part("template-parts/hero");
+// get_template_part("template-parts/hero");
 get_template_part("templates/home/teremok-section");
 get_template_part("templates/home/gallery-section");
 get_template_part("template-parts/apartments");
