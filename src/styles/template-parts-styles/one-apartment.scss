@@ -49,11 +49,11 @@
   }
   &__gallery {
     margin-bottom: 2rem;
+
+    height: 100%;
     @media screen and (max-width: $mobile) {
       margin-bottom: 1.5rem;
     }
-
-    height: 100%;
 
     &--wrapper {
       align-items: center;
