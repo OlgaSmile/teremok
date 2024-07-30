@@ -45,10 +45,24 @@ $video_url = get_field('video');
         <?php if ($index == 4) : ?>masonry-mobile-item-width2 masonry-mobile-item-height2<?php endif ?>">
 
           <?php if (!empty($video_url) && $index == 2) : ?>
-            <video class="custom-video-player" controls>
-              <source src="<?php echo $video_url ?>" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+
+            <div class="player-wrapper">
+              <video id="mobile-video-player" class="custom-video-player" controls muted>
+                <source src="<?php echo $video_url ?>" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+
+              <button id="btn-play" class="player-wrapper__btn player-play-active">
+                <svg>
+                  <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#icon-play"></use>
+                </svg>
+              </button>
+
+              <button id="btn-pause" class="player-wrapper__btn">
+
+              </button>
+            </div>
+
 
           <?php else : ?>
             <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt'] ? $image['alt'] : 'Галерея');  ?>" />
