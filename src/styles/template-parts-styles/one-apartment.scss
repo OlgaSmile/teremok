@@ -49,9 +49,12 @@
   }
   &__gallery {
     margin-bottom: 2rem;
+
+    height: 100%;
     @media screen and (max-width: $mobile) {
       margin-bottom: 1.5rem;
     }
+
     &--wrapper {
       align-items: center;
     }
