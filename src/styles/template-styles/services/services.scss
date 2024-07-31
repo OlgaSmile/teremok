@@ -80,6 +80,14 @@
       }
     }
 
+    strong {
+      font-size: 1.12rem;
+
+      font-weight: 500;
+
+      letter-spacing: 0.0675rem;
+    }
+
     @include media_rule($mobile) {
       margin-bottom: 5rem;
 
@@ -114,7 +122,23 @@
   }
 }
 
+.free-services-section {
+  padding-bottom: 7.5rem;
 
-.free-services-section{
-    
+  @include media_rule($mobile) {
+    padding-bottom: 10rem;
+  }
+
+  &__title-wrapper {
+    margin-bottom: 2.5rem;
+
+    @include media_rule($mobile) {
+      margin-bottom: 4rem;
+    }
+  }
+  &__wrapper {
+    display: block;
+    margin: 0 auto;
+    max-width: 55rem;
+  }
 }
