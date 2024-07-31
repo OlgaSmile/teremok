@@ -3,7 +3,6 @@ $services = get_field('section_services');
 $images = $services['section__foto_gallery'];
 $repeater_field = $services['services'];
 
-
 ?>
 <section class="section-services-page">
 
@@ -29,7 +28,7 @@ $repeater_field = $services['services'];
     <div class="teremok-section__box teremok-section__box---center">
       <div class="teremok-section__title">
         <?php
-        get_template_part("template-parts/section-title", null, array('title' => $services['section_name'])); ?>
+        get_template_part("template-parts/section-title", null, array('title' => get_field('services_title', 'option'))) ?>
 
       </div>
       <?php if (!empty($repeater_field)) : ?>

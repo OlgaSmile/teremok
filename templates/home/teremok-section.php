@@ -31,7 +31,7 @@ $teremok_main_field = get_field('teremok_main_field');
     <div class="teremok-section__box teremok-section__box---center">
       <div class="teremok-section__title">
         <?php
-        get_template_part("template-parts/section-title", null, array('title' => $teremok_title)); ?>
+        get_template_part("template-parts/section-title", null, array('title' => get_field('location_title', 'option'))); ?>
 
       </div>
       <?php if (!empty($repeater_field)) : ?>
@@ -171,7 +171,7 @@ $teremok_main_field = get_field('teremok_main_field');
     <div class="teremok-section__box-center">
       <div class="teremok-section__title">
         <?php
-        get_template_part("template-parts/section-title", null, array('title' => $teremok_title)); ?>
+        get_template_part("template-parts/section-title", null, array('title' =>  get_field('location_title', 'option'))); ?>
 
       </div>
       <?php if (!empty($repeater_field)) : ?>

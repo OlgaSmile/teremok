@@ -60,7 +60,7 @@
   }
 }
 
-// mobile
+/* mobile */
 .masonry-mobile {
   width: 100%;
   display: block;
@@ -115,6 +115,8 @@
     border: none;
     cursor: pointer;
     z-index: 99;
+    width: 100%;
+    height: 100%;
     svg {
       width: 50px;
       height: 50px;
@@ -130,15 +132,15 @@
   object-fit: cover;
 }
 
-// .player-wrapper__btn {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   background: transparent;
-//   border: none;
-//   cursor: pointer;
-// }
+/* .player-wrapper__btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+} */
 
 #btn-pause {
   display: none; /* сховати кнопку паузи за замовчуванням */
