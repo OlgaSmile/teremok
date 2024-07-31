@@ -132,17 +132,9 @@
   object-fit: cover;
 }
 
-/* .player-wrapper__btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-} */
-
 #btn-pause {
+  width: 100%;
+  height: 100%;
   display: none; /* сховати кнопку паузи за замовчуванням */
 }
 
