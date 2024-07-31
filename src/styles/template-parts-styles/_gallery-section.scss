@@ -1,0 +1,189 @@
+.section-gallery {
+  padding-bottom: 7.5rem;
+  @media screen and (min-width: $mobile) {
+    padding-bottom: 11.25rem;
+  }
+}
+.masonry {
+  display: none;
+  @media screen and (min-width: $mobile) {
+    display: block;
+    width: 100%;
+  }
+}
+
+.masonry-item {
+  @media screen and (min-width: $mobile) {
+    width: 50%;
+
+    height: 32.5rem;
+  }
+
+  /*   @media screen and (min-width: 1199px) {
+    // &:hover {
+    //   img {
+    //     transform: scale(1.1);
+    //     position: relative;
+    //     z-index: 999;
+    //     object-position: center;
+    //     // transition: 1s object-fit;
+    //     // object-fit: scale-down;
+    //     // w
+    //   }
+    // }
+  } */
+}
+.masonry-item-size2 {
+  @media screen and (min-width: $mobile) {
+    width: 25%;
+  }
+}
+
+.masonry-item-height {
+  @media screen and (min-width: $mobile) {
+    height: 18rem;
+  }
+}
+
+.masonry-item-height2 {
+  height: 37rem;
+}
+
+.masonry-item img {
+  @media screen and (min-width: $mobile) {
+    width: 100%;
+    height: 100% !important;
+    display: block;
+    object-fit: cover;
+
+    transition: transform 0.3s ease;
+  }
+}
+
+/* mobile */
+.masonry-mobile {
+  width: 100%;
+  display: block;
+  @media screen and (min-width: $mobile) {
+    display: none;
+  }
+}
+
+.masonry-mobile-item {
+  width: 50%;
+  height: 13rem;
+}
+
+.masonry-mobile-item img {
+  object-fit: cover;
+  height: 100% !important;
+}
+
+.masonry-mobile-item---height {
+  height: 16rem;
+}
+
+.masonry-mobile-item---long {
+  height: 22rem;
+}
+
+.masonry-mobile-item-width2 {
+  width: 75% !important;
+}
+
+.masonry-mobile-item-height2 {
+  height: 6rem;
+}
+
+.sizer {
+  width: 25%;
+}
+
+.player-wrapper {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    svg {
+      width: 50px;
+      height: 50px;
+      stroke: $green_light;
+      fill: $green;
+    }
+  }
+}
+
+.custom-video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* .player-wrapper__btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+} */
+
+#btn-pause {
+  display: none; /* сховати кнопку паузи за замовчуванням */
+}
+
+.player-play-active {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  z-index: 10;
+}
+
+.custom-video-player::-webkit-media-controls {
+  display: none !important; /* приховування всіх елементів керування */
+}
+
+.custom-video-player::-webkit-media-controls-enclosure {
+  display: none !important; /* приховування контейнера елементів керування */
+}
+
+.custom-video-player::-webkit-media-controls-panel {
+  display: none !important; /* приховування панелі елементів керування */
+}
+
+.custom-video-player::-webkit-media-controls-play-button {
+  @media screen and (min-width: $mobile) {
+    display: none !important; /* приховування кнопки відтворення */
+  }
+}
+
+.custom-video-player::-webkit-media-controls-volume-control {
+  display: none !important; /* приховування елементів керування гучністю */
+}
+
+.custom-video-player::-webkit-media-controls-timeline {
+  display: none !important; /* приховування таймлінії */
+}
+
+.custom-video-player::-webkit-media-controls-fullscreen-button {
+  display: none !important; /* приховування кнопки повного екрану */
+}
+
+.custom-video-player::-webkit-media-controls-current-time-display,
+.custom-video-player::-webkit-media-controls-time-remaining-display {
+  display: none !important; /* приховування відображення часу */
+}
