@@ -1,28 +1,27 @@
 <?php
-$repeater_field = get_field('free_services', 'home');
 
-$title = get_field('apartments_title', 'options')
 ?>
+<?php if (get_field('free_services_data', 'options')) : ?>
+  <section class="free-services-section">
+    <div class="free-services-section__title-wrapper">
+      <?php
+      get_template_part("template-parts/section-title", null, array('title' => get_field('free_service_title', 'option'))) ?>
 
-<section class="free-services-section">
-  <h1>feedback_title => <?php echo $title ?></h1>
-  <div class="free-services-section__wrapper">
-    <?php if ($repeater_field) : ?>
-      <h2>Our Free Services</h2>
-      <ul>
-        <?php foreach ($repeater_field as $row) : ?>
-          <li class="">
-            <?php if (!empty($row['free_services_icon'])) : ?>
-              <img class="teremok-section__img" src="<?php echo esc_url($row['free_services_icon']['url']); ?>" alt="">
-            <?php endif; ?>
-            <?php if (!empty($row['free_services_name'])) : ?>
-              <h3><?php echo esc_html($row['free_services_name']); ?></h3>
-            <?php endif; ?>
+    </div>
+    <div class="free-services-section__wrapper">
+      <ul class="services-section__free">
+
+        <?php while (has_sub_field('free_services_data', 'options')) : ?>
+
+          <li class="services-section__service-item">
+            <img class="services-section__service-icon" src="<?php the_sub_field('free_services_icon', 'options'); ?>" />
+            <div class="services-section__service-name">
+              <?php the_sub_field('free_services_name', 'options'); ?>
+            </div>
           </li>
-        <?php endforeach; ?>
+        <?php endwhile; ?>
+
       </ul>
-    <?php else : ?>
-      <p>No services found.</p>
-    <?php endif; ?>
-  </div>
-</section>
+    </div>
+  </section>
+<?php endif; ?>
