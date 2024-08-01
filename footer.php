@@ -49,7 +49,7 @@
         </div>
     </div>
     <div class="footer__policy container">
-        <a href="<?php home_url() . '/privacy-policy' ?>"><span class="footer__policy-item footer__policy-item_policy">Політика конфіденційності</span></a>
+        <a href="<?php echo home_url() . '/privacy-policy' ?>"><span class="footer__policy-item footer__policy-item_policy">Політика конфіденційності</span></a>
         <div class="footer__policy-item footer__policy-item_wrapper">
             <span class="footer__policy-item footer__policy-item_date">ТЕРЕМОК &#169; 2024</span>
             <div class="footer__policy-item footer__policy-item_country">Cайт розроблено
