@@ -13,12 +13,19 @@ get_header();
 ?>
 <main>
   <?php
-  get_template_part("template-parts/secondary-hero-section", null, ['img_array' => $hero_reviews_image, "title_section" => get_the_title()]);
+  if (!empty($hero_reviews_image)) {
+    get_template_part("template-parts/secondary-hero-section", null, ['img_array' => $hero_reviews_image, "title_section" => get_the_title()]);
+  }
+
   get_template_part("templates/services/section-desc-services");
   get_template_part("templates/services/section-services");
   get_template_part("templates/services/free-services-page-section");
   // get_template_part("templates/services/gallery-services-page-section");
-  get_template_part("template-parts/gallery-section", null, ['photos' => $gallery, "video" => $video_url]);
+
+  if (!empty($gallery)) {
+    get_template_part("template-parts/gallery-section", null, ['photos' => $gallery, "video" => $video_url]);
+  }
+
 
 
   // get_template_part("templates/home/gallery-section");

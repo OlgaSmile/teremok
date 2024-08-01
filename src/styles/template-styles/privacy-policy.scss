@@ -1,0 +1,45 @@
+@import "../main/mixins.scss";
+@import "../main/variables.scss";
+
+.privacy-policy-main {
+  .secondary-hero-section {
+    .secondary-hero-section__title {
+      font-size: 2rem;
+      text-align: center;
+      @include media_rule($mobile) {
+        font-size: 4rem;
+      }
+
+      @include media_rule($tablet) {
+        font-size: 5rem;
+      }
+    }
+  }
+}
+.privacy-policy-section {
+  padding-bottom: 3rem;
+  &__title {
+    font-weight: 500;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+
+.privacy-policy-content {
+  display: block;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  a {
+    color: blue;
+    text-decoration: underline;
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: 2.5rem;
+  }
+}
