@@ -7,7 +7,10 @@
   border-radius: 0.5rem;
   backdrop-filter: blur(4.5px);
   margin: 0 auto;
-  padding: 1.25rem 1rem;
+  padding-top: 1.85rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-bottom: 1rem;
   background: url(../../assets/images/reserve-layout.png) repeat;
   @include media_rule($mobile) {
     display: flex;
@@ -46,6 +49,10 @@
     div {
       position: relative;
       display: flex;
+
+      &:last-child {
+        align-items: center;
+      }
     }
 
     @include media_rule($mobile) {
@@ -89,8 +96,8 @@
 
   &__svg-mob {
     position: relative;
-    right: -2%;
-    top: 0.1rem;
+
+    margin-left: 1.5rem;
     @include media_rule($mobile) {
       display: none;
     }

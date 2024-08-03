@@ -10,7 +10,7 @@
   }
   &__item-top-box {
     @include media_rule($mobile) {
-      min-width: 19.12rem;
+      /*       // min-width: 19.12rem; */
       margin-right: 5rem;
     }
   }
@@ -59,12 +59,16 @@
 
   &__name-box {
     margin-left: 1rem;
+    @include media_rule($mobile) {
+      margin-left: 2.5rem;
+    }
 
     p {
       font-size: 1.12rem;
       font-weight: 500;
       width: max-content;
       @include media_rule($mobile) {
+        margin-bottom: 0.87rem;
         font-size: 1.25rem;
       }
     }
