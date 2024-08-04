@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function handleScroll() {
     const scrollY = window.scrollY
-    if (scrollY > 4000) {
+    if (scrollY > 1333) {
       btnScrollTop.classList.add("top-to-scroll-wrapper-active")
     } else {
       btnScrollTop.classList.remove("top-to-scroll-wrapper-active")

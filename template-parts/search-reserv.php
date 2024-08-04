@@ -48,6 +48,6 @@
   </ul>
 
   <button type="button" class="search-reserve-layout__btn">
-    <span> Знайти й забронювати</span>
+    <span> <?php echo the_field('find_and_book', 'options') ?></span>
   </button>
 </div>
