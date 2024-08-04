@@ -294,7 +294,9 @@
 }
 
 .reserv-position-hero {
-  width: 100%;
+  min-width: 100%;
   position: absolute;
-  bottom: 1.8rem;
+  bottom: 1.4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
