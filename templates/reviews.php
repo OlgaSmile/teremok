@@ -132,16 +132,8 @@ $current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
                 $feedback_text = get_field('feedback_text', $post->ID);
                 $feedback_text_string = (string) $feedback_text;
 
-                // $feedback_text_without_spaces = str_replace(' ', ' ', $feedback_text_string);
-                // $feedback_text_length = strlen($feedback_text_without_spaces);
-
-                // Видаляємо всі білі символи (пробіли, табуляції, переходи на новий рядок)
                 $feedback_text_without_spaces = preg_replace('/\s+/', ' ', $feedback_text_string);
-
-                // Видаляємо інші невидимі символи (якщо відомо, які саме)
                 $feedback_text_without_spaces = str_replace(['\t', '\n', '\r'], '', $feedback_text_without_spaces);
-
-                // Підраховуємо довжину з урахуванням кодування
                 $feedback_text_length = mb_strlen($feedback_text_without_spaces)
 
                 ?>
