@@ -130,23 +130,56 @@ $current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
               <div>
                 <?php
                 $feedback_text = get_field('feedback_text', $post->ID);
-                $feedback_text = (string) $feedback_text;
-                $feedback_text_length = strlen($feedback_text);
+                $feedback_text_string = (string) $feedback_text;
 
-
+                $feedback_text_without_spaces = preg_replace('/\s+/', ' ', $feedback_text_string);
+                $feedback_text_without_spaces = str_replace(['\t', '\n', '\r'], '', $feedback_text_without_spaces);
+                $feedback_text_length = mb_strlen($feedback_text_without_spaces)
 
                 ?>
                 <p id="desc-<?php echo $post->ID ?>" class="reviews-section__description reviews-text-hidden">
-                  <?php echo $feedback_text ?>
+                  <?php echo $feedback_text_without_spaces ?>
                 </p>
               </div>
               <?php
               get_template_part("template-parts/images_review_feedback_swiper", null, ['post_id' =>  $post->ID]); ?>
-              <div class=" reviews-section__button-wrapper">
+              <div class="reviews-section__button-wrapper reviews-section__button-wrapper---tablet">
                 <?php
 
                 $btn_name = get_field('read_all', 'options');
-                if ($feedback_text_length > 132) : ?>
+
+                if ($feedback_text_length > 375) : ?>
+                  <button id="btn-<?php echo $post->ID ?>" type="button" class="reviews-btn-watch-more" data-target="<?php echo $post->ID ?>">
+                    <span><?php echo $btn_name ? $btn_name : "Читати все" ?></span>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                      <path d="M12 5.48431C9.83647 5.99923 5.5094 8.02326 5.5094 12M5.5094 12C3.25648 5.80609 0.385307 5.15897 -4.26734e-07 5.15897M5.5094 12L5.5094 -2.83713e-07" stroke="#E67739" stroke-width="1.8" />
+                    </svg>
+                  </button>
+                <?php endif ?>
+              </div>
+              <div class="reviews-section__button-wrapper reviews-section__button-wrapper---desktop">
+                <?php
+
+                $btn_name = get_field('read_all', 'options');
+
+                if ($feedback_text_length > 166) : ?>
+                  <button id="btn-<?php echo $post->ID ?>" type="button" class="reviews-btn-watch-more" data-target="<?php echo $post->ID ?>">
+                    <span><?php echo $btn_name ? $btn_name : "Читати все" ?></span>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                      <path d="M12 5.48431C9.83647 5.99923 5.5094 8.02326 5.5094 12M5.5094 12C3.25648 5.80609 0.385307 5.15897 -4.26734e-07 5.15897M5.5094 12L5.5094 -2.83713e-07" stroke="#E67739" stroke-width="1.8" />
+                    </svg>
+                  </button>
+                <?php endif ?>
+              </div>
+              <div class="reviews-section__button-wrapper reviews-section__button-wrapper---mobile">
+                <?php
+
+                $btn_name = get_field('read_all', 'options');
+
+                if ($feedback_text_length > 181) : ?>
+
                   <button id="btn-<?php echo $post->ID ?>" type="button" class="reviews-btn-watch-more" data-target="<?php echo $post->ID ?>">
                     <span><?php echo $btn_name ? $btn_name : "Читати все" ?></span>
 
@@ -204,6 +237,12 @@ $current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
     <button id="add_comment-js" class="_button primary_button" type="button"><?php the_field('add_feedback_btn', 'options') ?></button>
 
   </section>
+
+
+
+  <?php get_template_part("template-parts/section-reserve") ?>
+  <?php get_template_part("template-parts/feedback-form"); ?>
+  <?php get_template_part("template-parts/location-section") ?>
 </main>
 
 <?php get_footer() ?>

@@ -1,0 +1,123 @@
+@import "../main/variables.scss";
+@import "../main/mixins.scss";
+
+.search-reserve-layout {
+  width: 100%;
+  max-width: 61.12rem;
+  border-radius: 0.5rem;
+  backdrop-filter: blur(4.5px);
+  margin: 0 auto;
+  padding-top: 1.85rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-bottom: 1.37rem;
+  background: url(../../assets/images/reserve-layout.png) repeat;
+  @include media_rule($mobile) {
+    display: flex;
+    align-items: center;
+
+    padding-top: 2.4rem;
+    padding-bottom: 2.09rem;
+    padding-left: 2.46rem;
+    padding-right: 2.46rem;
+  }
+
+  &__list {
+    width: 100%;
+
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include media_rule($mobile) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0;
+
+      margin-right: 4rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    div {
+      position: relative;
+      display: flex;
+
+      &:last-child {
+        align-items: center;
+      }
+    }
+
+    @include media_rule($mobile) {
+      flex-direction: column;
+      justify-content: normal;
+      margin-bottom: 0;
+      align-items: flex-start;
+    }
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      display: flex;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    span {
+      font-size: 0.87rem;
+      font-weight: 400;
+    }
+  }
+
+  &__svg-desc {
+    display: none;
+    @include media_rule($mobile) {
+      position: relative;
+      left: 0.5rem;
+      top: 0.3rem;
+
+      display: block;
+    }
+  }
+
+  &__svg-mob {
+    position: relative;
+
+    margin-left: 1.5rem;
+    @include media_rule($mobile) {
+      display: none;
+    }
+  }
+
+  &__btn {
+    display: block;
+    border-radius: 0.34rem;
+    background-color: $yellow;
+
+    max-width: 19rem;
+    margin: 0 auto;
+    width: 100%;
+    height: 3rem;
+    span {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.04rem;
+    }
+    @include media_rule($mobile) {
+    }
+  }
+}

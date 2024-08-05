@@ -40,6 +40,7 @@
     @include media_rule($mobile) {
       display: flex;
       padding: 2rem;
+      margin-bottom: 5rem;
     }
 
     padding: 1rem;
@@ -55,16 +56,24 @@
     display: flex;
     align-items: center;
     margin-bottom: 0.75rem;
+
+    @include media_rule($mobile) {
+      margin-bottom: 2rem;
+    }
   }
 
   &__name-box {
     margin-left: 1rem;
+    @include media_rule($mobile) {
+      margin-left: 2.5rem;
+    }
 
     p {
       font-size: 1.12rem;
       font-weight: 500;
       width: max-content;
       @include media_rule($mobile) {
+        margin-bottom: 0.87rem;
         font-size: 1.25rem;
       }
     }
@@ -73,6 +82,8 @@
   &__description {
     margin-bottom: 1.5rem;
 
+    word-wrap: break-word;
+    word-break: break-all;
     @include media_rule($mobile) {
       font-size: 1.25rem;
     }
@@ -84,6 +95,7 @@
       display: flex;
       align-items: center;
 
+      margin-bottom: 0.25rem;
       @include media_rule($mobile) {
         margin-bottom: 0.5rem;
       }
@@ -120,16 +132,41 @@
   }
 }
 
+.reviews-section__button-wrapper---desktop {
+  display: none;
+
+  @include media_rule($mobile) {
+    display: flex;
+  }
+  @include media_rule($tablet) {
+    display: none;
+  }
+}
+
+.reviews-section__button-wrapper---tablet {
+  display: none;
+
+  @include media_rule($tablet) {
+    display: flex;
+  }
+}
+.reviews-section__button-wrapper---mobile {
+  display: flex;
+
+  @include media_rule($mobile) {
+    display: none;
+  }
+}
 .reviews-text-hidden {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
   -webkit-line-clamp: 4;
-  max-height: 73px;
+  max-height: 4.56rem;
 
   transition: max-height 1s ease, overflow 1s;
   @include media_rule($mobile) {
-    max-height: 300px;
+    max-height: 21.87rem;
   }
 }
 
