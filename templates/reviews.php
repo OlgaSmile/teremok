@@ -63,20 +63,6 @@ $current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
                 </div>
               </div>
               <div class="reviews-section__date-box">
-
-                <?php
-
-                $feedback_arrive_leave_time = get_field('feedback_arrive_leave_time', $post->ID);
-                if ($feedback_arrive_leave_time) {
-                  $checkin_date = $feedback_arrive_leave_time['arrive_time'];  // або отримайте їх іншим способом
-                  $checkout_date = $feedback_arrive_leave_time['leave_time']; // або отримайте їх іншим способомleave_time
-
-                } else {
-                  $checkin_date = "07/05/2024";
-                  $checkout_date = "01/06/2024";
-                }
-                $result = calculate_nights_and_format_checkin($checkin_date, $checkout_date);
-                ?>
                 <?php if ($nameGroup['house_number']) : ?>
                   <p> <span class="date-box-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
 
@@ -96,31 +82,6 @@ $current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
                       </svg></span><span><?php echo $nameGroup['house_number']  ? $nameGroup['house_number'] : ' no number' ?></span></p>
 
 
-                <?php endif ?>
-                <?php if (isset($result['nights']) && is_numeric($result['nights']) && !empty($result['checkin_date_formatted']) && is_string($result['checkin_date_formatted'])) : ?>
-                  <p>
-                    <span class="date-box-icon-wrapper">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <g clip-path="url(#clip0_3559_783)">
-                          <path d="M2.08203 7.9165H17.9154V17.0832C17.9154 17.5434 17.5423 17.9165 17.082 17.9165H2.91536C2.45513 17.9165 2.08203 17.5434 2.08203 17.0832V7.9165Z" stroke="#689762" stroke-linejoin="round" />
-                          <path d="M2.08203 4.16683C2.08203 3.70659 2.45513 3.3335 2.91536 3.3335H17.082C17.5423 3.3335 17.9154 3.70659 17.9154 4.16683V7.91683H2.08203V4.16683Z" stroke="#689762" stroke-linejoin="round" />
-                          <path d="M6.66797 12.9165L9.16797 15.4165L14.168 10.4165" stroke="#689762" stroke-linecap="round" stroke-linejoin="round" />
-                          <path d="M6.66797 2.0835V5.41683" stroke="#689762" stroke-linecap="round" />
-                          <path d="M13.332 2.0835V5.41683" stroke="#689762" stroke-linecap="round" />
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_3559_783">
-                            <rect width="20" height="20" fill="white" />
-                          </clipPath>
-                        </defs>
-                      </svg>
-                    </span>
-                    <span>
-                      <?php echo $result['nights'] . ' ночі - ';
-                      echo $result['checkin_date_formatted'];
-                      ?>
-                    </span>
-                  </p>
                 <?php endif ?>
 
               </div>

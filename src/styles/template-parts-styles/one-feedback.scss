@@ -81,6 +81,31 @@
         width: 3.625rem;
         height: 3.625rem;
       }
+
+      &.more {
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .more-number {
+          display: none;
+        }
+
+        &:last-child {
+          .more-number {
+            display: block;
+            position: absolute;
+            z-index: 1;
+
+            color: $white;
+
+            font-size: 1.12rem;
+
+            letter-spacing: 0.04rem;
+          }
+        }
+      }
       &.more:nth-child(5) {
         .onefeedback__image {
           filter: blur(0.125rem);
