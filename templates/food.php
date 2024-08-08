@@ -14,10 +14,10 @@ $certificates_title = get_field('food_menu_certificates_section_title');
 <main>
     <div class="food__hero-section">
         <?php get_template_part("template-parts/secondary-hero-section", null, ['img_array' => $hero_food_image, "title_section" => get_the_title()]);?>
-        <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.svg'; ?>"
-            class="food__hero-section_decor-trees2" />
-        <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-mount.svg'; ?>"
-            class="food__hero-section_decor-mount" />
+        <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>"
+            class="food__hero-section_decor-trees2 decor-trees2" />
+        <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-mount.png'; ?>"
+            class="food__hero-section_decor-mount decor-mount" />
     </div>
 
     <section class="food__introduction-section">
@@ -43,8 +43,8 @@ $certificates_title = get_field('food_menu_certificates_section_title');
                     </svg>
                 </div>
             </div>
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch.svg'; ?>"
-                class="food__introduction-section_decor-branch" />
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch.png'; ?>"
+                class="food__introduction-section_decor-branch decor-branch" />
             <h2 class="food__introduction-section_title"><?php echo get_field('food_introduction_title'); ?></h2>
             <div class="food__introduction-section_text"><?php echo get_field('food_introduction_text'); ?></div>
             <div class="food__introduction-section_photo-wrapper">
@@ -60,11 +60,12 @@ $certificates_title = get_field('food_menu_certificates_section_title');
             <div class="food__introduction-section_owner-text">
                 <?php echo get_field('food_introduction_owner_text'); ?></div>
         </div>
-                <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.svg'; ?>"
-            class="food__introduction-section_decor-trees2" />
+        <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.svg'; ?>"
+            class="food__introduction-section_decor-trees2 decor-trees2" />
     </section>
 
     <section class="food__menu-section">
+
         <div class="food__menu-section_img">
             <?php if (get_field('food_menu_photo_left')): ?>
             <?php while (has_sub_field('food_menu_photo_left')): ?>
@@ -73,6 +74,12 @@ $certificates_title = get_field('food_menu_certificates_section_title');
             <?php endif;?>
         </div>
         <div class="food__menu-section_content">
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees1.png'; ?>"
+                class="food__menu-section_decor-trees1 decor-trees1" />
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>"
+                class="food__menu-section_decor-trees2 decor-trees2" />
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>"
+                class="food__menu-section_decor-trees3 decor-trees2" />
             <?php get_template_part("template-parts/section-title", null, array('title' => $menu_title));?>
 
             <div class="food__menu-section_wrapper">
@@ -149,7 +156,8 @@ $certificates_title = get_field('food_menu_certificates_section_title');
         </div>
     </section>
     <section class="food__certificates-section">
-
+        <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch.svg'; ?>"
+            class="food__certificates-section_decor-branch1 decor-branch" />
         <div class="food__certificates-section_container container">
             <?php get_template_part("template-parts/section-title", null, array('title' => $certificates_title));?>
             <div class="food__certificates-section-subtitle">

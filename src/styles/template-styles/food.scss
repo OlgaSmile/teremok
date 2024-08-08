@@ -128,20 +128,13 @@
 
         &_decor {
             &-branch {
-                position: absolute;
                 left: 0;
-
-                width: 9.375rem;
-                height: 12.8125rem;
                 transform: rotateY(180deg);
             }
 
             &-trees2 {
-                position: absolute;
                 right: 0;
                 top: 31.25rem;
-                width: 9.375rem;
-                height: 12.8125rem;
             }
         }
 
@@ -152,6 +145,23 @@
 
         @include media_rule($mobile) {
             display: flex;
+        }
+
+        &_decor {
+            &-trees1 {
+                left: -9.375rem;
+                top: 2.75rem;
+            }
+
+            &-trees2 {
+                right: -6.5rem;
+                top: 2.75rem;
+            }
+
+            &-trees3 {
+                left: -6.375rem;
+                top: 63.875rem;
+            }
         }
 
         &_wrapper {
@@ -192,6 +202,8 @@
         }
 
         &_content {
+            position: relative;
+
             @include media_rule($mobile) {
                 width: 52.25rem;
                 padding-top: 2.5rem;
@@ -297,8 +309,14 @@
 
     &__certificates-section {
         margin-bottom: 5rem;
+        position: relative;
 
-        &_container {}
+        &_decor {
+            &-branch1 {
+                top: 9.875rem;
+                right: -2rem;
+            }
+        }
 
         &-subtitle {
             font-size: 1rem;
