@@ -39,6 +39,11 @@
           $max_photos = 5;
           $counter = 0;
 
+          if (is_array($add_photos) && !empty($add_photos))
+            $filtered_photos = array_filter($add_photos, function ($value) {
+              return !empty($value) || $value === '0' || $value === 0;
+            });
+          $total_photos = count($filtered_photos);
           foreach ($add_photos as $key => $image) {
             if ($counter >= $max_photos) {
               break;
@@ -47,10 +52,14 @@
             if ($image) {
               $alt = $image['alt'];
               $thumbnail = $image['sizes']['thumbnail'];
-              //$medium_large = $image['sizes']['medium_large'];
+              $is_fifth_image = ($counter === 5);
               $counter++;
+
           ?>
               <li class="onefeedback__box-image <?php echo 'more'; ?>">
+                <?php if ($total_photos > 5) : ?>
+                  <span class="more-number">+<?php echo $total_photos - 4 ?></span>
+                <?php endif ?>
                 <img class="onefeedback__image" src="<?= $thumbnail ?>" alt="<?= $alt ?>">
               </li>
           <?php

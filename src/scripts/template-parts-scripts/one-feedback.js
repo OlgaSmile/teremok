@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     swiper2 = new Swiper(".swiper-reviews-top", {
       spaceBetween: 10,
+      loop: true,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -97,6 +98,12 @@ document.addEventListener("DOMContentLoaded", function () {
     closeIamgeModal()
   })
 
+  $(".modal-swiper-backdrop").on("click", function (e) {
+    if (e.target === e.currentTarget) {
+      console.log("click")
+      closeIamgeModal()
+    }
+  })
   $(document).on("keydown", function (e) {
     const active = $(".active")
     if (!active) {
