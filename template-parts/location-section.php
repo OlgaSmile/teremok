@@ -1,6 +1,6 @@
 <section class="location-section">
     <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>"
-        class="footer_decor-trees1 decor-trees1" />
+        class="location-section_decor-trees1 decor-trees1" />
     <?php
 $location_title = get_field('location_title', 'options');
 $google_maps_address = get_field('google_maps_address', 'options');

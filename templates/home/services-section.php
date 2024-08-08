@@ -15,6 +15,11 @@ $services_title = get_field('services_title', 'options');
 get_template_part("template-parts/section-title", null, array('title' => $services_title));?>
 
         <div class="services-section__content">
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees1.png'; ?>"
+                class="services-section__decor-trees1 decor-trees1" />
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>"
+                class="services-section__decor-trees2 decor-trees2" />
+
             <div class="services-section__image-mobile">
                 <?php if (get_field('services-section-left-photos')): ?>
                 <?php while (has_sub_field('services-section-left-photos') and get_row_index() <= 2): ?>
