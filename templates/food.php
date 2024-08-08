@@ -14,9 +14,14 @@ $certificates_title = get_field('food_menu_certificates_section_title');
 <main>
     <div class="food__hero-section">
         <?php get_template_part("template-parts/secondary-hero-section", null, ['img_array' => $hero_food_image, "title_section" => get_the_title()]);?>
+        <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.svg'; ?>"
+            class="food__hero-section_decor-trees2" />
+        <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-mount.svg'; ?>"
+            class="food__hero-section_decor-mount" />
     </div>
 
     <section class="food__introduction-section">
+
         <div class="food__introduction-section_container container">
             <div class="section_title--icon_wrap food__introduction-section_threes">
                 <div class="anim-items">
@@ -38,6 +43,8 @@ $certificates_title = get_field('food_menu_certificates_section_title');
                     </svg>
                 </div>
             </div>
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch.svg'; ?>"
+                class="food__introduction-section_decor-branch" />
             <h2 class="food__introduction-section_title"><?php echo get_field('food_introduction_title'); ?></h2>
             <div class="food__introduction-section_text"><?php echo get_field('food_introduction_text'); ?></div>
             <div class="food__introduction-section_photo-wrapper">
@@ -53,6 +60,8 @@ $certificates_title = get_field('food_menu_certificates_section_title');
             <div class="food__introduction-section_owner-text">
                 <?php echo get_field('food_introduction_owner_text'); ?></div>
         </div>
+                <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.svg'; ?>"
+            class="food__introduction-section_decor-trees2" />
     </section>
 
     <section class="food__menu-section">

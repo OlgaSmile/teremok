@@ -3,6 +3,26 @@
 
 .food {
     &__hero-section {
+        position: relative;
+
+        &_decor {
+            &-trees2 {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 12.375rem;
+                height: 7.4375rem;
+            }
+
+            &-mount {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 12.375rem;
+                height: 7.4375rem;
+            }
+        }
+
         & h2 {
             font-size: 2.75rem;
 
@@ -14,6 +34,7 @@
 
     &__introduction-section {
         margin-bottom: 5rem;
+        position: relative;
 
         @include media_rule($mobile) {
             margin-bottom: 10rem;
@@ -77,6 +98,7 @@
                 position: absolute;
                 z-index: 10;
             }
+
         }
 
         &_owner-name {
@@ -102,6 +124,25 @@
             line-height: 1.405rem;
             letter-spacing: 0.04em;
             text-align: center;
+        }
+
+        &_decor {
+            &-branch {
+                position: absolute;
+                left: 0;
+
+                width: 9.375rem;
+                height: 12.8125rem;
+                transform: rotateY(180deg);
+            }
+
+            &-trees2 {
+                position: absolute;
+                right: 0;
+                top: 31.25rem;
+                width: 9.375rem;
+                height: 12.8125rem;
+            }
         }
 
     }
