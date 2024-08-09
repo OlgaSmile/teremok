@@ -13,12 +13,14 @@
   font-size: 1rem;
   height: 5rem;
   transition: all 500ms ease-in-out;
-
+  backdrop-filter: blur(8px);
+  background: linear-gradient(360deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 100%);
 
   &__active {
     position: fixed;
-    background-color: black;
-    opacity: 0.5;
+    background: linear-gradient(360deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%);
+    backdrop-filter: blur(8px);
+
   }
 
 
@@ -45,7 +47,7 @@
       :focus {
         & .menu__list-trees {
           transform: translateY(0);
-          opacity: 1;
+          opacity: 0.5;
           height: 1.75rem;
         }
       }
@@ -59,6 +61,10 @@
       overflow: hidden;
       background-color: transparent;
       transition: all 1s linear;
+
+      background: linear-gradient(360deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
+      backdrop-filter: blur(150px);
+      color: $main_text;
 
       & a {
         display: inline-block;
@@ -77,6 +83,9 @@
         font-weight: 400;
         line-height: 1.0588rem;
         text-align: left;
+        text-wrap: nowrap;
+        z-index: 50;
+
 
         &:hover,
         :focus {
@@ -86,6 +95,8 @@
             box-shadow: 1px 1px 6px 6px rgba(255, 255, 255, 0.85);
             -webkit-box-shadow: 1px 1px 6px 6px rgba(255, 255, 255, 0.85);
             -moz-box-shadow: 1px 1px 6px 6px rgba(255, 255, 255, 0.85);
+            border: 1px solid transparent;
+
           }
         }
 
@@ -109,7 +120,6 @@
           padding: 0.5rem .5rem;
           height: auto;
           width: auto;
-          text-wrap: nowrap;
         }
       }
     }
@@ -117,16 +127,12 @@
 
   .current-menu-item,
   .current-menu-parent {
-    color: $orange;
+    color: $white;
 
     & .menu__list-trees {
       transform: translateY(0);
-      opacity: 1;
+      opacity: 0.5;
       height: 1.75rem;
-
-      & svg {
-        stroke: $orange;
-      }
     }
   }
 
@@ -172,8 +178,6 @@
   &_menu {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    // justify-content: space-between;
-
 
     &-logo {
       justify-self: center;
@@ -184,11 +188,6 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-
-    // & svg {
-    //   stroke: black !important;
-    //   fill: black !important;
-    // }
   }
 
   @include media_rule($mobile) {

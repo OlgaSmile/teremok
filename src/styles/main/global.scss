@@ -10,6 +10,7 @@
 
 .section {
   padding-bottom: 11.25rem;
+
   @media screen and (max-width: $mobile) {
     padding-bottom: 7.5rem;
   }
@@ -19,6 +20,7 @@
   width: 76.25rem;
   margin: 0 auto;
   padding: 0 1rem;
+
   @media screen and (max-width: $tablet) {
     width: 100%;
   }
@@ -26,6 +28,7 @@
 
 .inner-container {
   width: 52.25rem;
+
   @media screen and (max-width: $tablet) {
     width: 100%;
   }
@@ -43,4 +46,30 @@
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+.decor-trees1 {
+  position: absolute;
+  width: 12.375rem;
+  height: 3.625rem;
+}
+
+.decor-trees1 {
+  position: absolute;
+  width: 12.375rem;
+  height: 3.625rem;
+}
+
+.decor-trees2 {
+  position: absolute;
+  width: 12.375rem;
+  height: 5.5rem;
+}
+
+.decor-mount {}
+
+.decor-branch {
+  position: absolute;
+  width: 9.375rem;
+  height: 12.8125rem;
 }
