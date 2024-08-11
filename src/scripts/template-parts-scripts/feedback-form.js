@@ -288,15 +288,6 @@ jQuery(document).ready(function ($) {
     this.style.height = this.scrollHeight + "px"
   })
 
-  /*   $(".feedback__modal").on("click", (e) => {
-    if (!textarea.val()) {
-      const isClickInsideInput = textarea.is(e.target)
-      if (!isClickInsideInput) {
-        $("#plahceholder-text").removeClass("feedback-text-placeholder---top")
-      }
-    }
-  }) */
-
   const resetForm = () => {
     $("#feedback_ratinge").val($("#feedback_ratinge").attr("min"))
     stars.removeClass("selected")
@@ -316,12 +307,14 @@ jQuery(document).ready(function ($) {
     $("#ratinge-error").text("").removeClass("error")
     $("#name-max-length").text(`0/40`)
     $("#text-max-length").text(`0/40`)
+    $("#plahceholder-text").removeClass("feedback-text-placeholder---top")
 
     textarea.css("height", "2rem")
   }
 
   $("#feedback-cancel").on("click", () => {
     resetForm()
+    $("#js-close-feedback-form").click()
   })
 
   $("#feedback-form").on("submit", function (e) {
