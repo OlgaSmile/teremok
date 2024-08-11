@@ -13,7 +13,7 @@ const validationText = {
 const validationError = "Поле обов’язкове"
 
 jQuery(document).ready(function ($) {
-  const labelName = $(".feedback-name-placeholder")
+  const labelName = $("#feedback-name-placeholder")
   const userImgInput = $("#user-file")
   const photosFile = $("#photos-file")
   const customImagesWrapper = $(".custom-images-wrapper")
@@ -38,8 +38,9 @@ jQuery(document).ready(function ($) {
   })
 
   feedbackImputname.on("input", function (e) {
+    const maxLength = 40
     const length = e.target.value.trim().length
-    $("#name-max-length").text(`${length}/40`)
+
     if (length < 2) {
       $("#name-error")
         .text(validationName.warrningNameLength)
@@ -48,6 +49,15 @@ jQuery(document).ready(function ($) {
     if (length > 2) {
       $("#name-error").text("").removeClass("error")
     }
+
+    if (length > maxLength) {
+      e.target.value = e.target.value.trim().substring(0, maxLength)
+    }
+    console.log(length, "length")
+    if (length > 40) {
+      return
+    }
+    $("#name-max-length").text(`${length}/40`)
   })
 
   // click modal close label
@@ -216,10 +226,6 @@ jQuery(document).ready(function ($) {
   })
 
   $(".feedback__modal").on("click", (e) => {
-    // if () {
-
-    // }
-
     const value = $("#feedback_housing").val()
 
     if (value) {
@@ -244,7 +250,15 @@ jQuery(document).ready(function ($) {
     this.style.height = "auto"
     this.style.height = this.scrollHeight + "px"
 
-    if (e.target.value.length > 40) {
+    const maxLength = 1000
+    const length = e.target.value.trim().length
+
+    if (length > maxLength) {
+      e.target.value = e.target.value.trim().substring(0, maxLength)
+      return
+    }
+
+    if (length > 40) {
       $("#texterea-error").text(``).removeClass("error")
     } else {
       $("#texterea-error")
@@ -252,20 +266,18 @@ jQuery(document).ready(function ($) {
         .removeClass("error")
     }
 
-    if (e.target.value.length === 1000) {
-      return
-    }
-
-    $("#text-max-length").text(`${e.target.value.length}/1000`)
+    $("#text-max-length").text(`${length}/1000`)
   })
 
   textarea.on("click", function (e) {
+    $("#plahceholder-text").addClass("feedback-text-placeholder---top")
     if (e.target.value.trim().length === 0) {
       $("#texterea-error").text(validationError).addClass("error")
     }
   })
 
   textarea.on("focus", function (e) {
+    $("#plahceholder-text").addClass("feedback-text-placeholder---top")
     if (e.target.value.trim().length === 0) {
       $("#texterea-error").text(validationError).addClass("error")
     }
@@ -276,8 +288,16 @@ jQuery(document).ready(function ($) {
     this.style.height = this.scrollHeight + "px"
   })
 
+  /*   $(".feedback__modal").on("click", (e) => {
+    if (!textarea.val()) {
+      const isClickInsideInput = textarea.is(e.target)
+      if (!isClickInsideInput) {
+        $("#plahceholder-text").removeClass("feedback-text-placeholder---top")
+      }
+    }
+  }) */
+
   const resetForm = () => {
-    // apartment,  rating, images
     $("#feedback_ratinge").val($("#feedback_ratinge").attr("min"))
     stars.removeClass("selected")
     $("#feedback_housing").val("")
@@ -296,6 +316,8 @@ jQuery(document).ready(function ($) {
     $("#ratinge-error").text("").removeClass("error")
     $("#name-max-length").text(`0/40`)
     $("#text-max-length").text(`0/40`)
+
+    textarea.css("height", "2rem")
   }
 
   $("#feedback-cancel").on("click", () => {
@@ -337,7 +359,8 @@ jQuery(document).ready(function ($) {
       contentType: false,
       success: function (response) {
         $("#feedback-response").addClass("feedback-response---active")
-
+        $("#positive-responce").show()
+        $("#error-responce").hide()
         $(".feedback__modal").addClass("feedback__modal---hide")
 
         if (response.status === "success") {
@@ -350,10 +373,29 @@ jQuery(document).ready(function ($) {
           $("#js-close-feedback-form").click()
 
           return
-        }, 1500)
+        }, 3000)
       },
+
       error: function (xhr, status, error) {
-        $("#feedback-response").html("<p>Виникла помилка: " + error + "</p>")
+        $("#feedback-response").addClass("feedback-response---active")
+
+        $(".feedback__modal").addClass("feedback__modal---hide")
+
+        if (response.status === "success") {
+          $("#feedback-form")[0].reset()
+          resetForm()
+        }
+
+        setTimeout(() => {
+          $("#positive-response").hide()
+
+          $("#feedback-response").removeClass("feedback-response---active")
+          $("#js-close-feedback-form").click()
+          $("#error-response")
+            .text("Виникла помилка: " + error + "")
+            .show()
+          return
+        }, 1500)
       },
     })
   })

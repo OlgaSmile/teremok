@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeFeedbackFormButton = document.getElementById(
     "js-close-feedback-form",
   )
+
+  const closeFeedbackResponse = document.getElementById(
+    "js-close-feedback-response-form",
+  )
   const feedbackBackdrop = document.getElementById("js-feedback-form")
   const modal = document.getElementById("feedback-modal")
 
@@ -43,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
       feedbackBackdrop.classList.remove("is-hidden")
       modal.classList.remove("feedback__modal---hide")
       closeFeedbackFormButton.addEventListener("click", hideForm)
+      closeFeedbackResponse.addEventListener("click", hideForm)
       feedbackBackdrop.addEventListener("mousedown", closeByBgdClick)
       window.addEventListener("keydown", closeByPressEscape)
 
@@ -53,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function hideForm() {
       feedbackBackdrop.classList.add("is-hidden")
       closeFeedbackFormButton.removeEventListener("click", hideForm)
+      closeFeedbackResponse.addEventListener("click", hideForm)
       feedbackBackdrop.removeEventListener("mousedown", closeByBgdClick)
 
       const scrollY = parseInt(document.documentElement.style.top || "0")

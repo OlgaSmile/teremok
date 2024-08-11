@@ -31,8 +31,8 @@ $names_apartments_otions = get_field('form_user_apartments', 'options');
 
     <form id="feedback-form" method="post" enctype="multipart/form-data" class="form-feedback" action="<?php echo esc_url(admin_url('admin-ajax.php')); ?>">
       <div class="form-feedback__user-name">
-        <label class="feedback-name-placeholder"><?php echo $user_name_placeholder ?></label>
-        <input id="feedback_name" type="text" name="feedback_name" placeholder="" required>
+        <label id="feedback-name-placeholder" class="feedback-name-placeholder"><?php echo $user_name_placeholder ?><span class="asterisk">*</span></label>
+        <input id="feedback_name" type="text" name="feedback_name" placeholder="" min='2' max="40" required>
         <div class="form-feedback__warning-box">
           <p id="name-error" class="feedback-error"></p>
           <p id="name-max-length" class="feedback-max-length" name="text">0/40</p>
@@ -98,7 +98,7 @@ $names_apartments_otions = get_field('form_user_apartments', 'options');
       </div>
 
       <div class="form-feedback__ratinge-box">
-        <label><?php echo $user_rating_placeholder ?></label>
+        <label><?php echo $user_rating_placeholder ?><span class="asterisk">*</span></label>
         <input id="feedback_ratinge" type="range" name="feedback_astimation" max="5" value="0" required>
         <div class="star-rating">
           <span class="star" data-value="5">&#9733;</span>
@@ -137,7 +137,8 @@ $names_apartments_otions = get_field('form_user_apartments', 'options');
       </div>
 
       <div class="form-feedback__text-box">
-        <textarea id="feedback-text" name="feedback_text" id="" rows="1" minlength="40" maxlength="1000" placeholder="<?php echo $user_reviews_desc_placeholder ?>" required></textarea>
+        <label id="plahceholder-text" class="feedback-name-placeholder"><?php echo $user_reviews_desc_placeholder ?><span class="asterisk">*</span></label>
+        <textarea id="feedback-text" name="feedback_text" id="" rows="1" minlength="40" maxlength="1000" placeholder="" required></textarea>
         <div class="form-feedback__warning-box">
           <p id="texterea-error" class="feedback-error"></p>
           <p id="text-max-length" class="feedback-max-length" name="text">0/1000</p>
@@ -164,18 +165,21 @@ $names_apartments_otions = get_field('form_user_apartments', 'options');
   </div>
 
   <div id="feedback-response" class="feedback-response">
+    <button class="feedback__modal-close" type="button" id="js-close-feedback-response-form" aria-label="Close modal">
+      <svg class="icon__cross" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.28125 30.3381L30.2443 1.375M30.7212 30.3381L1.75816 1.375" stroke-linecap="round" />
+      </svg>
+    </button>
     <div class="feedback__modal-title">
       <?php
       $thanks_feedback = get_field('thanks-feedback', 'options');
 
       get_template_part("template-parts/section-title", null, ['title' => $thanks_feedback]); ?>
     </div>
-    <h3><?php echo  get_field('thanks-feedback-desc', 'options'); ?></h3>
-
+    <h3 id="positive-response"><?php echo  get_field('thanks-feedback-desc', 'options'); ?></h3>
+    <h3 id="error-response"></h3>
     <div class="feedback-response__logo">
-      <a href="/">
-        <?php get_template_part("template-parts/logo_footer"); ?>
-      </a>
+      <?php get_template_part("template-parts/logo_footer"); ?>
     </div>
   </div>
 </div>
