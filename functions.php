@@ -122,6 +122,9 @@ function register_post_types()
 
 add_action('init', 'register_post_types');
 
+
+
+
 function calculate_nights_and_format_checkin($checkin_date, $checkout_date)
 {
     // Перетворюємо дати з рядка у форматі 'd/m/Y' до об'єктів DateTime

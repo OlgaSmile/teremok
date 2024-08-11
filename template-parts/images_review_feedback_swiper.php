@@ -16,7 +16,6 @@ $add_photos = get_field('feedback_add_photos', $post_id);
       <?php
       $max_photos = 5;
       $counter = 0;
-      $tota_number = 0;
       if (is_array($add_photos) && !empty($add_photos))
         $filtered_photos = array_filter($add_photos, function ($value) {
           return !empty($value) || $value === '0' || $value === 0;

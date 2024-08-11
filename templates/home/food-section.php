@@ -46,7 +46,10 @@ $link = add_query_arg($wp->query_vars, home_url()) . '/food';
         <div class="food-section__images-mobile food-section__images-mobile-bottom">
             <?php if (get_field('food_bottom_images', 'options')): ?>
             <?php while (has_sub_field('food_bottom_images', 'options') and get_row_index() <= 3): ?>
-            <img class="food-section__images-mobile_item" src="<?php the_sub_field('food_bottom_img', 'options');?>" />
+            <div class="food-section__images-mobile_item-wrapper">
+                <img class="food-section__images-mobile_item"
+                    src="<?php the_sub_field('food_bottom_img', 'options');?>" />
+            </div>
             <?php endwhile;?>
             <?php endif;?>
         </div>

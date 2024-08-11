@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const apartmentSwiper = new Swiper(".one-apartment__gallery", {
     slidesPerView: 1,
     spaceBetween: 10,
+    speed: 1000,
     loop: true,
     lazy: {
       loadOnTransitionStart: true,
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         slidesPerView: "auto",
       },
     },
-  });
+  })
 
   // services slider
 
@@ -32,5 +33,5 @@ document.addEventListener("DOMContentLoaded", function () {
       loadOnTransitionStart: true,
       loadPrevNext: true,
     },
-  });
-});
+  })
+})
