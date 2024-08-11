@@ -40,15 +40,6 @@ add_action('init', 'feedbacks_custom_post');
 
 // feedback form submit
 
-
-// function my_enqueue_scripts()
-// {
-//   wp_enqueue_script('my-custom-script', get_template_directory_uri() . '/js/feedback-form.js', array('jquery'), '1.0', true);
-//   wp_localize_script('my-custom-script', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
-// }
-// add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
-
-
 // AJAX for writing reviews into CPT "Feedbacks
 add_action('wp_ajax_do_insert', 'do_insert');
 add_action('wp_ajax_nopriv_do_insert', 'do_insert');
