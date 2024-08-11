@@ -65,10 +65,6 @@
       }
     }
 
-    &-title {
-      margin-bottom: 4.5rem;
-    }
-
     //range
     .star-rating {
       unicode-bidi: bidi-override;
@@ -109,6 +105,8 @@
 /* form feedback */
 
 .form-feedback {
+  padding-top: 4.5rem;
+
   display: flex;
   flex-direction: column;
   max-width: 37.5rem;
@@ -141,7 +139,6 @@
       letter-spacing: 0.04px;
       border-bottom: 1px solid $grey_green;
       padding-bottom: 8px;
-
       @media screen and (max-width: $mobile) {
         width: 100%;
       }
