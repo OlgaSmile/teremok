@@ -60,7 +60,7 @@ $certificates_title = get_field('food_menu_certificates_section_title');
             <div class="food__introduction-section_owner-text">
                 <?php echo get_field('food_introduction_owner_text'); ?></div>
         </div>
-        <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.svg'; ?>"
+        <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>"
             class="food__introduction-section_decor-trees2 decor-trees2" />
     </section>
 

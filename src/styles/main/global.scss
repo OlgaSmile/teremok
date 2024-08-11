@@ -52,18 +52,22 @@
   position: absolute;
   width: 12.375rem;
   height: 3.625rem;
-}
 
-.decor-trees1 {
-  position: absolute;
-  width: 12.375rem;
-  height: 3.625rem;
+  @include media_rule_max($mobile) {
+    width: 8.0625rem;
+    height: 2.4rem;
+  }
 }
 
 .decor-trees2 {
   position: absolute;
   width: 12.375rem;
   height: 5.5rem;
+
+  @include media_rule_max($mobile) {
+    width: 8.0625rem;
+    height: 4.875rem;
+  }
 }
 
 .decor-mount {}
@@ -72,4 +76,9 @@
   position: absolute;
   width: 9.375rem;
   height: 12.8125rem;
+
+  @include media_rule_max($mobile) {
+    width: 8.0625rem;
+    height: 6.3125rem;
+  }
 }
