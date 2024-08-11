@@ -82,6 +82,30 @@
     'items_wrap' => '<ul id="%1$s" class="header-mobile-list %2$s">%3$s</ul>',
 ]);
 ?>
+            <ul class="header-mobile__menu_socials">
+                <?php if (get_field('social_links', 'option')): ?>
+                <?php while (has_sub_field('social_links', 'option')): ?>
+
+                <li class="header-mobile__menu_socials-item">
+                    <a href="<?php the_sub_field('social_link');?>">
+                        <img src="<?php the_sub_field('social_icon');?>">
+                    </a>
+                </li>
+                <?php endwhile;?>
+                <?php endif;?>
+            </ul>
+            <a type="phone" href="tel:<?php the_field('phone', "option");?>" class="header-mobile__menu_phone">
+                <?php the_field('phone', 'options');?>
+            </a>
+            <p class="header-mobile__menu_address">
+                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12.5001 2C8.08908 2 4.50008 5.589 4.50008 9.995C4.47108 16.44 12.1961 21.784 12.5001 22C12.5001 22 20.5291 16.44 20.5001 10C20.5001 5.589 16.9111 2 12.5001 2ZM12.5001 14C10.2901 14 8.50008 12.21 8.50008 10C8.50008 7.79 10.2901 6 12.5001 6C14.7101 6 16.5001 7.79 16.5001 10C16.5001 12.21 14.7101 14 12.5001 14Z"
+                        fill="#3C4839" />
+                </svg>
+                <?php the_field('location_address', 'options');?>
+            </p>
+
         </div>
         <!-- Mobile HEADER END -->
 

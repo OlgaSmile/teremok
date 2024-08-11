@@ -10,8 +10,11 @@
                 position: absolute;
                 left: 0;
                 bottom: 0;
-                width: 12.375rem;
-                height: 7.4375rem;
+
+
+                @include media_rule_max($mobile) {
+                    left: -24px;
+                }
             }
 
             &-mount {
@@ -20,6 +23,10 @@
                 bottom: 0;
                 width: 12.375rem;
                 height: 7.4375rem;
+
+                @include media_rule_max($mobile) {
+                    display: none;
+                }
             }
         }
 
@@ -130,11 +137,20 @@
             &-branch {
                 left: 0;
                 transform: rotateY(180deg);
+
+                @include media_rule_max($mobile) {
+                    top: -4.9375rem;
+                    left: -1.375rem;
+                }
             }
 
             &-trees2 {
                 right: 0;
                 top: 31.25rem;
+
+                @include media_rule_max($mobile) {
+                    display: none;
+                }
             }
         }
 
@@ -151,16 +167,28 @@
             &-trees1 {
                 left: -9.375rem;
                 top: 2.75rem;
+
+                @include media_rule_max($mobile) {
+                    display: none;
+                }
             }
 
             &-trees2 {
                 right: -6.5rem;
                 top: 2.75rem;
+
+                @include media_rule_max($mobile) {
+                    display: none;
+                }
             }
 
             &-trees3 {
                 left: -6.375rem;
                 top: 63.875rem;
+
+                @include media_rule_max($mobile) {
+                    display: none;
+                }
             }
         }
 
@@ -315,6 +343,10 @@
             &-branch1 {
                 top: 9.875rem;
                 right: -2rem;
+
+                @include media_rule_max($mobile) {
+                    display: none;
+                }
             }
         }
 

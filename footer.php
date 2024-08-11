@@ -48,7 +48,7 @@
         </div>
     </div>
     <div class="footer__policy container">
-        <a href="<?php echo home_url() . '/privacy-policy' ?>"><span
+        <a href="<?php echo home_url() . '/privacy-policy' ?>" class="footer__policy-link"><span
                 class="footer__policy-item footer__policy-item_policy">Політика конфіденційності</span></a>
         <div class="footer__policy-item footer__policy-item_wrapper">
             <span class="footer__policy-item footer__policy-item_date">ТЕРЕМОК &#169; 2024</span>
