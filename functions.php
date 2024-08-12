@@ -48,6 +48,10 @@ function wp_teremok_scripts()
     if (is_singular() && locate_template('template-parts/gallery-section.php')) {
         wp_enqueue_script('gallery-script', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/gallery.js', array(), false, true);
     }
+
+    if (is_singular() && locate_template('templates/home/teremok-section.php')) {
+        wp_enqueue_script('show-images-mobile-script', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/show-images-mobile.js', array(), false, true);
+    }
     if (is_singular() && locate_template('template-parts/feedbacks-section.php')) {
         wp_enqueue_style('feedbacks-section-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/feedbacks-section.css', array('main'));
         wp_enqueue_script('feedbacks-section-script', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/feedbacks-section.js', array(), false, true);
