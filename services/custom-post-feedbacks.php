@@ -40,7 +40,6 @@ add_action('init', 'feedbacks_custom_post');
 
 // feedback form submit
 
-
 // AJAX for writing reviews into CPT "Feedbacks
 add_action('wp_ajax_do_insert', 'do_insert');
 add_action('wp_ajax_nopriv_do_insert', 'do_insert');

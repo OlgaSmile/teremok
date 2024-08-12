@@ -53,7 +53,7 @@ jQuery(document).ready(function ($) {
     if (length > maxLength) {
       e.target.value = e.target.value.trim().substring(0, maxLength)
     }
-    console.log(length, "length")
+
     if (length > 40) {
       return
     }
@@ -321,7 +321,7 @@ jQuery(document).ready(function ($) {
     e.preventDefault()
     const rating = $("#feedback_ratinge").val()
     const apartmen = $("#feedback_housing").val()
-    console.log(Number(rating))
+
     if (Number(rating) === 0 && !apartmen) {
       $("#apartment-error").text(validationError).addClass("error")
       $("#ratinge-error").text(validationError).addClass("error")
@@ -345,7 +345,7 @@ jQuery(document).ready(function ($) {
     formData.append("action", "do_insert")
 
     $.ajax({
-      url: ajaxurl,
+      url: myAjax.ajaxurl,
       type: "POST",
       data: formData,
       processData: false,
@@ -364,14 +364,11 @@ jQuery(document).ready(function ($) {
         setTimeout(() => {
           $("#feedback-response").removeClass("feedback-response---active")
           $("#js-close-feedback-form").click()
-
-          return
         }, 3000)
       },
 
       error: function (xhr, status, error) {
         $("#feedback-response").addClass("feedback-response---active")
-
         $(".feedback__modal").addClass("feedback__modal---hide")
 
         if (response.status === "success") {
@@ -381,13 +378,11 @@ jQuery(document).ready(function ($) {
 
         setTimeout(() => {
           $("#positive-response").hide()
-
           $("#feedback-response").removeClass("feedback-response---active")
           $("#js-close-feedback-form").click()
           $("#error-response")
             .text("Виникла помилка: " + error + "")
             .show()
-          return
         }, 1500)
       },
     })
