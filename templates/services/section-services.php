@@ -147,16 +147,26 @@ $repeater_field = $services['services'];
         </ul>
       <?php endif; ?>
       <?php if (!empty($images)) : ?>
-        <div class="section-services-page__image teremok-section__Image">
-          <?php
-          foreach ($images as  $index => $image) :
-          ?>
-            <?php if ($index == 1) : ?>
-              <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>">
-            <?php endif ?>
-          <?php
-          endforeach
-          ?>
+        <div class="section-services-page__image teremok-section__Image-mobile">
+          <div class="swiper swiper-image-mobile">
+            <div class="swiper-wrapper">
+              <?php
+              foreach ($images as  $index => $image) :
+              ?>
+                <?php if ($index < 4) : ?>
+                  <div class="swiper-slide"> <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>"></div>
+                <?php endif ?>
+              <?php
+              endforeach
+              ?>
+            </div>
+            <div class="autoplay-progress">
+              <svg viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="20"></circle>
+              </svg>
+              <span></span>
+            </div>
+          </div>
         </div>
       <?php endif; ?>
       <?php if (!empty($repeater_field)) : ?>
@@ -203,20 +213,31 @@ $repeater_field = $services['services'];
           ?>
         </ul>
       <?php endif; ?>
-      <?php if (!empty($images)) : ?>
-        <div class="section-services-page__image teremok-section__Image">
-          <?php
-          foreach ($images as  $index => $image) :
-          ?>
-            <?php if ($index == 0) : ?>
-              <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>">
-            <?php endif ?>
-          <?php
-          endforeach
-          ?>
-        </div>
 
+      <?php if (!empty($images)) : ?>
+        <div class="section-services-page__image teremok-section__Image-mobile">
+          <div class="swiper swiper-image-mobile">
+            <div class="swiper-wrapper">
+              <?php
+              foreach ($images as  $index => $image) :
+              ?>
+                <?php if ($index > 3 && $index < 8) : ?>
+                  <div class="swiper-slide"> <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>"></div>
+                <?php endif ?>
+              <?php
+              endforeach
+              ?>
+            </div>
+            <div class="autoplay-progress">
+              <svg viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="20"></circle>
+              </svg>
+              <span></span>
+            </div>
+          </div>
+        </div>
       <?php endif; ?>
+
       <?php if (!empty($repeater_field)) : ?>
         <ul class="section-services-page__list teremok-section__list">
 
@@ -263,17 +284,28 @@ $repeater_field = $services['services'];
 
         </ul>
       <?php endif; ?>
+
       <?php if (!empty($images)) : ?>
-        <div class="section-services-page__image teremok-section__Image">
-          <?php
-          foreach ($images as  $index => $image) :
-          ?>
-            <?php if ($index == 2) : ?>
-              <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>">
-            <?php endif ?>
-          <?php
-          endforeach
-          ?>
+        <div class="teremok-section__Image-mobile section-services-page__image services-m-b-0 ">
+          <div class="swiper swiper-image-mobile">
+            <div class="swiper-wrapper">
+              <?php
+              foreach ($images as  $index => $image) :
+              ?>
+                <?php if ($index > 7) : ?>
+                  <div class="swiper-slide"> <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>"></div>
+                <?php endif ?>
+              <?php
+              endforeach
+              ?>
+            </div>
+            <div class="autoplay-progress">
+              <svg viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="20"></circle>
+              </svg>
+              <span></span>
+            </div>
+          </div>
         </div>
       <?php endif; ?>
 

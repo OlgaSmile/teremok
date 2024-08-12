@@ -193,16 +193,26 @@ $teremok_main_field = get_field('teremok_main_field');
         </ul>
       <?php endif; ?>
       <?php if (!empty($Images)) : ?>
-        <div class="teremok-section__Image">
-          <?php
-          foreach ($Images as  $index => $image) :
-          ?>
-            <?php if ($index == 1) : ?>
-              <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>">
-            <?php endif ?>
-          <?php
-          endforeach
-          ?>
+        <div class="teremok-section__Image-mobile" id="block2">
+          <div class="swiper swiper-image-mobile">
+            <div class="swiper-wrapper">
+              <?php
+              foreach ($Images as  $index => $image) :
+              ?>
+                <?php if ($index < 3) : ?>
+                  <div class="swiper-slide"> <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>"></div>
+                <?php endif ?>
+              <?php
+              endforeach
+              ?>
+            </div>
+            <div class="autoplay-progress">
+              <svg viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="20"></circle>
+              </svg>
+              <span></span>
+            </div>
+          </div>
         </div>
       <?php endif; ?>
       <?php if (!empty($repeater_field)) : ?>
@@ -224,18 +234,27 @@ $teremok_main_field = get_field('teremok_main_field');
         </ul>
       <?php endif; ?>
       <?php if (!empty($Images)) : ?>
-        <div class="teremok-section__Image">
-          <?php
-          foreach ($Images as  $index => $image) :
-          ?>
-            <?php if ($index == 0) : ?>
-              <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>">
-            <?php endif ?>
-          <?php
-          endforeach
-          ?>
+        <div class="teremok-section__Image-mobile" id="block2">
+          <div class="swiper swiper-image-mobile">
+            <div class="swiper-wrapper">
+              <?php
+              foreach ($Images as  $index => $image) :
+              ?>
+                <?php if ($index > 2) : ?>
+                  <div class="swiper-slide"> <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>"></div>
+                <?php endif ?>
+              <?php
+              endforeach
+              ?>
+            </div>
+            <div class="autoplay-progress">
+              <svg viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="20"></circle>
+              </svg>
+              <span></span>
+            </div>
+          </div>
         </div>
-
       <?php endif; ?>
       <?php if (!empty($repeater_field)) : ?>
         <ul class="teremok-section__list">

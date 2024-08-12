@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("show images")
   if (window.innerWidth <= 575.98) {
     const progressCircle = document.querySelector(".autoplay-progress svg")
     const progressContent = document.querySelector(".autoplay-progress span")
