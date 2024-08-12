@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",(function(){function e(e){const t=document.querySelectorAll(`#${e} .image-animate-mobile`);let n=0;t[n].classList.add("active"),setInterval((function(){t[n].classList.remove("active"),n=(n+1)%t.length,t[n].classList.add("active")}),3e3)}e("block1"),e("block2")}));
