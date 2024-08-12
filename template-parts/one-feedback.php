@@ -1,13 +1,22 @@
+<?php
+
+if (is_object($post) && property_exists($post, 'ID')) {
+  $post_id = $post->ID;
+} else {
+  echo 'Error: $post is not an object or ID property does not exist.';
+}
+
+?>
 <div class="swiper-slide onefeedback">
   <div>
-    <div class="onefeedback__rate rate-js" data-num="<?php the_field("feedback_astimation", $post->ID) ?>"></div>
+    <div class="onefeedback__rate rate-js" data-num="<?php the_field("feedback_astimation", $post_id) ?>"></div>
     <div class="onefeedback__box">
       <?php
-      $text = get_field('feedback_text', $post->ID);
+      $text = get_field('feedback_text', $post_id);
       $characterAmount = 380;
       $characterAmountMobile = 300;
 
-      $add_photos = get_field('feedback_add_photos', $post->ID);
+      $add_photos = get_field('feedback_add_photos', $post_id);
       if ($add_photos) {
         foreach ($add_photos as $key => $image) {
           if ($image) {
@@ -85,7 +94,7 @@
 
       <div class="onefeedback__user-image_wrap">
         <?php
-        $image = get_field('feedback_person_photo', $post->ID);
+        $image = get_field('feedback_person_photo', $post_id);
         $size = 'thumbnail';
         if ($image) { ?>
           <?php
@@ -99,9 +108,9 @@
       <div class="onefeedback__user-info">
 
         <?php
-        $nameGroup = get_field('feedbacks_full_name', $post->ID);
+        $nameGroup = get_field('feedback_name', $post_id);
         if ($nameGroup) { ?>
-          <p class='onefeedback__user-info_name'><?php echo  $nameGroup['name']; ?>
+          <p class='onefeedback__user-info_name'><?php echo  $nameGroup; ?>
           </p>
         <?php } ?>
 
