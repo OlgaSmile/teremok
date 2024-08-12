@@ -1,8 +1,8 @@
 <?php /* Template Name: reviews */ get_header();
 $hero_reviews_image = get_field('reviews_main_photo');
 $feedbacks_full_name = get_field('feedbacks_full_name');
-$current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
 
+$current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
 
 
 
@@ -35,14 +35,21 @@ $current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
 
     if ($query->have_posts()) : ?>
       <ul class="reviews-section__list">
-        <?php while ($query->have_posts()) : $query->the_post(); ?>
+        <?php while ($query->have_posts()) : $query->the_post();
+          if (is_object($post) && property_exists($post, 'ID')) {
+            $post_id = $post->ID;
+          } else {
+            echo 'Error: $post is not an object or ID property does not exist.';
+          }
+
+        ?>
           <li class="reviews-section__item">
             <div class="reviews-section__item-top-box">
               <div class="reviews-section__item-top-wrapper">
 
                 <div class="onefeedback__user-image_wrap">
                   <?php
-                  $image = get_field('feedback_person_photo', $post->ID);
+                  $image = get_field('feedback_person_photo', $post_id);
                   $size = 'thumbnail';
                   if ($image) { ?>
                     <?php
@@ -53,9 +60,10 @@ $current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
                 </div>
                 <div class="reviews-section__name-box">
                   <?php
-                  $nameGroup = get_field('feedbacks_full_name', $post->ID); ?>
-                  <?php if ($nameGroup) : ?>
-                    <p><?php echo  $nameGroup['name'] ? $nameGroup['name'] : '' ?></p>
+                  $name = get_field('feedback_name', $post_id);
+                  ?>
+                  <?php if ($name) : ?>
+                    <p><?php echo  $name ? $name : '' ?></p>
                   <?php endif ?>
 
 
@@ -63,7 +71,7 @@ $current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
                 </div>
               </div>
               <div class="reviews-section__date-box">
-                <?php if ($nameGroup['house_number']) : ?>
+                <?php if (get_field('house_number', $post_id)) : ?>
                   <p> <span class="date-box-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
 
                         <g clip-path="url(#clip0_3559_656)">
@@ -79,7 +87,7 @@ $current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
                             <rect width="20" height="20" fill="white" />
                           </clipPath>
                         </defs>
-                      </svg></span><span><?php echo $nameGroup['house_number']  ? $nameGroup['house_number'] : ' no number' ?></span></p>
+                      </svg></span><span><?php echo get_field('house_number', $post_id)  ? get_field('house_number', $post_id) : ' no number' ?></span></p>
 
 
                 <?php endif ?>
@@ -87,10 +95,10 @@ $current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
               </div>
             </div>
             <div>
-              <div class="onefeedback__rate rate-js" data-num="<?php the_field("feedback_astimation", $post->ID) ?>"></div>
+              <div class="onefeedback__rate rate-js" data-num="<?php the_field("feedback_astimation", $post_id) ?>"></div>
               <div>
                 <?php
-                $feedback_text = get_field('feedback_text', $post->ID);
+                $feedback_text = get_field('feedback_text', $post_id);
                 $feedback_text_string = (string) $feedback_text;
 
                 $feedback_text_without_spaces = preg_replace('/\s+/', ' ', $feedback_text_string);
@@ -98,19 +106,19 @@ $current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
                 $feedback_text_length = mb_strlen($feedback_text_without_spaces)
 
                 ?>
-                <p id="desc-<?php echo $post->ID ?>" class="reviews-section__description reviews-text-hidden">
+                <p id="desc-<?php echo $post_id ?>" class="reviews-section__description reviews-text-hidden">
                   <?php echo $feedback_text_without_spaces ?>
                 </p>
               </div>
               <?php
-              get_template_part("template-parts/images_review_feedback_swiper", null, ['post_id' =>  $post->ID]); ?>
+              get_template_part("template-parts/images_review_feedback_swiper", null, ['post_id' => $post_id]); ?>
               <div class="reviews-section__button-wrapper reviews-section__button-wrapper---tablet">
                 <?php
 
                 $btn_name = get_field('read_all', 'options');
 
                 if ($feedback_text_length > 375) : ?>
-                  <button id="btn-<?php echo $post->ID ?>" type="button" class="reviews-btn-watch-more" data-target="<?php echo $post->ID ?>">
+                  <button id="btn-<?php echo $post_id ?>" type="button" class="reviews-btn-watch-more" data-target="<?php echo $post_id ?>">
                     <span><?php echo $btn_name ? $btn_name : "Читати все" ?></span>
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
@@ -125,7 +133,7 @@ $current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
                 $btn_name = get_field('read_all', 'options');
 
                 if ($feedback_text_length > 166) : ?>
-                  <button id="btn-<?php echo $post->ID ?>" type="button" class="reviews-btn-watch-more" data-target="<?php echo $post->ID ?>">
+                  <button id="btn-<?php echo $post_id ?>" type="button" class="reviews-btn-watch-more" data-target="<?php echo $post_id ?>">
                     <span><?php echo $btn_name ? $btn_name : "Читати все" ?></span>
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
@@ -141,7 +149,7 @@ $current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
 
                 if ($feedback_text_length > 181) : ?>
 
-                  <button id="btn-<?php echo $post->ID ?>" type="button" class="reviews-btn-watch-more" data-target="<?php echo $post->ID ?>">
+                  <button id="btn-<?php echo $post_id ?>" type="button" class="reviews-btn-watch-more" data-target="<?php echo $post_id ?>">
                     <span><?php echo $btn_name ? $btn_name : "Читати все" ?></span>
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
@@ -198,9 +206,6 @@ $current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
     <button id="add_comment-js" class="_button primary_button" type="button"><?php the_field('add_feedback_btn', 'options') ?></button>
 
   </section>
-
-
-
   <?php get_template_part("template-parts/section-reserve") ?>
   <?php get_template_part("template-parts/feedback-form"); ?>
   <?php get_template_part("template-parts/location-section") ?>

@@ -3,6 +3,33 @@
 
 .food {
     &__hero-section {
+        position: relative;
+
+        &_decor {
+            &-trees2 {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+
+
+                @include media_rule_max($mobile) {
+                    left: -24px;
+                }
+            }
+
+            &-mount {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 12.375rem;
+                height: 7.4375rem;
+
+                @include media_rule_max($mobile) {
+                    display: none;
+                }
+            }
+        }
+
         & h2 {
             font-size: 2.75rem;
 
@@ -14,6 +41,7 @@
 
     &__introduction-section {
         margin-bottom: 5rem;
+        position: relative;
 
         @include media_rule($mobile) {
             margin-bottom: 10rem;
@@ -77,6 +105,7 @@
                 position: absolute;
                 z-index: 10;
             }
+
         }
 
         &_owner-name {
@@ -104,6 +133,27 @@
             text-align: center;
         }
 
+        &_decor {
+            &-branch {
+                left: 0;
+                transform: rotateY(180deg);
+
+                @include media_rule_max($mobile) {
+                    top: -4.9375rem;
+                    left: -1.375rem;
+                }
+            }
+
+            &-trees2 {
+                right: 0;
+                top: 31.25rem;
+
+                @include media_rule_max($mobile) {
+                    display: none;
+                }
+            }
+        }
+
     }
 
     &__menu-section {
@@ -111,6 +161,35 @@
 
         @include media_rule($mobile) {
             display: flex;
+        }
+
+        &_decor {
+            &-trees1 {
+                left: -9.375rem;
+                top: 2.75rem;
+
+                @include media_rule_max($mobile) {
+                    display: none;
+                }
+            }
+
+            &-trees2 {
+                right: -6.5rem;
+                top: 2.75rem;
+
+                @include media_rule_max($mobile) {
+                    display: none;
+                }
+            }
+
+            &-trees3 {
+                left: -6.375rem;
+                top: 63.875rem;
+
+                @include media_rule_max($mobile) {
+                    display: none;
+                }
+            }
         }
 
         &_wrapper {
@@ -151,6 +230,8 @@
         }
 
         &_content {
+            position: relative;
+
             @include media_rule($mobile) {
                 width: 52.25rem;
                 padding-top: 2.5rem;
@@ -256,8 +337,18 @@
 
     &__certificates-section {
         margin-bottom: 5rem;
+        position: relative;
 
-        &_container {}
+        &_decor {
+            &-branch1 {
+                top: 9.875rem;
+                right: -2rem;
+
+                @include media_rule_max($mobile) {
+                    display: none;
+                }
+            }
+        }
 
         &-subtitle {
             font-size: 1rem;

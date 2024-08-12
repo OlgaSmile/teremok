@@ -70,11 +70,14 @@ function wp_teremok_scripts()
     if (is_singular() && locate_template('template-parts/feedback-form.php')) {
         wp_enqueue_style('feedback-form-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/feedback-form.css', array('main'));
         wp_enqueue_script('feedback-form-script', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/feedback-form.js', array(), false, true);
+        wp_localize_script('feedback-form-script', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
     }
     if (is_singular() && locate_template('templates/home/location-section.php')) {
         wp_enqueue_style('location-section-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/location-section.css', array('main'));
     }
 }
+
+
 /** add fonts */
 require get_template_directory() . '/services/fonts-register.php';
 
@@ -125,6 +128,9 @@ function register_post_types()
 }
 
 add_action('init', 'register_post_types');
+
+
+
 
 function calculate_nights_and_format_checkin($checkin_date, $checkout_date)
 {

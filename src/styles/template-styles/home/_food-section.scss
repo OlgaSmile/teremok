@@ -85,8 +85,6 @@
         align-items: center;
 
         @include media_rule($mobile) {
-            // height: 47.9375rem;
-            // width: 52.5rem;
             padding: 2rem 3rem;
 
             grid-column-start: 2;
@@ -129,6 +127,11 @@
         grid-template-columns: 1fr 2fr 1fr;
         height: 8.75rem;
         width: 100%;
+
+        &-wrapper {
+            object-fit: cover;
+            overflow: hidden;
+        }
 
         @include media_rule($mobile) {
             display: none;
