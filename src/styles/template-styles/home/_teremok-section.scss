@@ -49,7 +49,6 @@
   &__Image {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
-
     @media screen and (min-width: $mobile) {
       margin-top: 0;
       margin-bottom: 0;
@@ -158,3 +157,14 @@
     display: none;
   }
 }
+
+.teremok-section__Image-mobile {
+  position: relative;
+  height: 12.5rem;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+

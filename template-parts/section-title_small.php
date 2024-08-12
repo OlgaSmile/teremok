@@ -1,6 +1,6 @@
 <?php
 if (isset($args['title'])) {
-    $title = $args['title'];
+  $title = $args['title'];
 }
 ?>
 

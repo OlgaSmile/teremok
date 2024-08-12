@@ -71,6 +71,9 @@ function wp_teremok_scripts()
     if (is_singular() && locate_template('templates/home/location-section.php')) {
         wp_enqueue_style('location-section-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/location-section.css', array('main'));
     }
+    if (is_singular() && locate_template('templates/home/teremok-section.php')) {
+        wp_enqueue_script('show-images-mobile-script', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/show-images-mobile.js', array(), false, true);
+    }
 }
 
 
