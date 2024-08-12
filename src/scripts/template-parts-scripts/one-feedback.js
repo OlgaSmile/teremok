@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function openIamgeModal(element) {
-    $(`#modal-${element.id}`).addClass("active")
+    $(`#modal-${element.id}`).addClass("active-modal-image ")
     currentId = element.id
     const imageId = $(element).attr("image-id")
 
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
     swiperBottom.removeClass("swiper-reviews-bottom")
     swiperTop.removeClass("swiper-reviews-top")
 
-    $(`#modal-${currentId}`).removeClass("active")
+    $(`#modal-${currentId}`).removeClass("active-modal-image ")
     document.body.classList.remove("overflow-hidden")
 
     // Знищуємо всі існуючі Swiper екземпляри
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   })
   $(document).on("keydown", function (e) {
-    const active = $(".active")
+    const active = $(".active-modal-image")
     if (!active) {
       return
     }
