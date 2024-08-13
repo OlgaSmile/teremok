@@ -341,7 +341,7 @@
         bottom: -8px;
         width: 0%;
         height: 1px;
-        border-bottom: 1px solid $grey_green;
+        border-bottom: 1px solid $green_light;
         transition: border-bottom 1s;
       }
 
@@ -365,7 +365,7 @@
           content: "";
 
           width: 100%;
-
+          border-bottom: 1px solid $green_light;
           transition: width 0.5s;
         }
       }
@@ -396,13 +396,14 @@
           display: none;
         }
       }
+
       &::before {
         content: "";
         position: absolute;
         bottom: -8px;
         width: 0%;
         height: 1px;
-        border-bottom: 1px solid $grey_green;
+        border-bottom: 1px solid $green_light;
         transition: border-bottom 1s;
       }
     }
