@@ -113,6 +113,9 @@ jQuery(document).ready(function ($) {
     }
   }
 
+  $()
+
+  // labl-user_photo_placeholder
   function checkArrayAndToggleWrapper() {
     if (newArray.length === 0) {
       customImagesWrapper.hide()
