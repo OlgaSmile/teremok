@@ -53,6 +53,7 @@
     width: 21.4375rem;
     background-color: $white;
     padding: 1rem;
+    overflow: hidden;
 
     @include media_rule($mobile) {
       width: 57.5rem;
