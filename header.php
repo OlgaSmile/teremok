@@ -107,6 +107,13 @@
             </p>
 
         </div>
+
+        <script>
+        const submenuMobileLinkHeader = document.querySelector(
+            ".header-mobile-list > .menu-item-object-custom > a"
+        );
+        submenuMobileLinkHeader.classList.add("a");
+        </script>
         <!-- Mobile HEADER END -->
 
         <!-- title trees -->
