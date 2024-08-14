@@ -32,21 +32,21 @@
     left: 50%;
     transform: translate(-50%, -50%) translateX(0);
     width: 57.5rem;
-    padding: 3rem 8rem;
-
+    padding: 48px 160px;
+    max-height: 992px;
     overflow-y: auto;
     background-color: $white;
     border-radius: $small-border-radius;
     box-shadow: 0px 4px 122px 40px rgba(0, 0, 0, 0.25);
     transition: transform $transition-function;
 
-    max-height: 996px;
     @media screen and (max-width: $mobile) {
       top: 0;
       left: 0;
       right: 0;
       width: 100%;
       padding: 5.93rem 1.81rem;
+      padding-bottom: 3.5rem;
       height: 100%;
       transform: translateX(0);
       overflow-y: auto !important;
@@ -105,25 +105,27 @@
 /* form feedback */
 
 .form-feedback {
-  padding-top: 4.5rem;
+  padding-top: 74px;
 
   display: flex;
   flex-direction: column;
-  max-width: 37.5rem;
+
   margin: 0 auto;
-  row-gap: 2.1rem;
-  column-gap: 3.5rem;
+
   @media screen and (max-width: $mobile) {
+    padding-top: 5.12rem;
     width: 100%;
     overflow-y: auto !important;
   }
 
   &__user-name {
     position: relative;
-    width: 25rem;
+    width: 21rem;
+    margin-bottom: 2rem;
 
     @media screen and (max-width: $mobile) {
       width: 100%;
+      margin-bottom: 4rem;
     }
     label {
       width: 100%;
@@ -133,7 +135,7 @@
     }
     input {
       position: relative;
-      width: 25rem;
+      width: 100%;
       z-index: 5;
       font-size: 1rem;
       letter-spacing: 0.04px;
@@ -142,8 +144,16 @@
       @media screen and (max-width: $mobile) {
         width: 100%;
       }
-      &:hover,
-      &:focus {
+
+      @media screen and (min-width: $mobile) {
+        &:hover,
+        &:focus {
+          transition: border-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+          border-color: $green_light;
+        }
+      }
+
+      &:active {
         transition: border-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
         border-color: $green_light;
       }
@@ -153,16 +163,20 @@
   &__user-photo-wrapper {
     display: flex;
     align-items: center;
-    column-gap: 4.56rem;
+    column-gap: 36px;
     width: 100%;
+    min-height: 56px;
+    margin-bottom: 56px;
 
     @media screen and (max-width: $mobile) {
       flex-direction: column;
       row-gap: 1.5rem;
+      margin-bottom: 4rem;
     }
     label {
       position: relative;
       padding-bottom: 8px;
+
       @media screen and (max-width: $mobile) {
         border-bottom: 1px solid $grey_green;
         width: 100%;
@@ -174,32 +188,45 @@
       &::before {
         content: "";
         position: absolute;
-        bottom: -8px;
+        bottom: 0;
         width: 0%;
         height: 1px;
-        border-bottom: 1px solid $grey_green;
+        border-bottom: 1px solid $green_light;
         transition: border-bottom 1s;
       }
     }
 
-    &:hover,
-    &:focus {
-      outline: none;
-      label {
-        position: relative;
-        &::before {
-          content: "";
+    @media screen and (min-width: $mobile) {
+      &:hover,
+      &:focus {
+        outline: none;
+        label {
+          position: relative;
+          &::before {
+            content: "";
 
-          width: 100%;
+            width: 100%;
 
-          transition: width 0.5s;
+            transition: width 0.5s;
+          }
+        }
+
+        & .custom-user-photo-input {
+          .default-user-img {
+            width: 64px !important;
+            height: 64px !important;
+
+            transition: width 1s, height 1s;
+          }
         }
       }
+    }
 
+    &:active {
       & .custom-user-photo-input {
         .default-user-img {
-          width: 3.8rem !important;
-          height: 3.8rem !important;
+          width: 64px !important;
+          height: 64px !important;
 
           transition: width 1s, height 1s;
         }
@@ -210,6 +237,7 @@
       display: flex;
       align-items: center;
       column-gap: 0.75rem;
+
       & .custom-user-photo-input {
         position: relative;
         display: flex;
@@ -220,8 +248,8 @@
         cursor: pointer;
 
         & .default-user-img {
-          width: 3.5rem;
-          height: 3.5rem;
+          width: 56px;
+          height: 56px;
           transition: width 1s, height 1s;
         }
 
@@ -290,12 +318,15 @@
     position: relative;
     display: flex;
     align-items: center;
-    column-gap: 4rem;
+    column-gap: 40px;
     align-items: center;
-
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     @media screen and (max-width: $mobile) {
       flex-direction: column;
       row-gap: 1.5rem;
+      margin-top: 4rem;
+      margin-bottom: 4rem;
     }
 
     & .form-feedback__warning-box {
@@ -310,7 +341,7 @@
         bottom: -8px;
         width: 0%;
         height: 1px;
-        border-bottom: 1px solid $grey_green;
+        border-bottom: 1px solid $green_light;
         transition: border-bottom 1s;
       }
 
@@ -334,7 +365,7 @@
           content: "";
 
           width: 100%;
-
+          border-bottom: 1px solid $green_light;
           transition: width 0.5s;
         }
       }
@@ -344,12 +375,14 @@
   &__add-images-wrapper {
     display: flex;
     align-items: center;
-    column-gap: 4rem;
-    align-items: center;
-
+    column-gap: 40px;
+    margin-bottom: 2rem;
+    width: max-content;
     @media screen and (max-width: $mobile) {
+      width: 100%;
       flex-direction: column;
       row-gap: 1.5rem;
+      margin-bottom: 4rem;
     }
 
     label {
@@ -363,59 +396,89 @@
           display: none;
         }
       }
+
       &::before {
         content: "";
         position: absolute;
         bottom: -8px;
         width: 0%;
         height: 1px;
-        border-bottom: 1px solid $grey_green;
+        border-bottom: 1px solid $green_light;
         transition: border-bottom 1s;
       }
     }
 
-    &:hover,
-    &:focus {
-      outline: none;
+    @media screen and (min-width: $mobile) {
+      &:hover,
+      &:focus {
+        outline: none;
 
-      & .animation-input-img {
-        width: 4rem !important;
-        transition: width 0.5s;
-      }
-      label {
-        position: relative;
-        &::before {
-          content: "";
+        & .animation-input-img {
+          position: absolute;
+          display: block;
+          margin: 0 auto;
+          left: 1px !important;
+          width: 64px !important;
+          height: 64px !important;
+        }
 
-          width: 100%;
+        label {
+          position: relative;
+          &::before {
+            content: "";
 
-          transition: width 0.5s;
+            width: 100%;
+
+            transition: width 0.5s;
+          }
         }
       }
     }
-    & .animation-input-img {
-      width: 100%;
+
+    &:active {
+      & .animation-input-img {
+        position: absolute;
+        display: block;
+        margin: 0 auto;
+        left: 1px !important;
+        width: 64px !important;
+        height: 64px !important;
+      }
     }
+
     & .custom-add-images {
       & .custom-add-photos-input {
-        position: relative;
-        width: 9rem;
-        height: 4rem;
         display: flex;
         align-items: center;
-        column-gap: 0.25rem;
-        img {
-          width: 3rem;
+        width: 100%;
+
+        .add-img-wraper {
+          position: relative;
+
+          width: 64px;
+          height: 64px;
+          display: flex;
+
+          justify-content: center;
+          align-items: center;
+          .animation-input-img {
+            position: absolute;
+            position: absolute;
+            left: 4px;
+            width: 56px;
+            height: 56px;
+          }
         }
-        & .animation-input-img {
-          width: 3.5rem;
-          transition: width 0.5s;
+
+        .animation-input-img-other {
+          width: 40px;
         }
+
         input {
           opacity: 0;
           position: absolute;
-          width: 100%;
-          height: 100%;
+          width: 144px;
+          height: 57px;
         }
       }
       & .custom-images-wrapper {
@@ -449,17 +512,23 @@
 
   &__text-box {
     position: relative;
-
+    width: 100%;
+    margin-bottom: 80px;
     & .form-feedback__warning-box {
       bottom: -0.7rem;
     }
+
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 80px;
+    }
+
     textarea {
       width: 100%;
       min-height: 2rem;
-      max-height: 300px;
+      height: 100%;
 
       padding-right: 8px;
-      overflow-y: auto;
+      overflow-y: hidden;
       border-bottom: 1px solid $grey_green;
       resize: none;
       position: relative;
@@ -503,20 +572,25 @@
     column-gap: 64px;
 
     @media screen and (max-width: $mobile) {
-      margin-top: 2.62rem;
+      row-gap: 1rem;
+      width: 100%;
+      flex-direction: column;
     }
 
     & .feedback-submit-btn {
       border-radius: 6px;
       background: $yellow;
 
-      width: 188px;
-      height: 48px;
+      width: 11.75rem;
+      height: 3rem;
 
       font-size: 1rem;
       font-weight: 600;
-
       letter-spacing: 0.04rem;
+
+      @media screen and (max-width: $mobile) {
+        width: 100%;
+      }
 
       @media screen and (min-width: $mobile) {
         &:hover {
@@ -539,12 +613,14 @@
     & .feedback-cancel {
       border-radius: 4px;
       border: 1px solid $main_text;
-      width: 188px;
-      height: 48px;
+      width: 11.75rem;
+      height: 3rem;
       font-size: 1rem;
       font-weight: 600;
-
       letter-spacing: 0.04rem;
+      @media screen and (max-width: $mobile) {
+        width: 100%;
+      }
 
       @media screen and (min-width: $mobile) {
         &:hover,
@@ -631,7 +707,7 @@
 
 .custom-select {
   position: relative;
-
+  max-width: 400px;
   & .form-feedback__warning-box {
     bottom: -1.25rem;
   }
@@ -678,7 +754,7 @@
   padding: 1rem;
   border: 1px solid $green_light;
   background-color: $white;
-  width: 25rem;
+  width: 100%;
   z-index: 40;
   opacity: 0;
   height: 0%;

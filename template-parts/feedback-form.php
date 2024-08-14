@@ -118,9 +118,11 @@ $names_apartments_otions = get_field('form_user_apartments', 'options');
 
         <div class="custom-add-images">
           <div class="custom-add-photos-input">
-            <img src="<?php echo get_template_directory_uri() ?>/assets/images/add-images.svg" ?>
-            <img class="animation-input-img" src="<?php echo get_template_directory_uri() ?>/assets/images/user-photo-form.svg" ?>
-            <img src="<?php echo get_template_directory_uri() ?>/assets/images/add-images.svg" ?>
+            <img class="animation-input-img-other" src="<?php echo get_template_directory_uri() ?>/assets/images/add-images.svg" ?>
+            <div class="add-img-wraper">
+              <img class="animation-input-img" src="<?php echo get_template_directory_uri() ?>/assets/images/add-photos-camera.svg" ?>
+            </div>
+            <img class="animation-input-img-other" src="<?php echo get_template_directory_uri() ?>/assets/images/add-images.svg" ?>
             <input id="photos-file" type="file" accept="image/*" multiple max="8">
           </div>
           <div class="custom-images-wrapper">

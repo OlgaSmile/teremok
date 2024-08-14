@@ -1,18 +1,64 @@
 .teremok-section {
+  position: relative;
   padding-bottom: 7.5rem;
   width: 100%;
   @media screen and (min-width: $mobile) {
     padding-bottom: 11.25rem;
   }
 
+  &__decor-left-popsition-b {
+    position: absolute;
+    top: -7rem;
+    left: 0;
+    width: 6.12rem;
+    height: 6.31rem;
+    @media screen and (min-width: $mobile) {
+      top: -12rem;
+      left: -2rem;
+      width: 9.31rem;
+      height: 9.62rem;
+    }
+
+    @media screen and (max-width: $mobile) {
+      /*         height: 50.75rem;
+      margin-bottom: 7.5rem; */
+    }
+  }
+
+  .teremok-section__decor-popsition-b {
+    position: absolute;
+    display: none;
+    @include media_rule($mobile) {
+      display: block;
+      width: 9.5rem;
+      left: 3rem;
+      bottom: 6rem;
+    }
+  }
+
   &__title {
     margin-bottom: 2.5rem;
-
+    position: relative;
     @media screen and (min-width: $mobile) {
       padding-top: 2.56rem;
       margin-bottom: 5rem;
     }
+
+    .teremok-section__decor-1 {
+      position: absolute;
+      width: 5.5rem;
+      bottom: -4.1rem;
+      right: -4rem;
+
+      height: 4.87rem;
+      @include media_rule($mobile) {
+        width: 9.5rem;
+        right: -17.5rem;
+        z-index: -1;
+      }
+    }
   }
+
   &__list {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -28,12 +74,28 @@
   }
 
   &__item {
+    position: relative;
     margin-bottom: 2.5rem;
 
     margin-bottom: 3.75rem;
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    .teremok-section__item-decor-1 {
+      position: absolute;
+      width: 12.37rem;
+      height: 6rem;
+      bottom: 4rem;
+      left: -6rem;
+
+      @media screen and (min-width: $mobile) {
+        width: 12.37rem;
+        height: 6rem;
+        bottom: 0;
+        left: -13rem;
+      }
     }
     img {
       margin: 0 auto;
@@ -166,5 +228,3 @@
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
 }
-
-

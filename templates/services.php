@@ -12,10 +12,18 @@ $video_url = $gallery_service['video'];
 get_header();
 ?>
 <main>
+  <div class="reviews-decor">
+    <img class="reviews-section__decor-1" src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch-left.png'; ?>">
+    <?php
+    if (!empty($hero_reviews_image)) {
+
+      get_template_part("template-parts/secondary-hero-section", null, ['img_array' => $hero_reviews_image, "title_section" => get_the_title()]);
+    } ?>
+  </div>
   <?php
-  if (!empty($hero_reviews_image)) {
-    get_template_part("template-parts/secondary-hero-section", null, ['img_array' => $hero_reviews_image, "title_section" => get_the_title()]);
-  }
+
+
+
 
   get_template_part("templates/services/section-desc-services");
   get_template_part("templates/services/section-services");

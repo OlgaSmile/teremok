@@ -7,6 +7,7 @@ $photo_owner = $desc_services['description_services_owner_photo'];
 
 ?>
 <section class="section-desc-services">
+  <img class="section-desc-services__decor" src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch.png'; ?>">
   <?php if ($image_icon) : ?>
     <img class="section-desc-services__icon" src="<?php echo esc_url($image_icon['url']); ?>" alt="<?php echo esc_attr($image_icon['alt']); ?>" width="50" height="50" />
   <?php endif; ?>
