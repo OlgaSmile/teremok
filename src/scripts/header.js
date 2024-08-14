@@ -32,9 +32,5 @@ const submenuMobileLink = document.querySelector(
 );
 submenuMobile.addEventListener("click", function () {
   submenuMobileBlock.classList.toggle("show-menu");
-  if (submenuMobileLink.classList.contains("a")) {
-    submenuMobileLink.classList.replace("a", "b");
-  } else {
-    submenuMobileLink.classList.replace("b", "a");
-  }
+  submenuMobileLink.classList.toggle("b");
 });

@@ -79,7 +79,7 @@
     'menu_class' => 'header-mobile__menu-list',
     'menu_id' => false,
     'echo' => true,
-    'items_wrap' => '<ul id="%1$s" class="header-mobile-list %2$s">%3$s</ul>',
+    'items_wrap' => '<ul id="%1$s" class="header-mobile-list header-mobile_menu-list %2$s">%3$s</ul>',
 ]);
 ?>
             <ul class="header-mobile__menu_socials">
@@ -108,12 +108,12 @@
 
         </div>
 
-        <script>
+        <!-- <script>
         const submenuMobileLinkHeader = document.querySelector(
             ".header-mobile-list > .menu-item-object-custom > a"
         );
         submenuMobileLinkHeader.classList.add("a");
-        </script>
+        </script> -->
         <!-- Mobile HEADER END -->
 
         <!-- title trees -->
