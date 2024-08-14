@@ -1,43 +1,43 @@
-let prevScrollpos = window.scrollY;
+let prevScrollpos = window.scrollY
 
-const headerDiv = document.querySelector("header");
-const headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
+const headerDiv = document.querySelector("header")
+const headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight
 
 window.onscroll = function () {
-  const currentScrollPos = window.scrollY;
+  const currentScrollPos = window.scrollY
 
   if (prevScrollpos <= currentScrollPos) {
-    headerDiv.classList.remove("header__active");
-    headerDiv.style.top = "-7.2rem";
+    headerDiv.classList.remove("header__active")
+    headerDiv.style.top = "-7.2rem"
   } else {
-    headerDiv.classList.add("header__active");
-    headerDiv.style.top = "0";
+    headerDiv.classList.add("header__active")
+    headerDiv.style.top = "0"
   }
 
-  prevScrollpos = currentScrollPos;
+  prevScrollpos = currentScrollPos
 
   if (currentScrollPos === 0) {
-    document.querySelector(".header").classList.remove("header__active");
+    document.querySelector(".header").classList.remove("header__active")
   }
-};
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   const submenuMobile = document.querySelector(
-    ".header-mobile-list > .menu-item-has-children"
-  );
+    ".header-mobile-list > .menu-item-has-children",
+  )
   const submenuMobileBlock = document.querySelector(
-    ".header-mobile-list > .menu-item-object-custom > .sub-menu"
-  );
+    ".header-mobile-list > .menu-item-object-custom > .sub-menu",
+  )
   const submenuMobileLink = document.querySelector(
-    ".header-mobile-list > .menu-item-object-custom > a"
-  );
-  submenuMobileLink.classList.add("a");
+    ".header-mobile-list > .menu-item-object-custom > a",
+  )
+  submenuMobileLink.classList.add("a")
   submenuMobile.addEventListener("click", function () {
-    submenuMobileBlock.classList.toggle("show-menu");
+    submenuMobileBlock.classList.toggle("show-menu")
     if (submenuMobileLink.classList.contains("a")) {
-      submenuMobileLink.classList.replace("a", "b");
+      submenuMobileLink.classList.replace("a", "b")
     } else {
-      submenuMobileLink.classList.replace("b", "a");
+      submenuMobileLink.classList.replace("b", "a")
     }
-  });
-});
+  })
+})

@@ -1,9 +1,23 @@
 .section-desc-services {
+  position: relative;
   padding-bottom: 7.5rem;
 
   @include media_rule($mobile) {
     padding-bottom: 10rem;
   }
+
+  &__decor {
+    position: absolute;
+    width: 5.5rem;
+    bottom: 2rem;
+    right: 0;
+
+    @include media_rule($mobile) {
+      width: 9.5rem;
+      top: 0;
+    }
+  }
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,7 +64,7 @@
 
 .section-services-page {
   padding-bottom: 7.5rem;
-
+  position: relative;
   @include media_rule($mobile) {
     padding-bottom: 10rem;
   }
@@ -60,7 +74,108 @@
     }
   }
 
+  &__decor-left-popsition-b {
+    position: absolute;
+    width: 5.5rem;
+    bottom: 2rem;
+    left: 0;
+
+    @include media_rule($mobile) {
+      display: none;
+    }
+  }
+
+  &__decor-left-popsition-b-desc {
+    display: none;
+
+    @include media_rule($mobile) {
+      position: absolute;
+      display: block;
+      right: 0;
+      height: 9.75rem !important;
+      width: 9.5rem !important;
+      bottom: 0;
+    }
+  }
+
   &__item {
+    position: relative;
+
+    .section-services-page__item-decor-1 {
+      position: absolute;
+      display: block;
+      width: 9.5rem !important;
+      height: 3.5rem !important;
+      left: -7rem;
+      bottom: 0;
+      @include media_rule($mobile) {
+        display: block;
+        top: 0;
+        z-index: -1;
+        width: 13.75rem !important;
+        height: 3.5rem !important;
+        right: -53rem;
+      }
+    }
+
+    .section-services-page__item-decor-2 {
+      position: absolute;
+      display: block;
+      width: 6.87rem !important;
+      height: 5.71rem !important;
+      left: -7rem;
+      top: 0;
+
+      @include media_rule($mobile) {
+        display: block;
+        top: 0;
+        left: -11rem;
+        z-index: -1;
+        width: 9.5rem !important;
+        height: 5.5rem !important;
+      }
+    }
+    .section-services-page__item-decor-3 {
+      position: absolute;
+
+      width: 9.5rem !important;
+      height: 3.8rem !important;
+      left: -6rem;
+      top: 0;
+
+      @include media_rule($mobile) {
+        bottom: -3rem;
+        right: -8rem;
+        z-index: -1;
+        width: 9.5rem !important;
+        height: 5.5rem !important;
+      }
+    }
+
+    .section-services-page__item-decor-1-position-t {
+      position: absolute;
+      display: block;
+      width: 9.5rem !important;
+      height: 3.8rem !important;
+      right: -6rem;
+      top: -4rem;
+
+      @include media_rule($mobile) {
+        display: none;
+      }
+    }
+    .section-services-page__item-decor-1-position-b {
+      position: absolute;
+      display: block;
+      width: 9.5rem !important;
+      height: 3.8rem !important;
+      left: -6rem;
+      bottom: -4rem;
+
+      @include media_rule($mobile) {
+        display: none;
+      }
+    }
     img {
       width: 2.25rem;
       @include media_rule($mobile) {
@@ -123,10 +238,36 @@
 }
 
 .free-services-section {
+  position: relative;
+
   padding-bottom: 7.5rem;
 
   @include media_rule($mobile) {
     padding-bottom: 10rem;
+  }
+  &__item-decor-1-position-t {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 8.87rem;
+    height: 4rem;
+    @include media_rule($mobile) {
+      top: 6rem;
+      width: 12.37rem;
+      height: 7.43rem;
+    }
+  }
+
+  &__item-decor-1-position-b {
+    position: absolute;
+    bottom: 9rem;
+    right: 0;
+    width: 8.87rem;
+    height: 4rem;
+    @include media_rule($mobile) {
+      width: 12.37rem;
+      height: 7.43rem;
+    }
   }
 
   &__title-wrapper {
@@ -146,4 +287,3 @@
 .services-m-b-0 {
   margin-bottom: 0;
 }
-
