@@ -12,13 +12,6 @@
 <body>
     <div class="wrapper">
 
-        <script>
-        const submenuMobileLinkHeader = document.querySelector(
-            ".header-mobile-list > .menu-item-object-custom > a"
-        );
-        submenuMobileLinkHeader.classList.add("a");
-        </script>
-
         <!-- Desktop HEADER START -->
         <header class="header">
             <div class="header__content container">
@@ -114,6 +107,13 @@
             </p>
 
         </div>
+
+        <script>
+        const submenuMobileLinkHeader = document.querySelector(
+            ".header-mobile-list > .menu-item-object-custom > a"
+        );
+        submenuMobileLinkHeader.classList.add("a");
+        </script>
         <!-- Mobile HEADER END -->
 
         <!-- title trees -->
