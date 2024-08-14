@@ -1,12 +1,47 @@
 @import "../main/variables.scss";
 @import "../main/mixins.scss";
 
+.reviews-decor {
+  position: relative;
+
+  .reviews-section__decor-1 {
+    position: absolute;
+    width: 5.5rem;
+    bottom: 0;
+
+    @include media_rule($mobile) {
+      width: 9.5rem;
+    }
+  }
+}
 .reviews-section {
   position: relative;
 
   padding-bottom: 5rem;
+
   @include media_rule($mobile) {
     padding-bottom: 11.25rem;
+  }
+
+  &__decor-bottom {
+    position: absolute;
+    display: none;
+    @include media_rule($mobile) {
+      bottom: 2rem;
+      display: block;
+      width: 9.5rem;
+      right: 0;
+    }
+  }
+  &__decor-2 {
+    position: absolute;
+    width: 5.5rem;
+    top: 0;
+    right: 0;
+
+    @include media_rule($mobile) {
+      width: 9.5rem;
+    }
   }
   &__item-top-box {
     @include media_rule($mobile) {
@@ -22,13 +57,97 @@
     }
   }
 
+  &__decor-3 {
+    position: absolute;
+    width: 5.5rem;
+    bottom: -4.1rem;
+    right: -4rem;
+
+    height: 4.87rem;
+    @include media_rule($mobile) {
+      width: 9.5rem;
+      left: -2rem;
+    }
+  }
+
+  &__decor-desc-4 {
+    position: absolute;
+    width: 5.5rem;
+    top: -0.7rem;
+    right: 0;
+    display: none;
+    @include media_rule($mobile) {
+      display: block;
+      width: 9.5rem;
+      right: -2rem;
+    }
+  }
+  &__decor-4 {
+    position: absolute;
+    width: 5.5rem;
+    top: -0.7rem;
+    right: -4rem;
+    display: none;
+    @include media_rule($mobile) {
+      display: block;
+      width: 9.5rem;
+      right: -2rem;
+    }
+  }
+
+  &__decor-5 {
+    position: absolute;
+    width: 5.5rem;
+    top: 4.1rem;
+    right: -4rem;
+
+    height: 4.87rem;
+    @include media_rule($mobile) {
+      width: 9.5rem;
+      top: -1.5rem;
+      left: -2rem;
+    }
+  }
+
+  &__decor-6 {
+    position: absolute;
+    width: 5.5rem;
+    top: 4.1rem;
+    right: -4rem;
+    display: none;
+    height: 4.87rem;
+    @include media_rule($mobile) {
+      display: block;
+      width: 9.5rem;
+      top: -1.5rem;
+      right: -2rem;
+    }
+  }
+
+  &__decor-desc-7 {
+    position: absolute;
+    width: 5.5rem;
+    top: -0.7rem;
+    right: 0;
+    display: none;
+    @include media_rule($mobile) {
+      display: block;
+      top: 0.5rem;
+      width: 9.5rem;
+
+      left: -2rem;
+    }
+  }
   &__list {
+    position: relative;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
 
     margin-bottom: 4rem;
 
     @include media_rule($mobile) {
+      padding-left: 6.87rem;
+      padding-right: 6.87rem;
       margin-bottom: 5rem;
     }
   }

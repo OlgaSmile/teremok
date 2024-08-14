@@ -5,8 +5,8 @@ $Images = get_field('teremok_foto-gallery');
 $teremok_main_field = get_field('teremok_main_field');
 ?>
 <section class="teremok-section">
-
-
+  <img class="teremok-section__decor-left-popsition-b" src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch-left.png'; ?>">
+  <img class="teremok-section__decor-popsition-b" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees1.png'; ?>">
 
 
   <div class="teremok-section__desktop-wrapper">
@@ -37,9 +37,13 @@ $teremok_main_field = get_field('teremok_main_field');
       <?php if (!empty($repeater_field)) : ?>
         <ul class="teremok-section__list">
           <?php
-          foreach ($repeater_field as $row) :
+          foreach ($repeater_field as $index => $row) :
           ?>
             <li class="teremok-section__item">
+
+              <?php if ($index == 3): ?>
+                <img class="teremok-section__item-decor-1" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>">
+              <?php endif ?>
               <img class="teremok-section__img" src="<?php echo $subfield_value = $row['teremok_repeating_img']['url']; ?>" alt="">
               <p>
                 <?php echo $subfield_value = $row['teremok_repeating_name']; ?>
@@ -263,7 +267,11 @@ $teremok_main_field = get_field('teremok_main_field');
           foreach ($repeater_field as  $index => $row) :
           ?>
             <?php if ($index > 3) : ?>
+
               <li class="teremok-section__item">
+                <?php if ($index === 4): ?>
+                  <img class="teremok-section__item-decor-1" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>">
+                <?php endif ?>
                 <img class="teremok-section__img" src="<?php echo esc_attr($row['teremok_repeating_img']['url']); ?>" alt="<?php echo esc_attr($row['teremok_repeating_img']['alt']) ?  esc_attr($row['teremok_repeating_img']['alt']) : 'image'; ?>">
                 <p>
                   <?php echo  $row['teremok_repeating_name']; ?>
