@@ -21,23 +21,20 @@ window.onscroll = function () {
   }
 };
 
-document.addEventListener("DOMContentLoaded", function () {
-  const submenuMobile = document.querySelector(
-    ".header-mobile-list > .menu-item-has-children"
-  );
-  const submenuMobileBlock = document.querySelector(
-    ".header-mobile-list > .menu-item-object-custom > .sub-menu"
-  );
-  const submenuMobileLink = document.querySelector(
-    ".header-mobile-list > .menu-item-object-custom > a"
-  );
-  submenuMobileLink.classList.add("a");
-  submenuMobile.addEventListener("click", function () {
-    submenuMobileBlock.classList.toggle("show-menu");
-    if (submenuMobileLink.classList.contains("a")) {
-      submenuMobileLink.classList.replace("a", "b");
-    } else {
-      submenuMobileLink.classList.replace("b", "a");
-    }
-  });
+const submenuMobile = document.querySelector(
+  ".header-mobile-list > .menu-item-has-children"
+);
+const submenuMobileBlock = document.querySelector(
+  ".header-mobile-list > .menu-item-object-custom > .sub-menu"
+);
+const submenuMobileLink = document.querySelector(
+  ".header-mobile-list > .menu-item-object-custom > a"
+);
+submenuMobile.addEventListener("click", function () {
+  submenuMobileBlock.classList.toggle("show-menu");
+  if (submenuMobileLink.classList.contains("a")) {
+    submenuMobileLink.classList.replace("a", "b");
+  } else {
+    submenuMobileLink.classList.replace("b", "a");
+  }
 });

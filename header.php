@@ -12,6 +12,13 @@
 <body>
     <div class="wrapper">
 
+        <script>
+        const submenuMobileLink = document.querySelector(
+            ".header-mobile-list > .menu-item-object-custom > a"
+        );
+        submenuMobileLink.classList.add("a");
+        </script>
+
         <!-- Desktop HEADER START -->
         <header class="header">
             <div class="header__content container">
