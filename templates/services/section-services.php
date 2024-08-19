@@ -1,6 +1,7 @@
 <?php
 $services = get_field('section_services');
-$images = $services['section__foto_gallery'];
+$images_left = $services['section__foto_gallery_left'];
+$images_right = $services['section__foto_gallery_right'];
 $repeater_field = $services['services'];
 
 ?>
@@ -9,14 +10,12 @@ $repeater_field = $services['services'];
   <div class="teremok-section__desktop-wrapper">
     <div class="teremok-section__box">
 
-      <?php if (!empty($images)) : ?>
+      <?php if (!empty($images_left)) : ?>
         <div class="section-services-page__image teremok-section__Image">
           <?php
-          foreach ($images as  $index => $image) :
+          foreach ($images_left as  $index => $image) :
           ?>
-            <?php if ($index < 6) : ?>
-              <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>">
-            <?php endif ?>
+            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>">
           <?php
           endforeach
           ?>
@@ -89,14 +88,12 @@ $repeater_field = $services['services'];
 
     </div>
     <div class="teremok-section__box">
-      <?php if (!empty($images)) : ?>
+      <?php if (!empty($images_right)) : ?>
         <div class="section-services-page__image teremok-section__Image">
           <?php
-          foreach ($images as  $index => $image) :
+          foreach ($images_right as  $index => $image) :
           ?>
-            <?php if ($index > 5) : ?>
-              <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>">
-            <?php endif ?>
+            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>">
           <?php
           endforeach
           ?>
@@ -163,12 +160,12 @@ $repeater_field = $services['services'];
           ?>
         </ul>
       <?php endif; ?>
-      <?php if (!empty($images)) : ?>
+      <?php if (!empty($images_left)) : ?>
         <div class="section-services-page__image teremok-section__Image-mobile">
           <div class="swiper swiper-image-mobile">
             <div class="swiper-wrapper">
               <?php
-              foreach ($images as  $index => $image) :
+              foreach ($images_left as  $index => $image) :
               ?>
                 <?php if ($index < 3) : ?>
                   <div class="swiper-slide"> <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>"></div>
@@ -213,14 +210,14 @@ $repeater_field = $services['services'];
         </ul>
       <?php endif; ?>
 
-      <?php if (!empty($images)) : ?>
+      <?php if (!empty($images_left)) : ?>
         <div class="section-services-page__image teremok-section__Image-mobile">
           <div class="swiper swiper-image-mobile">
             <div class="swiper-wrapper">
               <?php
-              foreach ($images as  $index => $image) :
+              foreach ($images_left as  $index => $image) :
               ?>
-                <?php if ($index > 3 && $index < 6) : ?>
+                <?php if ($index > 3) : ?>
                   <div class="swiper-slide"> <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>"></div>
                 <?php endif ?>
               <?php
@@ -270,14 +267,14 @@ $repeater_field = $services['services'];
           ?>
         </ul>
       <?php endif; ?>
-      <?php if (!empty($images)) : ?>
+      <?php if (!empty($images_right)) : ?>
         <div class="teremok-section__Image-mobile section-services-page__image">
           <div class="swiper swiper-image-mobile">
             <div class="swiper-wrapper">
               <?php
-              foreach ($images as  $index => $image) :
+              foreach ($images_right as  $index => $image) :
               ?>
-                <?php if ($index > 6 && $index < 9) : ?>
+                <?php if ($index < 3) : ?>
                   <div class="swiper-slide"> <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>"></div>
                 <?php endif ?>
               <?php
@@ -323,14 +320,14 @@ $repeater_field = $services['services'];
         </ul>
       <?php endif; ?>
 
-      <?php if (!empty($images)) : ?>
+      <?php if (!empty($images_right)) : ?>
         <div class="teremok-section__Image-mobile section-services-page__image services-m-b-0 ">
           <div class="swiper swiper-image-mobile">
             <div class="swiper-wrapper">
               <?php
-              foreach ($images as  $index => $image) :
+              foreach ($images_right as  $index => $image) :
               ?>
-                <?php if ($index > 9): ?>
+                <?php if ($index > 3): ?>
                   <div class="swiper-slide"> <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>"></div>
                 <?php endif ?>
               <?php
