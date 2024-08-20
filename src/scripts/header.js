@@ -35,7 +35,10 @@ const submenuMobileBlock = document.querySelector(
 const submenuMobileLink = document.querySelector(
   ".header-mobile-list > .menu-item-object-custom > a"
 );
-submenuMobile.addEventListener("click", function () {
-  submenuMobileBlock.classList.toggle("show-menu");
-  submenuMobileLink.classList.toggle("b");
-});
+
+if (submenuMobile) {
+  submenuMobile.addEventListener("click", function () {
+    submenuMobileBlock.classList.toggle("show-menu");
+    submenuMobileLink.classList.toggle("b");
+  });
+}

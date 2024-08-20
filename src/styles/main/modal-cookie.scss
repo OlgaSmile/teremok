@@ -1,0 +1,129 @@
+.cookie-modal {
+  position: fixed;
+  bottom: -100%;
+  width: 100%;
+  background-color: $white;
+  background: url("../../assets/images/background-cookie.png") repeat;
+  background-size: 100%;
+  opacity: 0;
+  visibility: hidden;
+  padding: 32px 16px 48px 16px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: bottom 0.5s, transform 0.5s, opacity 0.5s;
+
+  @include media_rule($tablet) {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__text-wrapper {
+    text-align: center;
+    font-size: 0.87rem;
+    font-weight: 600;
+    letter-spacing: 0.01rem;
+    a {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    margin-bottom: 1.5rem;
+
+    @include media_rule($tablet) {
+      max-width: 49.87rem;
+      margin-bottom: 0;
+      margin-right: 4rem;
+      text-align: justify;
+    }
+  }
+  &__btn-agree {
+    background-color: $yellow;
+    height: 3rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.64px;
+
+    @include media_rule($tablet) {
+      width: 11.75rem;
+      margin-bottom: 0;
+
+      margin-right: 2rem;
+
+      &:hover {
+        transition: 300ms ease-in-out;
+        background-color: $hovered_btn_yellow;
+      }
+
+      &:focus {
+        transition: 300ms ease-in-out;
+        background-color: $hovered_btn_yellow;
+      }
+    }
+
+    &:active {
+      transition: 300ms ease-in-out;
+      background-color: $pressed_btn_yellow;
+    }
+  }
+
+  &__btn-detaliis {
+    background-color: transparent;
+    height: 3rem;
+    border-radius: 4px;
+    border: 1px solid $main_text;
+
+    @include media_rule($tablet) {
+      width: 11.75rem;
+      margin-bottom: 0;
+      /*       padding-left: 40px;
+      padding-right: 40px; */
+      &:hover,
+      &:focus {
+        border: 1px solid $orange;
+
+        transition: 300ms ease-in-out;
+
+        a {
+          color: $orange;
+        }
+      }
+    }
+
+    a {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.04rem;
+      color: $main_text;
+    }
+  }
+}
+
+.cookie-modal.show {
+  opacity: 1;
+  visibility: visible;
+  bottom: 0;
+  transition: bottom;
+  animation: slideUp 0.5s ease forwards;
+  background-color: $white;
+}
+
+@keyframes slideUp {
+  0% {
+    bottom: -10%;
+
+    transition: bottom 0.5s;
+  }
+  50% {
+    bottom: 5%;
+    transition: bottom 0.5s;
+  }
+  100% {
+    bottom: 00%;
+    transition: bottom 0.5s;
+  }
+}

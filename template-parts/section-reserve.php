@@ -1,6 +1,10 @@
 <?php
 
-$image = get_field('find_and_book_image', 'options');
+if (isset($args['image'])) {
+  $image = $args['image'];
+} else {
+  $image =  get_field('find_and_book_image', 'options');
+}
 
 
 ?>

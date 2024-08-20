@@ -70,3 +70,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   btnScrollTop.addEventListener("click", scrollToTop)
 })
+
+// cookie
+document.addEventListener("DOMContentLoaded", function () {
+  // Перевірка, чи є кукі згода
+  if (!localStorage.getItem("cookiesAccepted")) {
+    document.getElementById("cookie-modal").classList.add("show")
+  }
+
+  // Подія на кнопку
+  document.getElementById("btn-agree").addEventListener("click", function () {
+    localStorage.setItem("cookiesAccepted", "true")
+    document.getElementById("cookie-modal").classList.remove("show")
+  })
+
+  // Подія на кнопку
+  document
+    .getElementById("btn-detaliis")
+    .addEventListener("click", function () {
+      localStorage.setItem("cookiesAccepted", "true")
+      document.getElementById("cookie-modal").classList.remove("show")
+    })
+})

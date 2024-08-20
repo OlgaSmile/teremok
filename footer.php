@@ -1,4 +1,5 @@
 <footer class="footer">
+    <?php get_template_part("template-parts/modal-cookie"); ?>
     <div class="top-to-scroll-wrapper">
         <button class="top-to-scroll">
             <svg class="">
@@ -9,34 +10,33 @@
     <div class="footer__content container">
 
         <?php wp_nav_menu([
-    'theme_location' => 'header',
-    'container' => false,
-    'menu_class' => 'footer__menu',
-    'menu_id' => false,
-    'echo' => true,
-    'items_wrap' => '<ul id="%1$s" class="footer_list %2$s">%3$s</ul>',
-]);
-?>
+            'theme_location' => 'header',
+            'container' => false,
+            'menu_class' => 'footer__menu',
+            'menu_id' => false,
+            'echo' => true,
+            'items_wrap' => '<ul id="%1$s" class="footer_list %2$s">%3$s</ul>',
+        ]);
+        ?>
         <div class="footer__logo-block">
             <a href="/">
-                <?php get_template_part("template-parts/logo_footer");?>
+                <?php get_template_part("template-parts/logo_footer"); ?>
             </a>
 
             <button class="_button secondary_button booking_btn-footer">Забронювати проживання</button>
-            <!-- <?php get_template_part("template-parts/booking-btn", null, array('text' => "Забронювати проживання"));?> -->
+            <!-- <?php get_template_part("template-parts/booking-btn", null, array('text' => "Забронювати проживання")); ?> -->
         </div>
         <div class="footer__contacts">
             <div class="footer__email">
-                <a class="footer__email-link" href="mailto:<?php the_field('email', 'option');?>">
-                    <?php the_field('email', 'option');?>
+                <a class="footer__email-link" href="mailto:<?php the_field('email', 'option'); ?>">
+                    <?php the_field('email', 'option'); ?>
                 </a>
             </div>
-            <div class="footer__phone"><?php the_field('phone', 'option');?>
+            <div class="footer__phone"><?php the_field('phone', 'option'); ?>
             </div>
             <ul class="footer__socials">
                 <?php if (get_field('social_links', 'option')): ?>
                 <?php while (has_sub_field('social_links', 'option')): ?>
-
                 <li class="footer__socials-item">
                     <a href="<?php the_sub_field('social_link');?>">
                         <svg class="footer__socials-svg footer__socials-<?php the_sub_field('social_name');?>">
@@ -97,7 +97,7 @@
         </div>
     </div>
 </footer>
-<?php wp_footer();?>
+<?php wp_footer(); ?>
 </div>
 </body>
 

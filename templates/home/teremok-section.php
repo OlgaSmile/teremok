@@ -1,7 +1,8 @@
 <?php $teremok_title = get_field('teremok_title');
 $teremok_foto_gallery = get_field('teremok_foto-gallery');
 $repeater_field = get_field('teremok_repeating');
-$Images = get_field('teremok_foto-gallery');
+$Images_left = get_field('teremok_foto-gallery_left');
+$Images_right = get_field('teremok_foto-gallery_right');
 $teremok_main_field = get_field('teremok_main_field');
 ?>
 <section class="teremok-section">
@@ -12,14 +13,15 @@ $teremok_main_field = get_field('teremok_main_field');
   <div class="teremok-section__desktop-wrapper">
     <div class="teremok-section__box">
 
-      <?php if (!empty($Images)) : ?>
+      <?php if (!empty($Images_left)) : ?>
         <div class="teremok-section__Image">
           <?php
-          foreach ($Images as  $index => $image) :
+          foreach ($Images_left as  $index => $image) :
           ?>
-            <?php if ($index < 3) : ?>
+            <!--   <?php if ($index < 3) : ?>
               <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>">
-            <?php endif ?>
+            <?php endif ?> -->
+            <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>">
           <?php
           endforeach
           ?>
@@ -152,14 +154,12 @@ $teremok_main_field = get_field('teremok_main_field');
       <?php endif; ?>
     </div>
     <div class="teremok-section__box">
-      <?php if (!empty($Images)) : ?>
+      <?php if (!empty($Images_left)) : ?>
         <div class="teremok-section__Image">
           <?php
-          foreach ($Images as  $index => $image) :
+          foreach ($Images_right as  $index => $image) :
           ?>
-            <?php if ($index > 2) : ?>
-              <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>">
-            <?php endif ?>
+            <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>">
           <?php
           endforeach
           ?>
@@ -196,16 +196,15 @@ $teremok_main_field = get_field('teremok_main_field');
           ?>
         </ul>
       <?php endif; ?>
-      <?php if (!empty($Images)) : ?>
+      <?php if (!empty($Images_left)) : ?>
         <div class="teremok-section__Image-mobile" id="block2">
           <div class="swiper swiper-image-mobile">
             <div class="swiper-wrapper">
               <?php
-              foreach ($Images as  $index => $image) :
+              foreach ($Images_left as  $index => $image) :
               ?>
-                <?php if ($index < 3) : ?>
-                  <div class="swiper-slide"> <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>"></div>
-                <?php endif ?>
+
+                <div class="swiper-slide"> <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>"></div>
               <?php
               endforeach
               ?>
@@ -237,16 +236,15 @@ $teremok_main_field = get_field('teremok_main_field');
           ?>
         </ul>
       <?php endif; ?>
-      <?php if (!empty($Images)) : ?>
+      <?php if (!empty($Images_right)) : ?>
         <div class="teremok-section__Image-mobile" id="block2">
           <div class="swiper swiper-image-mobile">
             <div class="swiper-wrapper">
               <?php
-              foreach ($Images as  $index => $image) :
+              foreach ($Images_right as  $index => $image) :
               ?>
-                <?php if ($index > 2) : ?>
-                  <div class="swiper-slide"> <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>"></div>
-                <?php endif ?>
+
+                <div class="swiper-slide"> <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>"></div>
               <?php
               endforeach
               ?>
