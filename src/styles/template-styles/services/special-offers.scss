@@ -1,0 +1,83 @@
+.section-services-page-speccial {
+  padding-bottom: 7.5rem;
+
+  @include media_rule($mobile) {
+    padding-bottom: 10rem;
+  }
+
+  .teremok-section__box {
+    img {
+      height: 36.43rem;
+      object-fit: cover;
+    }
+  }
+  &__title {
+    margin-bottom: 2.5rem;
+
+    @include media_rule($tablet) {
+      margin-bottom: 4rem;
+    }
+  }
+  & .teremok-section__desktop-wrapper {
+    width: 100%;
+    justify-content: space-between;
+    .teremok-section__box {
+      width: 300px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .section-services-page__list {
+    max-width: 45.5rem;
+
+    margin: 0 auto;
+  }
+  &__item {
+    text-align: center;
+    position: relative;
+
+    .item-decor {
+      position: absolute;
+      right: -12rem;
+      top: 0;
+      width: 12.37rem;
+      height: 3.62rem;
+    }
+
+    .item-decor2 {
+      position: absolute;
+      left: -12rem;
+      top: -4rem;
+      width: 6.37rem;
+      height: 7.43rem;
+    }
+    img {
+      width: 2.25rem;
+      margin: 0 auto;
+      margin-bottom: 0.5rem;
+    }
+    @include media_rule($tablet) {
+      margin-bottom: 4rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  /* 
+    &__wrapper-desktop{
+
+        @include media_rule($tablet) {
+        display: flex;
+    }
+  &__img-box-left {
+  }
+  &__content {
+  }
+  &__img-box-right {
+  }
+} */
+}
