@@ -217,7 +217,7 @@ $repeater_field = $services['services'];
               <?php
               foreach ($images_left as  $index => $image) :
               ?>
-                <?php if ($index > 3) : ?>
+                <?php if ($index > 2) : ?>
                   <div class="swiper-slide"> <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>"></div>
                 <?php endif ?>
               <?php
@@ -327,7 +327,7 @@ $repeater_field = $services['services'];
               <?php
               foreach ($images_right as  $index => $image) :
               ?>
-                <?php if ($index > 3): ?>
+                <?php if ($index > 2): ?>
                   <div class="swiper-slide"> <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']) ?  esc_attr($image['alt']) : 'image'; ?>"></div>
                 <?php endif ?>
               <?php
