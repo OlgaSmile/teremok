@@ -1,6 +1,7 @@
 let prevScrollpos = window.scrollY;
 
 const headerDiv = document.querySelector("header");
+const headerMobile = document.querySelector(".header-mobile");
 const headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
 
 window.onscroll = function () {
@@ -9,9 +10,13 @@ window.onscroll = function () {
   if (prevScrollpos <= currentScrollPos) {
     headerDiv.classList.remove("header__active");
     headerDiv.style.top = "-7.2rem";
+    headerMobile.classList.remove("header-mobile__active");
+    headerMobile.style.top = "-7.2rem";
   } else {
     headerDiv.classList.add("header__active");
     headerDiv.style.top = "0";
+    headerMobile.classList.add("header-mobile__active");
+    headerMobile.style.top = "0";
   }
 
   prevScrollpos = currentScrollPos;

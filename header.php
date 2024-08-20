@@ -63,7 +63,7 @@
 
         <!-- Mobile HEADER START -->
 
-        <header class="header-mobile">
+        <header class="header-mobile header-mobile__active">
 
             <?php get_template_part("template-parts/header_mobile");?>
 
@@ -108,12 +108,6 @@
 
         </div>
 
-        <!-- <script>
-        const submenuMobileLinkHeader = document.querySelector(
-            ".header-mobile-list > .menu-item-object-custom > a"
-        );
-        submenuMobileLinkHeader.classList.add("a");
-        </script> -->
         <!-- Mobile HEADER END -->
 
         <!-- title trees -->

@@ -114,6 +114,26 @@
     width: 100%;
     margin-bottom: 2rem;
 
+    &-svg {
+      stroke: $main_text;
+      width: 1.75rem;
+      height: 1.8125rem;
+
+      &:hover {
+        stroke: $orange;
+      }
+
+    }
+
+    &-viber {
+      stroke: transparent;
+
+      &:hover {
+        stroke: transparent;
+        fill: $orange;
+      }
+    }
+
     & img:hover {
       fill: $orange;
     }
@@ -169,6 +189,7 @@
       &_wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        align-items: center;
       }
 
       &_policy {
@@ -201,6 +222,10 @@
         }
       }
     }
+  }
+
+  & .current_page_item a {
+    color: $orange
   }
 }
 

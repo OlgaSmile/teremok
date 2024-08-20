@@ -156,7 +156,7 @@ $certificates_title = get_field('food_menu_certificates_section_title');
         </div>
     </section>
     <section class="food__certificates-section">
-        <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch.svg'; ?>"
+        <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch.png'; ?>"
             class="food__certificates-section_decor-branch1 decor-branch" />
         <div class="food__certificates-section_container container">
             <?php get_template_part("template-parts/section-title", null, array('title' => $certificates_title));?>

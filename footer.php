@@ -39,7 +39,12 @@
 
                 <li class="footer__socials-item">
                     <a href="<?php the_sub_field('social_link');?>">
-                        <img src="<?php the_sub_field('social_icon');?>">
+                        <svg class="footer__socials-svg footer__socials-<?php the_sub_field('social_name');?>">
+                            <use
+                                href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#<?php the_sub_field('social_name');?>">
+                            </use>
+
+                        </svg>
                     </a>
                 </li>
                 <?php endwhile;?>
