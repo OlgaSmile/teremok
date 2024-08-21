@@ -36,15 +36,19 @@
             </div>
             <ul class="footer__socials">
                 <?php if (get_field('social_links', 'option')): ?>
-                    <?php while (has_sub_field('social_links', 'option')): ?>
+                <?php while (has_sub_field('social_links', 'option')): ?>
+                <li class="footer__socials-item">
+                    <a href="<?php the_sub_field('social_link');?>">
+                        <svg class="footer__socials-svg footer__socials-<?php the_sub_field('social_name');?>">
+                            <use
+                                href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#<?php the_sub_field('social_name');?>">
+                            </use>
 
-                        <li class="footer__socials-item">
-                            <a href="<?php the_sub_field('social_link'); ?>">
-                                <img src="<?php the_sub_field('social_icon'); ?>">
-                            </a>
-                        </li>
-                    <?php endwhile; ?>
-                <?php endif; ?>
+                        </svg>
+                    </a>
+                </li>
+                <?php endwhile;?>
+                <?php endif;?>
             </ul>
         </div>
     </div>
