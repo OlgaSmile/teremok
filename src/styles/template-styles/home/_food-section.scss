@@ -107,6 +107,7 @@
 
         @include media_rule($tablet) {
             display: block;
+            margin-bottom: 5rem;
         }
 
         &-tablet {
@@ -114,6 +115,7 @@
 
             @include media_rule($mobile) {
                 display: block;
+                margin-bottom: 2.5rem;
             }
 
             @include media_rule($tablet) {
@@ -142,7 +144,7 @@
         }
 
         &-bottom {
-            margin-top: 2.25rem;
+            margin-top: 3rem;
         }
     }
 
@@ -154,8 +156,12 @@
         padding: 0 1rem;
 
         @include media_rule($mobile) {
-            gap: 3.75rem;
             padding: 0;
+        }
+
+        @include media_rule($tablet) {
+            gap: 3.75rem;
+            margin-bottom: 3rem;
         }
 
         &-item {
