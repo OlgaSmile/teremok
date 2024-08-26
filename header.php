@@ -17,7 +17,9 @@
             <div class="header__content container">
                 <div class="header__menu menu">
                     <div class="menu__icon icon-menu menu__round">
-                        <?php get_template_part("template-parts/logo");?>
+                        <a href="/">
+                            <?php get_template_part("template-parts/logo");?>
+                        </a>
                     </div>
                 </div>
                 <div class="menu__nav">
