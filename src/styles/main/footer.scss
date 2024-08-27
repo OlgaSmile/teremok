@@ -79,10 +79,13 @@
 
   &__email {
     order: 3;
-    font-family: Montserrat;
     font-size: 0.875rem;
     font-weight: 400;
     margin-bottom: 1.25rem;
+
+    &>.footer__email-link {
+      font-family: $primary_font;
+    }
 
     &-link:hover {
       color: $orange;
@@ -160,6 +163,7 @@
     font-weight: 400;
     font-size: 1rem;
     color: $main_text;
+    font-family: $font_inter;
   }
 
   &__policy {
