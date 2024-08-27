@@ -42,3 +42,15 @@ if (submenuMobile) {
     submenuMobileLink.classList.toggle("b");
   });
 }
+
+const check_in_date = document.querySelector(
+  ".mphb_sc_search-check-in-date > label"
+);
+const check_out_date = document.querySelector(
+  ".mphb_sc_search-check-out-date > label"
+);
+const search_adults = document.querySelector(".mphb_sc_search-adults > label");
+
+check_in_date.innerHTML = "Дата заїзду";
+check_out_date.innerHTML = "Дата виїзду";
+search_adults.innerHTML = "Кількість гостей";
