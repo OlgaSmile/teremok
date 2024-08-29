@@ -1,0 +1,123 @@
+@import "../main/variables.scss";
+@import "../main/mixins.scss";
+
+.site-content-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.search-result {
+  .mphb-room-type {
+    border-radius: 2px;
+    border: 1px solid var(--grey_green, #99b7a2);
+    padding: 32px;
+
+    & .mphb-book-button {
+      border-radius: 6px;
+
+      background-color: $yellow;
+      width: 11.75rem;
+      height: 3rem;
+
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.04rem;
+
+      @media screen and (max-width: $mobile) {
+        width: 100%;
+      }
+
+      @media screen and (min-width: $mobile) {
+        &:hover {
+          transition: 300ms ease-in-out;
+          background-color: $hovered_btn_yellow;
+        }
+
+        &:focus {
+          transition: 300ms ease-in-out;
+          background-color: $hovered_btn_yellow;
+        }
+      }
+
+      &:active {
+        transition: 300ms ease-in-out;
+        background-color: $pressed_btn_yellow;
+      }
+    }
+    @media (min-width: 992px) {
+      display: flex;
+    }
+  }
+  & .mphb-room-type-images {
+    @media (min-width: 992px) {
+      min-width: 443px !important;
+      max-width: 562px !important;
+      padding-right: 30px;
+    }
+  }
+  & .gallery-columns-1 {
+    border: none;
+  }
+
+  & .slides {
+    .flex-active-slide {
+      @media (min-width: 992px) {
+        width: 562px !important;
+
+        .gallery-icon {
+          img {
+            width: 562px;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+  & .gallery-item {
+    background: url("../../assets/images/bg.jpg") repeat;
+    @media (min-width: 992px) {
+      height: 562px;
+
+      .gallery-icon {
+        img {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+  & .description-wrapper {
+    padding-left: 2rem;
+
+    & .entry-title {
+      display: none;
+    }
+
+    p {
+      &:nth-of-type(1) {
+        margin-top: 1rem;
+      }
+    }
+
+    & .mphb-room-type-title {
+      @include media_rule($mobile) {
+        font-weight: 600;
+        font-size: 1.25rem;
+        margin-bottom: 1rem !important;
+      }
+    }
+  }
+  #mphb-flexslider-gallery-2 {
+    display: none;
+  }
+
+  & .gallery-columns-4 {
+    display: none;
+  }
+  .flex-next {
+    /*     &::before {
+        content: "";
+        top: 0;
+        background-image: url("../../images/arrow-left.svg") !important;
+      } */
+  }
+}
