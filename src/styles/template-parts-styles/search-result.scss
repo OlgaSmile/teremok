@@ -7,6 +7,10 @@
 }
 
 .search-result {
+  .mphb-recommendation,
+  .mphb-recommendation-title {
+    display: none;
+  }
   .mphb-room-type {
     border-radius: 2px;
     border: 1px solid var(--grey_green, #99b7a2);
