@@ -34,6 +34,7 @@ jQuery(document).ready(function ($) {
   const searchInDate = $(".mphb_sc_search-check-in-date > label")
   const searchOutDate = $(".mphb_sc_search-check-out-date > label")
   const searchAdults = $(".mphb_sc_search-adults > label")
+  const pathname = window.location.pathname
 
   if (searchInDate) searchInDate.text("Дата заїзду")
   if (searchOutDate) searchOutDate.text("Дата виїзду")
@@ -43,12 +44,19 @@ jQuery(document).ready(function ($) {
 
   const FormTitle = $(".mphb-reservation-form-title")
   const form = $(".mphb-booking-form")
+  const searchButton = $(".mphb_sc_search-submit-button-wrapper > input")
+
+  if (pathname === "/" || pathname === "/teremok/") {
+    console.log("знайти")
+    searchButton.val("Знайти й забронювати")
+  } else {
+    console.log("Змінити")
+    searchButton.val("Змінити й забронювати")
+  }
 
   formBox.append(FormTitle)
   formBox.append(form)
 
-  const searchResultWrapper = $(".site-content-wrapper")
-  const pathname = window.location.pathname
   $(".mphb-room-type").each(function () {
     const searchWrapper = $(this)
 
