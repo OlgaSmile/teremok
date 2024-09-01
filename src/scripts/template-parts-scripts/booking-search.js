@@ -1,5 +1,5 @@
 function getNightPriceText(number) {
-  let text = "Ціна за "
+  let text = "за "
 
   const lastDigit = number % 10
   const lastTwoDigits = number % 100
@@ -47,6 +47,8 @@ jQuery(document).ready(function ($) {
   formBox.append(FormTitle)
   formBox.append(form)
 
+  const searchResultWrapper = $(".site-content-wrapper")
+  const pathname = window.location.pathname
   $(".mphb-room-type").each(function () {
     const searchWrapper = $(this)
 
@@ -59,25 +61,33 @@ jQuery(document).ready(function ($) {
 
       priceNight.text(result)
     }
-
+    // rezul-taty-poshuku
     reserveBtn.text("Забронювати")
+    if (
+      pathname === "rezul-taty-poshuku" ||
+      pathname === "/teremok/rezul-taty-poshuku/"
+    ) {
+      console.log(pathname, "pathname")
+      const title = searchWrapper.find(".mphb-room-type-title").detach()
+      const paragraph = searchWrapper.find("p").detach()
+      const details = searchWrapper
+        .find(".mphb-room-type-details-title")
+        .detach()
+      const attributes = searchWrapper
+        .find(".mphb-loop-room-type-attributes")
+        .detach()
+      const book = searchWrapper.find(".mphb-reserve-room-section").detach()
 
-    const title = searchWrapper.find(".mphb-room-type-title").detach()
-    const paragraph = searchWrapper.find("p").detach()
-    const details = searchWrapper.find(".mphb-room-type-details-title").detach()
-    const attributes = searchWrapper
-      .find(".mphb-loop-room-type-attributes")
-      .detach()
-    const book = searchWrapper.find(".mphb-reserve-room-section").detach()
+      const descriptionWrapper = $("<div></div>").addClass(
+        "description-wrapper",
+      )
 
-    const descriptionWrapper = $("<div></div>").addClass("description-wrapper")
-
-    descriptionWrapper.append(title)
-    descriptionWrapper.append(paragraph)
-    descriptionWrapper.append(details)
-    descriptionWrapper.append(attributes)
-    descriptionWrapper.append(book)
-
-    searchWrapper.append(descriptionWrapper)
+      descriptionWrapper.append(title)
+      descriptionWrapper.append(paragraph)
+      descriptionWrapper.append(details)
+      descriptionWrapper.append(attributes)
+      descriptionWrapper.append(book)
+      searchWrapper.append(descriptionWrapper)
+    }
   })
 })
