@@ -64,7 +64,7 @@ jQuery(document).ready(function ($) {
     console.log(pathname, "pathname")
     reserveBtn.text("Забронювати")
     if (
-      pathname === "rezul-taty-poshuku/" ||
+      pathname === "/rezul-taty-poshuku/" ||
       pathname === "/teremok/rezul-taty-poshuku/"
     ) {
       const title = searchWrapper.find(".mphb-room-type-title").detach()
