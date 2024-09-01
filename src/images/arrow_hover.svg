@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="8px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow_passive</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-380.000000, -358.000000)" fill="#e67739">
+            <path d="M385.027,364.996 C385.191,365.159 385.39,365.242 385.625,365.242 C385.859,365.242 386.058,365.159 386.222,364.996 L391.003,360.214 C391.168,360.051 391.25,359.851 391.25,359.617 C391.25,359.382 391.168,359.183 391.003,359.019 L390.195,358.246 C390.031,358.081 389.832,358 389.597,358 C389.363,358 389.164,358.081 389,358.246 L385.625,361.62 L382.25,358.246 C382.086,358.081 381.886,358 381.652,358 C381.418,358 381.218,358.081 381.054,358.246 L380.246,359.019 C380.082,359.183 380,359.382 380,359.617 C380,359.851 380.082,360.051 380.246,360.214 L385.027,364.996 Z" id="arrow_passive"></path>
+        </g>
+    </g>
+</svg>
