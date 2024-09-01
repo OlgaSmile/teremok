@@ -61,13 +61,12 @@ jQuery(document).ready(function ($) {
 
       priceNight.text(result)
     }
-    // rezul-taty-poshuku
+    console.log(pathname, "pathname")
     reserveBtn.text("Забронювати")
     if (
       pathname === "rezul-taty-poshuku/" ||
       pathname === "/teremok/rezul-taty-poshuku/"
     ) {
-      console.log(pathname, "pathname")
       const title = searchWrapper.find(".mphb-room-type-title").detach()
       const paragraph = searchWrapper.find("p").detach()
       const details = searchWrapper
