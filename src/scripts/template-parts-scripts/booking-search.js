@@ -64,7 +64,7 @@ jQuery(document).ready(function ($) {
     // rezul-taty-poshuku
     reserveBtn.text("Забронювати")
     if (
-      pathname === "rezul-taty-poshuku" ||
+      pathname === "rezul-taty-poshuku/" ||
       pathname === "/teremok/rezul-taty-poshuku/"
     ) {
       console.log(pathname, "pathname")
