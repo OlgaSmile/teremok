@@ -76,6 +76,19 @@
   }
 
   & .slides {
+    .gallery-item {
+      @media (min-width: 992px) {
+        width: 27.22rem !important;
+
+        .gallery-icon {
+          img {
+            height: 500px;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
     .flex-active-slide {
       @media (min-width: 992px) {
         width: 27.22rem !important;
@@ -116,7 +129,6 @@
       }
 
       & .mphb-view-details-button {
-        /*         width: max-content; */
         margin-right: 0 !important;
       }
     }
