@@ -1111,6 +1111,7 @@ body .mphb_sc_services-wrapper .mphb-service:not(:first-of-type) {
 }
 
 .mphb-view-details-button {
+  width: 10.43rem;
   background: transparent;
   color: $orange;
   border: 0;
@@ -1118,19 +1119,25 @@ body .mphb_sc_services-wrapper .mphb-service:not(:first-of-type) {
   box-shadow: none;
   padding-left: 0;
   padding-right: 0;
-  display: block;
+  display: flex;
+  align-items: center;
   position: relative;
+
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.04rem;
 }
 
 .mphb-view-details-button:after {
   content: "";
-  display: block;
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: $orange;
+  right: 1rem;
+  display: block;
+  width: 48px;
+  height: 0.87rem;
+  margin-left: 16px;
+  background-image: url("../../assets/images/detalies-right.svg");
+  background-repeat: no-repeat;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -1144,8 +1151,9 @@ body .mphb_sc_services-wrapper .mphb-service:not(:first-of-type) {
 
 .mphb-view-details-button:hover:after,
 .mphb-view-details-button:focus:after {
-  height: 4px;
-  background: $orange;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  right: 0;
 }
 
 body .mphb_sc_search_results-wrapper .mphb-reservation-cart {
@@ -1218,11 +1226,11 @@ h2.mphb-room-type-title {
 .mphb_sc_rooms-wrapper .mphb-to-book-btn-wrapper,
 .mphb_sc_room-wrapper .mphb-view-details-button-wrapper,
 .mphb_sc_room-wrapper .mphb-to-book-btn-wrapper {
-  display: inline-block;
+  /* display: inline-block;
   margin-right: 2.5em;
   margin-top: 0.6em;
   vertical-align: top;
-  margin-bottom: 0;
+  margin-bottom: 0; */
 }
 
 .mphb-rooms-quantity-wrapper select {
@@ -2694,3 +2702,15 @@ label {
 form > p {
   margin-bottom: 1.875rem;
 }
+
+/* .mphb-view-details-button-wrapper {
+  &::after {
+    content: "";
+    width: 3rem;
+    height: 1rem;
+    margin-left: 16px;
+    background-image: url("../../assets/images/detalies-right.svg");
+    background-repeat: no-repeat;
+  }
+}
+ */

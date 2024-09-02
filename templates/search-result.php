@@ -18,7 +18,7 @@ $heroImg = get_field('search-result-img')
 
   <section class="section-search-result">
     <?php
-    get_template_part("template-parts/section-title-secondary", null, array('title' => "Результати пошуку:")) ?>
+    get_template_part("template-parts/section-title-secondary", null, array('title' => get_field('search_result_title', 'options'))) ?>
 
     <div class="container">
       <?php echo do_shortcode('[mphb_search_results class="search-result"]'); ?>

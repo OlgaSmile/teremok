@@ -47,6 +47,9 @@ jQuery(document).ready(function ($) {
     const priceNight = $(".mphb-price-period")
     const reserveBtn = $(".mphb-book-button")
     const priceText = $(".mphb-regular-price > strong")
+
+    const detaliesLink = $(".mphb-view-details-button")
+
     if (priceText) {
       priceText.text("Ціна")
     }
@@ -73,6 +76,9 @@ jQuery(document).ready(function ($) {
         .detach()
       const paragraph = searchWrapper.find("p").detach()
 
+      if (detaliesLink) {
+        detaliesLink.text("Детальніше")
+      }
       const attributes = searchWrapper
         .find(".mphb-loop-room-type-attributes")
         .detach()
@@ -81,13 +87,16 @@ jQuery(document).ready(function ($) {
       const descriptionWrapper = $("<div></div>").addClass(
         "description-wrapper",
       )
+      const topWrapper = $("<div></div>").addClass("description-top-wrapper")
       const btnWrapper = $("<div></div>").addClass("description-btn-wrapper")
-      descriptionWrapper.append(title)
-      descriptionWrapper.append(paragraph)
-      descriptionWrapper.append(attributes)
+      topWrapper.append(title)
+      topWrapper.append(paragraph)
+      topWrapper.append(attributes)
       btnWrapper.append(details)
       btnWrapper.append(book)
+      descriptionWrapper.append(topWrapper)
       descriptionWrapper.append(btnWrapper)
+
       searchWrapper.append(descriptionWrapper)
     }
   })

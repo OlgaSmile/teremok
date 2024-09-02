@@ -79,11 +79,10 @@
     .flex-active-slide {
       @media (min-width: 992px) {
         width: 27.22rem !important;
+
         .gallery-icon {
           img {
-            width: 27.22rem;
-
-            height: 100% !important;
+            height: 500px;
             object-fit: cover;
           }
         }
@@ -92,18 +91,17 @@
   }
 
   & .flex-viewport {
-    @media (min-width: 992px) {
-      max-height: 18.2rem;
-    }
-  }
-
-  & .slides {
     background: url("../../assets/images/bg.jpg") repeat;
-    height: 420px;
+
+    height: 500px !important;
   }
 
   & .description-wrapper {
     width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     & .description-btn-wrapper {
       @media (min-width: $mobile) {
@@ -118,7 +116,7 @@
       }
 
       & .mphb-view-details-button {
-        width: max-content;
+        /*         width: max-content; */
         margin-right: 0 !important;
       }
     }
