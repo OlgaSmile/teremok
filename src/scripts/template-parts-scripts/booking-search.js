@@ -50,6 +50,10 @@ jQuery(document).ready(function ($) {
 
     const detaliesLink = $(".mphb-view-details-button")
 
+    if (detaliesLink) {
+      detaliesLink.text("Детальніше")
+    }
+
     if (priceText) {
       priceText.text("Ціна")
     }
@@ -76,9 +80,6 @@ jQuery(document).ready(function ($) {
         .detach()
       const paragraph = searchWrapper.find("p").detach()
 
-      if (detaliesLink) {
-        detaliesLink.text("Детальніше")
-      }
       const attributes = searchWrapper
         .find(".mphb-loop-room-type-attributes")
         .detach()
