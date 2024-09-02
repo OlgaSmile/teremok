@@ -26,6 +26,31 @@
     width: 100%;
 
     & .mphb_sc_search-adults {
+      @include media_rule_max($mobile) {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 1rem !important;
+
+        &::after {
+          content: "";
+          right: 0;
+          position: absolute;
+
+          margin-left: 8px;
+          background-image: url("../../assets/images/arrow-botton.svg");
+          background-repeat: no-repeat;
+          width: 14px;
+          height: 8px;
+        }
+
+        & select {
+          width: 40px !important;
+          text-align: center;
+        }
+      }
+
       br {
         display: none;
       }
@@ -33,6 +58,25 @@
 
     & .mphb_sc_search-check-in-date,
     .mphb_sc_search-check-out-date {
+      @include media_rule_max($mobile) {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 1rem !important;
+
+        &::after {
+          content: "";
+          right: 0;
+          position: absolute;
+
+          margin-left: 8px;
+          background-image: url("../../assets/images/arrow-botton.svg");
+          background-repeat: no-repeat;
+          width: 14px;
+          height: 8px;
+        }
+      }
       br {
         display: none;
       }
@@ -42,6 +86,9 @@
         align-items: center;
 
         &::after {
+          @include media_rule_max($mobile) {
+            display: none;
+          }
           margin-left: 8px;
           content: "";
           background-image: url("../../assets/images/arrow-botton.svg");
@@ -63,6 +110,9 @@
       align-items: center;
 
       &::after {
+        @include media_rule_max($mobile) {
+          display: none;
+        }
         margin-left: 8px;
         content: "";
         background-image: url("../../assets/images/arrow-botton.svg");
@@ -72,6 +122,9 @@
       }
     }
     & input[type="text"].mphb-datepick.is-datepick {
+      @include media_rule_max($mobile) {
+        width: 6.1rem !important;
+      }
       width: max-content;
       max-width: 7.62rem;
       font-size: 1rem !important;
@@ -120,7 +173,9 @@
         font-weight: 600;
         color: $main_text;
         font-size: 1rem !important;
-        margin-bottom: 0.5rem;
+        @include media_rule($mobile) {
+          margin-bottom: 0.5rem;
+        }
       }
 
       & .mphb_check_in_date-mphb-search-form-66d0c82c57f4c {
