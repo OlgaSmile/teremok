@@ -36,12 +36,7 @@ jQuery(document).ready(function ($) {
   const FormTitle = $(".mphb-reservation-form-title")
   const form = $(".mphb-booking-form")
   const searchButton = $(".mphb_sc_search-submit-button-wrapper > input")
-
-  if (pathname === "/" || pathname === "/teremok/") {
-    searchButton.val("Знайти й забронювати")
-  } else {
-    searchButton.val("Змінити й забронювати")
-  }
+  searchButton.val("Знайти й забронювати")
 
   formBox.append(FormTitle)
   formBox.append(form)
@@ -71,6 +66,7 @@ jQuery(document).ready(function ($) {
       pathname === "/rezul-taty-poshuku/" ||
       pathname === "/teremok/rezul-taty-poshuku/"
     ) {
+      searchButton.val("Змінити й забронювати")
       const title = searchWrapper.find(".mphb-room-type-title").detach()
       const details = searchWrapper
         .find(".mphb-view-details-button-wrapper")
