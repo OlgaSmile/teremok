@@ -1,20 +1,32 @@
 @import "../main/variables.scss";
 @import "../main/mixins.scss";
 
-.site-content-wrapper {
-  max-width: 1440px;
-  margin: 0 auto;
-}
+.section-search-result {
+  padding-bottom: 7.5rem;
 
+  @include media_rule($mobile) {
+    padding-bottom: 10rem;
+  }
+}
 .search-result {
-  .mphb-recommendation,
-  .mphb-recommendation-title {
+  & .mphb_sc_search_results-info {
+    color: $main_text;
+    font-size: 1.87rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 180%;
+
+    margin-bottom: 3.75rem;
+    text-align: center;
+  }
+
+  & .mphb-empty-cart-message {
     display: none;
   }
   .mphb-room-type {
     border-radius: 2px;
-    border: 1px solid var(--grey_green, #99b7a2);
-    padding: 32px;
+    border: 1px solid $grey_green;
+    padding: 2.12rem;
 
     & .mphb-book-button {
       border-radius: 6px;
@@ -55,7 +67,7 @@
   & .mphb-room-type-images {
     @media (min-width: 992px) {
       min-width: 443px !important;
-      max-width: 562px !important;
+      max-width: 27.22rem !important;
       padding-right: 30px;
     }
   }
@@ -66,32 +78,50 @@
   & .slides {
     .flex-active-slide {
       @media (min-width: 992px) {
-        width: 562px !important;
-
+        width: 27.22rem !important;
         .gallery-icon {
           img {
-            width: 562px;
-            object-fit: contain;
+            width: 27.22rem;
+
+            height: 100% !important;
+            object-fit: cover;
           }
         }
       }
     }
   }
-  & .gallery-item {
-    background: url("../../assets/images/bg.jpg") repeat;
-    @media (min-width: 992px) {
-      height: 562px;
 
-      .gallery-icon {
-        img {
-          width: 100% !important;
-        }
-      }
+  & .flex-viewport {
+    @media (min-width: 992px) {
+      max-height: 18.2rem;
     }
   }
-  & .description-wrapper {
-    padding-left: 2rem;
 
+  & .slides {
+    background: url("../../assets/images/bg.jpg") repeat;
+    height: 420px;
+  }
+
+  & .description-wrapper {
+    width: 100%;
+
+    & .description-btn-wrapper {
+      @media (min-width: $mobile) {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+
+        & .mphb-book-button {
+          width: 19.62rem;
+        }
+      }
+
+      & .mphb-view-details-button {
+        width: max-content;
+        margin-right: 0 !important;
+      }
+    }
     & .entry-title {
       display: none;
     }
@@ -99,6 +129,10 @@
     p {
       &:nth-of-type(1) {
         margin-top: 1rem;
+
+        @media (min-width: 992px) {
+          margin-right: 0;
+        }
       }
     }
 
@@ -116,12 +150,5 @@
 
   & .gallery-columns-4 {
     display: none;
-  }
-  .flex-next {
-    /*     &::before {
-        content: "";
-        top: 0;
-        background-image: url("../../images/arrow-left.svg") !important;
-      } */
   }
 }
