@@ -49,3 +49,14 @@
     }
   }
 }
+
+.section_title-secondary {
+  display: block;
+  & .section_title--text {
+    text-transform: capitalize;
+  }
+
+  & .section_title--icon_wrap {
+    justify-content: center;
+  }
+}

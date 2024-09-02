@@ -5,28 +5,34 @@ Template Name: search-result
 
 get_header();
 
+$heroImg = get_field('search-result-img')
 
 ?>
 
-<main class="">
+<main>
 
-  <!--   <?php if (empty($hero_reviews_image)) {
+  <?php if (!empty($heroImg)) {
 
-            get_template_part("temp late-parts/section-reserve", null, ['image' => $services_section_reserve['services_section_reserve_img']]);
-            get_template_part("template-parts/secondary-hero-section", null, ['img_array' => $hero_reviews_image, "title_section" => get_the_title()]);
-          } ?>
- -->
-  <section class="">
+    get_template_part("template-parts/section-reserve", null, ['image' => $heroImg]);
+  } ?>
 
-    <div class="site-content-wrapper">
+  <section class="section-search-result">
+    <?php
+    get_template_part("template-parts/section-title-secondary", null, array('title' => "Результати пошуку:")) ?>
+
+    <div class="container">
       <?php echo do_shortcode('[mphb_search_results class="search-result"]'); ?>
-
     </div>
 
     </div>
 
 
   </section>
+
+  <?php
+  get_template_part("template-parts/feedbacks-section");
+  get_template_part("template-parts/location-section");
+  ?>
 </main>
 
 
