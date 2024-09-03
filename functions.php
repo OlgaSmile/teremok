@@ -74,6 +74,12 @@ function wp_teremok_scripts()
     if (is_singular() && locate_template('templates/home/teremok-section.php')) {
         wp_enqueue_script('show-images-mobile-script', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/show-images-mobile.js', array(), false, true);
     }
+
+    if (is_singular() && locate_template('template-parts/search-reserv.php')) {
+        wp_enqueue_script('booking-search-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/booking-search.js', array(), false, true);
+    }
+
+    // 
 }
 
 

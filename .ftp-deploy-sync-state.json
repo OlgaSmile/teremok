@@ -1,0 +1,1399 @@
+{
+    "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
+    "version": "1.0.0",
+    "generatedTime": 1724739952380,
+    "data": [
+        {
+            "type": "file",
+            "name": "404.php",
+            "size": 738,
+            "hash": "9c6c16755889f79ef252316ae5d7a363136cc6c3921d876b14bec371259bf77a"
+        },
+        {
+            "type": "file",
+            "name": "README.md",
+            "size": 1910,
+            "hash": "cef2da0b7bfb3d664b9928bdc8a4432318d6b17f88da5e7304cb13997c9faa70"
+        },
+        {
+            "type": "folder",
+            "name": "assets"
+        },
+        {
+            "type": "file",
+            "name": "footer.php",
+            "size": 10966,
+            "hash": "1b306e4c6c70720c32e7b0a5ffdfac7f43d851524db24ce98d4228d8f3f8e6f8"
+        },
+        {
+            "type": "file",
+            "name": "functions.php",
+            "size": 7754,
+            "hash": "d3cbebb524bdef295a2ce3349368a9a8f917d91cadf3cd18050e8fc54f92802d"
+        },
+        {
+            "type": "file",
+            "name": "gulpfile.js",
+            "size": 2734,
+            "hash": "3f6c378bd240431e08ee63a99420211a5759c77dd7562e51458d061d7708b443"
+        },
+        {
+            "type": "file",
+            "name": "header.php",
+            "size": 7107,
+            "hash": "d81171f4dd412a640f25cb7136b06fa7a3e1415ed0b6b145fb5830c9291670fe"
+        },
+        {
+            "type": "file",
+            "name": "index.php",
+            "size": 1267,
+            "hash": "dc43150b0ef9796e6281c254bd45ba83462346f3036e5c29eb32513fb68ef62a"
+        },
+        {
+            "type": "file",
+            "name": "package-lock.json",
+            "size": 338715,
+            "hash": "a6458e28a18e8142752e5b1a2b656bc52db905dae41ba6705699d9b6b6106961"
+        },
+        {
+            "type": "file",
+            "name": "package.json",
+            "size": 569,
+            "hash": "94f507cc35b2bba4dea65d554ae5a28fa81ffebefae746a83eedc21e44fdcaf9"
+        },
+        {
+            "type": "file",
+            "name": "page.php",
+            "size": 915,
+            "hash": "71bb362e45301fd2e41a519efa78e045b710fe0db77a2741e5e616ebff6232d3"
+        },
+        {
+            "type": "file",
+            "name": "screenshot.png",
+            "size": 432493,
+            "hash": "22d5756f5888accc81701941b278d3e8355c748dfe1f1803eeb5d32dfbfbbc3c"
+        },
+        {
+            "type": "folder",
+            "name": "services"
+        },
+        {
+            "type": "file",
+            "name": "sidebar.php",
+            "size": 352,
+            "hash": "64da015fad5cb58972a1973f5b1a95980f6796360489d1bbf4dbf6ad2e56d69c"
+        },
+        {
+            "type": "file",
+            "name": "single-blogs.php",
+            "size": 1190,
+            "hash": "0597b6895f0691426bb7429001160c90e895571fd097976295b87ad318bd49cb"
+        },
+        {
+            "type": "file",
+            "name": "single.php",
+            "size": 976,
+            "hash": "e1203148d61e1feab868bf9d0bb2fa695d5b2764cb0f1ec293c78366341a8275"
+        },
+        {
+            "type": "file",
+            "name": "style.css",
+            "size": 124,
+            "hash": "02cf65292fe821104df949efe5e5fe10be1bf295dd6698ca9731fb5f327f4fbc"
+        },
+        {
+            "type": "folder",
+            "name": "src"
+        },
+        {
+            "type": "folder",
+            "name": "template-parts"
+        },
+        {
+            "type": "folder",
+            "name": "templates"
+        },
+        {
+            "type": "folder",
+            "name": "assets/images"
+        },
+        {
+            "type": "folder",
+            "name": "assets/scripts"
+        },
+        {
+            "type": "folder",
+            "name": "assets/styles"
+        },
+        {
+            "type": "file",
+            "name": "services/acf-options.php",
+            "size": 1072,
+            "hash": "e84965284b790016f61cb6d18ebe97d7a75dbe5efedbc03d29156a8123dd76d3"
+        },
+        {
+            "type": "file",
+            "name": "services/blogs-post-types.php",
+            "size": 849,
+            "hash": "ead17573c454477c2bab16939cd598fadc23d67a8f1cc6a34c768220bb99eeda"
+        },
+        {
+            "type": "file",
+            "name": "services/custom-post-apartments.php",
+            "size": 1684,
+            "hash": "94b1eb42aaa478ffc1c6e88bd205a4d5fc5291bc700b07e5f6dfa2bf361d57f6"
+        },
+        {
+            "type": "file",
+            "name": "services/custom-post-feedbacks.php",
+            "size": 5701,
+            "hash": "a3bfd2f9a65f821a42651e1ee70c0abbc92396e185f7ad39a250f1252639002c"
+        },
+        {
+            "type": "file",
+            "name": "services/feedback-form-register.php",
+            "size": 616,
+            "hash": "aeb2f243e6383e25ba4136c8fffe4d9945f7bd7b3fcb9d2ae4d1c291f5459bd2"
+        },
+        {
+            "type": "file",
+            "name": "services/fonts-register.php",
+            "size": 607,
+            "hash": "74715c6fff8626df71219e5fd1ebacc55538695e333a4c7527e6bc8e31b38a6d"
+        },
+        {
+            "type": "file",
+            "name": "services/menu-register.php",
+            "size": 246,
+            "hash": "1da2bb206f755e77fd42f551056e1b91108063d6ece89295e30d57e50597ece4"
+        },
+        {
+            "type": "file",
+            "name": "services/transliteration.php",
+            "size": 1445,
+            "hash": "a92397bcb9f56df7d2c11dd672ffbd693a002f272b5c91921ea02b4331ea5d7c"
+        },
+        {
+            "type": "folder",
+            "name": "src/images"
+        },
+        {
+            "type": "folder",
+            "name": "src/scripts"
+        },
+        {
+            "type": "folder",
+            "name": "src/styles"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/2tree.php",
+            "size": 1483,
+            "hash": "c3274565c6970c964dc459095d7ca5a5b7327a67ce7793619008503cc5e2cdd2"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/apartments.php",
+            "size": 803,
+            "hash": "5f06563fa6c06cac4b3a4b67dea6604897a32b1e3c57e8c702715e150b9d7655"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/booking-btn.php",
+            "size": 126,
+            "hash": "1da11393e27bc63ba04b1bc6f725c29483e9ce7d5b982886b0f43aa23ca98661"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/content-blogs.php",
+            "size": 478,
+            "hash": "c0403f9806516883764efa530d3744626ae3524f033e42e170730ea2877456b3"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/feedback-form.php",
+            "size": 8331,
+            "hash": "cca6bfcc19502e526af91655720c7c1aecfa2c4f5d0eba34064bf09c7b3b85c9"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/feedbacks-section.php",
+            "size": 2260,
+            "hash": "077fc5151767a7d25c3449d508411f9075f4a648acc6819cc6b7586d4968e26f"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/gallery-section.php",
+            "size": 3563,
+            "hash": "3b8be1a38643d17676628d6b77b82c808a449e3765dd52e51eeacff58310bae8"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/header_mobile-menu.php",
+            "size": 7319,
+            "hash": "7ad050b57b2d494d644c93291fc181dbe1af434170d12c261fafa8938352e4e2"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/header_mobile.php",
+            "size": 6676,
+            "hash": "61acde08d1635603167590e2f8c0ba801906b523c8399792419f0a4e91233a32"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/hero.php",
+            "size": 6103,
+            "hash": "8da5d33647be98c15ec0ce903a5c999eb7efa1179288b2b3a849dad922939463"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/images_review_feedback_swiper.php",
+            "size": 4203,
+            "hash": "227e7666d71453596b487a27aa51bd38fea7f11f28bc7804fb4395968602a245"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/learn-more-btn.php",
+            "size": 368,
+            "hash": "bbcaf5dc5b731bbc7d5986c279622c29fd285f36f5f7d47586e21feee73cad1a"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/location-section.php",
+            "size": 998,
+            "hash": "f13cc68ad2fff35452e4587ba863b772a79bae7d71041a88bebc8051127caaf7"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/logo.php",
+            "size": 6110,
+            "hash": "822a27c5a6771f6996c2e10604ae48cb494b58635c12b6230a8ffed3a7d8a510"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/logo_footer.php",
+            "size": 6306,
+            "hash": "a9882c19fa6a0718cf0b44625a0cfa9838e8dff9c8076839c79fc4bfdf6c5638"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/modal-cookie.php",
+            "size": 563,
+            "hash": "1488fbc639f5528426b513a6e9a7ec94de0db2e735b6278a5ab3d3455fd52951"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/one-apartment.php",
+            "size": 3226,
+            "hash": "0a13f6d3578357c99aca7e9396387648c15bc939acf5bb9a7ec68e43f661ef18"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/one-feedback.php",
+            "size": 3516,
+            "hash": "70a0965ed47333e31d53bec1c6f7138cb44c6a582334d416207b99c145931470"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/read-more-btn.php",
+            "size": 625,
+            "hash": "a4b9379dc2eb28b26c30f158e075746db5d580b3e674c7ee222491bbdc8944bf"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/search-reserv.php",
+            "size": 3125,
+            "hash": "166d5a213d84799cd9d47fe928908157f779232a4ad403f5464d2a01c6fd789e"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/secondary-hero-section.php",
+            "size": 499,
+            "hash": "8d3e44eb160d5be832efb7325046d953df3b56d7db7c18cfd3b30d4a512b0a81"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/section-reserve.php",
+            "size": 512,
+            "hash": "ac73e03298d71b52598dac994882dfdacd451b4eb0fb373582a51f3127bc78a0"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/section-title.php",
+            "size": 1341,
+            "hash": "2a0dd467f8f8c60335d024fb79e01b287e3d80e0c6041c55e14e94da82047af5"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/section-title_small.php",
+            "size": 550,
+            "hash": "1a8ecbb61313dc490597691737c092e9549b9c4f509947db127bc41e20f6bb00"
+        },
+        {
+            "type": "file",
+            "name": "templates/blogs.php",
+            "size": 2011,
+            "hash": "7caf497c1b46aba49e3d377e0fb8a47c4f20c07c1c91ea8de4e7d4f0593bff8d"
+        },
+        {
+            "type": "file",
+            "name": "templates/food.php",
+            "size": 9614,
+            "hash": "732058b4a5043dffe8240c5801edf5b5e45ef2acc60cb51c83807c0ea2fb1ec2"
+        },
+        {
+            "type": "folder",
+            "name": "templates/home"
+        },
+        {
+            "type": "file",
+            "name": "templates/home.php",
+            "size": 859,
+            "hash": "7b33e38ffe641198b39ec2685778fadcf2e91625815a5f761fd702d8245b0b4b"
+        },
+        {
+            "type": "file",
+            "name": "templates/privacy-policy.php",
+            "size": 671,
+            "hash": "37be0a36aa51e67c587d205b7d2eb2b743c33c404b4c0aa9d7c26b65050cae0f"
+        },
+        {
+            "type": "file",
+            "name": "templates/reviews.php",
+            "size": 11352,
+            "hash": "650e4f36877029ff4d01678cba92d4c9e8365ecbb35eff8802fb342d4e79daeb"
+        },
+        {
+            "type": "folder",
+            "name": "templates/services"
+        },
+        {
+            "type": "file",
+            "name": "templates/services.php",
+            "size": 1381,
+            "hash": "3933fe73fa3b9be0e6fa719a9543f08713ed7fb62a26f9c59ee003c730fbd4b8"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/2tree.svg",
+            "size": 491,
+            "hash": "7d84e30f07ebf383ef64abd79a41f19d03da6c712cb6f8f324f3e2de13ae64d3"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/Frame 3960.png",
+            "size": 1284,
+            "hash": "bc4038d375cfec3d6a661357aa14b32490ef5a0d39bcb72aee2aed0393e4fe58"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/LOGO2 1.svg",
+            "size": 4263,
+            "hash": "769ac5a2d7c51ae04c59bb8dc128dea51f25bb6c45d58b2ab9d86fc5f993e407"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/Linked Path Group (2).png",
+            "size": 4846,
+            "hash": "205c9b59dcbb7edc81070fab0f8e6b5daa70ba1236aa19708ab765ae21c96e52"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/Linked Path Group.svg",
+            "size": 1278,
+            "hash": "9d2cb97032e9453ff1158d25eb6495b6b09c1df7fd4e08ac1c6c1bff1124043f"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/[Copy] Group 3798.png",
+            "size": 202,
+            "hash": "ae3e19c9c66a1e0b7c373aeeb5edc661799279721b31c279960c81a6444cef76"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/[Copy] Group 3798.svg",
+            "size": 180,
+            "hash": "02a226fc9d571071923f6dca232997d26f9d657316def450ba84275c6acfcebb"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/add-images.svg",
+            "size": 29449,
+            "hash": "6c0cd4cdf0a5fa4fd48c860745fd3f09ab5515140c66b274a76b69975091c46d"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/add-photos-camera.svg",
+            "size": 31031,
+            "hash": "d4941cd5484e170bea452229041fd3cb2003c1b07e20a81e467a5b484cc9faec"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/add-photos.svg",
+            "size": 31031,
+            "hash": "d4941cd5484e170bea452229041fd3cb2003c1b07e20a81e467a5b484cc9faec"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/angle-fraime.svg",
+            "size": 180,
+            "hash": "02a226fc9d571071923f6dca232997d26f9d657316def450ba84275c6acfcebb"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/angle-frame.png",
+            "size": 202,
+            "hash": "ae3e19c9c66a1e0b7c373aeeb5edc661799279721b31c279960c81a6444cef76"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/angle-frame.svg",
+            "size": 180,
+            "hash": "02a226fc9d571071923f6dca232997d26f9d657316def450ba84275c6acfcebb"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/background-cookie.png",
+            "size": 133513,
+            "hash": "6a46c41b08cef0c6de7bf8b6ff53c782bb9af293a4f23b40eb0d800e6dc3ed4c"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/bg.jpg",
+            "size": 737299,
+            "hash": "7b74ba08fc64c5c25a40326fa32ed237b0b1067b71b491c5fe606e76677ca08f"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/bg.svg",
+            "size": 6,
+            "hash": "d4dc56669143034f31aa309635d4113d9ad76a02b1739da22c965ed2049be9e6"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/cancel.svg",
+            "size": 261,
+            "hash": "d4325920ca0e99c6b590761f973ba0fcdd8b494f5caddbe3c98196072e44150e"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/close_icon.svg",
+            "size": 142,
+            "hash": "8ab6210fd6057bfa7be5ec18b6a6023e7bea9941d57666399e4bd9b6fe1363fc"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/crose.svg",
+            "size": 142,
+            "hash": "8ab6210fd6057bfa7be5ec18b6a6023e7bea9941d57666399e4bd9b6fe1363fc"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/decor-branch-left.png",
+            "size": 6802,
+            "hash": "5845f64b22180c41074ee733177f411f44aa87cbbb018c34dc4981ac2e7de07d"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/decor-branch.png",
+            "size": 16662,
+            "hash": "d4f8dad0f362228d464701bd2503b5fb8512683458620eb4231bc27bfc0e3dcd"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/decor-mount.png",
+            "size": 4524,
+            "hash": "60b5a3d8d018ad114c11a07cb85074f7d6d0e143c0c00479263c1b23afaece12"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/decor-trees1.png",
+            "size": 7542,
+            "hash": "cfb9478e681b337402c4676ce3a0a710a6483f0b707d5a8130f86834b3bf6c98"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/decor-trees2.png",
+            "size": 4108,
+            "hash": "20957fb8b21beb0394679056a904cf115dd6334f88a31d4dbc4ec339d5134e26"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/edit.svg",
+            "size": 399,
+            "hash": "c56e2bafb7000fca4ff1e544e8c6dddbc02572be5d359049a1a4521ffd025e21"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/edit2.svg",
+            "size": 378,
+            "hash": "6b8c5485d9c2101dbf2680a66765ecdd698e1f9ae50ea70fc14285b51690b548"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/frame.png",
+            "size": 4846,
+            "hash": "205c9b59dcbb7edc81070fab0f8e6b5daa70ba1236aa19708ab765ae21c96e52"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/frame.svg",
+            "size": 1278,
+            "hash": "9d2cb97032e9453ff1158d25eb6495b6b09c1df7fd4e08ac1c6c1bff1124043f"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/reserve-layout.png",
+            "size": 118956,
+            "hash": "8e936e721626c191b40c4d76654c3fb10a626a8c3aff643b28a9a644f9778e05"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/sprite.svg",
+            "size": 14928,
+            "hash": "01df95b615efbf988bcaace08aa15284f17afa78c905b7b27c3afaeda78775a8"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/trees_icon.png",
+            "size": 1284,
+            "hash": "bc4038d375cfec3d6a661357aa14b32490ef5a0d39bcb72aee2aed0393e4fe58"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/trees_icon.svg",
+            "size": 1134,
+            "hash": "ee6ac989c7f485b6775f94ed8a51283260fdc76a59e29141d299b3723750604d"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/user-photo-form.svg",
+            "size": 30448,
+            "hash": "1584197a3d151ca1bb8d91a65c49c8767cb5f82db6b39ed3ec2761c16d3fd5b3"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/wj-logo.svg",
+            "size": 4263,
+            "hash": "769ac5a2d7c51ae04c59bb8dc128dea51f25bb6c45d58b2ab9d86fc5f993e407"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/verticalArrow.svg",
+            "size": 190,
+            "hash": "f1ba5802e5431f90c06a2769182d690b749c02e59b4295fbc6e1b142af21663a"
+        },
+        {
+            "type": "file",
+            "name": "assets/images/wrapperOwner.svg",
+            "size": 7500,
+            "hash": "b81408dfce19e57caa98260003f25b1466e05b97463f785164af3d58fb111abc"
+        },
+        {
+            "type": "file",
+            "name": "assets/scripts/main.js",
+            "size": 3116,
+            "hash": "ef1e1348d89e3e306083212a14432e22c09d82478b3cf91aabcf330f482d66e0"
+        },
+        {
+            "type": "folder",
+            "name": "assets/scripts/template-parts-scripts"
+        },
+        {
+            "type": "folder",
+            "name": "assets/scripts/template-scripts"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/main.css",
+            "size": 67517,
+            "hash": "4d98c774fa536c031b71756b562489f71ddaf2a7331575c10d765bb8dee5eebb"
+        },
+        {
+            "type": "folder",
+            "name": "assets/styles/template-parts-styles"
+        },
+        {
+            "type": "folder",
+            "name": "assets/styles/template-styles"
+        },
+        {
+            "type": "file",
+            "name": "src/images/add-images.svg",
+            "size": 65988,
+            "hash": "eadc38385df607ab5ced1595abfa2d0baa9e35308a90d2f9b2848dd79e8b6068"
+        },
+        {
+            "type": "file",
+            "name": "src/images/add-photos-camera.svg",
+            "size": 66558,
+            "hash": "bb0456ca30f5352ac6de333471459139d2c30861041d5a7f1cc020495d2762ce"
+        },
+        {
+            "type": "file",
+            "name": "src/images/angle-frame.png",
+            "size": 262,
+            "hash": "f22c5ccdf5e8a66f560b6fa319331557dde98618dc8f51febec9b2815b0f9f95"
+        },
+        {
+            "type": "file",
+            "name": "src/images/angle-frame.svg",
+            "size": 283,
+            "hash": "594e3987889306cb6fc1f027afadd9ca29942c78393bba1e70f390ead059acee"
+        },
+        {
+            "type": "file",
+            "name": "src/images/background-cookie.png",
+            "size": 148850,
+            "hash": "cb1973fd9bfc416622397193fd65ae3656ca0286c9f63b48915f74a73d0d1a3e"
+        },
+        {
+            "type": "file",
+            "name": "src/images/bg.jpg",
+            "size": 885021,
+            "hash": "417fe9e43a538472b9a3d5c87af0c74237847b25948736999f9bf109f29cf53b"
+        },
+        {
+            "type": "file",
+            "name": "src/images/cancel.svg",
+            "size": 385,
+            "hash": "ce06b36f39f3777b815272b35de0d12528abf8be3dbaa405ab37281bf0fdf9f7"
+        },
+        {
+            "type": "file",
+            "name": "src/images/bg.svg",
+            "size": 26568,
+            "hash": "732cc0315114a7f6206c83106796f4991f84ae75be7560b762a8679a109609c7"
+        },
+        {
+            "type": "file",
+            "name": "src/images/close_icon.svg",
+            "size": 200,
+            "hash": "490b7d2f65e36958e425be291f0eef9899f9d27d9f57274c4f98a33e7eabff3f"
+        },
+        {
+            "type": "file",
+            "name": "src/images/decor-branch-left.png",
+            "size": 19798,
+            "hash": "f448ba294b4099539abb5b414c6a82463a1ca507ab31cdaecaa18dc011d4c409"
+        },
+        {
+            "type": "file",
+            "name": "src/images/decor-branch.png",
+            "size": 46115,
+            "hash": "11778c796fa7e36fe3460c3650856beef414af616c4c687cc5c43b25849ae08d"
+        },
+        {
+            "type": "file",
+            "name": "src/images/decor-mount.png",
+            "size": 9128,
+            "hash": "01dbd4922a7658e8acf38edb7381c292694a7654ada2c3ba175f687042fd8997"
+        },
+        {
+            "type": "file",
+            "name": "src/images/decor-trees1.png",
+            "size": 10721,
+            "hash": "5be5b866eefe6a587fa43f54acc0aa75291ebbec840233d3c6263ef6724efe21"
+        },
+        {
+            "type": "file",
+            "name": "src/images/decor-trees2.png",
+            "size": 11751,
+            "hash": "a400f5a18c846e2a4526e0faf86e7c613a4b3b14178dfd275cd3ca913ab46bdd"
+        },
+        {
+            "type": "file",
+            "name": "src/images/edit.svg",
+            "size": 516,
+            "hash": "ac75b4bcfebd7f985501a786225c12e7f0eed73f900d84f70100c75556109bbf"
+        },
+        {
+            "type": "file",
+            "name": "src/images/edit2.svg",
+            "size": 470,
+            "hash": "090833377d130b394c6362f95241e45d4d489d5ac43926d6cd621cd29337e6c6"
+        },
+        {
+            "type": "file",
+            "name": "src/images/frame.png",
+            "size": 14192,
+            "hash": "9990f20983a6f91a27c2ab127601618b33db506466bf2c39cd2d3256f19beb90"
+        },
+        {
+            "type": "file",
+            "name": "src/images/frame.svg",
+            "size": 3795,
+            "hash": "60c47ef63505771ecb8a83f47d0835114f7b6816de948b38d4e813c9fab8a6e1"
+        },
+        {
+            "type": "file",
+            "name": "src/images/reserve-layout.png",
+            "size": 152277,
+            "hash": "9426b6a1292e0a56e5607682228949d4b24456fee83dc5a1d5cd9f2647e0d004"
+        },
+        {
+            "type": "file",
+            "name": "src/images/sprite.svg",
+            "size": 23155,
+            "hash": "7d7b1657d0e35ee24fca99727f55b13ed5ce7f26f5be790e8753552e11f99c9a"
+        },
+        {
+            "type": "file",
+            "name": "src/images/trees_icon.png",
+            "size": 2968,
+            "hash": "0d29f945ddb95318e5707808d1ab8defec9f04d94562f3e5796a159a128a1ab2"
+        },
+        {
+            "type": "file",
+            "name": "src/images/trees_icon.svg",
+            "size": 1928,
+            "hash": "353bebaa573753deebee90c081098d0f9b567c8227418af2aa4d195dcf3da11a"
+        },
+        {
+            "type": "file",
+            "name": "src/images/user-photo-form.svg",
+            "size": 66331,
+            "hash": "5c1ff7d405359c2c2146caf28add2e55ce89c4fda559ae1ecbd035801e5b294f"
+        },
+        {
+            "type": "file",
+            "name": "src/images/verticalArrow.svg",
+            "size": 281,
+            "hash": "cd1e9f8b3151ea319878fb2f3a060896441768eaec5dccfa133bb8b9a030cb0b"
+        },
+        {
+            "type": "file",
+            "name": "src/images/wj-logo.svg",
+            "size": 6959,
+            "hash": "ef376feae3ac97a7eb882bc9ab2ac110ccb056bbc62ff9621a47d653e2d63e0f"
+        },
+        {
+            "type": "file",
+            "name": "src/scripts/footer.js",
+            "size": 27,
+            "hash": "acbeceafceee70598f292170e2d8f64a89166e9e2f7c809643eb4196a11daa67"
+        },
+        {
+            "type": "file",
+            "name": "src/scripts/header.js",
+            "size": 1801,
+            "hash": "750c904e1fae2b608575f08e63f5200aae07f0e589813178aebd57eabfa121a4"
+        },
+        {
+            "type": "file",
+            "name": "src/scripts/main.js",
+            "size": 2799,
+            "hash": "cbe0c5f440e3e455cec3e54485c5e1aa657f1510b61b7adb0157d0a3dc011aac"
+        },
+        {
+            "type": "folder",
+            "name": "src/scripts/template-parts-scripts"
+        },
+        {
+            "type": "folder",
+            "name": "src/scripts/template-scripts"
+        },
+        {
+            "type": "folder",
+            "name": "src/styles/main"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/main.scss",
+            "size": 1137,
+            "hash": "162ecf4a24c471903fbf9846c848f60c1404d43095cd20c65ba118cc53a999ca"
+        },
+        {
+            "type": "folder",
+            "name": "src/styles/template-parts-styles"
+        },
+        {
+            "type": "folder",
+            "name": "src/styles/template-styles"
+        },
+        {
+            "type": "file",
+            "name": "templates/home/blog-card.php",
+            "size": 830,
+            "hash": "42f363e907faebec64502ebbea045e7ee47d1d01e9622be89b1ae2ace2ef11df"
+        },
+        {
+            "type": "file",
+            "name": "templates/home/blog-section.php",
+            "size": 1929,
+            "hash": "bb2556a6968732965f5f88eece6197b4eb473c26a0ba2635e8b123f729df73d0"
+        },
+        {
+            "type": "file",
+            "name": "templates/home/food-section.php",
+            "size": 3009,
+            "hash": "3f0b2dc28a1fb110fb64f4618ef73d43e927338a6b8a538fb3de62d9bb47b48e"
+        },
+        {
+            "type": "file",
+            "name": "templates/home/gallery-section.php",
+            "size": 182,
+            "hash": "c88e9d6dca26a009a3cdd09a182dc973a46a83c8d59cfcebbe1d34491b1e9e05"
+        },
+        {
+            "type": "file",
+            "name": "templates/home/photo-collage-section.php",
+            "size": 488,
+            "hash": "101585890fd78dd6121f29fdf2634ac05cef0c617de363c1b1e2fa959462b336"
+        },
+        {
+            "type": "file",
+            "name": "templates/home/proposition-section.php",
+            "size": 2228,
+            "hash": "1d3bece64452d00d3b2e6f7906998860115f1a1809e6e040a8436d5ff901ebe1"
+        },
+        {
+            "type": "file",
+            "name": "templates/home/services-section.php",
+            "size": 4564,
+            "hash": "41d6d2944ccd7f50726d6405e8964b5aa445a4fe3ba674451d54af11ed4c4418"
+        },
+        {
+            "type": "file",
+            "name": "templates/home/teremok-section.php",
+            "size": 26667,
+            "hash": "380cf8f6cf2e54ce4b167f40f80f0975caf2ae38912a1e86f88e90fe9b78225f"
+        },
+        {
+            "type": "file",
+            "name": "templates/services/free-services-page-section.php",
+            "size": 1203,
+            "hash": "8c36532566945718feea81ad4c565f88de4981512e4abd5d1ed53499e54340a8"
+        },
+        {
+            "type": "file",
+            "name": "templates/services/gallery-services-page-section.php",
+            "size": 3556,
+            "hash": "d1c7c19d428ba4d1ab772f91034bc98aa992761062406ac73bf7258558e89df8"
+        },
+        {
+            "type": "file",
+            "name": "templates/services/section-desc-services.php",
+            "size": 6229,
+            "hash": "d8153f14380857ef742f00d5489600987a73080a5d89cec0ed99a1a86568690f"
+        },
+        {
+            "type": "file",
+            "name": "templates/services/section-services.php",
+            "size": 12869,
+            "hash": "00862194c19caaa8f97b782fed58d18f77e69c0963d9c45e6dc3638ad90e35de"
+        },
+        {
+            "type": "file",
+            "name": "templates/services/special-offer.php",
+            "size": 8342,
+            "hash": "a53828aa85fbae57fa51adb920df297b45008caf9d181b31a7a20a397168939f"
+        },
+        {
+            "type": "file",
+            "name": "assets/scripts/template-parts-scripts/blog-section.js",
+            "size": 285,
+            "hash": "b9185b5ce688c093a3b705f7d4ecb10097a68a29cd08720a7f871715bb650152"
+        },
+        {
+            "type": "file",
+            "name": "assets/scripts/template-parts-scripts/apartments.js",
+            "size": 0,
+            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "type": "file",
+            "name": "assets/scripts/template-parts-scripts/feedback-form.js",
+            "size": 7882,
+            "hash": "a10d4e82736d5422e95ac506ac9b7eb9bd346a2eefa23fd44b30969d5be65648"
+        },
+        {
+            "type": "file",
+            "name": "assets/scripts/template-parts-scripts/feedbacks-section.js",
+            "size": 1463,
+            "hash": "84106c10f63084e90bfd4eccd7e9ac942ab86a7005b1373b47cf8ccadf426e5c"
+        },
+        {
+            "type": "file",
+            "name": "assets/scripts/template-parts-scripts/gallery.js",
+            "size": 1067,
+            "hash": "0ca57205330fa3f0354edfd020ca558b2b100b59190047b28c412d3cbe643079"
+        },
+        {
+            "type": "file",
+            "name": "assets/scripts/template-parts-scripts/hero.js",
+            "size": 225,
+            "hash": "3be6192b7122423936d91a7265c5f60a0ec595aac459bbdbfbd3c1e7253111a4"
+        },
+        {
+            "type": "file",
+            "name": "assets/scripts/template-parts-scripts/one-apartment.js",
+            "size": 501,
+            "hash": "b04fbe0aff64cf41e82a82e46d9bed3c1e3510abd050c41ed01c65436f83e060"
+        },
+        {
+            "type": "file",
+            "name": "assets/scripts/template-parts-scripts/one-feedback.js",
+            "size": 2181,
+            "hash": "8c4341157dccf79374035cbf07cd33e00bcb3cb38f28edcaf663f6f578bd3646"
+        },
+        {
+            "type": "file",
+            "name": "assets/scripts/template-parts-scripts/rooms.js",
+            "size": 0,
+            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "type": "file",
+            "name": "assets/scripts/template-parts-scripts/show-images-mobile.js",
+            "size": 429,
+            "hash": "c4dffb82b5a7d5902e5a8881f46a22ad2644a9b2325e02cb17b6632855465812"
+        },
+        {
+            "type": "file",
+            "name": "assets/scripts/template-scripts/about.js",
+            "size": 21,
+            "hash": "904da5ae49e4354f90ba604eac8b705fd19d9540a6fcdfcf18dce8152685a068"
+        },
+        {
+            "type": "file",
+            "name": "assets/scripts/template-scripts/home.js",
+            "size": 25,
+            "hash": "c65fbd768344eec289f54e895b03dc4f6bde7b5ac5dfbf7bd095b466c2bca6d2"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-parts-styles/apartments.css",
+            "size": 133,
+            "hash": "0837cbf1d6300f9f2c1e4a94744ac4e623afa029f2080d077f7809ad370469ff"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-parts-styles/blog-card.css",
+            "size": 618,
+            "hash": "1de1b9adc537f806773156f72cb2beec38d51a8115ac93cf677ddf4007f74c56"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-parts-styles/blog-section.css",
+            "size": 452,
+            "hash": "361a0c5b3354fd00b429daf54c9558aa6d876241a5e092cdd2dbf616184ccc2a"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-parts-styles/feedback-form.css",
+            "size": 20089,
+            "hash": "fb7a1b321e84bb28d4b3ac94a0494e519832cf1ff4dae31be498944106bc6e0b"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-parts-styles/feedbacks-section.css",
+            "size": 3111,
+            "hash": "836704215b458b2f73ead9485b22013fb2a5740f9338d5062c42e3fee757f901"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-parts-styles/hero.css",
+            "size": 6812,
+            "hash": "0fa730cd051fc280383f6f6b13d335a6f3b7ec50d3c4c6acd6653525c6c24143"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-parts-styles/loader.css",
+            "size": 601,
+            "hash": "942b99aff0cd70e381d615fa0bca1146776272405580715995437f7cc7317740"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-parts-styles/logo.css",
+            "size": 1563,
+            "hash": "c0d9ee137a01365fc04f2d013575f0c2f897966007b0dd9afed6dd2af43efe18"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-parts-styles/location-section.css",
+            "size": 734,
+            "hash": "19cf393e215e0002ad8b80231d90fe5f52303d09b83001e2901bdd1d07f8345c"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-parts-styles/one-apartment.css",
+            "size": 4331,
+            "hash": "18cfb908f68171c0006990adabe92f207258c46b80836f222e4d426b199b8c79"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-parts-styles/one-feedback.css",
+            "size": 3603,
+            "hash": "1c9c3def2ce7454e963057db677d0caffd12cb85c6cf5fee46491d90e191a957"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-parts-styles/proposition-section.css",
+            "size": 1600,
+            "hash": "6c1d1250f496de947103e275f6415a43ea85de8ba1b2b5216fe57fe3293c0607"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-parts-styles/read-more-btn.css",
+            "size": 1265,
+            "hash": "fea06b5f0441250fd383fd2fa301ad74a82b8880b4e57477755af6d6e0fa676d"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-parts-styles/reserve.css",
+            "size": 2640,
+            "hash": "3dd254f5f93e3cd015086b079f0ce8f1122ec360f0ff231a5d018ffcf0d6bf95"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-parts-styles/rooms.css",
+            "size": 0,
+            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-parts-styles/section-title.css",
+            "size": 459,
+            "hash": "7f70c9bcb628f7c252fb49c2a1dfe1646420c65ef68e12670709e29b2634e895"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-parts-styles/services-section.css",
+            "size": 1671,
+            "hash": "4a604046678e5c09bf3e0b3b4b7e1bbe59d21d12085d048499c1bd4d3b635a7e"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-styles/food.css",
+            "size": 7374,
+            "hash": "99afc71cd7cc88d018950deec7adcb9ec346cad0695091c49b61944757297674"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-styles/blog.css",
+            "size": 3757,
+            "hash": "d6944e815b93165f9d59aeddae626d464c196ccd2f7ecf24b99dbd2c7d2e22a3"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-styles/home.css",
+            "size": 10537,
+            "hash": "1154114095ce92ea3495e369ff79fee5f0d0b3d01e1cf6cd569885ef102671a6"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-styles/privacy-policy.css",
+            "size": 748,
+            "hash": "342ed7d4d0e316889e8fbaff744aa321df18cbc0f49e03bc143cf19290b06141"
+        },
+        {
+            "type": "file",
+            "name": "assets/styles/template-styles/reviews.css",
+            "size": 8221,
+            "hash": "f0908dc98684d86880e52cf09a5ef156d0b03529450319ab060187425dd46d27"
+        },
+        {
+            "type": "file",
+            "name": "src/scripts/template-parts-scripts/blog-section.js",
+            "size": 437,
+            "hash": "2491595a3793ce0e1827e69890fe46303950df40793e2143f307c3f9595b66ee"
+        },
+        {
+            "type": "file",
+            "name": "src/scripts/template-parts-scripts/feedback-form.js",
+            "size": 11600,
+            "hash": "384702ec381a574229468721f342a803908eb15cd54cd665826aeebf3df4c381"
+        },
+        {
+            "type": "file",
+            "name": "src/scripts/template-parts-scripts/feedbacks-section.js",
+            "size": 2543,
+            "hash": "28f816bdf49d154a54032ea7177da8a8b71a40952cd8459da90aafcbfa39b453"
+        },
+        {
+            "type": "file",
+            "name": "src/scripts/template-parts-scripts/gallery.js",
+            "size": 2241,
+            "hash": "eafce542adcf841f2f0ae89b4db729480192e691a9807fafc90b6e73350369a1"
+        },
+        {
+            "type": "file",
+            "name": "src/scripts/template-parts-scripts/hero.js",
+            "size": 360,
+            "hash": "9a447845ef06004a36f1f6216e64e5c0e8a28b71d7547fd02b7c16524c19c018"
+        },
+        {
+            "type": "file",
+            "name": "src/scripts/template-parts-scripts/one-apartment.js",
+            "size": 819,
+            "hash": "c569486ab509e3ed2bdc2282a7e67ceda3f3bc9bdbf077cacceeff16ea6d4408"
+        },
+        {
+            "type": "file",
+            "name": "src/scripts/template-parts-scripts/one-feedback.js",
+            "size": 3683,
+            "hash": "25941709b657cff0471526f5d052370fb91fdae4cf535691d411988738267101"
+        },
+        {
+            "type": "file",
+            "name": "src/scripts/template-parts-scripts/show-images-mobile.js",
+            "size": 678,
+            "hash": "9581dad39ab15fe251122121beb01e89fd922c9ec725e93d16b3001c0f17b4b0"
+        },
+        {
+            "type": "file",
+            "name": "src/scripts/template-scripts/home.js",
+            "size": 25,
+            "hash": "82ebedb7dacf345b7fd4869edf299d85343c93b30d3475d7791e9a5c9f5136ba"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/main/buttons.scss",
+            "size": 1144,
+            "hash": "1c2f834f9613fdd4e8d32a14d386eb4404c01f7c4226793819019b9cca5f34e5"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/main/anim-scroll.scss",
+            "size": 268,
+            "hash": "afe139b6f97b92f4c9a51f7d7e2cf7f54ae36a653d751ba382e15b4b85d8119b"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/main/footer.scss",
+            "size": 4821,
+            "hash": "72a3a83d7b49e07f3a71b0e7945454dd0b1ede7511b9edd5d9677a41dd4a85c0"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/main/global.scss",
+            "size": 1250,
+            "hash": "ea52b59eb0a57747df47fa61afb28bbd3c746f5b42c8129ff6eea2885c39cf79"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/main/header.scss",
+            "size": 6972,
+            "hash": "e60af582bc3e7bc47ae5b1f84307f314f09d9eec069baae350d0cf38dcec35db"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/main/image-modal.scss",
+            "size": 4251,
+            "hash": "8eebf9f8209ef9e589de48ac2583645746f80b78732e4c7617e515ac70ec17dc"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/main/learn-more-btn.scss",
+            "size": 650,
+            "hash": "903f23d41715a96cf9cffcd3f87a55bdda7291eabe14162e049da8679c94befe"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/main/location-section.scss",
+            "size": 1189,
+            "hash": "7425c89259410039cef92fed638845d2299ac0ffa41b50e81ddd0c9ecf70d939"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/main/mixins.scss",
+            "size": 224,
+            "hash": "726d0d3b9a7b656299b3bd352e50f4edd1906e5382cf4e63d92b2c91e5227c73"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/main/modal-cookie.scss",
+            "size": 2392,
+            "hash": "ff4c3a4b1c3d07c5c0ae44cab029651bb4edbf2218f3252433c36d2baa2ca490"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/main/reserve-section.scss",
+            "size": 622,
+            "hash": "601086d150e1048d9cc1f12fd1f09e6443f5e53fa5c84b4d6fab70765433da69"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/main/secondary-hero-section.scss",
+            "size": 571,
+            "hash": "c460e1c2e250e034fc7801f4cc1b441aba7979d87695c36188a6fee82271cb05"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/main/read-more-btn.scss",
+            "size": 1322,
+            "hash": "688ed0dece7b6e8201093ce9b55d4fa78c198fd211779d24409506c0dd6497c6"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/main/section-title.scss",
+            "size": 1026,
+            "hash": "71003a72f5a604b7b2bf9abea64f1511a257893d1d1d9fc15be8e2897f4ddd99"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/main/swiper-image-mobile.scss",
+            "size": 1019,
+            "hash": "7910474b9261e35661e0932ffc28b3176d49d96387c76cbc750f88567077d125"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/main/utils.scss",
+            "size": 3029,
+            "hash": "c5a08e53ae97827780cd532c69213f86d86991a6527665d5df14c545eb9ee55f"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/main/variables.scss",
+            "size": 654,
+            "hash": "a27ad04d405dd73c6362d37e25ef4be05746dc2cb05ae94de6f9adc1c7eb79bd"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-parts-styles/_gallery-section.scss",
+            "size": 3788,
+            "hash": "c46623d4685c27543cdda2890526b1831f7fbb8078dabc2f7a30d917929ca1b7"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-parts-styles/apartments.scss",
+            "size": 179,
+            "hash": "23f73fa91c7fb14357332213d5b75fafff71a3f7902d70ec8320cf6783eb5e36"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-parts-styles/feedback-form.scss",
+            "size": 17057,
+            "hash": "f2abf416d2eb7cd368e210e5f7851f8aae79177f06b35fb72ca183199b88aa63"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-parts-styles/feedbacks-section.scss",
+            "size": 2211,
+            "hash": "1c38cfef0f94de8b645be979d567244bfc734e22aa55edba53d38972cd1a50ca"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-parts-styles/hero.scss",
+            "size": 7107,
+            "hash": "67d825d0629319475d51967c5828d48831a66601fe62761c9900ec3db9875da8"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-parts-styles/logo.scss",
+            "size": 1193,
+            "hash": "db6e0ecc7cc7c5f7c84025f1b7e10e8ffe8587dd31da086e5e0030b76d382015"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-parts-styles/one-apartment.scss",
+            "size": 3502,
+            "hash": "430a22af6446ef50e7ee75f19c65e4a4ed6407a97a17966ca1cdcacf40b7ff7f"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-parts-styles/one-feedback.scss",
+            "size": 3293,
+            "hash": "5e3201b0791cf02ef29b48278f6cb2fd449dfb2ff208002f872fc9e92872581e"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-parts-styles/reserve.scss",
+            "size": 2153,
+            "hash": "a8cf7296bde243a83593c35332b95851c1d4a9a81d5ebfe30cfb9e6dd14ee106"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-styles/blog.scss",
+            "size": 4557,
+            "hash": "098668f46af54c5fb9b328b5f9f5d2d7d1cbdd794194f3c5a86fd65b8b5c07c8"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-styles/food.scss",
+            "size": 9124,
+            "hash": "8b00e10137ecc54e8c57cbed47d1f21b56c71ddb20d55956da8b1f966a655a45"
+        },
+        {
+            "type": "folder",
+            "name": "src/styles/template-styles/home"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-styles/home.scss",
+            "size": 186,
+            "hash": "e1e405fd1158997d77b877f53fe2b5dea0b82d0a09dfef8a92d2afef40843745"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-styles/privacy-policy.scss",
+            "size": 768,
+            "hash": "cb021bcd8108014c92b72ccca7043e2eae7dbc5dec1206ecb3162ae22d2f6691"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-styles/reviews.scss",
+            "size": 7098,
+            "hash": "ff01bb22218f2528840b4ad3b27869f0b1c1807a68c8991bf98e48ac7b421b16"
+        },
+        {
+            "type": "folder",
+            "name": "src/styles/template-styles/services"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-styles/home/_blog-card.scss",
+            "size": 1070,
+            "hash": "8e161cbbac2d15b46ed8babfc26e92e11de50ef29d5bb8d6d03d6f5bbda7860e"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-styles/home/_food-section.scss",
+            "size": 4006,
+            "hash": "f77b73f961282282bcd516870a11c405b9df44d4882a16ebecbbb1da6b33fd8c"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-styles/home/_blog-section.scss",
+            "size": 1338,
+            "hash": "d242a4257010fa0efc80b6e0f25570fd2ac7ed9d0355f460787f9a2f3e464bf7"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-styles/home/_photo-collage-section.scss",
+            "size": 1025,
+            "hash": "ee3a0304ceb26fde63b90b08e00cadde7fd207ccd6b5f9dcd55031f10de978c0"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-styles/home/_proposition-section.scss",
+            "size": 2457,
+            "hash": "46959648ac95552a7eac90a07665f5d428a60b028ca5401fdd0fadbee67c5879"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-styles/home/_services-section.scss",
+            "size": 3408,
+            "hash": "6005d1a8ac5bbd2cbc244c2a0a1484f3611068e0708422a6c34398adf21deb8c"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-styles/home/_teremok-section.scss",
+            "size": 4340,
+            "hash": "36bda40d1f2c559d1fd24e967ea7ceb447fa67392299b81ee36dad8ca3d818f5"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-styles/services/services.scss",
+            "size": 5209,
+            "hash": "3d17ed991e06f30e48f38614203373eab7fd8f03611591c829ac2c21b6ada5d7"
+        },
+        {
+            "type": "file",
+            "name": "src/styles/template-styles/services/special-offers.scss",
+            "size": 1328,
+            "hash": "a7ad6e92de6caa6925a00fc012fc35f2f9e446c9a7e59adfca9dbf32d92b233c"
+        }
+    ]
+}

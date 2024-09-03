@@ -1,0 +1,164 @@
+@import "../main/variables.scss";
+@import "../main/mixins.scss";
+
+.section-search-result {
+  padding-bottom: 7.5rem;
+
+  @include media_rule($mobile) {
+    padding-bottom: 10rem;
+  }
+}
+.search-result {
+  & .mphb_sc_search_results-info {
+    color: $main_text;
+    font-size: 1.87rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 180%;
+
+    margin-bottom: 3.75rem;
+    text-align: center;
+  }
+
+  & .mphb-empty-cart-message {
+    display: none;
+  }
+  .mphb-room-type {
+    border-radius: 2px;
+    border: 1px solid $grey_green;
+    padding: 2.12rem;
+
+    & .mphb-book-button {
+      border-radius: 6px;
+
+      background-color: $yellow;
+      width: 11.75rem;
+      height: 3rem;
+
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.04rem;
+
+      @media screen and (max-width: $mobile) {
+        width: 100%;
+      }
+
+      @media screen and (min-width: $mobile) {
+        &:hover {
+          transition: 300ms ease-in-out;
+          background-color: $hovered_btn_yellow;
+        }
+
+        &:focus {
+          transition: 300ms ease-in-out;
+          background-color: $hovered_btn_yellow;
+        }
+      }
+
+      &:active {
+        transition: 300ms ease-in-out;
+        background-color: $pressed_btn_yellow;
+      }
+    }
+    @media (min-width: 992px) {
+      display: flex;
+    }
+  }
+  & .mphb-room-type-images {
+    @media (min-width: 992px) {
+      min-width: 443px !important;
+      max-width: 27.22rem !important;
+      padding-right: 30px;
+    }
+  }
+  & .gallery-columns-1 {
+    border: none;
+  }
+
+  & .slides {
+    .gallery-item {
+      @media (min-width: 992px) {
+        width: 27.22rem !important;
+
+        .gallery-icon {
+          img {
+            height: 500px;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+    .flex-active-slide {
+      @media (min-width: 992px) {
+        width: 27.22rem !important;
+
+        .gallery-icon {
+          img {
+            height: 500px;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+
+  & .flex-viewport {
+    background: url("../../assets/images/bg.jpg") repeat;
+
+    height: 500px !important;
+  }
+
+  & .description-wrapper {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & .description-btn-wrapper {
+      @media (min-width: $mobile) {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+
+        & .mphb-book-button {
+          width: 19.62rem;
+        }
+      }
+
+      & .mphb-view-details-button {
+        margin-right: 0 !important;
+      }
+    }
+    & .entry-title {
+      display: none;
+    }
+
+    p {
+      &:nth-of-type(1) {
+        margin-top: 1rem;
+
+        @media (min-width: 992px) {
+          margin-right: 0;
+        }
+      }
+    }
+
+    & .mphb-room-type-title {
+      @include media_rule($mobile) {
+        font-weight: 600;
+        font-size: 1.25rem;
+        margin-bottom: 1rem !important;
+      }
+    }
+  }
+  #mphb-flexslider-gallery-2 {
+    display: none;
+  }
+
+  & .gallery-columns-4 {
+    display: none;
+  }
+}

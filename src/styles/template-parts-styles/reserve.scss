@@ -22,102 +22,206 @@
     padding-right: 2.46rem;
   }
 
-  &__list {
+  & .search-form-wrapper {
     width: 100%;
 
-    margin-bottom: 1rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    @include media_rule($mobile) {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0;
-
-      margin-right: 4rem;
-    }
-  }
-
-  &__item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    div {
-      position: relative;
-      display: flex;
-
-      &:last-child {
+    & .mphb_sc_search-adults {
+      @include media_rule_max($mobile) {
+        position: relative;
+        display: flex;
         align-items: center;
+        justify-content: space-between;
+        padding-right: 1rem !important;
+
+        &::after {
+          content: "";
+          right: 0;
+          position: absolute;
+
+          margin-left: 8px;
+          background-image: url("../../assets/images/arrow-botton.svg");
+          background-repeat: no-repeat;
+          width: 14px;
+          height: 8px;
+        }
+
+        & select {
+          width: 40px !important;
+          text-align: center;
+        }
+      }
+
+      br {
+        display: none;
       }
     }
 
-    @include media_rule($mobile) {
-      flex-direction: column;
-      justify-content: normal;
-      margin-bottom: 0;
-      align-items: flex-start;
-    }
-    margin-bottom: 1rem;
+    & .mphb_sc_search-check-in-date,
+    .mphb_sc_search-check-out-date {
+      @include media_rule_max($mobile) {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 1rem !important;
 
-    &:last-child {
-      margin-bottom: 0;
-    }
+        &::after {
+          content: "";
+          right: 0;
+          position: absolute;
 
-    h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
+          margin-left: 8px;
+          background-image: url("../../assets/images/arrow-botton.svg");
+          background-repeat: no-repeat;
+          width: 14px;
+          height: 8px;
+        }
+      }
+      br {
+        display: none;
+      }
+      label {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        &::after {
+          @include media_rule_max($mobile) {
+            display: none;
+          }
+          margin-left: 8px;
+          content: "";
+          background-image: url("../../assets/images/arrow-botton.svg");
+          background-repeat: no-repeat;
+          width: 14px;
+          height: 8px;
+        }
+      }
+      input {
+        color: $main_text;
+        &::placeholder {
+          color: $main_text;
+        }
+      }
+    }
+    & .mphb_sc_search-adults > label {
+      position: relative;
       display: flex;
+      align-items: center;
+
+      &::after {
+        @include media_rule_max($mobile) {
+          display: none;
+        }
+        margin-left: 8px;
+        content: "";
+        background-image: url("../../assets/images/arrow-botton.svg");
+        background-repeat: no-repeat;
+        width: 14px;
+        height: 8px;
+      }
+    }
+    & input[type="text"].mphb-datepick.is-datepick {
+      @include media_rule_max($mobile) {
+        width: 6.1rem !important;
+      }
+      width: max-content;
+      max-width: 7.62rem;
+      font-size: 1rem !important;
+      padding: 0;
+      border: none !important;
+
+      background-image: none;
+    }
+
+    & .mphb_sc_search-form input,
+    .mphb_sc_search-form select {
+      max-width: 100%;
+      border: none;
+      padding: 0;
+      background-image: none;
+    }
+    & .mphb-required-fields-tip {
+      display: none;
+    }
+
+    & .mphb_sc_search-form {
+      width: 100%;
+      margin: 0 auto;
       &:last-child {
         margin-bottom: 0;
       }
+      & p {
+        padding: 0;
+
+        margin-bottom: 0;
+
+        @include media_rule_max($mobile) {
+          margin-bottom: 1rem;
+        }
+      }
+      @include media_rule($mobile) {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        column-gap: 4rem;
+        margin-bottom: 0;
+      }
+
+      & p label {
+        width: max-content;
+        font-weight: 600;
+        color: $main_text;
+        font-size: 1rem !important;
+        @include media_rule($mobile) {
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      & .mphb_check_in_date-mphb-search-form-66d0c82c57f4c {
+        background-color: red !important;
+      }
     }
 
-    span {
-      font-size: 0.87rem;
-      font-weight: 400;
+    & input[type="text"].mphb-datepick.is-datepick {
+      width: max-content;
+      font-size: 1rem !important;
     }
-  }
 
-  &__svg-desc {
-    display: none;
-    @include media_rule($mobile) {
-      position: relative;
-      left: 0.5rem;
-      top: 0.3rem;
+    & .mphb_sc_search-submit-button-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.34rem;
+      background-color: $yellow;
 
-      display: block;
-    }
-  }
+      margin: 0 auto;
 
-  &__svg-mob {
-    position: relative;
+      width: 100%;
+      padding: 16px 48px !important;
 
-    margin-left: 1.5rem;
-    @include media_rule($mobile) {
-      display: none;
-    }
-  }
+      @media screen and (min-width: $mobile) {
+        &:hover {
+          transition: 300ms ease-in-out;
+          background-color: $hovered_btn_yellow;
+        }
 
-  &__btn {
-    display: block;
-    border-radius: 0.34rem;
-    background-color: $yellow;
+        &:focus {
+          transition: 300ms ease-in-out;
+          background-color: $hovered_btn_yellow;
+        }
+      }
 
-    max-width: 19rem;
-    margin: 0 auto;
-    width: 100%;
-    height: 3rem;
-    span {
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.04rem;
-    }
-    @include media_rule($mobile) {
+      &:active {
+        transition: 300ms ease-in-out;
+        background-color: $pressed_btn_yellow;
+      }
+
+      & input {
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.04rem;
+      }
     }
   }
 }
