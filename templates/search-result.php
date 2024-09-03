@@ -11,10 +11,16 @@ $heroImg = get_field('search-result-img')
 
 <main>
 
-  <?php if (!empty($heroImg)) {
+  <section class="reserve-section">
+    <div class="wrapper-search-hero">
+      <img src="<?php echo $heroImg['url'] ?>" alt="<?php echo $heroImg['alt'] ?>">
+      <div class="reserve-section__position-box-reserve">
+        <?php get_template_part("template-parts/search-reserv")  ?>
+      </div>
+    </div>
+  </section>
 
-    get_template_part("template-parts/section-reserve", null, ['image' => $heroImg]);
-  } ?>
+
 
   <section class="section-search-result">
     <?php

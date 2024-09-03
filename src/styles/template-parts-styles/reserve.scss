@@ -50,7 +50,10 @@
           text-align: center;
         }
       }
-
+      @include media_rule($mobile) {
+        width: max-content;
+        margin-right: 4rem;
+      }
       br {
         display: none;
       }
@@ -77,6 +80,11 @@
           height: 8px;
         }
       }
+      @include media_rule($mobile) {
+        width: max-content;
+        margin-right: 4rem;
+      }
+
       br {
         display: none;
       }
@@ -122,9 +130,6 @@
       }
     }
     & input[type="text"].mphb-datepick.is-datepick {
-      @include media_rule_max($mobile) {
-        width: 6.1rem !important;
-      }
       width: max-content;
       max-width: 7.62rem;
       font-size: 1rem !important;
@@ -164,7 +169,6 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        column-gap: 4rem;
         margin-bottom: 0;
       }
 
@@ -186,6 +190,10 @@
     & input[type="text"].mphb-datepick.is-datepick {
       width: max-content;
       font-size: 1rem !important;
+
+      @include media_rule_max($mobile) {
+        text-align: end;
+      }
     }
 
     & .mphb_sc_search-submit-button-wrapper {
@@ -198,8 +206,8 @@
       margin: 0 auto;
 
       width: 100%;
-      padding: 16px 48px !important;
-
+      height: 3rem;
+      margin-bottom: 0 !important;
       @media screen and (min-width: $mobile) {
         &:hover {
           transition: 300ms ease-in-out;
