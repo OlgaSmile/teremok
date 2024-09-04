@@ -2713,3 +2713,9 @@ form > p {
 .mphb-price-period {
   border-bottom: none;
 }
+
+/* disabler to link atributes */
+.mphb-attribute-value {
+  pointer-events: none !important;
+  cursor: default !important;
+}
