@@ -1,4 +1,5 @@
 @import "../main/variables.scss";
+@import "../main/mixins.scss";
 
 .one-apartment {
   &:not(:last-child) {
@@ -61,18 +62,19 @@
       align-items: center;
     }
     &--slide {
-      width: 38.25rem;
-      height: 17.37rem;
+      @include media_rule($mobile) {
+        width: 38.25rem !important;
+        height: 17.37rem !important;
+      }
+      width: 100%;
+      height: 17.5rem !important;
+
       scale: 1.06;
       overflow: hidden;
       transition: $transition-function;
       &.swiper-slide-next,
       &.swiper-slide-prev {
         scale: 0.92;
-      }
-      @media screen and (max-width: $mobile) {
-        width: 100%;
-        height: 17.5rem;
       }
 
       & img {
