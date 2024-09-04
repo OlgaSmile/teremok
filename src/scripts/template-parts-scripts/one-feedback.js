@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const swiperTop = $(`#swiper-top-${element.id}`)
 
     if (swiperBottom.length > 0 && swiperTop.length > 0) {
-      swiperBottom.addClass("swiper-reviews-bottom") /*  */
+      swiperBottom.addClass("swiper-reviews-bottom")
       swiperTop.addClass("swiper-reviews-top")
 
       const swiperBottomClass = $(`.swiper-reviews-bottom`)
