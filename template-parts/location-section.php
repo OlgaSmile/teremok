@@ -4,6 +4,7 @@
     <?php
 $location_title = get_field('location_title', 'options');
 $google_maps_address = get_field('google_maps_address', 'options');
+$location_image = get_field('location_map', 'options');
 
 get_template_part("template-parts/section-title", null, array('title' => $location_title));?>
     <h2 class="location-section__subtitle"><?php the_field('location_subtitle', 'options');?></h2>
@@ -13,9 +14,8 @@ get_template_part("template-parts/section-title", null, array('title' => $locati
         <a href="<?php echo esc_url($google_maps_address['url']); ?>"
             target="<?php echo $google_maps_address['target']; ?>">
             <?php
-$location_image = get_field('location_map', 'options');
 if ($location_image) {
-    echo wp_get_attachment_image($location_image, 'size-large');
+    echo wp_get_attachment_image($location_image, 'full');
 }
 ;?>
         </a>

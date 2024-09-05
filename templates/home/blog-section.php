@@ -26,13 +26,14 @@ if ($query->have_posts()) {
     while ($query->have_posts()) {
         $query->the_post();
         $link = get_permalink($query->ID);
-
         ?>
               <div class="blog__section-card swiper-slide">
-                  <?php get_template_part("templates/home/blog-card", null, array('blog' => $query, 'link_name' => $link));?>
+                  <?php get_template_part("templates/home/blog-card", null, array('blog' => $query, 'link_name' => $link));
+        ?>
               </div>
               <?php
-}
+
+    }
 }
 ;
 
@@ -47,10 +48,11 @@ wp_reset_postdata();
       <div class="blog__section-content">
           <?php
 if ($query->have_posts()) {
-    while ($query->have_posts()) {
+    $counter = 0;
+    while ($query->have_posts() and $counter < 4) {
         $query->the_post();
         $link = get_permalink($query->ID);
-
+        $counter++;
         ?>
           <div class="blog__section-card swiper-slide">
 
