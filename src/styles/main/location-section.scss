@@ -65,6 +65,10 @@
     & img {
       width: auto;
       height: 100%;
+
+      @include media_rule_max($mobile) {
+        height: 150%
+      }
     }
   }
 }
