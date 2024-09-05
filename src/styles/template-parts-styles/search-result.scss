@@ -134,6 +134,11 @@
   & .flex-viewport {
     background: url("../../assets/images/bg.jpg") repeat;
 
+    height: 12.05rem !important;
+
+    @media (min-width: $mobile) {
+      height: 28.37rem !important;
+    }
     @media (min-width: $tablet) {
       height: 18.37rem !important;
     }
@@ -150,6 +155,34 @@
       margin-top: 1.25rem;
     }
 
+    & .description-title-wrapper {
+      & .mphb-regular-price {
+        .mphb-price {
+          border-radius: 0.37rem;
+          background: #43ca69;
+          padding: 0.25rem 1.46rem;
+        }
+      }
+      @media (min-width: 1440px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & .mphb-room-type-title {
+          margin-bottom: 0 !important;
+          max-width: 30.5rem;
+        }
+        & .mphb-regular-price {
+          margin-top: 0;
+          margin-bottom: 0 !important;
+          .mphb-price {
+            border-radius: 0.37rem;
+            background: #43ca69;
+            padding: 0.25rem 1.46rem;
+          }
+        }
+      }
+    }
     & .mphb-reserve-room-section {
       margin-top: 0;
     }
