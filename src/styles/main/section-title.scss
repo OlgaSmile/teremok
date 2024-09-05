@@ -53,7 +53,7 @@
 .section_title-secondary {
   display: block;
   & .section_title--text {
-    text-transform: capitalize;
+    text-transform: none;
   }
 
   & .section_title--icon_wrap {

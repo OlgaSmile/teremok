@@ -1,4 +1,5 @@
 @import "../main/variables.scss";
+@import "../main/mixins.scss";
 
 .one-apartment {
   &:not(:last-child) {
@@ -16,10 +17,12 @@
     font-family: $font_inter;
     font-weight: 600;
     font-size: 1.875rem;
+
     @media screen and (max-width: $mobile) {
       padding: 0 1rem;
       font-size: 1.25rem;
     }
+
     &--icon {
       width: 1.375rem;
       height: 1.375rem;
@@ -59,17 +62,19 @@
       align-items: center;
     }
     &--slide {
-      width: 38.25rem;
-      height: 17.37rem;
+      @include media_rule($mobile) {
+        width: 38.25rem !important;
+        height: 17.37rem !important;
+      }
+      width: 100%;
+      height: 17.5rem !important;
+
       scale: 1.06;
       overflow: hidden;
       transition: $transition-function;
       &.swiper-slide-next,
       &.swiper-slide-prev {
         scale: 0.92;
-      }
-      @media screen and (max-width: $mobile) {
-        height: 17.5rem;
       }
 
       & img {

@@ -228,7 +228,7 @@
 # Regular price
 --------------------------------------------------------------*/
 .mphb-regular-price {
-  margin: 1.875rem 0;
+  margin: 1rem 0;
   font-size: 16px;
   font-size: 1rem;
 }
@@ -1111,7 +1111,8 @@ body .mphb_sc_services-wrapper .mphb-service:not(:first-of-type) {
 }
 
 .mphb-view-details-button {
-  width: 10.43rem;
+  /*   max-width: 12.55rem; */
+
   background: transparent;
   color: $orange;
   border: 0;
@@ -1123,19 +1124,21 @@ body .mphb_sc_services-wrapper .mphb-service:not(:first-of-type) {
   align-items: center;
   position: relative;
 
-  font-size: 1rem;
+  font-size: 16px;
+  font-style: normal;
   font-weight: 600;
-  letter-spacing: 0.04rem;
+  line-height: normal;
+  letter-spacing: 0.64px;
 }
 
 .mphb-view-details-button:after {
   content: "";
-  position: absolute;
-  right: 1rem;
+  position: relative;
+  right: 0;
   display: block;
-  width: 48px;
-  height: 0.87rem;
-  margin-left: 16px;
+  width: 48.747px;
+  height: 16.374px;
+  margin-left: 0.62rem;
   background-image: url("../../assets/images/detalies-right.svg");
   background-repeat: no-repeat;
   -webkit-transition: all 0.3s ease;
@@ -1153,7 +1156,7 @@ body .mphb_sc_services-wrapper .mphb-service:not(:first-of-type) {
 .mphb-view-details-button:focus:after {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  right: 0;
+  right: -1rem;
 }
 
 body .mphb_sc_search_results-wrapper .mphb-reservation-cart {
@@ -1226,13 +1229,17 @@ h2.mphb-room-type-title {
 .mphb_sc_rooms-wrapper .mphb-to-book-btn-wrapper,
 .mphb_sc_room-wrapper .mphb-view-details-button-wrapper,
 .mphb_sc_room-wrapper .mphb-to-book-btn-wrapper {
-  /* display: inline-block;
+  /*   display: inline-block;
   margin-right: 2.5em;
   margin-top: 0.6em;
   vertical-align: top;
   margin-bottom: 0; */
 }
 
+/* .mphb-view-details-button-wrapper {
+  width: 300px !important;
+}
+ */
 .mphb-rooms-quantity-wrapper select {
   display: inline-block;
   width: auto;
@@ -2703,14 +2710,12 @@ form > p {
   margin-bottom: 1.875rem;
 }
 
-/* .mphb-view-details-button-wrapper {
-  &::after {
-    content: "";
-    width: 3rem;
-    height: 1rem;
-    margin-left: 16px;
-    background-image: url("../../assets/images/detalies-right.svg");
-    background-repeat: no-repeat;
-  }
+.mphb-price-period {
+  border-bottom: none;
 }
- */
+
+/* disabler to link atributes */
+.mphb-attribute-value {
+  pointer-events: none !important;
+  cursor: default !important;
+}
