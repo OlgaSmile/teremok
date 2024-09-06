@@ -4,6 +4,9 @@
   &__backdrop {
     position: fixed;
     z-index: 10;
+    @media screen and (max-width: $mobile) {
+      z-index: 110;
+    }
     top: 0;
     left: 0;
     width: 100%;
@@ -32,8 +35,16 @@
     left: 50%;
     transform: translate(-50%, -50%) translateX(0);
     width: 57.5rem;
-    padding: 48px 160px;
-    max-height: 992px;
+    /*     padding: 48px 116px; */
+    max-height: 769px;
+    padding: 48px 116px;
+    max-height: 100%;
+    @media screen and (min-width: $desktop) {
+      padding: 48px 160px;
+      max-height: 992px;
+    }
+    /*    max-height: 992px; */
+    /*     max-height: 100%; */
     overflow-y: auto;
     background-color: $white;
     border-radius: $small-border-radius;
@@ -56,12 +67,12 @@
       position: absolute;
       top: 2rem;
       right: 2rem;
-      width: 2rem;
-      height: 2rem;
+      width: 1.5rem;
+      height: 1.5rem;
       & .icon__cross {
         stroke: $green_light;
-        width: 2rem;
-        height: 2rem;
+        width: 1.5rem;
+        height: 1.5rem;
       }
     }
 
@@ -105,7 +116,10 @@
 /* form feedback */
 
 .form-feedback {
-  padding-top: 74px;
+  padding-top: 54px;
+  @media screen and (min-width: $desktop) {
+    padding-top: 74px;
+  }
 
   display: flex;
   flex-direction: column;
@@ -120,7 +134,7 @@
 
   &__user-name {
     position: relative;
-    width: 21rem;
+    width: 25rem;
     margin-bottom: 2rem;
 
     @media screen and (max-width: $mobile) {
@@ -136,6 +150,7 @@
     input {
       position: relative;
       width: 100%;
+      max-width: 100%;
       z-index: 5;
       font-size: 1rem;
       letter-spacing: 0.04px;
@@ -168,7 +183,10 @@
     column-gap: 36px;
     width: 100%;
     min-height: 56px;
-    margin-bottom: 56px;
+    margin-bottom: 46px;
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 56px;
+    }
 
     @media screen and (max-width: $mobile) {
       flex-direction: column;
@@ -515,7 +533,10 @@
   &__text-box {
     position: relative;
     width: 100%;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 80px;
+    }
     & .form-feedback__warning-box {
       bottom: -0.7rem;
     }
@@ -712,7 +733,7 @@
 
 .custom-select {
   position: relative;
-  max-width: 400px;
+  max-width: 25rem;
   & .form-feedback__warning-box {
     bottom: -1.25rem;
   }
