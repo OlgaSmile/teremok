@@ -145,7 +145,7 @@
 
     margin-bottom: 4rem;
 
-    @include media_rule($mobile) {
+    @include media_rule($tablet) {
       padding-left: 6.87rem;
       padding-right: 6.87rem;
       margin-bottom: 5rem;
