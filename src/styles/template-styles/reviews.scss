@@ -64,7 +64,7 @@
     right: -4rem;
 
     height: 4.87rem;
-    @include media_rule($mobile) {
+    @include media_rule($tablet) {
       width: 9.5rem;
       left: -2rem;
     }
@@ -76,7 +76,7 @@
     top: -0.7rem;
     right: 0;
     display: none;
-    @include media_rule($mobile) {
+    @include media_rule($tablet) {
       display: block;
       width: 9.5rem;
       right: -2rem;
@@ -88,7 +88,7 @@
     top: -0.7rem;
     right: -4rem;
     display: none;
-    @include media_rule($mobile) {
+    @include media_rule($tablet) {
       display: block;
       width: 9.5rem;
       right: -2rem;
@@ -102,7 +102,7 @@
     right: -4rem;
 
     height: 4.87rem;
-    @include media_rule($mobile) {
+    @include media_rule($tablet) {
       width: 9.5rem;
       top: -1.5rem;
       left: -2rem;
@@ -116,7 +116,7 @@
     right: -4rem;
     display: none;
     height: 4.87rem;
-    @include media_rule($mobile) {
+    @include media_rule($tablet) {
       display: block;
       width: 9.5rem;
       top: -1.5rem;
@@ -130,7 +130,7 @@
     top: -0.7rem;
     right: 0;
     display: none;
-    @include media_rule($mobile) {
+    @include media_rule($tablet) {
       display: block;
       top: 0.5rem;
       width: 9.5rem;
@@ -156,7 +156,7 @@
     margin-bottom: 3rem;
     position: relative;
 
-    @include media_rule($mobile) {
+    @include media_rule($tablet) {
       display: flex;
       padding: 2rem;
       margin-bottom: 5rem;
