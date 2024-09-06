@@ -74,14 +74,15 @@ function wp_teremok_scripts()
     if (is_singular() && locate_template('templates/home/teremok-section.php')) {
         wp_enqueue_script('show-images-mobile-script', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/show-images-mobile.js', array(), false, true);
     }
-
     if (is_singular() && locate_template('template-parts/search-reserv.php')) {
         wp_enqueue_script('booking-search-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/booking-search.js', array(), false, true);
     }
+    if (is_singular() && locate_template('templates/accommodations.php')) {
+        wp_enqueue_script('accommodations-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/accommodations.js', array(), false, true);
+    }
 
-    // 
+    //
 }
-
 
 /** add fonts */
 require get_template_directory() . '/services/fonts-register.php';
@@ -133,9 +134,6 @@ function register_post_types()
 }
 
 add_action('init', 'register_post_types');
-
-
-
 
 function calculate_nights_and_format_checkin($checkin_date, $checkout_date)
 {

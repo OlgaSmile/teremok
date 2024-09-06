@@ -11,7 +11,6 @@ get_header();
 
 <?php
 get_template_part("template-parts/hero");
-// echo do_shortcode('[vikbooking category_id="" view="vikbooking" lang="*"]');
 get_template_part("templates/home/teremok-section");
 get_template_part("template-parts/gallery-section", null, ['photos' => $gallery, "video" => $video_url]);
 get_template_part("template-parts/apartments");
