@@ -75,6 +75,9 @@ jQuery(document).ready(function ($) {
     ) {
       searchButton.val("Змінити й забронювати");
       const title = searchWrapper.find(".mphb-room-type-title").detach();
+      const price = searchWrapper.find(".mphb-regular-price").detach();
+      const mphPrice = price.find(".mphb-price").detach();
+
       const details = searchWrapper
         .find(".mphb-view-details-button-wrapper")
         .detach();
@@ -90,11 +93,18 @@ jQuery(document).ready(function ($) {
       );
       const topWrapper = $("<div></div>").addClass("description-top-wrapper");
       const btnWrapper = $("<div></div>").addClass("description-btn-wrapper");
-      topWrapper.append(title);
+      const titleWrapper = $("<div></div>").addClass(
+        "description-title-wrapper"
+      );
+      if (price) price.append(mphPrice);
+      titleWrapper.append(title);
+      titleWrapper.append(price);
+      topWrapper.append(titleWrapper);
       topWrapper.append(paragraph);
       topWrapper.append(attributes);
       btnWrapper.append(details);
       btnWrapper.append(book);
+
       descriptionWrapper.append(topWrapper);
       descriptionWrapper.append(btnWrapper);
 
