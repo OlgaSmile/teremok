@@ -19,31 +19,31 @@ $double_rooms_title = get_field('double-rooms_section_title');
         <div class="accommodations-hero_info">
             <div class="accommodations-hero_info-content">
                 <?php if ($accommodation_rules): ;?>
-                <div class="accommodations-hero_info-item">
-                    <?php echo $accommodation_rules['accommodation_rule_1']; ?>
-                </div>
-                <svg class="accommodations-hero_info-divider">
-                    <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#one_tree">
-                    </use>
-                </svg>
-                <div class="accommodations-hero_info-item">
-                    <?php echo $accommodation_rules['accommodation_rule_2']; ?>
+	                <div class="accommodations-hero_info-item">
+	                    <?php echo $accommodation_rules['accommodation_rule_1']; ?>
+	                </div>
+	                <svg class="accommodations-hero_info-divider">
+	                    <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#one_tree">
+	                    </use>
+	                </svg>
+	                <div class="accommodations-hero_info-item">
+	                    <?php echo $accommodation_rules['accommodation_rule_2']; ?>
 
-                </div>
-                <svg class="accommodations-hero_info-divider">
-                    <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#one_tree">
-                    </use>
-                </svg>
-                <div class="accommodations-hero_info-item">
-                    <?php echo $accommodation_rules['accommodation_rule_3']; ?>
+	                </div>
+	                <svg class="accommodations-hero_info-divider">
+	                    <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#one_tree">
+	                    </use>
+	                </svg>
+	                <div class="accommodations-hero_info-item">
+	                    <?php echo $accommodation_rules['accommodation_rule_3']; ?>
 
-                </div>
-                <?php endif;?>
+	                </div>
+	                <?php endif;?>
             </div>
         </div>
     </section>
 
-    <section class="accommodations-houses accommodations-section">
+    <section id="houses" class="accommodations-houses accommodations-section">
         <?php get_template_part("template-parts/section-title", null, array('title' => $houses_title));?>
         <div class="accommodations-desc">
             <?php echo get_field('houses_section_desc'); ?>
@@ -52,7 +52,7 @@ $double_rooms_title = get_field('double-rooms_section_title');
         <?php echo do_shortcode('[mphb_rooms class="accommodations" price="1"]'); ?>
     </section>
 
-    <section class="accommodations-family_rooms accommodations-section">
+    <section id="family_rooms" class="accommodations-family_rooms accommodations-section">
         <?php get_template_part("template-parts/section-title", null, array('title' => $family_rooms_title));?>
         <div class="accommodations-desc">
             <?php echo get_field('family-rooms_desc'); ?>
@@ -61,7 +61,7 @@ $double_rooms_title = get_field('double-rooms_section_title');
         <?php echo do_shortcode('[mphb_rooms class="accommodations"]'); ?>
     </section>
 
-    <section class="accommodations-double_rooms accommodations-section">
+    <section id="double_rooms" class="accommodations-double_rooms accommodations-section">
         <?php get_template_part("template-parts/section-title", null, array('title' => $double_rooms_title));?>
         <div class="accommodations-desc">
             <?php echo get_field('double-rooms_desc'); ?>
