@@ -4,18 +4,18 @@
 .accommodations {
     display: flex;
     flex-direction: column;
-    gap: 120px;
+    gap: 7.5rem;
 
     @include media_rule_max($mobile) {
-        gap: 80px;
+        gap: 5rem;
     }
 
     &-section {
         @include media_rule_max($mobile) {
-            margin-bottom: 80px;
+            margin-bottom: 5rem;
         }
 
-        margin-bottom: 120px;
+        margin-bottom: 7.5rem;
     }
 
     &-hero {
@@ -24,12 +24,12 @@
         @include media_rule_max($mobile) {
             & h2 {
                 font-size: 2.875rem;
-                top: 267px;
+                top: 16.6875rem;
             }
         }
 
         &>.secondary-hero-section {
-            height: 812px;
+            height: 50.75rem;
 
             &>img {
                 height: 100%;
@@ -278,7 +278,7 @@
                 @include media_rule_max($mobile) {
                     flex-direction: column-reverse;
                     align-items: center;
-                    gap: 16px;
+                    gap: 1rem;
                     width: auto;
                 }
 
@@ -317,6 +317,7 @@
 
         &_img {
             height: 100%;
+            width: auto;
         }
 
         &_form {

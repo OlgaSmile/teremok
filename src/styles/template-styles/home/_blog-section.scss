@@ -1,4 +1,10 @@
 .blog__section {
+  margin-bottom: 180px;
+
+  @include media_rule_max($mobile) {
+    margin-bottom: 120px;
+  }
+
   &-card {
     height: 100%;
 
@@ -51,7 +57,7 @@
     display: flex;
     gap: 1rem;
     width: fit-content;
-    margin: 1.5rem auto 2rem;
+    margin: 0 auto;
 
     & .swiper-pagination-bullet {
       margin: 0;
