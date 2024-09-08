@@ -162,6 +162,7 @@
         @include media_rule($tablet) {
             gap: 3.75rem;
             margin-bottom: 3rem;
+            width: 32.1875rem;
         }
 
         &-item {

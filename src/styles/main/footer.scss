@@ -79,12 +79,16 @@
 
   &__email {
     order: 3;
-    font-size: 0.875rem;
     font-weight: 400;
     margin-bottom: 1.25rem;
 
     & > .footer__email-link {
       font-family: $primary_font;
+      font-size: 0.875rem;
+
+      @include media_rule($tablet) {
+        font-size: 1rem;
+      }
     }
 
     &-link:hover {
@@ -93,6 +97,7 @@
 
     @include media_rule($tablet) {
       margin-bottom: 0;
+      font-size: 1rem;
     }
   }
 
@@ -160,7 +165,6 @@
 
   & a {
     font-weight: 400;
-    font-size: 1rem;
     color: $main_text;
     font-family: $font_inter;
   }
@@ -171,6 +175,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     padding: 0 1rem;
     gap: 2rem;
+    font-family: $secondary_font;
 
     @include media_rule($tablet) {
       display: grid;
@@ -184,6 +189,7 @@
     &-item {
       font-size: 0.625rem;
       font-weight: 400;
+      font-family: $secondary_font;
 
       @include media_rule($tablet) {
         font-size: 0.75rem;
