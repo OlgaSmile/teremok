@@ -183,6 +183,7 @@
 
   &__name-box {
     margin-left: 1rem;
+
     @include media_rule($mobile) {
       margin-left: 2.5rem;
     }
@@ -190,10 +191,15 @@
     p {
       font-size: 1.12rem;
       font-weight: 500;
-      width: max-content;
+
+      width: 100%;
+      word-wrap: break-word;
+      word-break: break-all;
+
       @include media_rule($mobile) {
         margin-bottom: 0.87rem;
         font-size: 1.25rem;
+        max-width: 14.62rem;
       }
     }
   }

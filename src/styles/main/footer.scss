@@ -83,7 +83,7 @@
     font-weight: 400;
     margin-bottom: 1.25rem;
 
-    &>.footer__email-link {
+    & > .footer__email-link {
       font-family: $primary_font;
     }
 
@@ -125,7 +125,6 @@
       &:hover {
         stroke: $orange;
       }
-
     }
 
     &-viber {
@@ -229,7 +228,7 @@
   }
 
   & .current_page_item a {
-    color: $orange
+    color: $orange;
   }
 }
 
@@ -267,6 +266,10 @@
     height: 3rem;
 
     bottom: 5%;
+
+    @include media_rule_max($mobile) {
+      bottom: 10%;
+    }
     right: 5%;
     background-color: $white;
     border-radius: 80%;
