@@ -89,7 +89,7 @@
     justify-content: center;
     position: absolute;
     top: 40%;
-    left: 3px;
+    right: 12px;
     z-index: 15;
     width: 3rem;
     height: 3rem;
@@ -101,6 +101,8 @@
 
     svg {
       stroke: #3c4839;
+
+      transform: rotate(180deg) scale(1.2);
     }
 
     &:active {
@@ -120,7 +122,7 @@
     justify-content: center;
     position: absolute;
     top: 40%;
-    right: 10px;
+    left: 4px;
     z-index: 15;
     width: 3rem;
     height: 3rem;
@@ -130,8 +132,6 @@
 
     cursor: pointer;
     svg {
-      transform: rotate(180deg) scale(1.2);
-
       stroke: #3c4839;
     }
 
