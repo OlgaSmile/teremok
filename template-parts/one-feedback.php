@@ -118,4 +118,5 @@ if (is_object($post) && property_exists($post, 'ID')) {
       </div>
     </div>
   </div>
+
 </div>

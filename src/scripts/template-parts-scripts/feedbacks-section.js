@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
         slidesPerGroup: 3,
         spaceBetween: 16,
         navigation: {
-          nextEl: ".feedbacks-custom-next-icon",
-          prevEl: ".feedbacks-custom-prev-icon",
+          nextEl: ".feedbacks__section-custom-btn-next",
+          prevEl: ".feedbacks__section-custom-btn-prev",
         },
       },
     },

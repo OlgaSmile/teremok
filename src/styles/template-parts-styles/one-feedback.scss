@@ -9,6 +9,7 @@
   border: 0.0625rem solid $grey_green;
   border-radius: 0.125rem;
   padding: 1.5rem;
+
   @media screen and (max-width: $mobile) {
     height: 22.75rem;
     padding: 1rem;
@@ -39,6 +40,11 @@
     }
   }
 
+  &__user-info_name {
+    width: 100%;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
   &__box {
     height: 15rem;
     display: flex;
