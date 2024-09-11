@@ -59,7 +59,7 @@ $names_apartments_otions = get_field('form_user_apartments', 'options');
         <?php if (!empty($names_apartments_otions)) : ?>
           <div>
             <div class="custom-select__selected-option">
-              <p id="current-option" class="current-option"><?php echo $user_house_placeholder ?></p>
+              <p id="current-option" class="current-option"><?php echo $user_house_placeholder ?><span class="asterisk">*</span></p>
               <span><svg id="selected-open" class="" xmlns="http://www.w3.org/2000/svg" width="12" height="6" viewBox="0 0 12 6" fill="">
                   <path d="M5.71862 5.72151C5.87449 5.87578 6.12551 5.87578 6.28138 5.72151L11.3708 0.684298C11.6248 0.432914 11.4468 0 11.0894 0H0.910592C0.553235 0 0.375222 0.432913 0.629211 0.684297L5.71862 5.72151Z" fill="" />
                 </svg></span>
