@@ -38,7 +38,7 @@ jQuery(document).ready(function ($) {
   })
 
   feedbackImputname.on("input", function (e) {
-    const maxLength = 40
+    const maxLength = 10
     const length = e.target.value.trim().length
 
     if (length < 2) {
@@ -54,10 +54,10 @@ jQuery(document).ready(function ($) {
       e.target.value = e.target.value.trim().substring(0, maxLength)
     }
 
-    if (length > 40) {
+    if (length > 10) {
       return
     }
-    $("#name-max-length").text(`${length}/40`)
+    $("#name-max-length").text(`${length}/10`)
   })
 
   // click modal close label
