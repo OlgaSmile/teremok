@@ -5,7 +5,14 @@ jQuery(document).ready(function ($) {
 
   $(roomWrapper).each(function () {
     const searchWrapper = $(this);
+    const view = searchWrapper
+      .find($(".mphb-room-type-view>.mphb-attribute-value"))
+      .detach();
+
     const roomName = searchWrapper.find($(".mphb-room-type-title")).detach();
+    const roomGalleryThumb = searchWrapper
+      .find($(".gallery-size-thumbnail"))
+      .detach();
     const roomGallery = searchWrapper
       .find($(".mphb-room-type-images"))
       .detach();
@@ -37,10 +44,7 @@ jQuery(document).ready(function ($) {
       .find($(".mphb-loop-room-type-attributes>.mphb-room-type-facilities"))
       .detach();
 
-    const prevOptionsList = facilities
-      .find(".mphb-attribute-value")
-      .text()
-      .split(",");
+    const prevOptionsList = facilities.find(".mphb-attribute-value").children();
 
     searchWrapper.find(".mphb-regular-price").remove();
     searchWrapper.find(".mphb-loop-room-type-attributes").remove();
@@ -64,13 +68,22 @@ jQuery(document).ready(function ($) {
       optionsItem.append(NumberOfGuests.text(NumberOfGuestsText))
     );
 
-    prevOptionsList.forEach((item) => {
-      const optionsItem = $("<li></li>").addClass(
-        "accommodations_facilities-item"
-      );
-      optionsList.append(optionsItem.append(item.trim()));
-    });
+    prevOptionsList.map((_, item) => {
+      const classN = item.className;
+      const text = item.children;
 
+      const optionsItem = $("<li></li>").addClass(
+        `accommodations_facilities-item ${classN}`
+      );
+      console.log("optionsItem: ", optionsItem);
+      optionsItem.append(text);
+      optionsItem.append(`<img src="../../images/edit.svg" />`);
+      optionsList.append(optionsItem);
+    });
+    const kitchenField = $("<div></div>").addClass(
+      "accommodations_kitchen container"
+    );
+    kitchenField.append(view);
     actionsWrapper.append(bookingBtnWrapper);
     actionsWrapper.append(showMoreBtn.find("a").text("Детальніше"));
     descWrapper.append(roomDesc.text());
@@ -79,57 +92,11 @@ jQuery(document).ready(function ($) {
     roomCard.append(roomPrice.text(priseText));
     roomCard.append(descWrapper);
     roomCard.append(roomGallery);
+    roomCard.append(roomGalleryThumb);
     roomCard.append(optionsList);
+    roomCard.append(kitchenField);
     roomCard.append(actionsWrapper);
 
     searchWrapper.append(roomCard);
-    // console.log("searchWrapper: ", searchWrapper);
-    // console.log("roomPrice: ", roomPrice.text().split("₴")[1]);
-    // const priceNight = $(".mphb-price-period");
-    // const reserveBtn = $(".mphb-book-button");
-    // const priceText = $(".mphb-regular-price > strong");
-    // const detaliesLink = $(".mphb-view-details-button");
-    // if (detaliesLink) {
-    //   detaliesLink.text("Детальніше");
-    // }
-    // if (priceText) {
-    //   priceText.text("Ціна");
-    // }
-    // const night = priceNight.text().split(" ")[1];
-    // if (Number(night)) {
-    //   const result = getNightPriceText(Number(night));
-    //   priceNight.text(result);
-    // } else {
-    //   priceNight.text("за ніч");
-    // }
-    // reserveBtn.text("Забронювати");
-    // if (
-    //   pathname === "/rezul-taty-poshuku/" ||
-    //   pathname === "/teremok/rezul-taty-poshuku/"
-    // ) {
-    //   searchButton.val("Змінити й забронювати");
-    //   const title = searchWrapper.find(".mphb-room-type-title").detach();
-    //   const details = searchWrapper
-    //     .find(".mphb-view-details-button-wrapper")
-    //     .detach();
-    //   const paragraph = searchWrapper.find("p").detach();
-    //   const attributes = searchWrapper
-    //     .find(".mphb-loop-room-type-attributes")
-    //     .detach();
-    //   const book = searchWrapper.find(".mphb-reserve-room-section").detach();
-    //   const descriptionWrapper = $("<div></div>").addClass(
-    //     "description-wrapper"
-    //   );
-    //   const topWrapper = $("<div></div>").addClass("description-top-wrapper");
-    //   const btnWrapper = $("<div></div>").addClass("description-btn-wrapper");
-    //   topWrapper.append(title);
-    //   topWrapper.append(paragraph);
-    //   topWrapper.append(attributes);
-    //   btnWrapper.append(details);
-    //   btnWrapper.append(book);
-    //   descriptionWrapper.append(topWrapper);
-    //   descriptionWrapper.append(btnWrapper);
-    //   searchWrapper.append(descriptionWrapper);
-    // }
   });
 });

@@ -205,11 +205,24 @@
                 }
             }
 
+            & .flex-prev,
+            .flex-next {
+                width: 2.5rem;
+                height: 2.5rem;
+
+            }
+
             &>.mphb-room-type-images {
                 border-radius: .125rem;
-                width: 100%;
-                height: 19.875rem;
+                width: 56.25rem;
+                height: 37.5rem;
                 overflow: hidden;
+
+
+                & .gallery-item {
+                    width: 56.25rem !important;
+                    height: 37.5rem;
+                }
 
                 @include media_rule_max($mobile) {
                     height: 17.5rem;
@@ -331,8 +344,33 @@
             padding: 0 48px !important;
         }
     }
-}
 
-.gallery-size-thumbnail {
-    display: none;
+    .gallery-size-thumbnail {
+        display: none;
+        height: 200px;
+        width: 600px;
+
+        &>.flex-viewport {
+            height: 200px;
+
+            &>.slides {
+                height: 200px;
+
+                &>.gallery-item {
+                    width: auto !important;
+                    height: 200px;
+
+                    & img {
+                        height: 200px;
+                        width: auto;
+                    }
+
+                    & a {
+                        display: contents;
+                    }
+                }
+            }
+        }
+
+    }
 }
