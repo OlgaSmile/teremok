@@ -1,6 +1,7 @@
 <section class="section feedbacks__section">
   <div class="container">
     <div class="feedbacks__section-title">
+
       <?php
       $feedback_title = get_field('feedback_title', 'options');
       get_template_part("template-parts/section-title", null, ['title' => $feedback_title]); ?>
@@ -30,21 +31,19 @@
         wp_reset_postdata(); ?>
 
 
+
+      </div>
+      <div class="feedbacks__section-custom-btn-next">
+        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="20" viewBox="0 0 29 20" fill="none">
+          <path d="M11.0569 1C10.2226 4.51933 6.94325 11.558 0.500084 11.558M0.500084 11.558C10.5355 15.2227 11.0569 19.2204 11.0569 19.8472M0.500084 11.558H29" stroke="" stroke-width="1.19212" />
+        </svg>
+      </div>
+      <div class="feedbacks__section-custom-btn-prev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="20" viewBox="0 0 29 20" fill="none">
+          <path d="M11.0569 1C10.2226 4.51933 6.94325 11.558 0.500084 11.558M0.500084 11.558C10.5355 15.2227 11.0569 19.2204 11.0569 19.8472M0.500084 11.558H29" stroke="" stroke-width="1.19212" />
+        </svg>
       </div>
       <div class="swiper-pagination feedbacks__swiper-pagination"></div>
-
-      <div class="feedbacks__swiper--navigation">
-        <div class="feedbacks-custom-prev-icon feedbacks__swiper--navigation--prev">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="" xmlns="http://www.w3.org/2000/svg">
-            <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#left_arrow"></use>
-          </svg>
-        </div>
-        <div class="feedbacks-custom-next-icon feedbacks__swiper--navigation--next">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="" xmlns="http://www.w3.org/2000/svg">
-            <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#left_arrow"></use>
-          </svg>
-        </div>
-      </div>
     </div>
     <div class="feedbacks__section-btns">
 
