@@ -237,6 +237,7 @@
             & .accommodations_facilities-list {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
+                gap: 1rem 3.75rem;
                 width: 56.6875rem;
                 margin-top: 2rem;
                 margin-bottom: 3.5rem;
@@ -246,6 +247,14 @@
                     margin-bottom: 1rem;
                     grid-template-columns: 1fr 1fr;
                     width: auto;
+                }
+
+                & .accommodations_facilities-icon {
+                    margin-right: 1.25rem;
+                }
+
+                &>.facility-kitchen {
+                    order: 100;
                 }
 
                 &>.accommodations_facilities-item {
@@ -259,14 +268,13 @@
                     font-size: 1rem;
                     letter-spacing: 0.04em;
                     height: 3rem;
-                    padding-left: 6rem;
 
                     @include media_rule_max($mobile) {
                         width: auto;
                         padding-left: 0;
                     }
 
-                    &::before {
+                    &::after {
                         content: "";
                         display: flex;
                         align-items: center;
@@ -275,7 +283,10 @@
                         background-size: 1.5rem;
                         width: 1.5rem;
                         height: 1.5rem;
+                        margin-left: auto;
                     }
+
+
                 }
             }
 
