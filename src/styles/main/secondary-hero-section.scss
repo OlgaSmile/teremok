@@ -12,6 +12,8 @@
     font-size: 3.5rem;
     color: $white;
     text-transform: uppercase;
+    max-width: 53.37rem;
+    text-align: center;
     @include media_rule($mobile) {
       font-size: 8rem;
     }

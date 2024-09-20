@@ -9,6 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
       loadOnTransitionStart: true,
       loadPrevNext: true,
     },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      slideToClickedSlide: true,
+    },
     navigation: {
       nextEl: ".custom-next-icon",
       prevEl: ".custom-prev-icon",
@@ -20,18 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
         centeredSlides: true,
         slidesPerView: "auto",
       },
-    },
-  })
-
-  // services slider
-
-  const servicesSwiper = new Swiper(".one-apartment__services--mobile", {
-    slidesPerView: "auto",
-    spaceBetween: 6,
-    autoHeight: true,
-    lazy: {
-      loadOnTransitionStart: true,
-      loadPrevNext: true,
     },
   })
 })

@@ -81,7 +81,7 @@ if (is_object($post) && property_exists($post, 'ID')) {
     </div>
   </div>
 
-  <div>
+  <div class="onefeedback__bottom-wrapper">
 
     <div class="watchmore_button">
       <?php
