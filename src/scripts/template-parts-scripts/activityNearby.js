@@ -54,4 +54,19 @@ jQuery(document).ready(function ($) {
       },
     })
   })
+
+  $('a[href^="#"]').on("click", function (event) {
+    event.preventDefault()
+
+    const target = $(this.getAttribute("href"))
+
+    if (target.length) {
+      $("html, body").animate(
+        {
+          scrollTop: target.offset().top,
+        },
+        1000,
+      ) // 1000 мс - це час анімації
+    }
+  })
 })
