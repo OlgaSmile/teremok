@@ -66,7 +66,7 @@ jQuery(document).ready(function ($) {
           scrollTop: target.offset().top,
         },
         1000,
-      ) // 1000 мс - це час анімації
+      ) 
     }
   })
 })
