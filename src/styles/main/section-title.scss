@@ -54,9 +54,20 @@
   display: block;
   & .section_title--text {
     text-transform: none;
+    margin-top: 0.8rem;
   }
 
   & .section_title--icon_wrap {
     justify-content: center;
+  }
+
+  & .section_title--icon.small {
+    width: 0.78rem;
+    height: 1.5rem;
+  }
+
+  & .section_title--icon.big {
+    width: 1.11rem;
+    height: 2.1rem;
   }
 }

@@ -7,8 +7,21 @@ if (isset($args['post_id'])) {
 
 $add_photos = get_field('feedback_add_photos', $post_id);
 
+// Перевірка наявності масиву та його непустоти
+if (!is_array($add_photos) || empty($add_photos)) {
+  return;
+}
+
+$filtered_photos = array_filter($add_photos, function ($value) {
+  return !empty($value) || $value === '0' || $value === 0;
+});
+
+if (empty($filtered_photos)) {
+  return; // Якщо після фільтрації масив порожній, виходимо
+}
 ?>
-<div>
+
+<div class="images-feedback-wrapper">
 
   <?php
   if ($add_photos) : ?>
