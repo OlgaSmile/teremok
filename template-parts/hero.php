@@ -8,6 +8,7 @@ $title_bg = get_field('title_bg');
 $google_maps_address = get_field('google_maps_address', 'option');
 $hero_subtitle = get_field('hero_subtitle');
 $location = get_field('location');
+$address_location = get_field('address_location');
 
 //socials
 $facebook = get_field('facebook', 'option');
@@ -55,10 +56,17 @@ $viber = get_field('viber', 'option');
             <svg width="24" height="24">
                 <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#point_map"></use>
             </svg>
-            <p><?php if ($location) {
-                    echo $location;
-                }
-                ?></p>
+            <div class="location-wrapper">
+                <p class="location-text-hide"><?php if ($location) {
+                                                    echo $location;
+                                                }
+                                                ?></p>
+                <p class="location-text-show"><?php
+                                                if ($address_location) {
+                                                    echo $address_location;
+                                                }
+                                                ?></p>
+            </div>
         </a>
         <div class="hero__route">
             <svg class="hero__route--one" width="14" height="14">

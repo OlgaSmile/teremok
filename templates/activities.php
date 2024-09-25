@@ -9,30 +9,23 @@ Template Name: Activities
 $hero_active_image = get_field('hero_activity_image');
 $title_main = get_field('activity_introduction_title');
 $main_text = get_field('activity_introduction_text');
-$photo_gallery = get_field('activity_photo_gallery');
-$gallery = isset($photo_gallery['photos']) ? $photo_gallery['photos'] : null;
-$video_url = isset($photo_gallery['video']) ? $photo_gallery['video'] : null;
 $section_reserve_img = get_field('activity_reserve_Image');
 
 
 
-function convertStringToSlug($str)
-{
-  $str = trim($str);
-  $slug = str_replace(' ', '-', $str);
-  echo $slug;
-  return $slug;
-}
+
 
 get_header();
 ?>
-<main>
-  <div class="">
+<main class="activities-main">
+  <div class="activities-bg-decor-hero">
     <?php
     if (!empty($hero_active_image)) {
 
       get_template_part("template-parts/secondary-hero-section", null, ['img_array' => $hero_active_image, "title_section" => get_the_title()]);
     } ?>
+    <img class="activities-main__decor-1" src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch-left.png'; ?>">
+
   </div>
 
 
@@ -44,6 +37,7 @@ get_header();
   ?>
 
   <section class="section-activity">
+    <img class="section-activity__decor2" src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch.png'; ?>">
     <?php
     get_template_part("template-parts/section-title", null, array('title' => $title_main)) ?>
 
@@ -57,9 +51,18 @@ get_header();
     );
 
     $query = new WP_Query($args);
+    $number_of_posts  = $query->found_posts
     ?>
 
     <div class="activity-nearby">
+
+      <?php
+
+      $index = 0;
+      if ($number_of_posts >= 5): ?>
+        <img class="activity-nearby__decor-1" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees1.png'; ?>">
+        <img class="activity-nearby__decor-2" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>">
+      <?php endif ?>
       <?php if ($query->have_posts()) :
         while ($query->have_posts()) : $query->the_post();
           if (is_object($post) && property_exists($post, 'ID')) {
@@ -71,10 +74,18 @@ get_header();
           $activity_distance_repeat = get_field('activity_distance_repeat', $post_id);
           $activity_gallery_swiper = get_field('activity_repeet_item_images', $post_id);
           $activity_text_contents = get_field('activity_repeet_item_text_box', $post_id);
-          $main_img = get_field('activity_repeet_item_main_img', $post_id)
+          $main_img = get_field('activity_repeet_item_main_img', $post_id);
+
+          $index++;
       ?>
 
           <div class="activity-nearby__item">
+            <?php if ($index === 1 &&  $number_of_posts >= 12): ?>
+              <img class="activity-nearby__item-decor-1" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>">
+            <?php endif ?>
+            <?php if ($index === 16 &&  $number_of_posts >= 24): ?>
+              <img class="activity-nearby__item-decor-2" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>">
+            <?php endif ?>
             <?php if (!empty($main_img)): ?>
               <div class="activity-nearby__item-image-box">
                 <img src="<?php echo $main_img['url'] ?>" alt="<?php echo $main_img['alt'] ?>">
@@ -117,10 +128,16 @@ get_header();
             <?php endif ?>
             <div class="activity-nearby__item-bottom-wrapper">
 
-              <a href="#<?php convertStringToSlug(get_the_title()) ?>" class="activity-nearby__detalies-btn"><?php echo get_field('more-details', 'options') ? get_field('more-details', 'options') : 'Детальніше' ?></a>
-              <button id="activity-<?php echo $post_id ?>" class="activity-nearby__detalies-btn-mobile"><?php echo get_field('more-details', 'options') ? get_field('more-details', 'options') : 'Детальніше' ?> <svg id='activity-icon-<?php echo $post_id  ?>' class="activity-nearby__detalies-btn-mobile-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
-                  <path d="M12 5.48431C9.83647 5.99923 5.5094 8.02326 5.5094 12M5.5094 12C3.25648 5.80609 0.385307 5.15897 -4.26734e-07 5.15897M5.5094 12L5.5094 -2.83713e-07" stroke="#E67739" stroke-width="1.8" />
-                </svg></button>
+              <a href="#post-<?php echo $post_id ?>" class="activity-nearby__detalies-btn"><?php echo get_field('more-details', 'options') ? get_field('more-details', 'options') : 'Детальніше' ?></a>
+
+              <button id="activity-<?php echo $post_id ?>" class="activity-nearby__detalies-btn-mobile"><span id="text-more-<?php echo $post_id ?>"><?php echo get_field('more-details', 'options') ? get_field('more-details', 'options') : 'Детальніше' ?></span>
+
+
+
+
+                <svg id='activity-icon-<?php echo $post_id  ?>' class="activity-nearby__detalies-btn-mobile-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <path d="M12.5 5.48431C10.3365 5.99923 6.0094 8.02326 6.0094 12M6.0094 12C3.75648 5.80609 0.885307 5.15897 0.5 5.15897M6.0094 12L6.0094 -2.83713e-07" stroke="#E67739" />
+                </svg> </button>
             </div>
 
 
@@ -173,7 +190,7 @@ get_header();
 
 
 
-        <div id="<?php convertStringToSlug(get_the_title()) ?>" class="section-activity-content__item">
+        <div id="post-<?php echo $post_id ?>" class="section-activity-content__item">
 
 
           <div class="section-activity-content__item-top-wrapper">
@@ -224,9 +241,7 @@ get_header();
   <?php endif; ?>
   <?php wp_reset_postdata(); ?>
   <?php
-  if (!empty($gallery)) {
-    get_template_part("template-parts/gallery-section", null, ['photos' => $gallery, "video" => $video_url]);
-  }
+
 
   if (!empty($section_reserve_img)) {
     get_template_part("template-parts/section-reserve", null, ['image' => $section_reserve_img]);

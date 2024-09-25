@@ -122,6 +122,7 @@ function extractNumbersFromString(str) {
   })
 
   // watch-more
+  let textBtn
 
   $(".reviews-btn-watch-more").on("click", function (e) {
     const btnId = $(this).attr("data-target")
@@ -136,10 +137,14 @@ function extractNumbersFromString(str) {
 
       $(`#btn-${btnId}`).addClass("btn-active-watch-more")
       $(`#btn-${btnId}`).addClass("spin-fade")
+
+      textBtn = $(`#btn-${btnId} > span`).text()
+      $(`#btn-${btnId} > span`).text("Згорнути")
     } else {
       description.removeClass("active-text").addClass("reviews-text-hidden")
       $(`#btn-${btnId}`).removeClass("spin-fade")
       $(`#btn-${btnId}`).removeClass("btn-active-watch-more")
+      $(`#btn-${btnId} > span`).text(textBtn)
     }
   })
 
