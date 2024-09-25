@@ -8,6 +8,7 @@ jQuery(document).ready(function ($) {
   const content = $(".activity-nearby__content-mobile")
 
   detaliesButton.each(function () {
+    let text
     $(this).on("click", function (e) {
       const id = extractNumbersFromString(e.target.id) // Ваш метод для отримання ID
 
@@ -18,9 +19,12 @@ jQuery(document).ready(function ($) {
       if (content.hasClass("active")) {
         content.removeClass("active")
         $(`#activity-icon-${id}`).removeClass("active")
+        $(`#activity-${id} > span`).text(text)
       } else {
         content.addClass("active")
         $(`#activity-icon-${id}`).addClass("active")
+        text = $(`#activity-${id} > span`).text()
+        $(`#activity-${id} > span`).text("Згорнути")
       }
     })
   })
@@ -28,7 +32,7 @@ jQuery(document).ready(function ($) {
   $(".section-activity-content__gallery").each(function (index, element) {
     new Swiper(element, {
       slidesPerView: 1,
-      spaceBetween: 10,
+      spaceBetween: 0,
       speed: 1000,
       loop: true,
       lazy: {
@@ -66,7 +70,7 @@ jQuery(document).ready(function ($) {
           scrollTop: target.offset().top,
         },
         1000,
-      ) 
+      )
     }
   })
 })

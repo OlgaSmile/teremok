@@ -340,10 +340,10 @@
 
 .btn-active-watch-more .reviews-btn-watch-more {
   display: inline-block;
-  transition: opacity 0.4s ease;
+  /*   transition: opacity 0.4s ease; */
 }
 
-@keyframes spin-and-fade {
+/* @keyframes spin-and-fade {
   0% {
     transform: rotate(0deg);
     opacity: 1;
@@ -352,12 +352,12 @@
     transform: rotate(0deg);
     opacity: 0;
   }
-}
+} */
 
 .spin-fade {
   span {
-    animation: spin-and-fade 0.4s ease forwards;
-    rotate: 180deg;
+    /*   animation: spin-and-fade 0.4s ease forwards; */
+    /*     rotate: 180deg; */
   }
 
   svg {
