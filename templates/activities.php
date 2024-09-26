@@ -105,7 +105,7 @@ get_header();
                   <?php if (!empty(get_field("distance_icon", "options")['url'])): ?>
                     <img width="24" height="24" src="<?php echo get_field("distance_icon", "options")['url'] ?>" alt="<?php echo get_field("distance_icon", "options")['alt'] ?>">
                   <?php endif ?>
-                  <p><?php echo $rowDistance['distance'] ?> <?php echo $rowDistance['select'] ?></p>
+                  <p><?php echo $rowDistance['from'] === true ? 'від' : '' ?> <?php echo $rowDistance['distance'] ?> <?php echo $rowDistance['select'] ?></p>
                 </div>
 
               <?php endforeach ?>
@@ -208,7 +208,7 @@ get_header();
                     <img width="24" height="24" src="<?php echo get_field("distance_icon", "options")['url'] ?>" alt="<?php echo get_field("distance_icon", "options")['alt'] ?>">
                   <?php endif ?>
 
-                  <p><?php echo $rowDistance['distance'] ?> <?php echo $rowDistance['select'] ?></p>
+                  <p><?php echo $rowDistance['from'] === true ? 'від' : '' ?> <?php echo $rowDistance['distance'] ?> <?php echo $rowDistance['select'] ?></p>
                 </div>
               <?php endforeach ?>
             <?php endif ?>
