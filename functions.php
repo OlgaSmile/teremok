@@ -77,12 +77,19 @@ function wp_teremok_scripts()
     if (is_singular() && locate_template('template-parts/search-reserv.php')) {
         wp_enqueue_script('booking-search-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/booking-search.js', array(), false, true);
     }
-    if (is_singular() && locate_template('templates/accommodations.php')) {
+    if (locate_template('templates/accommodations.php')) {
         wp_enqueue_script('accommodations-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/accommodations.js', array(), false, true);
+        wp_enqueue_script('accommodations-single-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/accommodations-single.js', array(), false, true);
     }
 
     //
 }
+
+function subscribe_link_att()
+{
+    return get_template_part("template-parts/feedbacks-section");
+}
+add_shortcode('feedback', 'subscribe_link_att');
 
 /** add fonts */
 require get_template_directory() . '/services/fonts-register.php';
@@ -164,3 +171,22 @@ function calculate_nights_and_format_checkin($checkin_date, $checkout_date)
         'checkin_date_formatted' => $formatted_checkin,
     ];
 }
+
+function feedback_section_shortcode()
+{
+    ob_start();
+
+    get_template_part('template-parts/feedbacks-section');
+
+    return ob_get_clean();
+}
+add_shortcode('feedback_section', 'feedback_section_shortcode');
+
+function location_section_shortcode()
+{
+    ob_start();
+    get_template_part('template-parts/location-section');
+
+    return ob_get_clean();
+}
+add_shortcode('location_section', 'location_section_shortcode');
