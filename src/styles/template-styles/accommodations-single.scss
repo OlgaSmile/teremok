@@ -14,6 +14,7 @@
     &__gallery {
         margin-bottom: 2.5rem;
         height: 100%;
+        width: 100%;
 
         @media screen and (max-width: $mobile) {
             margin-bottom: 1.5rem;
@@ -89,7 +90,8 @@
 
     &_booking_section {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        gap: 3.125rem;
 
         margin-bottom: 5rem;
 
@@ -105,6 +107,15 @@
             margin-bottom: 0 !important;
 
         }
+
+        & input {
+            width: max-content;
+            max-width: 7.62rem;
+            font-size: 1rem !important;
+            padding: 0;
+            border: none !important;
+            background-image: none
+        }
     }
 
     &_search-section {
@@ -119,6 +130,7 @@
 
 .single-room_wrapper {
     padding: 0 !important;
+    width: 100%;
 
     & .mphb-single-room-type-thumbnails {
         margin-bottom: 10rem;
