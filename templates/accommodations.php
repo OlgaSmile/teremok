@@ -19,26 +19,26 @@ $double_rooms_title = get_field('double-rooms_section_title');
         <div class="accommodations-hero_info">
             <div class="accommodations-hero_info-content">
                 <?php if ($accommodation_rules): ;?>
-	                <div class="accommodations-hero_info-item">
-	                    <?php echo $accommodation_rules['accommodation_rule_1']; ?>
-	                </div>
-	                <svg class="accommodations-hero_info-divider">
-	                    <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#one_tree">
-	                    </use>
-	                </svg>
-	                <div class="accommodations-hero_info-item">
-	                    <?php echo $accommodation_rules['accommodation_rule_2']; ?>
+                <div class="accommodations-hero_info-item">
+                    <?php echo $accommodation_rules['accommodation_rule_1']; ?>
+                </div>
+                <svg class="accommodations-hero_info-divider">
+                    <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#one_tree">
+                    </use>
+                </svg>
+                <div class="accommodations-hero_info-item">
+                    <?php echo $accommodation_rules['accommodation_rule_2']; ?>
 
-	                </div>
-	                <svg class="accommodations-hero_info-divider">
-	                    <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#one_tree">
-	                    </use>
-	                </svg>
-	                <div class="accommodations-hero_info-item">
-	                    <?php echo $accommodation_rules['accommodation_rule_3']; ?>
+                </div>
+                <svg class="accommodations-hero_info-divider">
+                    <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#one_tree">
+                    </use>
+                </svg>
+                <div class="accommodations-hero_info-item">
+                    <?php echo $accommodation_rules['accommodation_rule_3']; ?>
 
-	                </div>
-	                <?php endif;?>
+                </div>
+                <?php endif;?>
             </div>
         </div>
     </section>
