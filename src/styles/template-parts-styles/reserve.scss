@@ -5,25 +5,29 @@
   width: 100%;
   max-width: 61.12rem;
   border-radius: 0.5rem;
-  backdrop-filter: blur(4.5px);
+
   margin: 0 auto;
-  padding-top: 1.85rem;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  padding-bottom: 1.37rem;
+
   background: url(../../assets/images/reserve-layout.png) repeat;
   @include media_rule($mobile) {
     display: flex;
     align-items: center;
-
-    padding-top: 2.4rem;
-    padding-bottom: 2.09rem;
-    padding-left: 2.46rem;
-    padding-right: 2.46rem;
   }
 
   & .search-form-wrapper {
     width: 100%;
+
+    padding-top: 1.85rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-bottom: 1.37rem;
+
+    @include media_rule($mobile) {
+      padding-top: 2.4rem;
+      padding-bottom: 2.09rem;
+      padding-left: 2.46rem;
+      padding-right: 2.46rem;
+    }
 
     & .mphb_sc_search-adults {
       @include media_rule_max($mobile) {
