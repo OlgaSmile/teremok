@@ -985,7 +985,8 @@ jQuery(document).ready(function ($) {
       .find(".mphb-view-details-button-wrapper")
       .detach();
 
-    searchWrapper.find(".mphb-book-button").text("Забронювати");
+    const btn = searchWrapper.find(".mphb-book-button");
+    // .text("Забронювати");
 
     const bookingBtnWrapper = searchWrapper
       .find(".mphb-to-book-btn-wrapper")
@@ -1061,7 +1062,7 @@ jQuery(document).ready(function ($) {
     );
     kitchenField.append(view);
     actionsWrapper.append(bookingBtnWrapper);
-    actionsWrapper.append(showMoreBtn.find("a").text("Детальніше"));
+    actionsWrapper.append(showMoreBtn.find("a"));
     descWrapper.append(roomDesc.text());
 
     roomCard.append(roomName);
