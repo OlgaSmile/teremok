@@ -19,10 +19,10 @@ $query = new WP_Query($args);
 
 ?>
 
-<main class="">
-    <section class="blog-page__hero">
+<main class="blog-page">
+    <div class="blog-page__hero">
         <?php get_template_part("template-parts/secondary-hero-section", null, ['img_array' => $hero_blog_image, "title_section" => get_the_title()]);?>
-    </section>
+    </div>
     <section class="blog-page__blogs-section blog-page__blogs-section-container">
         <?php get_template_part("template-parts/section-title", null, array('title' => $blog_title));?>
         <div class="blog-page__blogs ">
@@ -57,6 +57,8 @@ wp_reset_postdata();
 ?>
         </div>
     </section>
+    <?php get_template_part("template-parts/location-section");?>
+
 </main>
 
 
