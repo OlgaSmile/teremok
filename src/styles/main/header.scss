@@ -13,8 +13,7 @@
   font-size: 1rem;
   height: 5rem;
   transition: all 500ms ease-in-out;
-  backdrop-filter: blur(8px);
-  background: linear-gradient(360deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 100%);
+  background: linear-gradient(360deg, rgb(28 27 27 / 0%) 0%, rgb(11 11 11 / 50%) 100%);
 
   @include media_rule_max($mobile) {
     display: none;
