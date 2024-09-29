@@ -22,10 +22,10 @@ if ($query->have_posts()):
     while ($query->have_posts()): $query->the_post();?>
 
 
-		                <?php get_template_part('template-parts/one-feedback');?>
+                <?php get_template_part('template-parts/one-feedback');?>
 
 
-		                <?php endwhile;
+                <?php endwhile;
 endif;
 
 wp_reset_postdata();?>

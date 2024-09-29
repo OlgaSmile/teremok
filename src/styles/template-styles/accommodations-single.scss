@@ -334,7 +334,6 @@
         display: flex;
         justify-content: center;
         gap: 3.125rem;
-
         margin-bottom: 5rem;
 
         & .mphb-reserve-btn {
@@ -360,6 +359,7 @@
     }
 
     &_search-section {
+        height: 31.9375rem;
         margin-bottom: 5rem;
 
         @include media_rule_max($mobile) {
