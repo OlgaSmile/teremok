@@ -81,6 +81,9 @@ function wp_teremok_scripts()
         wp_enqueue_script('accommodations-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/accommodations.js', array(), false, true);
         wp_enqueue_script('accommodations-single-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/accommodations-single.js', array(), false, true);
     }
+    if (is_singular() && locate_template('templates/activities.php')) {
+        wp_enqueue_script('activityNearby-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/activityNearby.js', array(), false, true);
+    }
 
     //
 }
@@ -106,6 +109,7 @@ add_theme_support('post-thumbnails');
 /** add custom post types */
 require get_template_directory() . '/services/custom-post-feedbacks.php';
 require get_template_directory() . '/services/custom-post-apartments.php';
+require get_template_directory() . '/services/custom-post-activities-nearby.php';
 
 /** acf form registration */
 require get_template_directory() . '/services/feedback-form-register.php';

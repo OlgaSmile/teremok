@@ -47,7 +47,9 @@ $repeater_field = $special_offer['special_offer_item'];
               <?php if ($index === count($repeater_field) - 2): ?>
                 <img class="item-decor2" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>">
               <?php endif ?>
-              <img class="teremok-section__img" src="<?php echo $row['img']['url']; ?>" alt="<?php echo $row['img']['alt']; ?>">
+              <?php if (!empty(get_field("mountains_icon", "options")['url'])): ?>
+                <img class="section-activity-content__item-content-img" src="<?php echo get_field("mountains_icon", "options")['url'] ?>" alt="<?php echo get_field("mountains_icon", "options")['alt'] ?>">
+              <?php endif ?>
               <p>
                 <?php echo $row['text']; ?>
               </p>

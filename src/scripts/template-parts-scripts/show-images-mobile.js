@@ -5,15 +5,21 @@ document.addEventListener("DOMContentLoaded", function () {
     new Swiper(".swiper-image-mobile", {
       spaceBetween: 0,
       centeredSlides: true,
+      speed: 1000,
+      lazy: {
+        loadOnTransitionStart: true,
+        loadPrevNext: true,
+      },
       autoplay: {
-        delay: 2500,
+        delay: 3000,
         disableOnInteraction: false,
       },
+
       loop: true,
       on: {
         autoplayTimeLeft(s, time, progress) {
           progressCircle.style.setProperty("--progress", 1 - progress)
-          progressContent.textContent = `${Math.ceil(time / 1000)}s`
+          progressContent.textContent = `${Math.ceil(time / 2000)}s`
         },
       },
     })
