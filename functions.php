@@ -77,7 +77,7 @@ function wp_teremok_scripts()
     if (is_singular() && locate_template('template-parts/search-reserv.php')) {
         wp_enqueue_script('booking-search-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/booking-search.js', array(), false, true);
     }
-    if (locate_template('templates/accommodations.php')) {
+    if (is_singular() && locate_template('templates/accommodations.php')) {
         wp_enqueue_script('accommodations-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/accommodations.js', array(), false, true);
         wp_enqueue_script('accommodations-single-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/accommodations-single.js', array(), false, true);
     }
