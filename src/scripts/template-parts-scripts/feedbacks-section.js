@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const feedbackSwiper = new Swiper(".feedbacks__section-swiper", {
     slidesPerView: 1,
     spaceBetween: 10,
+    speed: 1000,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
