@@ -38,9 +38,6 @@ $heroImg = get_field('search-result-img')
     <?php
     get_template_part("template-parts/feedbacks-section");
     get_template_part("template-parts/location-section");
-
-    echo do_shortcode('[mphb_rooms class="accommodations"]');
-
     ?>
 </main>
 

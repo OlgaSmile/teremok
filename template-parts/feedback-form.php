@@ -151,13 +151,6 @@ $names_apartments_otions = get_field('form_user_apartments', 'options');
         <input id="feedback-form-submit" class="feedback-submit-btn" tabindex="0" type="submit" value="<?php echo get_field('send', 'options') ?>">
         <button type='button' id="feedback-cancel" class="feedback-cancel" tabindex="0"><?php echo get_field('cancel', 'options') ?></button>
       </div>
-
-      <!-- NO DELETE -->
-      <!--       <?php while (have_posts()) : the_post(); ?>
-        <?php acf_form('new-feedback'); ?>
-      <?php endwhile; ?> -->
-      <!-- NO DELETE-->
-
     </form>
 
 
