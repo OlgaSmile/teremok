@@ -122,8 +122,9 @@ $btn_name = get_field('read_all', 'options');
               </div>
             </div>
             <div>
+              <div class="onefeedback__rate rate-js" data-num="<?php the_field("feedback_astimation", $post_id) ?>"></div>
+
               <div class="reviews-section__content-wrapper">
-                <div class="onefeedback__rate rate-js" data-num="<?php the_field("feedback_astimation", $post_id) ?>"></div>
 
                 <div>
                   <?php
