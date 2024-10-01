@@ -23,6 +23,12 @@ jQuery(document).ready(function ($) {
   // name
   const feedbackImputname = $("#feedback_name")
 
+  feedbackImputname.on("keydown", function (e) {
+    if (e.key >= "0" && e.key <= "9") {
+      e.preventDefault()
+    }
+  })
+
   feedbackImputname.on("click", function (e) {
     labelName.addClass("feedback-name-placeholder---top")
     if (e.target.value.trim().length === 0) {
@@ -347,6 +353,7 @@ jQuery(document).ready(function ($) {
     }
     formData.append("action", "do_insert")
 
+    $("#feedback-form-submit").addClass("disabled").prop("disabled", true)
     $.ajax({
       url: myAjax.ajaxurl,
       type: "POST",
@@ -366,6 +373,9 @@ jQuery(document).ready(function ($) {
 
         setTimeout(() => {
           $("#feedback-response").removeClass("feedback-response---active")
+          $("#feedback-form-submit")
+            .removeClass("disabled")
+            .prop("disabled", false)
           $("#js-close-feedback-form").click()
         }, 3000)
       },
@@ -373,7 +383,9 @@ jQuery(document).ready(function ($) {
       error: function (xhr, status, error) {
         $("#feedback-response").addClass("feedback-response---active")
         $(".feedback__modal").addClass("feedback__modal---hide")
-
+        $("#feedback-form-submit")
+          .removeClass("disabled")
+          .prop("disabled", false)
         if (response.status === "success") {
           $("#feedback-form")[0].reset()
           resetForm()
