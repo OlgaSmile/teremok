@@ -32,10 +32,10 @@ $names_apartments_otions = get_field('form_user_apartments', 'options');
     <form id="feedback-form" method="post" enctype="multipart/form-data" class="form-feedback" action="<?php echo esc_url(admin_url('admin-ajax.php')); ?>">
       <div class="form-feedback__user-name">
         <label id="feedback-name-placeholder" class="feedback-name-placeholder"><?php echo $user_name_placeholder ?><span class="asterisk">*</span></label>
-        <input id="feedback_name" type="text" name="feedback_name" placeholder="" min='2' max="40" required>
+        <input id="feedback_name" type="text" name="feedback_name" placeholder="" minlength="2" min='2' max="10" required>
         <div class="form-feedback__warning-box">
           <p id="name-error" class="feedback-error"></p>
-          <p id="name-max-length" class="feedback-max-length" name="text">0/40</p>
+          <p id="name-max-length" class="feedback-max-length" name="text">0/10</p>
         </div>
       </div>
 

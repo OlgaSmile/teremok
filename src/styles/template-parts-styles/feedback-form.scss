@@ -913,3 +913,9 @@
 #error-responce {
   color: red;
 }
+
+.feedback-submit-btn.disabled {
+  cursor: default;
+  color: #e7e7e7;
+  background-color: #8f978d !important;
+}
