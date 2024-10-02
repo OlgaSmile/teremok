@@ -272,7 +272,8 @@
 
   &__title-wrapper {
     margin-bottom: 2.5rem;
-
+    padding-left: 1rem;
+    padding-right: 1rem;
     @include media_rule($mobile) {
       margin-bottom: 4rem;
     }
