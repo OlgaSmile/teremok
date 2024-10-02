@@ -115,8 +115,8 @@ get_header();
               <div id="activity-content-<?php echo $post_id ?>" class="activity-nearby__content-mobile">
                 <?php foreach ($activity_text_contents as  $rowContent) : ?>
 
-                  <?php if (!empty(get_field("mountains_icon", "options")['url'])): ?>
-                    <img class="section-activity-content__item-content-img" src="<?php echo get_field("mountains_icon", "options")['url'] ?>" alt="<?php echo get_field("mountains_icon", "options")['alt'] ?>">
+                  <?php if (!empty(get_field("mountains_green_icon", "options")['url'])): ?>
+                    <img class="section-activity-content__item-content-img" src="<?php echo get_field("mountains_green_icon", "options")['url'] ?>" alt="<?php echo get_field("mountains_green_icon", "options")['alt'] ?>">
                   <?php endif ?>
                   <div>
                     <p><?php echo $rowContent['text'] ?></p>
@@ -224,8 +224,8 @@ get_header();
           <?php if (!empty($activity_text_contents)): ?>
             <div class="section-activity-content__item-content">
               <?php foreach ($activity_text_contents as $rowContent) : ?>
-                <?php if (!empty(get_field("mountains_icon", "options")['url'])): ?>
-                  <img class="section-activity-content__item-content-img" src="<?php echo get_field("mountains_icon", "options")['url'] ?>" alt="<?php echo get_field("mountains_icon", "options")['alt'] ?>">
+                <?php if (!empty(get_field("mountains_green_icon", "options")['url'])): ?>
+                  <img class="section-activity-content__item-content-img" src="<?php echo get_field("mountains_green_icon", "options")['url'] ?>" alt="<?php echo get_field("mountains_green_icon", "options")['alt'] ?>">
                 <?php endif ?>
                 <div>
                   <p><?php echo $rowContent['text'] ?></p>
