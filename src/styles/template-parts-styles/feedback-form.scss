@@ -719,9 +719,16 @@
   }
 }
 
+.feedback-text-placeholder {
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  transition: top 1s;
+}
+
 .feedback-text-placeholder---top {
   position: absolute;
-  top: -1.25rem;
+  top: -0.6rem;
   transition: top 1s;
 
   color: $disabled_text;
@@ -808,20 +815,6 @@
     &:last-child {
       margin-bottom: 0;
     }
-  }
-}
-.custom-select__options-list---visabled {
-  height: max-content;
-  max-height: 20rem;
-  overflow: auto;
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.5s;
-
-  .options-item {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 1s;
   }
 }
 
@@ -918,4 +911,19 @@
   cursor: default;
   color: #e7e7e7;
   background-color: #8f978d !important;
+}
+
+.custom-select__options-list.open {
+  height: max-content;
+  max-height: 20rem;
+  overflow: auto;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s;
+
+  .options-item {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s;
+  }
 }

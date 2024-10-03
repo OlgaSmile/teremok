@@ -79,7 +79,7 @@ $names_apartments_otions = get_field('form_user_apartments', 'options');
           </div>
 
 
-          <select id='feedback_housing' name="house_number" required>
+          <!--           <select id='feedback_housing' name="house_number" required>
             <option value="Виберіть опцію" disabled selected>Виберіть опцію</option>
             <?php
             foreach ($names_apartments_otions as $row) :
@@ -89,7 +89,7 @@ $names_apartments_otions = get_field('form_user_apartments', 'options');
             endforeach
             ?>
 
-          </select>
+          </select> -->
 
         <?php endif ?>
         <div class="form-feedback__warning-box">
@@ -139,7 +139,7 @@ $names_apartments_otions = get_field('form_user_apartments', 'options');
       </div>
 
       <div class="form-feedback__text-box">
-        <label id="plahceholder-text" class="feedback-name-placeholder"><?php echo $user_reviews_desc_placeholder ?><span class="asterisk">*</span></label>
+        <label id="plahceholder-text" class="feedback-text-placeholder"><?php echo $user_reviews_desc_placeholder ?><span class="asterisk">*</span></label>
         <textarea id="feedback-text" name="feedback_text" id="" rows="1" minlength="40" maxlength="1000" placeholder="" required></textarea>
         <div class="form-feedback__warning-box">
           <p id="texterea-error" class="feedback-error"></p>
