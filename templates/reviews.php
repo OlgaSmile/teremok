@@ -204,7 +204,9 @@ $btn_name = get_field('read_all', 'options');
       ?>
     <?php endif ?>
 
-    <button id="add_comment-js" class="_button primary_button" type="button"><?php the_field('add_feedback_btn', 'options') ?></button>
+    <div class="container">
+      <button id="add_comment-js" class="_button primary_button" type="button"><?php the_field('add_feedback_btn', 'options') ?></button>
+    </div>
     <img class="reviews-section__decor-bottom" src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch.png'; ?>">
   </section>
   <div class="reviews-reserve-decor">
