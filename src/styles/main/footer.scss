@@ -11,7 +11,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 
     @include media_rule($mobile) {
       flex-direction: row;
@@ -82,7 +82,7 @@
     font-weight: 400;
     margin-bottom: 1.25rem;
 
-    & > .footer__email-link {
+    &>.footer__email-link {
       font-family: $primary_font;
       font-size: 0.875rem;
 
@@ -276,6 +276,7 @@
     @include media_rule_max($mobile) {
       bottom: 10%;
     }
+
     right: 5%;
     background-color: $white;
     border-radius: 80%;

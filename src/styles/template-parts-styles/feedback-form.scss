@@ -36,15 +36,17 @@
     transform: translate(-50%, -50%) translateX(0);
     width: 57.5rem;
     /*     padding: 48px 116px; */
-    max-height: 769px;
+    /*     max-height: 769px; */
     padding: 48px 116px;
-    max-height: 100%;
+
+    max-height: 98%;
     @media screen and (min-width: $desktop) {
       padding: 48px 160px;
-      max-height: 992px;
+      /*       max-height: 992px; */
     }
     /*    max-height: 992px; */
     /*     max-height: 100%; */
+
     overflow-y: auto;
     background-color: $white;
     border-radius: $small-border-radius;
@@ -56,9 +58,10 @@
       left: 0;
       right: 0;
       width: 100%;
+      height: 100%;
+      max-height: 100%;
       padding: 5.93rem 1.81rem;
       padding-bottom: 3.5rem;
-      height: 100%;
       transform: translateX(0);
       overflow-y: auto !important;
     }

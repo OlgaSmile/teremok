@@ -12,6 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   })
 })
+
+function extractNumbersFromString(str) {
+  const number = str.match(/\d+/g)
+
+  return number ? Number(number[0]) : null
+}
 ;(function ($) {
   let swiper
   let swiper2
@@ -116,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
   })
 
   // watch-more
+  let textBtn
 
   $(".reviews-btn-watch-more").on("click", function (e) {
     const btnId = $(this).attr("data-target")
@@ -127,13 +134,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (description.hasClass("reviews-text-hidden")) {
       description.removeClass("reviews-text-hidden").addClass("active-text")
-      console.log(btnId, "btnId")
+
       $(`#btn-${btnId}`).addClass("btn-active-watch-more")
       $(`#btn-${btnId}`).addClass("spin-fade")
+
+      textBtn = $(`#btn-${btnId} > span`).text()
+      $(`#btn-${btnId} > span`).text("Згорнути")
     } else {
       description.removeClass("active-text").addClass("reviews-text-hidden")
       $(`#btn-${btnId}`).removeClass("spin-fade")
       $(`#btn-${btnId}`).removeClass("btn-active-watch-more")
+      $(`#btn-${btnId} > span`).text(textBtn)
     }
   })
+
+  // description visable btn
+  $(window).on("resize load", function () {
+    const block = $(".reviews-section__description")
+    const windowWidth = $(window).width()
+
+    block.each((idx, el) => {
+      const $el = $(el)
+      const visableLines = $el.data("lines") || windowWidth <= 575.98 ? 5 : 7
+      const lineHeight = parseFloat($el.css("line-height"))
+
+      const maxHeight = lineHeight * visableLines
+
+      if ($el[0].scrollHeight > maxHeight) {
+        const id = extractNumbersFromString($el[0].id)
+
+        $(`#btn-wrapper-${id}`).addClass("visable")
+      }
+    })
+  })
 })(window.jQuery)
+
+// 417 496

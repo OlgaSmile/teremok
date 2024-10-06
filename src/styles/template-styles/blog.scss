@@ -2,6 +2,11 @@
 @import "../main/variables.scss";
 
 .blog-page {
+    margin-bottom: 0;
+
+    @include media_rule($mobile) {
+        margin-bottom: 5.75rem;
+    }
 
     &__hero {
         height: 32rem;
@@ -26,6 +31,7 @@
         grid-template-columns: 1fr;
         gap: 2rem;
         margin-top: 2.125rem;
+        margin-bottom: 0;
 
         @include media_rule($mobile) {
             grid-template-columns: 1fr 1fr;
@@ -39,18 +45,19 @@
         }
 
         &-section {
+            margin-bottom: 7.5rem;
 
             @include media_rule($mobile) {
                 position: relative;
                 z-index: 100;
+                margin-bottom: 0;
 
                 &-container {
                     margin-left: auto;
                     margin-right: auto;
-                    padding: 1.5625rem 3.125rem 7.3125rem 3.125rem;
+                    padding: 0 3.125rem;
                 }
             }
-
         }
     }
 
@@ -71,7 +78,6 @@
                 @include media_rule($tablet) {
                     padding: 0;
                 }
-
             }
         }
 
@@ -133,6 +139,12 @@
         &__read-more-btn {
             display: flex;
             justify-content: flex-end;
+        }
+    }
+
+    & .location-section {
+        @include media_rule($mobile) {
+            display: none;
         }
     }
 
@@ -221,7 +233,5 @@
                 display: none;
             }
         }
-
     }
-
 }

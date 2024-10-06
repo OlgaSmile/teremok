@@ -985,9 +985,7 @@ jQuery(document).ready(function ($) {
       .find(".mphb-view-details-button-wrapper")
       .detach();
 
-    console.log("showMoreBtn: ", showMoreBtn);
     const btn = searchWrapper.find(".mphb-book-button");
-    console.log("btn: ", btn);
     // .text("Забронювати");
 
     const bookingBtnWrapper = searchWrapper

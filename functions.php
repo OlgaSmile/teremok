@@ -79,6 +79,10 @@ function wp_teremok_scripts()
     }
     if (is_singular() && locate_template('templates/accommodations.php')) {
         wp_enqueue_script('accommodations-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/accommodations.js', array(), false, true);
+        wp_enqueue_script('accommodations-single-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/accommodations-single.js', array(), false, true);
+    }
+    if (is_singular() && locate_template('templates/activities.php')) {
+        wp_enqueue_script('activityNearby-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/activityNearby.js', array(), false, true);
     }
 
     //
@@ -86,9 +90,9 @@ function wp_teremok_scripts()
 
 function subscribe_link_att()
 {
-    return get_template_directory() . '/template-parts/read-more-btn.php';
+    return get_template_part("template-parts/feedbacks-section");
 }
-add_shortcode('subscribe', 'subscribe_link_att');
+add_shortcode('feedback', 'subscribe_link_att');
 
 /** add fonts */
 require get_template_directory() . '/services/fonts-register.php';
@@ -105,6 +109,7 @@ add_theme_support('post-thumbnails');
 /** add custom post types */
 require get_template_directory() . '/services/custom-post-feedbacks.php';
 require get_template_directory() . '/services/custom-post-apartments.php';
+require get_template_directory() . '/services/custom-post-activities-nearby.php';
 
 /** acf form registration */
 require get_template_directory() . '/services/feedback-form-register.php';
@@ -170,3 +175,22 @@ function calculate_nights_and_format_checkin($checkin_date, $checkout_date)
         'checkin_date_formatted' => $formatted_checkin,
     ];
 }
+
+function feedback_section_shortcode()
+{
+    ob_start();
+
+    get_template_part('template-parts/feedbacks-section');
+
+    return ob_get_clean();
+}
+add_shortcode('feedback_section', 'feedback_section_shortcode');
+
+function location_section_shortcode()
+{
+    ob_start();
+    get_template_part('template-parts/location-section');
+
+    return ob_get_clean();
+}
+add_shortcode('location_section', 'location_section_shortcode');

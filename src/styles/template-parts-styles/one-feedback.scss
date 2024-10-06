@@ -78,13 +78,16 @@
     &-photos {
       display: flex;
       gap: 0.625rem;
+
       @media screen and (max-width: $mobile) {
+        margin-bottom: 2.5rem;
         gap: 0.325rem;
       }
     }
     &-image {
       width: 3.5rem;
       height: 3.5rem;
+
       @media screen and (max-width: $mobile) {
         width: 3.625rem;
         height: 3.625rem;
@@ -122,6 +125,13 @@
     }
   }
 
+  &__bottom-wrapper {
+    margin-top: 2rem;
+
+    @media screen and (max-width: $mobile) {
+      margin-top: 2.5rem;
+    }
+  }
   &__image {
     object-fit: cover;
     height: 100%;
