@@ -13,11 +13,7 @@ get_template_part("template-parts/section-title", null, array('title' => $locati
 
         <a href="<?php echo esc_url($google_maps_address['url']); ?>"
             target="<?php echo $google_maps_address['target']; ?>">
-            <?php
-if ($location_image) {
-    echo wp_get_attachment_image($location_image['id'], 'full');
-}
-;?>
+            <img src="<?php echo $location_image; ?>" />
         </a>
     </div>
 </section>

@@ -9,15 +9,20 @@
     }
 
     &__hero {
-
+        height: 32rem;
         margin-bottom: 5rem;
 
         @include media_rule($mobile) {
-            margin-bottom: 6.5625rem;
+            height: 42.5rem;
+        }
+
+        &-image {
+            object-fit: cover;
+            height: 100%;
         }
 
         & .secondary-hero-section {
-            padding-bottom: 0;
+            padding: 0;
         }
     }
 
@@ -134,6 +139,12 @@
         &__read-more-btn {
             display: flex;
             justify-content: flex-end;
+        }
+    }
+
+    & .location-section {
+        @include media_rule($mobile) {
+            display: none;
         }
     }
 
