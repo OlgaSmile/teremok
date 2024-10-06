@@ -24,6 +24,11 @@
         transition: opacity 0.5s;
       }
 
+      & .swiper-button-disabled {
+        opacity: 0.5 !important;
+        transition: opacity 0.5s;
+      }
+
       &:hover {
         .feedbacks__section-custom-btn-prev {
           opacity: 1;
@@ -78,6 +83,14 @@
   & .swiper-button-disabled {
     opacity: 0 !important;
     transition: opacity 0.5s;
+    cursor: default;
+
+    &:active {
+      svg {
+        stroke: $main_text;
+        transition: none;
+      }
+    }
   }
 
   &-custom-btn-next {

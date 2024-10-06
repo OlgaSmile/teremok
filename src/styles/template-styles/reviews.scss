@@ -208,11 +208,13 @@
 
   &__content-wrapper {
     @include media_rule_max($tablet) {
-      margin-top: 1.5rem;
+      margin-top: 0.5rem;
     }
+
+    margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
-    /* justify-content: flex-start; */
+
     row-gap: 1.5rem;
     align-items: inherit;
   }
@@ -228,7 +230,12 @@
   }
 
   &__date-box {
-    /*   margin-bottom: 1.5rem; */
+    margin-bottom: 1.5rem;
+
+    @include media_rule($tablet) {
+      margin-bottom: 0;
+    }
+
     p {
       display: flex;
       align-items: center;

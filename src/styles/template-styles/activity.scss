@@ -10,6 +10,7 @@
     width: 8.06rem;
     height: 6.36rem;
     bottom: 0;
+
     @include media_rule($mobile) {
       bottom: 5rem;
       left: -1rem;

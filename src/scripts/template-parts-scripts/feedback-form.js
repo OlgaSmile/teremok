@@ -23,6 +23,12 @@ jQuery(document).ready(function ($) {
   // name
   const feedbackImputname = $("#feedback_name")
 
+  feedbackImputname.on("keydown", function (e) {
+    if (e.key >= "0" && e.key <= "9") {
+      e.preventDefault()
+    }
+  })
+
   feedbackImputname.on("click", function (e) {
     labelName.addClass("feedback-name-placeholder---top")
     if (e.target.value.trim().length === 0) {
@@ -211,41 +217,43 @@ jQuery(document).ready(function ($) {
   })
 
   // apartments
+  // Обробник натискання на вибраний елемент
   $(".custom-select__selected-option").on("click", function () {
-    $(".custom-select__options-list").addClass(
-      "custom-select__options-list---visabled",
-    )
+    // Додаємо або видаляємо клас 'open' для анімації
     $("#selected-open").addClass("selected-open-icon---top")
-    $("#current-option").addClass("current-option---active-color")
-    $("#apartment-error").text(validationError).addClass("error")
+    if ($("#current-option").text() === defaultApatmentValue) {
+      $("#apartment-error").text(validationError).addClass("error")
+    }
+
+    $(".custom-select__options-list").toggleClass("open")
   })
 
+  // Обробник натискання на опції
   $(".options-item").on("click", function () {
-    const selectedValue = $(this).text().trim()
-    $("#apartment-error").text("").removeClass("error")
-    $("#current-option").text(selectedValue)
-    $("#feedback_housing").val(selectedValue).change()
-    hideSelectelList()
-  })
+    // Вибір опції
+    const selectedOption = $(this).text()
+    $("#current-option").text(selectedOption)
 
-  $(".feedback__modal").on("click", (e) => {
-    const value = $("#feedback_housing").val()
-
-    if (value) {
-      $("#apartment-error").text("").removeClass("error")
-    }
-    if (e.currentTarget === e.target) {
-      hideSelectelList()
-    }
-  })
-
-  const hideSelectelList = () => {
+    // Закриваємо селект
+    $(".custom-select__options-list").removeClass("open")
     $("#selected-open").removeClass("selected-open-icon---top")
-    $(".custom-select__options-list").removeClass(
-      "custom-select__options-list---visabled",
-    )
-    $("#current-option").removeClass("current-option---active-color")
-  }
+    if (selectedOption !== defaultApatmentValue) {
+      $("#apartment-error").text("").removeClass("error")
+    } else {
+      $("#apartment-error").text(validationError).addClass("error")
+    }
+
+    // Можливо, хочете оновити також і select
+    $("#feedback_housing").val(selectedOption)
+  })
+
+  // Закриття селекту при натисканні поза ним
+  $(document).on("click", function (e) {
+    if (!$(e.target).closest(".custom-select").length) {
+      $(".custom-select__options-list").removeClass("open")
+      $("#selected-open").removeClass("selected-open-icon---top")
+    }
+  })
 
   const textarea = $("#feedback-text")
 
@@ -276,6 +284,12 @@ jQuery(document).ready(function ($) {
     $("#plahceholder-text").addClass("feedback-text-placeholder---top")
     if (e.target.value.trim().length === 0) {
       $("#texterea-error").text(validationError).addClass("error")
+    }
+  })
+
+  $(document).on("click", function (e) {
+    if (!$(e.target).closest(textarea).length && textarea.val().trim() === "") {
+      $("#plahceholder-text").removeClass("feedback-text-placeholder---top")
     }
   })
 
@@ -323,7 +337,11 @@ jQuery(document).ready(function ($) {
   $("#feedback-form").on("submit", function (e) {
     e.preventDefault()
     const rating = $("#feedback_ratinge").val()
-    const apartmen = $("#feedback_housing").val()
+    const apartmen = $("#current-option").text()
+
+    if (apartmen === defaultApatmentValue) {
+      return $("#apartment-error").text(validationError).addClass("error")
+    }
 
     if (Number(rating) === 0 && !apartmen) {
       $("#apartment-error").text(validationError).addClass("error")
@@ -347,6 +365,7 @@ jQuery(document).ready(function ($) {
     }
     formData.append("action", "do_insert")
 
+    $("#feedback-form-submit").addClass("disabled").prop("disabled", true)
     $.ajax({
       url: myAjax.ajaxurl,
       type: "POST",
@@ -366,6 +385,9 @@ jQuery(document).ready(function ($) {
 
         setTimeout(() => {
           $("#feedback-response").removeClass("feedback-response---active")
+          $("#feedback-form-submit")
+            .removeClass("disabled")
+            .prop("disabled", false)
           $("#js-close-feedback-form").click()
         }, 3000)
       },
@@ -373,7 +395,9 @@ jQuery(document).ready(function ($) {
       error: function (xhr, status, error) {
         $("#feedback-response").addClass("feedback-response---active")
         $(".feedback__modal").addClass("feedback__modal---hide")
-
+        $("#feedback-form-submit")
+          .removeClass("disabled")
+          .prop("disabled", false)
         if (response.status === "success") {
           $("#feedback-form")[0].reset()
           resetForm()

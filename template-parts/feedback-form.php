@@ -30,18 +30,15 @@ get_template_part("template-parts/section-title", null, ['title' => $add_feedbac
         </div>
 
 
-        <form id="feedback-form" method="post" enctype="multipart/form-data" class="form-feedback"
-            action="<?php echo esc_url(admin_url('admin-ajax.php')); ?>">
-            <div class="form-feedback__user-name">
-                <label id="feedback-name-placeholder"
-                    class="feedback-name-placeholder"><?php echo $user_name_placeholder ?><span
-                        class="asterisk">*</span></label>
-                <input id="feedback_name" type="text" name="feedback_name" placeholder="" min='2' max="40" required>
-                <div class="form-feedback__warning-box">
-                    <p id="name-error" class="feedback-error"></p>
-                    <p id="name-max-length" class="feedback-max-length" name="text">0/40</p>
-                </div>
-            </div>
+    <form id="feedback-form" method="post" enctype="multipart/form-data" class="form-feedback" action="<?php echo esc_url(admin_url('admin-ajax.php')); ?>">
+      <div class="form-feedback__user-name">
+        <label id="feedback-name-placeholder" class="feedback-name-placeholder"><?php echo $user_name_placeholder ?><span class="asterisk">*</span></label>
+        <input id="feedback_name" type="text" name="feedback_name" placeholder="" minlength="2" min='2' max="10" required>
+        <div class="form-feedback__warning-box">
+          <p id="name-error" class="feedback-error"></p>
+          <p id="name-max-length" class="feedback-max-length" name="text">0/10</p>
+        </div>
+      </div>
 
             <div class="form-feedback__user-photo-wrapper">
                 <label><?php echo $user_photo_placeholder ?></label>
@@ -89,17 +86,17 @@ endforeach
                 </div>
 
 
-                <select id='feedback_housing' name="house_number" required>
-                    <option value="Виберіть опцію" disabled selected>Виберіть опцію</option>
-                    <?php
-foreach ($names_apartments_otions as $row):
-?>
-                    <option value="<?php echo $row['option']; ?>"> <?php echo $row['option']; ?></option>
-                    <?php
-endforeach
-?>
+          <!--           <select id='feedback_housing' name="house_number" required>
+            <option value="Виберіть опцію" disabled selected>Виберіть опцію</option>
+            <?php
+            foreach ($names_apartments_otions as $row) :
+            ?>
+              <option value="<?php echo $row['option']; ?>"> <?php echo $row['option']; ?></option>
+            <?php
+            endforeach
+            ?>
 
-                </select>
+          </select> -->
 
                 <?php endif?>
                 <div class="form-feedback__warning-box">
@@ -153,25 +150,20 @@ endforeach
 
             </div>
 
-            <div class="form-feedback__text-box">
-                <label id="plahceholder-text"
-                    class="feedback-name-placeholder"><?php echo $user_reviews_desc_placeholder ?><span
-                        class="asterisk">*</span></label>
-                <textarea id="feedback-text" name="feedback_text" id="" rows="1" minlength="40" maxlength="1000"
-                    placeholder="" required></textarea>
-                <div class="form-feedback__warning-box">
-                    <p id="texterea-error" class="feedback-error"></p>
-                    <p id="text-max-length" class="feedback-max-length" name="text">0/1000</p>
-                </div>
-            </div>
+      <div class="form-feedback__text-box">
+        <label id="plahceholder-text" class="feedback-text-placeholder"><?php echo $user_reviews_desc_placeholder ?><span class="asterisk">*</span></label>
+        <textarea id="feedback-text" name="feedback_text" id="" rows="1" minlength="40" maxlength="1000" placeholder="" required></textarea>
+        <div class="form-feedback__warning-box">
+          <p id="texterea-error" class="feedback-error"></p>
+          <p id="text-max-length" class="feedback-max-length" name="text">0/1000</p>
+        </div>
+      </div>
 
-            <div class="form-feedback__btn_box">
-                <input id="feedback-form-submit" class="feedback-submit-btn" tabindex="0" type="submit"
-                    value="<?php echo get_field('send', 'options') ?>">
-                <button type='button' id="feedback-cancel" class="feedback-cancel"
-                    tabindex="0"><?php echo get_field('cancel', 'options') ?></button>
-            </div>
-        </form>
+      <div class="form-feedback__btn_box">
+        <input id="feedback-form-submit" class="feedback-submit-btn" tabindex="0" type="submit" value="<?php echo get_field('send', 'options') ?>">
+        <button type='button' id="feedback-cancel" class="feedback-cancel" tabindex="0"><?php echo get_field('cancel', 'options') ?></button>
+      </div>
+    </form>
 
 
 
