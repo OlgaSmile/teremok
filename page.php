@@ -20,13 +20,13 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-  <section class="section">
-    <div class="container">
-      <?php
-      the_content();
-      ?>
-    </div>
-  </section>
+    <section class="section">
+        <div class="container">
+            <?php
+the_content();
+?>
+        </div>
+    </section>
 
 
 </main><!-- #main -->

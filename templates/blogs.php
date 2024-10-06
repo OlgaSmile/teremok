@@ -19,7 +19,7 @@ $query = new WP_Query($args);
 
 ?>
 
-<main class="">
+<main class="blog-page">
     <section class="blog-page__hero">
         <?php get_template_part("template-parts/secondary-hero-section", null, ['img_array' => $hero_blog_image, "title_section" => get_the_title()]);?>
     </section>
@@ -57,6 +57,9 @@ wp_reset_postdata();
 ?>
         </div>
     </section>
+
+    <?php get_template_part("template-parts/location-section");?>
+
 </main>
 
 

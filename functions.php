@@ -84,6 +84,12 @@ function wp_teremok_scripts()
     //
 }
 
+function subscribe_link_att()
+{
+    return get_template_directory() . '/template-parts/read-more-btn.php';
+}
+add_shortcode('subscribe', 'subscribe_link_att');
+
 /** add fonts */
 require get_template_directory() . '/services/fonts-register.php';
 
