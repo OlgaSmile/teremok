@@ -12,7 +12,7 @@ if (isset($args['blog'])) {
     </div>
     <div class="blog-card__content">
         <h2 class="blog-card__title"> <?php the_title();?><?php the_field('title', $blog->ID);?></h2>
-        <div class="blog-card__text"><?php the_content();?></div>
+        <div class="blog-card__text"><?php the_excerpt();?></div>
         <div class="blog-card__read-more-btn">
             <div class="watchmore_button">
                 <?php

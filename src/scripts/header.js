@@ -42,3 +42,9 @@ if (submenuMobile) {
     submenuMobileLink.classList.toggle("b");
   });
 }
+
+jQuery(document).ready(function ($) {
+  const subMenu = $(".sub-menu");
+
+  subMenu.wrap("<div class='sub-menu_wrapper'></div>");
+});
