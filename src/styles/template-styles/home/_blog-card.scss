@@ -6,7 +6,6 @@
     object-fit: cover;
     height: 100%;
 
-
     &-wrapper {
       margin-bottom: 0.5rem;
       height: 16.5rem;
@@ -18,7 +17,6 @@
       @include media_rule($tablet) {
         padding: 0;
       }
-
     }
   }
 
@@ -47,20 +45,16 @@
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 4;
       text-align: start;
-
     }
 
     & *:not(:first-child) {
       display: none;
     }
 
-
     @include media_rule_max($tablet) {
       height: 5.3125rem;
       overflow: hidden;
       margin-bottom: .25rem;
-
-
     }
   }
 

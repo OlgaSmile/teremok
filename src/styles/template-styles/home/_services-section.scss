@@ -68,10 +68,8 @@
 
       &_bottom {
         grid-template-columns: 1fr 2fr;
-
       }
     }
-
 
     &-item {
       height: 100%;
@@ -103,10 +101,10 @@
   }
 
   &__content {
+    position: relative;
     width: 100%;
     text-align: center;
     margin-top: 2.5rem;
-    position: relative;
 
     @include media_rule($mobile) {
       margin-top: 5rem;
