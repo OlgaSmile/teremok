@@ -9,7 +9,6 @@
         grid-template-columns: 1fr 1.25fr 1.25fr 1fr;
         grid-template-rows: repeat(5, 16rem);
         margin-bottom: 11.25rem;
-
     }
 
     @include media_rule_max($tablet) {
@@ -76,7 +75,6 @@
                 grid-row-end: 6;
             }
         }
-
     }
 
     &__container {

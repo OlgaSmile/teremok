@@ -11,7 +11,6 @@
                 left: 0;
                 bottom: 0;
 
-
                 @include media_rule_max($mobile) {
                     left: -24px;
                 }
@@ -80,7 +79,6 @@
             line-height: 1.2188rem;
             letter-spacing: 0.04em;
             text-align: center;
-
         }
 
         &_photo {
@@ -105,7 +103,6 @@
                 position: absolute;
                 z-index: 10;
             }
-
         }
 
         &_owner-name {
@@ -202,7 +199,7 @@
 
             @include media_rule($mobile) {
                 width: 52.25rem;
-                padding: 0rem 3.75rem 0rem 3.75rem;
+                padding: 0rem 3.75rem;
                 margin-top: 5rem;
                 gap: 5rem;
             }
@@ -215,7 +212,6 @@
             @include media_rule($mobile) {
                 width: 28.665rem;
             }
-
         }
 
         &_img {
@@ -242,8 +238,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-
-
 
             &_icon {
                 width: 1.5rem;
@@ -328,11 +322,8 @@
             @include media_rule($mobile) {
                 font-size: 1.875rem;
                 line-height: 2.2694rem;
-
             }
-
         }
-
     }
 
     &__certificates-section {
@@ -369,7 +360,6 @@
         &-images {
             display: flex;
             gap: 1.25rem;
-
 
             @include media_rule_max($mobile) {
                 overflow-x: scroll;

@@ -22,9 +22,7 @@
             <a href="/">
                 <?php get_template_part("template-parts/logo_footer");?>
             </a>
-
-            <button class="_button secondary_button booking_btn-footer">Забронювати проживання</button>
-            <!-- <?php get_template_part("template-parts/booking-btn", null, array('text' => "Забронювати проживання"));?> -->
+            <a href="/residence" class="_button secondary_button booking_btn-footer">Забронювати проживання</a>
         </div>
         <div class="footer__contacts">
             <div class="footer__email">
@@ -43,7 +41,6 @@
                             <use
                                 href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#<?php the_sub_field('social_name');?>">
                             </use>
-
                         </svg>
                     </a>
                 </li>
