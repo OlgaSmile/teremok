@@ -152,7 +152,7 @@ endforeach
 
       <div class="form-feedback__text-box">
         <label id="plahceholder-text" class="feedback-text-placeholder"><?php echo $user_reviews_desc_placeholder ?><span class="asterisk">*</span></label>
-        <textarea id="feedback-text" name="feedback_text" id="" rows="1" minlength="40" maxlength="1000" placeholder="" required></textarea>
+        <textarea id="feedback-text" name="feedback_text" rows="1" minlength="40" maxlength="1000" placeholder="" required></textarea>
         <div class="form-feedback__warning-box">
           <p id="texterea-error" class="feedback-error"></p>
           <p id="text-max-length" class="feedback-max-length" name="text">0/1000</p>

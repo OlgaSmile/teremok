@@ -121,7 +121,7 @@ $repeater_field = $special_offer['special_offer_item'];
                     <img src="<?php echo esc_url($images_right[$index / 2]['url']); ?>" alt="<?php echo esc_attr($images_right[$index / 2]['alt']); ?>">
                   </div>
                 <?php else : ?>
-                  <!-- Якщо є обидва зображення -->
+
                   <div class="mobile-special-img-wrapper__silide <?php echo ($index / 2) % 2 == 0 ? 'anim-slide-wrapper-primary' : 'anim-slide-wrapper-secondary'; ?>">
                     <img src="<?php echo esc_url($images_left[$index / 2]['url']); ?>" alt="<?php echo esc_attr($images_left[$index / 2]['alt']); ?>">
                   </div>

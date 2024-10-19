@@ -33,6 +33,9 @@ function wp_teremok_scripts()
     wp_enqueue_script('wp-teremok-scripts', get_template_directory_uri() . '/assets/scripts/main.js', array(), false, true);
     wp_enqueue_script('masonry-scripts', 'https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js', array(), false, true);
 
+    wp_enqueue_script('show-images-mobile-script', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/show-images-mobile.js', array(), false, true);
+
+
     if (is_page_template('templates/home.php')) {
         wp_enqueue_style('home-style', get_template_directory_uri() . '/assets/styles/template-styles/home.css', array('main'));
         wp_enqueue_script('home-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/home.js', array(), false, true);
@@ -71,9 +74,7 @@ function wp_teremok_scripts()
     if (is_singular() && locate_template('templates/home/location-section.php')) {
         wp_enqueue_style('location-section-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/location-section.css', array('main'));
     }
-    if (is_singular() && locate_template('templates/home/teremok-section.php')) {
-        wp_enqueue_script('show-images-mobile-script', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/show-images-mobile.js', array(), false, true);
-    }
+
     if (is_singular() && locate_template('template-parts/search-reserv.php')) {
         wp_enqueue_script('booking-search-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/booking-search.js', array(), false, true);
     }
@@ -89,7 +90,16 @@ function wp_teremok_scripts()
         wp_enqueue_script('services-page-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/service-page.js', array(), false, true);
     }
 
-    //
+    if (is_singular() && locate_template('templates/business.php')) {
+        wp_enqueue_script('business-page-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/details-agreement-form.js', array(), false, true);
+
+        wp_enqueue_style('intl-tel--style', 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css', array('main'), '17.0.8');
+
+        wp_enqueue_script('intl-tel-script', "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js", array('jquery'), '17.0.8', true);
+
+        // Зміна імені скрипта на 'business-page-scripts'
+        wp_localize_script('business-page-scripts', 'businessAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
+    }
 }
 
 function subscribe_link_att()
@@ -114,6 +124,9 @@ add_theme_support('post-thumbnails');
 require get_template_directory() . '/services/custom-post-feedbacks.php';
 require get_template_directory() . '/services/custom-post-apartments.php';
 require get_template_directory() . '/services/custom-post-activities-nearby.php';
+require get_template_directory() . '/services/custom-post-detalies.php';
+
+
 
 /** acf form registration */
 require get_template_directory() . '/services/feedback-form-register.php';
