@@ -258,6 +258,12 @@
     }
   }
 
+  &__list {
+    .section-activity-content__item-content-img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
   & .section-services-page__list {
     max-width: 37.5rem;
     margin-top: 2.5rem;
