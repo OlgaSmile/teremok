@@ -29,16 +29,13 @@ $repeater_field =  get_field('conditions');
       <?php endif; ?>
 
       <?php if (is_array($repeater_field) && !empty($repeater_field)) : ?>
-        <ul class="section-services-page__list teremok-section__list">
+        <ul class="section-services-page__list teremok-section__list section-conditions__list">
           <?php foreach ($repeater_field as $index => $row) : ?>
 
             <li class="section-services-page-speccial__item">
-
-
               <?php if (!empty(get_field("mountains_bg_icon", "options")['url'])): ?>
                 <img class="section-activity-content__item-content-img" src="<?php echo get_field("mountains_bg_icon", "options")['url'] ?>" alt="<?php echo get_field("mountains_icon", "options")['alt'] ?>">
               <?php endif; ?>
-
               <p>
                 <?php echo $row['desc']; ?>
               </p>
