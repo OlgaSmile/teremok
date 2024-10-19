@@ -37,7 +37,7 @@ $business_form_title = get_field('business_form_title')
           <p>Введіть не менше ніж 40 символів</p><span><span id="current-length-text">0</span>/1000</span></>
         </div>
       </div>
-
+      <a href="<?php echo home_url() . '/privacy-policy' ?>" class="secttion-details-agreement__form-policy ">Політика конфеденційності</a>
       <button class="secttion-details-agreement__form-submit">Надіслати</button>
       <input type="hidden" name="action" value="do_insert_detalies">
     </form>
