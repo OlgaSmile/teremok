@@ -9,8 +9,8 @@
     width: 100%;
 
     & .mphb-single-room-type-thumbnails {
-        margin-bottom: 10rem;
         height: 42.5rem;
+        margin-bottom: 10rem;
         overflow: hidden;
 
         @include media_rule_max($mobile) {
@@ -24,13 +24,12 @@
         }
     }
 
-
-
     & .mphb-room-type-title {
         display: flex;
-        gap: 1rem;
         align-items: center;
         justify-content: center;
+        gap: 1rem;
+
         font-family: $secondary_font;
         font-weight: 600;
         font-size: 1.875rem;
@@ -62,20 +61,47 @@
     }
 
     &>.mphb-regular-price {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 20px;
 
-        border-radius: .375rem;
-        padding: .25rem .75rem;
-        width: 9.4375rem;
-        height: 1.75rem;
-        background-color: $green;
-        margin: 0 auto .8125rem auto;
-        font-weight: 600;
-        font-size: 1rem;
+        width: fit-content;
+        margin-inline: auto;
+        margin-bottom: .8125rem;
 
+        & .price_text {
+            position: relative;
+            cursor: pointer;
+            border-radius: .375rem;
+            padding: .25rem .75rem;
+            width: fit-content;
+            height: 1.75rem;
+            background-color: $green;
+            font-weight: 600;
+            font-size: 1rem;
 
+            &:hover+.price_notice {
+                display: flex;
+            }
+
+        }
+
+        & .price_notice {
+            display: none;
+            position: absolute;
+            top: -0.25rem;
+            right: -8.375rem;
+
+            &-icon {
+                font-size: 1.5rem;
+                color: red;
+                position: absolute;
+                top: -0.25rem;
+                right: .125rem;
+            }
+        }
     }
 
     & .accommodations_facilities-list {
@@ -117,7 +143,7 @@
             align-items: center;
             justify-content: start;
             gap: .75rem;
-            color: #3a4f37;
+            color: $dark_green;
 
             font-weight: 400;
             font-size: 1rem;
@@ -140,8 +166,6 @@
                 height: 1.5rem;
                 margin-left: auto;
             }
-
-
         }
     }
 
@@ -151,7 +175,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 0 auto 5rem auto;
+        margin-inline: auto;
+        margin-bottom: 5rem;
         padding: 0 1rem;
 
         &>h2 {
@@ -226,7 +251,6 @@
                 & .single-room_content-wrapper {
                     display: flex;
                 }
-
             }
         }
 
@@ -287,7 +311,6 @@
             & img {
                 min-width: 100%;
                 height: 100%;
-
                 object-fit: cover;
             }
         }
@@ -334,7 +357,6 @@
         display: flex;
         justify-content: center;
         gap: 3.125rem;
-
         margin-bottom: 5rem;
 
         & .mphb-reserve-btn {
@@ -342,8 +364,8 @@
             align-items: center;
             justify-content: center;
             border-radius: .34rem;
-            background-color: #fcd85b;
-            margin: 0 auto;
+            background-color: $yellow;
+            margin-inline: auto;
             width: 100%;
             height: 3rem;
             margin-bottom: 0 !important;
@@ -351,7 +373,6 @@
 
         & input {
             width: max-content;
-            max-width: 7.62rem;
             font-size: 1rem !important;
             padding: 0;
             border: none !important;
@@ -360,6 +381,7 @@
     }
 
     &_search-section {
+        height: 31.9375rem;
         margin-bottom: 5rem;
 
         @include media_rule_max($mobile) {

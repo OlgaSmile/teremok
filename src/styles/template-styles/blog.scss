@@ -9,15 +9,20 @@
     }
 
     &__hero {
-
+        height: 32rem;
         margin-bottom: 5rem;
 
         @include media_rule($mobile) {
-            margin-bottom: 6.5625rem;
+            height: 42.5rem;
+        }
+
+        &-image {
+            object-fit: cover;
+            height: 100%;
         }
 
         & .secondary-hero-section {
-            padding-bottom: 0;
+            padding: 0;
         }
     }
 
@@ -48,8 +53,7 @@
                 margin-bottom: 0;
 
                 &-container {
-                    margin-left: auto;
-                    margin-right: auto;
+                    margin-inline: auto;
                     padding: 0 3.125rem;
                 }
             }
@@ -63,7 +67,6 @@
         &__image {
             object-fit: cover;
             height: 100%;
-
 
             &-wrapper {
                 margin-bottom: 0.5rem;
@@ -142,6 +145,12 @@
             display: none;
         }
     }
+
+    & .location-section {
+        @include media_rule($mobile) {
+            display: none;
+        }
+    }
 }
 
 .single-blog {
@@ -178,10 +187,8 @@
         margin-left: auto;
 
         @include media_rule($tablet) {
-            width: 944px;
+            width: 59rem;
         }
-
-
 
         &-title {
             font-size: 1.25rem;
@@ -201,7 +208,7 @@
         &-text {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: .625rem;
             line-height: 1.0669rem;
             letter-spacing: 0.04em;
             text-align: left;
