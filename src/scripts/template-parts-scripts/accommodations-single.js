@@ -1,29 +1,13 @@
-function getNightPriceText(number) {
-  if (!number) {
-    return "за ніч";
-  }
-  let text = "";
-
-  const lastDigit = number % 10;
-  const lastTwoDigits = number % 100;
-
-  if (lastTwoDigits >= 11 && lastTwoDigits <= 14) {
-    text += number + " ночей";
-  } else if (lastDigit === 1) {
-    text += number + " ніч";
-  } else if (lastDigit >= 2 && lastDigit <= 4) {
-    text += number + " ночі";
-  } else {
-    text += number + " ночей";
-  }
-
-  return text;
-}
-
 jQuery(document).ready(function ($) {
   const roomWrapper = $(".single-room_wrapper");
 
-  $(treesTitleIcon).insertBefore(roomWrapper.find($(".mphb-room-type-title")));
+  // Title
+
+  const roomTitle = roomWrapper.find($(".mphb-room-type-title"));
+
+  const roomName = roomTitle.text();
+
+  $(treesTitleIcon).insertBefore(roomName);
 
   // Ціна
 
@@ -151,6 +135,16 @@ jQuery(document).ready(function ($) {
     }
   });
 
+  const content = roomWrapper.find($(".single-room_content"));
+
+  const linkToFoodSection = `<a href="/food" class="button mphb-view-details-button">Дізнатися більше
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="11" viewBox="0 0 50 18" fill="none">
+  <path d="M40.8531 1C41.5523 3.94928 44.3005 9.84785 49.7 9.84785M49.7 9.84785C41.29 12.919 40.4114 16.8329 40.4114 17.3582M49.7 9.84785H17.9169M1 9.84785H8.64346M8.64346 9.84785L1 5.87775M8.64346 9.84785L1 14.7096M8.64346 9.84785H13.3538M13.3538 9.84785L7.31868 5.87775M13.3538 9.84785L7.31868 14.7096M13.3538 9.84785H17.9169M17.9169 9.84785L13.3538 5.87775M17.9169 9.84785L13.3538 14.7096" stroke="#E67739" stroke-width="1.8"></path>
+</svg>
+  </a>`;
+
+  content.append(linkToFoodSection);
+
   const accommodationsSingleSwiper = new Swiper(
     ".accommodations-single__gallery",
     {
@@ -184,18 +178,43 @@ jQuery(document).ready(function ($) {
 
   // Booking form
 
-  $(".mphb_sc_availability_calendar-wrapper").addClass(
-    "accommodations-single_booking-item"
+  const bookingSection = $(
+    "<section class='accommodations-single__booking-section'></section>"
   );
-  $(".mphb_sc_booking_form-wrapper").addClass(
-    "accommodations-single_booking-item"
-  );
-
-  $(".accommodations-single_booking-item").wrapAll(
-    '<div class="accommodations-single_booking_section container"></div>'
+  const bookingSectionTitle = $(
+    "<h2 class='accommodations-single__booking-section_title'>Перевірити доступність</h2>"
   );
 
-  // Search form
+  const calendarWrapper = $(
+    "<div class='accommodations-single__booking-section_calendar'></div>"
+  );
+  const calendar = roomWrapper.find($(".mphb-calendar"));
 
-  $(".search-form-wrapper").wrap('<div class="search-reserve-layout"></div>');
+  const bookingForm = roomWrapper.find($(".mphb-reserve-room-section"));
+
+  bookingForm.prepend(
+    `<div class="accommodations-single__booking-section_check">${roomName} доступно для бронювання на обрані дати</div>`
+  );
+
+  const submitForm = roomWrapper.find($(".mphb_sc_booking_form-wrapper"));
+
+  $(treesTitleIcon).insertBefore(bookingSectionTitle);
+
+  calendarWrapper.append(calendar);
+
+  bookingSection.append(treesTitleIcon);
+  bookingSection.append(bookingSectionTitle);
+  bookingSection.append(calendarWrapper);
+  bookingSection.append(
+    $(`<ul class="accommodations-single__booking-section_labels">
+      <li class="accommodations-single__booking-section_labels-free">вільні дати</li>
+      <li class="accommodations-single__booking-section_labels-chosen">обрані дати</li>
+      <li class="accommodations-single__booking-section_labels-reserved">зарезервовані дати</li>
+      </ul>`)
+  );
+  bookingSection.append(submitForm);
+
+  bookingSection.insertAfter(content);
+
+  roomWrapper.css("display", "block");
 });
