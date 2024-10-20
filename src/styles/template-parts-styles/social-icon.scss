@@ -151,3 +151,143 @@
     transform: scale(1);
   }
 }
+
+.social-icon-wrapper-booking {
+  display: flex;
+  /*   width: 8.31rem; */
+  flex-direction: column-reverse;
+  align-items: center;
+  &:hover {
+    .social-icon-wrapper-booking__icon {
+      scale: 1.1;
+      transition: scale 0.5s;
+    }
+
+    .social-icon-wrapper__text {
+      animation: move-up-down-text-btn 0.5s linear 0.5;
+    }
+  }
+
+  & .social-text-wrapper {
+    height: 2.1rem;
+    overflow: hidden;
+  }
+
+  .social-icon-wrapper__text {
+    position: relative;
+    animation: move-up-up-text-btn 0.5s linear 0.5;
+  }
+  &__icon {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@keyframes move-up-down-text-btn {
+  0% {
+    transform: translateY(-30%);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(-30%);
+    opacity: 1;
+  }
+
+  25% {
+    transform: translateY(-70%);
+    opacity: 1;
+  }
+
+  45% {
+    transform: translateY(-130%);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-150%);
+    opacity: 0;
+  }
+
+  55% {
+    transform: translateY(145%);
+    opacity: 0;
+  }
+
+  55% {
+    transform: translateY(115%);
+    opacity: 0;
+  }
+
+  65% {
+    transform: translateY(90%);
+    opacity: 1;
+  }
+
+  65% {
+    transform: translateY(75%);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translateY(45%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0%);
+
+    opacity: 1;
+  }
+}
+
+@keyframes move-up-up-text-btn {
+  0% {
+    transform: translateY(10%);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(30%);
+    opacity: 1;
+  }
+
+  25% {
+    transform: translateY(70%);
+    opacity: 1;
+  }
+
+  45% {
+    transform: translateY(130%);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(150%);
+    opacity: 0;
+  }
+
+  55% {
+    transform: translateY(-145%);
+    opacity: 0;
+  }
+
+  55% {
+    transform: translateY(-115%);
+    opacity: 0;
+  }
+
+  65% {
+    transform: translateY(-90%);
+    opacity: 1;
+  }
+
+  65% {
+    transform: translateY(-75%);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translateY(-45%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0%);
+
+    opacity: 1;
+  }
+}
