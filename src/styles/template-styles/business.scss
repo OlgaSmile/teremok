@@ -391,14 +391,10 @@
   }
 
   &__logo-wrapper {
-    margin-top: 0.5rem;
-    a {
-    }
-    img {
-      margin-left: auto;
-      margin-right: auto;
-      width: 8.31rem;
-    }
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 8.31rem;
   }
 
   &__rating-desc {
@@ -438,6 +434,25 @@
         margin-bottom: 0;
       }
       a {
+        &:hover {
+          scale: 1.1;
+
+          transition: scale 1s;
+        }
+
+        &:focus {
+          scale: 1.1;
+
+          transition: scale 1s;
+        }
+
+        &:active {
+          scale: 1.1;
+
+          transition: scale 1s;
+        }
+
+        transition: scale 1s;
         img {
           width: 100%;
           height: auto;

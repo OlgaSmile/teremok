@@ -9,7 +9,7 @@ $business_rating_logo_link = get_field('business_rating_logo_link');
 $business_rating_desc2 = get_field('business_rating_desc2');
 $business_rating_rating_points = get_field('business_rating_rating_points');
 $business_rating_desc3 = get_field('business_rating_desc3');
-
+$business_rating_booking_link = get_field('business_rating_booking_link');
 $business_kitchen_title = get_field('business_kitchen_title');
 $business_kitchen_desc = get_field('business_kitchen_desc');
 
@@ -58,18 +58,13 @@ $business_client_title_final = get_field('business_client_title_final')
         <?php echo $business_rating_desc ?>
       </p>
     <?php endif ?>
-    <?php if (!empty($business_rating_logo)): ?>
-      <?php if (!empty($business_rating_logo_link)) { ?>
-        <div class="section-business-success__logo-wrapper">
-          <a href="<?php echo $business_rating_logo_link ?>" target="blank">
-            <img src="<?php echo $business_rating_logo['url'] ?>" alt="<?php echo $business_rating_logo['alt'] ?>">
-          </a>
-        </div>
-      <?php } else { ?>
-        <div class="section-business-success__logo-wrapper">
-          <img src="<?php echo $business_rating_logo['url'] ?>" alt="<?php echo $business_rating_logo['alt'] ?>">
-        </div>
-      <?php } ?>
+
+    <?php if (!empty($business_rating_booking_link)): ?>
+      <div class="section-business-success__logo-wrapper">
+        <a href="<?php echo $business_rating_booking_link ?>" target="_blank">
+          <?php get_template_part("template-parts/booking-icon"); ?>
+        </a>
+      </div>
     <?php endif ?>
     <?php if (!empty($business_rating_desc2)): ?>
       <div class="section-business-success__rating-desc"> <?php echo $business_rating_desc2 ?></div>
