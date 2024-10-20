@@ -44,8 +44,13 @@ jQuery(document).ready(function ($) {
   })
 
   feedbackImputname.on("input", function (e) {
+    if (!e.target || typeof e.target.value !== "string") {
+      return
+    }
+
     const maxLength = 10
-    const length = e.target.value.trim().length
+    const value = e.target.value || ""
+    const length = value.trim().length
 
     if (length < 2) {
       $("#name-error")
@@ -57,7 +62,7 @@ jQuery(document).ready(function ($) {
     }
 
     if (length > maxLength) {
-      e.target.value = e.target.value.trim().substring(0, maxLength)
+      e.target.value = e.target.value.substring(0, maxLength)
     }
 
     if (length > 10) {
@@ -288,7 +293,7 @@ jQuery(document).ready(function ($) {
   })
 
   $(document).on("click", function (e) {
-    if (!$(e.target).closest(textarea).length && textarea.val().trim() === "") {
+    if (!$(e.target).closest(textarea).length && textarea.val() === "") {
       $("#plahceholder-text").removeClass("feedback-text-placeholder---top")
     }
   })
@@ -338,6 +343,23 @@ jQuery(document).ready(function ($) {
     e.preventDefault()
     const rating = $("#feedback_ratinge").val()
     const apartmen = $("#current-option").text()
+
+    if (
+      feedbackImputname.val().trim() === "" &&
+      feedbackImputname.val().trim().length < 2
+    ) {
+      feedbackImputname.val("")
+      return $("#name-error").text(validationError).addClass("error")
+    }
+
+    if (textarea.val().trim() === "" && textarea.val().trim() < 40) {
+      textarea.val("")
+      return $("#name-error").text(validationError).addClass("error")
+    }
+
+    if (textarea.val().trim().length < 40) {
+      return$("#name-error").text(validationError).addClass("error")
+    }
 
     if (apartmen === defaultApatmentValue) {
       return $("#apartment-error").text(validationError).addClass("error")
