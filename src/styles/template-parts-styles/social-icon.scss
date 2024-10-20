@@ -164,7 +164,7 @@
     }
 
     .social-icon-wrapper__text {
-      animation: move-up-down-text-btn 0.5s linear 0.5;
+      animation: move-up-down-text-btn 1s linear;
     }
   }
 
@@ -175,7 +175,7 @@
 
   .social-icon-wrapper__text {
     position: relative;
-    animation: move-up-up-text-btn 0.5s linear 0.5;
+    animation: move-up-up-text-btn 1s linear;
   }
   &__icon {
     margin-bottom: 0.5rem;
