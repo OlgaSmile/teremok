@@ -146,7 +146,7 @@ $business_client_title_final = get_field('business_client_title_final')
       </p>
     <?php endif ?>
 
-    <div class="section-business-success__logo-box">
+    <div class="section-business-success__logo-box-teremok">
       <a href="/" target="_blank">
         <?php get_template_part("template-parts/logo_business"); ?>
 

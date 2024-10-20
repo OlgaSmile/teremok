@@ -172,6 +172,8 @@
     }
 
     &__detalies-wrapper {
+      padding-left: 1rem;
+      padding-right: 1rem;
       @include media_rule($mobile) {
         display: flex;
         flex-wrap: wrap;
@@ -464,7 +466,7 @@
     }
   }
 
-  &__logo-box {
+  &__logo-box-teremok {
     margin-top: 1.5rem;
     display: flex;
 
@@ -472,6 +474,30 @@
 
     @include media_rule($mobile) {
       column-gap: 5.5rem;
+      justify-content: center;
+    }
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      p {
+        margin-top: 1rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__logo-box {
+    margin-top: 1.5rem;
+    display: flex;
+
+    justify-content: space-between;
+
+    @include media_rule($mobile) {
+      column-gap: 5.5rem;
+      justify-content: center;
     }
     a {
       display: flex;
