@@ -162,14 +162,11 @@ jQuery(document).ready(function ($) {
       return $("error-name").text("Поле обов’язкове для заповнення")
     }
 
-    /*     if (formData.text.trim().length > 1 || formData.text.trim().length < 40) {
-      return
-    } */
-    console.log(formData, "name formData")
+
     $.ajax({
       url: businessAjax.ajaxurl,
       type: "POST",
-      data: formData, // передаємо formData з action
+      data: formData, 
       success: function (response) {
         $("#form-details-agreement")[0].reset()
         resetForm()
