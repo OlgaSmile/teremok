@@ -35,17 +35,12 @@
     left: 50%;
     transform: translate(-50%, -50%) translateX(0);
     width: 57.5rem;
-    /*     padding: 48px 116px; */
-    /*     max-height: 769px; */
     padding: 48px 116px;
 
     max-height: 98%;
     @media screen and (min-width: $desktop) {
       padding: 48px 160px;
-      /*       max-height: 992px; */
     }
-    /*    max-height: 992px; */
-    /*     max-height: 100%; */
 
     overflow-y: auto;
     background-color: $white;
@@ -855,8 +850,12 @@
     padding: 3rem;
     padding-top: 50%;
   }
+
+  &__modal-title {
+    margin-bottom: 3.5rem;
+  }
   h3 {
-    color: var(--text_1, #3c4839);
+    color: #3c4839;
     text-align: center;
     font-size: 1rem;
 
