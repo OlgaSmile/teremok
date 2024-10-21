@@ -21,7 +21,7 @@ $business_form_title = get_field('business_form_title')
           <input id="detalies-name" type="phone" name="name" required>
           <div class="details-nema-max-length">
             <p id='error-name' class="error"></p>
-            <p>Введіть не менше ніж 2 символів</p><span><span id="current-length-name">0</span>/40</span></>
+            <p id="validation-name">Введіть не менше ніж 2 символа</p><span><span id="current-length-name">0</span>/40</span></>
           </div>
         </div>
         <div class="secttion-details-agreement__form-input-wrapper">
@@ -34,7 +34,7 @@ $business_form_title = get_field('business_form_title')
         <label id="paleceholder-text-details">Залишіть свій коментар</label>
         <textarea id="text-details" name="text" rows="1" minlength="40" maxlength="1000" placeholder=""></textarea>
         <div class="details-text-max-length">
-          <p>Введіть не менше ніж 40 символів</p><span><span id="current-length-text">0</span>/1000</span></>
+          <p id="validation-text-details">Введіть не менше ніж 40 символів</p><span><span id="current-length-text">0</span>/1000</span>
         </div>
       </div>
       <a href="<?php echo home_url() . '/privacy-policy' ?>" class="secttion-details-agreement__form-policy ">Політика конфеденційності</a>
