@@ -52,7 +52,7 @@ jQuery(document).ready(function ($) {
     const value = e.target.value || ""
     const length = value.trim().length
 
-    const sanitizedValue = value.replace(/[^a-zA-ZА-Яа-яЁёІіЇїЄє0-9]/g, "")
+    const sanitizedValue = value.replace(/[^a-zA-ZА-Яа-яЁёІіЇїЄє\s]/g, "")
 
     e.target.value = sanitizedValue
 
