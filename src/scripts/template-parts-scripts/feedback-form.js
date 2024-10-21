@@ -52,23 +52,24 @@ jQuery(document).ready(function ($) {
     const value = e.target.value || ""
     const length = value.trim().length
 
+    const sanitizedValue = value.replace(/[^a-zA-ZА-Яа-яЁёІіЇїЄє0-9]/g, "")
+
+    e.target.value = sanitizedValue
+
     if (length < 2) {
       $("#name-error")
         .text(validationName.warrningNameLength)
         .removeClass("error")
     }
-    if (length > 2) {
+    if (length >= 2) {
       $("#name-error").text("").removeClass("error")
     }
 
-    if (length > maxLength) {
-      e.target.value = e.target.value.substring(0, maxLength)
+    if (sanitizedValue.length > maxLength) {
+      e.target.value = sanitizedValue.substring(0, maxLength)
     }
 
-    if (length > 10) {
-      return
-    }
-    $("#name-max-length").text(`${length}/10`)
+    $("#name-max-length").text(`${sanitizedValue.length}/10`)
   })
 
   // click modal close label

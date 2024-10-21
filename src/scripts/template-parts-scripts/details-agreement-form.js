@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($) {
   const nameLabel = $("#name-label")
   const nameInput = $("#detalies-name")
-  const wrapperInput = $(".secttion-details-agreement__form-input-wrapper")
+
   const textarea = $("#text-details")
   var input = document.querySelector("#phone")
   var iti = window.intlTelInput(input, {
@@ -54,13 +54,37 @@ jQuery(document).ready(function ($) {
   })
 
   nameInput.on("input", (e) => {
-    const value = e.target.value
+    /*     const value = e.target.value
     const length = value.trim().length
     const maxLength = 40
-
+    const sanitizedValue = value.replace(/[^a-zA-ZА-Яа-яЁёІіЇїЄє0-9]/g, "")
+    value = sanitizedValue
     if (length > maxLength) {
       e.target.value = e.target.value.substring(0, maxLength)
       return
+    } */
+
+    if (!e.target || typeof e.target.value !== "string") {
+      return
+    }
+
+    const maxLength = 40
+    const value = e.target.value || ""
+    const length = value.trim().length
+
+    const sanitizedValue = value.replace(/[^a-zA-ZА-Яа-яЁёІіЇїЄє]/g, "")
+
+    e.target.value = String(sanitizedValue)
+
+    if (length < 2) {
+      $("#validation-name").text("Введіть не менше ніж 2 символа")
+    }
+    if (length >= 2) {
+      $("#validation-name").text("")
+    }
+
+    if (sanitizedValue.length > maxLength) {
+      e.target.value = sanitizedValue.substring(0, maxLength)
     }
 
     $("#current-length-name").text(length)
@@ -90,17 +114,16 @@ jQuery(document).ready(function ($) {
     const maxLength = 1000
     const length = e.target.value.trim().length
 
-    if (length > maxLength) {
-      e.target.value = e.target.value.substring(0, maxLength)
-      return
+    if (length < 40) {
+      $("#validation-text-details").text("Введіть не менше ніж 40 символів")
     }
 
     if (length > 40) {
-      $("#texterea-error").text(``).removeClass("error")
-    } else {
-      $("#texterea-error")
-        .text(validationText.warrningTextLength)
-        .removeClass("error")
+      $("#validation-text-details").text("")
+    }
+
+    if (length > maxLength) {
+      e.target.value = e.target.value.substring(0, maxLength)
     }
 
     $("#current-length-text").text(`${length}`)
