@@ -26,9 +26,6 @@ jQuery(document).ready(function ($) {
       .find(".mphb-view-details-button-wrapper")
       .detach();
 
-    const btn = searchWrapper.find(".mphb-book-button");
-    // .text("Забронювати");
-
     const bookingBtnWrapper = searchWrapper
       .find(".mphb-to-book-btn-wrapper")
       .detach();
@@ -118,4 +115,6 @@ jQuery(document).ready(function ($) {
 
     searchWrapper.append(roomCard);
   });
+
+  $(".accommodations").css("display", "flex");
 });
