@@ -1,12 +1,10 @@
 @import "../main/mixins.scss";
 @import "../main/variables.scss";
 
-
-
-
 .single-room_wrapper {
     padding: 0 !important;
     width: 100%;
+    display: none;
 
     & .mphb-single-room-type-thumbnails {
         height: 42.5rem;
@@ -259,6 +257,25 @@
         }
     }
 
+    &>.is-layout-flex {
+        flex-direction: column !important;
+    }
+
+    & .mphb-required-fields-tip,
+    .mphb-check-in-date-wrapper,
+    .mphb-check-out-date-wrapper,
+    .mphb-rooms-quantity-wrapper {
+        display: none;
+    }
+
+    .button {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        font-size: 1rem;
+        letter-spacing: 0.04em;
+        height: 3.125rem;
+    }
 }
 
 .accommodations-single {
@@ -390,6 +407,204 @@
 
         & .mphb_sc_search-submit-button-wrapper {
             color: $main_text;
+        }
+    }
+
+    &__booking-section {
+        margin-bottom: 11.25rem !important;
+
+        &_title {
+            font-weight: 600;
+            font-size: 1.875rem;
+            text-align: center;
+            margin: 2rem auto;
+        }
+
+        &_calendar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: fit-content;
+            margin-bottom: 1.875rem;
+
+            & div {
+                height: fit-content;
+            }
+
+            & .datepick {
+                width: 40.375rem !important;
+                height: fit-content !important;
+
+                & .datepick-month-header {
+                    height: 2rem;
+                    background: transparent;
+                    color: $main_text;
+                }
+
+                & .datepick-nav {
+                    background: $white !important;
+                    color: $main_text !important;
+
+                    & .datepick-cmd {
+                        color: black;
+                        display: flex;
+                        align-items: center;
+
+                        &-today {
+                            justify-content: center;
+                            font-weight: 600;
+                        }
+
+                        &-prev {
+                            &::before {
+                                content: "<";
+                                font-size: 1.5rem;
+                                font-weight: 900;
+                                text-align: center;
+                                vertical-align: middle;
+                                margin-top: auto;
+                                margin-bottom: auto;
+                            }
+                        }
+
+                        &-next {
+                            &::before {
+                                content: ">";
+                                font-size: 1.5rem;
+                                font-weight: 900;
+                                text-align: center;
+                                vertical-align: middle;
+                                margin-top: auto;
+                                margin-bottom: auto;
+                            }
+                        }
+                    }
+                }
+
+                & select {
+                    background: $white !important;
+                    color: $main_text !important;
+                    -webkit-text-fill-color: black;
+                }
+
+            }
+
+            & .mphb-calendar__selected-dates {
+                background: transparent;
+            }
+
+            & .datepick-ctrl {
+                padding: 0;
+
+                &>.mphb-calendar__selected-dates {
+                    background: transparent;
+                    border: none;
+
+                    font-weight: 600;
+                    font-size: 1rem;
+                    color: $main_text;
+                }
+            }
+
+            & .datepick-cmd-clear {
+                font-weight: 600;
+                font-size: 1rem;
+            }
+
+            & .mphb-calendar__selected-dates {
+                background: transparent;
+                border: none;
+            }
+        }
+
+        &_labels {
+            display: flex;
+            justify-content: space-between;
+            margin-inline: auto;
+            margin-bottom: 1.875rem;
+            width: 40.375rem;
+            height: 1.25rem;
+
+            & li {
+                display: flex;
+                gap: 1rem;
+
+                &::before {
+                    content: "";
+                    display: flex;
+                    width: 1.5rem;
+                    height: 1.25rem;
+                    border-radius: .125rem;
+                }
+            }
+
+            &-free {
+                &::before {
+                    background: #e1f0c0;
+                }
+            }
+
+            &-chosen {
+                &::before {
+                    background: #e67739;
+                }
+            }
+
+            &-reserved {
+                &::before {
+                    background: #b0c4de;
+                }
+            }
+        }
+
+        &_check {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.04em;
+            margin-bottom: 2.5rem;
+
+            &::before {
+                content: "";
+                background: url("../../assets/images/green_check.png");
+                background-size: 1.5rem;
+                object-fit: contain;
+                width: 1.5rem;
+                height: 1.5rem;
+
+                fill: $green;
+                stroke: $green;
+            }
+        }
+
+        & .mphb-reserve-btn-wrapper,
+        .mphb-reserve-room-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            & input {
+                border-radius: .375rem;
+                padding: .625rem 3rem;
+                width: 21.4375rem;
+                height: 3rem;
+                background: $yellow;
+
+                font-weight: 600;
+                font-size: 1rem;
+                letter-spacing: 0.04em;
+            }
+        }
+
+        & .mphb-reserve-btn-wrapper {
+
+            & input {
+                background: transparent;
+                border: .125rem solid $yellow;
+            }
         }
     }
 }

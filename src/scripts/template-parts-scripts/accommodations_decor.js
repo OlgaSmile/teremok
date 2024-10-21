@@ -992,3 +992,40 @@ const sliderNavigation = `<div class="one-apartment__navigation">
         </svg>
       </div>
     </div>`;
+
+const singleAccommodationBookingDatesTemplate = `
+<section class="accommodations-single__booking-section">
+ 
+ <div class="accommodations-single__booking-section_calendar"></div>
+ <div class="accommodations-single__booking-section_calendar-description"></div>
+ <ul class="accommodations-single__booking-section_dates">
+  <li class="accommodations-single__booking-section_dates-free"></li>
+  <li class="accommodations-single__booking-section_dates-choosen"></li>
+  <li class="accommodations-single__booking-section_dates-reserved"></li>
+ </ul>
+ <div class="accommodations-single__booking-section_check"></div>
+ <div class="accommodations-single__booking-section_btn-wrapper"></div>
+</section>
+`;
+
+function getNightPriceText(number) {
+  if (!number) {
+    return "за ніч";
+  }
+  let text = "";
+
+  const lastDigit = number % 10;
+  const lastTwoDigits = number % 100;
+
+  if (lastTwoDigits >= 11 && lastTwoDigits <= 14) {
+    text += number + " ночей";
+  } else if (lastDigit === 1) {
+    text += number + " ніч";
+  } else if (lastDigit >= 2 && lastDigit <= 4) {
+    text += number + " ночі";
+  } else {
+    text += number + " ночей";
+  }
+
+  return text;
+}

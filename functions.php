@@ -82,6 +82,7 @@ function wp_teremok_scripts()
         wp_enqueue_script('accommodations-scripts_decor', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/accommodations_decor.js', array(), false, true);
         wp_enqueue_script('accommodations-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/accommodations.js', array(), false, true);
         wp_enqueue_script('accommodations-single-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/accommodations-single.js', array(), false, true);
+        wp_enqueue_script('accommodations-booking-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/accommodations-booking.js', array(), false, true);
     }
     if (is_singular() && locate_template('templates/activities.php')) {
         wp_enqueue_script('activityNearby-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/activityNearby.js', array(), false, true);

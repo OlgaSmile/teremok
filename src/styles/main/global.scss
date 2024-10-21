@@ -82,3 +82,19 @@
     height: 6.3125rem;
   }
 }
+
+.plugin_submit-button {
+
+  input {
+    border-radius: .375rem;
+    padding: .625rem 3rem;
+    width: 21.4375rem;
+    height: 3rem;
+    background: $yellow;
+
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+
+  }
+}
