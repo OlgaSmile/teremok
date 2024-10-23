@@ -15,7 +15,7 @@
         width: 43.75rem;
         margin: 0 auto 2rem auto;
         padding: 1.5rem;
-        border: 1px solid $grey_green;
+        border: .0625rem solid $grey_green;
 
         @include media_rule_max($mobile) {
             width: 100%;
@@ -60,7 +60,7 @@
 
             & .mphb-check-in-date_text {
                 display: flex;
-                gap: 10px;
+                gap: .625rem;
                 line-height: normal;
             }
         }
@@ -143,7 +143,7 @@
         .mphb-room-type-title {
             margin: 0 auto 2rem auto;
             padding: 1.5rem;
-            border: 1px solid $grey_green;
+            border: .0625rem solid $grey_green;
 
             @include media_rule_max($mobile) {
                 border: none;
@@ -203,7 +203,7 @@
 
             & input {
                 border: none;
-                border-bottom: 1px solid $grey_green;
+                border-bottom: .0625rem solid $grey_green;
                 width: 25rem;
                 height: 3.375rem;
                 min-height: 3.375rem;
@@ -308,8 +308,8 @@
 
         & .mphb-price-breakdown {
             & tr {
-                height: 30px;
-                padding-bottom: 8px;
+                height: 1.875rem;
+                padding-bottom: .5rem;
             }
         }
 
@@ -324,7 +324,7 @@
 
         & .mphb-price-breakdown-total {
             font-weight: 700;
-            font-size: 18px;
+            font-size: 1.125rem;
         }
 
 
@@ -381,7 +381,7 @@
         & input,
         textarea {
             border: none;
-            border-bottom: 1px solid $grey_green;
+            border-bottom: .0625rem solid $grey_green;
             width: 25rem;
             height: 3.375rem;
             min-height: 3.375rem;
@@ -394,7 +394,7 @@
 
         & label {
             position: absolute;
-            top: 40px;
+            top: 2.5rem;
             left: 0;
             transition: all 300ms linear;
 
@@ -479,7 +479,7 @@
                 background-color: $green;
 
                 font-weight: 500;
-                font-size: 26px;
+                font-size: 1.625rem;
                 color: $main_text;
             }
         }
