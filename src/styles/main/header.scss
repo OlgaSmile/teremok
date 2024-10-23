@@ -244,6 +244,10 @@
     background: url("../../assets/images/bg.jpg") repeat;
     padding: 3.5rem 1rem;
 
+    @include media_rule($mobile) {
+      display: none;
+    }
+
     &-list {
       display: flex;
       flex-direction: column;

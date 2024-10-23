@@ -26,13 +26,11 @@ jQuery(document).ready(function ($) {
   roomPrice
     .empty()
     .append(
-      `<span class='price_text'>${priseText}<span class='price_notice-icon'>*</span></span>`
+      `<span class='price_text'>${priseText}<span class='price_notice-icon'> *</span></span>`
     );
   if (prisePeriod > 1) {
     roomPrice.append(
-      `<span class='price_notice' id="price_notice">Мінімум ${getNightPriceText(
-        prisePeriod
-      )}</span>`
+      `<div class='price_notice' id="price_notice"><span class='price_notice-icon'>*</span> Бронювання від ${prisePeriod} діб.</div>`
     );
   }
 
