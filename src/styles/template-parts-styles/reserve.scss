@@ -9,6 +9,7 @@
   margin: 0 auto;
 
   background: url(../../assets/images/reserve-layout.png) repeat;
+  backdrop-filter: 20px;
   @include media_rule($mobile) {
     display: flex;
     align-items: center;

@@ -4,7 +4,7 @@ $business_form_image = get_field('business_form_image');
 $business_form_title = get_field('business_form_title')
 
 ?>
-<section class="secttion-details-agreement">
+<section id="details-section" class="secttion-details-agreement">
   <?php if (!empty($business_form_image)): ?>
     <img class="secttion-details-agreement__image" src="<?php echo esc_url($business_form_image['url']); ?>" />
   <?php endif ?>
