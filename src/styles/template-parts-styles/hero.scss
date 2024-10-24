@@ -170,23 +170,27 @@
       opacity: 1;
       visibility: visible;
       transition: top 1s, opacity 1s, visibility 1s;
+      animation: hideAnimation 30s infinite;
     }
 
-    &:hover {
+    /*     &:hover {
       .location-text-hide {
-        top: -1rem;
-        opacity: 0;
-        visibility: hidden;
-        transition: top 1s, opacity 1s, visibility 1s;
+        top: -1rem !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+
+        transition: top 1.5s, opacity 1.5s, visibility 1.5s !important;
+        animation-play-state: paused;
       }
 
       .location-text-show {
-        top: 0;
-        opacity: 1;
-        visibility: visible;
-        transition: top 1s, opacity 1s, visibility 1s;
+        top: 0 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transition: top 1s, opacity 1s, visibility 1s !important;
+        animation-play-state: paused;
       }
-    }
+    } */
 
     .location-text-show {
       position: absolute;
@@ -197,6 +201,75 @@
       visibility: hidden;
       width: 20rem;
       transition: top 1s, opacity 1s, visibility 1s;
+      animation: showAnimation 30s infinite;
+      animation-play-state: running;
+    }
+
+    @keyframes hideAnimation {
+      0% {
+        top: 0;
+        opacity: 1;
+        visibility: visible;
+      }
+      10.33% {
+        top: -2rem;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      18.33% {
+        top: 0;
+        opacity: 1;
+        visibility: visible;
+      }
+      100% {
+        top: 0;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    @keyframes showAnimation {
+      0% {
+        top: 2rem;
+        opacity: 0;
+        visibility: hidden;
+      }
+      10.33% {
+        top: 0;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      18.33% {
+        top: 2rem;
+        opacity: 0;
+        visibility: hidden;
+      }
+      100% {
+        top: 2rem;
+        opacity: 0;
+        visibility: hidden; /* Затримка до кінця хвилини */
+      }
+    }
+
+    .location-wrapper:hover .location-text-hide,
+    .location-wrapper:hover .location-text-show {
+      animation-play-state: paused; /* Призупиняємо анімацію на ховері */
+    }
+
+    .location-wrapper:hover .location-text-hide {
+      top: -1rem !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      transition: top 1.5s, opacity 1.5s, visibility 1.5s !important;
+    }
+
+    .location-wrapper:hover .location-text-show {
+      top: 0 !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      transition: top 1s, opacity 1s, visibility 1s !important;
     }
 
     @media screen and (max-width: $tablet) {

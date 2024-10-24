@@ -193,9 +193,7 @@ $business_client_title_final = get_field('business_client_title_final')
       </h2>
     <?php endif ?>
     <?php if (!empty($business_client_desc)): ?>
-      <p class="">
-        <?php echo $business_client_desc ?>
-      </p>
+      <?php echo $business_client_desc ?>
     <?php endif ?>
 
     <?php get_template_part("template-parts/heart-icon-animate"); ?>
@@ -203,7 +201,7 @@ $business_client_title_final = get_field('business_client_title_final')
   <?php if (!empty($business_client_title_final)): ?>
     <div class="section-business-success__final-title-wrapper">
       <?php
-      get_template_part("template-parts/section-title", null, array('title' => $business_client_title_final)) ?>
+      get_template_part("template-parts/section-title-third", null, array('title' => $business_client_title_final)) ?>
     </div>
   <?php endif ?>
 </section>
