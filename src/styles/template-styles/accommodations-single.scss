@@ -12,13 +12,13 @@
         overflow: hidden;
 
         @include media_rule_max($mobile) {
-            height: 32rem;
+            height: 20rem;
             margin-bottom: 7.5rem;
         }
 
         &>img {
             object-fit: cover;
-            width: auto;
+            height: 100%;
         }
     }
 
@@ -54,8 +54,6 @@
                 height: 1.25rem;
             }
         }
-
-
     }
 
     &>.mphb-regular-price {
@@ -63,11 +61,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 20px;
+        flex-direction: column;
+        gap: 1rem;
 
         width: fit-content;
         margin-inline: auto;
-        margin-bottom: .8125rem;
+        margin-bottom: 1rem;
 
         & .price_text {
             position: relative;
@@ -79,25 +78,18 @@
             background-color: $green;
             font-weight: 600;
             font-size: 1rem;
-
-            &:hover+.price_notice {
-                display: flex;
-            }
-
+            z-index: 20;
+            overflow: hidden;
         }
 
         & .price_notice {
-            display: none;
-            position: absolute;
-            top: -0.25rem;
-            right: -8.375rem;
+            display: block;
+            width: fit-content;
+            text-wrap: nowrap;
+            color: $disabled_text;
 
             &-icon {
-                font-size: 1.5rem;
                 color: red;
-                position: absolute;
-                top: -0.25rem;
-                right: .125rem;
             }
         }
     }
@@ -176,6 +168,10 @@
         margin-inline: auto;
         margin-bottom: 5rem;
         padding: 0 1rem;
+
+        @include media_rule_max($mobile) {
+            margin-bottom: 7.5rem;
+        }
 
         &>h2 {
             display: flex;
@@ -283,10 +279,6 @@
         text-align: center;
         margin-bottom: 1rem;
 
-        @include media_rule_max($mobile) {
-            display: none;
-        }
-
         & svg {
             stroke: $orange;
             width: 4.5rem;
@@ -370,33 +362,6 @@
         }
     }
 
-    &_booking_section {
-        display: flex;
-        justify-content: center;
-        gap: 3.125rem;
-        margin-bottom: 5rem;
-
-        & .mphb-reserve-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: .34rem;
-            background-color: $yellow;
-            margin-inline: auto;
-            width: 100%;
-            height: 3rem;
-            margin-bottom: 0 !important;
-        }
-
-        & input {
-            width: max-content;
-            font-size: 1rem !important;
-            padding: 0;
-            border: none !important;
-            background-image: none
-        }
-    }
-
     &_search-section {
         height: 31.9375rem;
         margin-bottom: 5rem;
@@ -413,6 +378,16 @@
     &__booking-section {
         margin-bottom: 11.25rem !important;
 
+        @include media_rule_max($mobile) {
+            width: 100%;
+            margin-bottom: 7.5rem !important;
+            padding-inline: 1rem;
+
+            & .last {
+                display: none;
+            }
+        }
+
         &_title {
             font-weight: 600;
             font-size: 1.875rem;
@@ -427,13 +402,25 @@
             height: fit-content;
             margin-bottom: 1.875rem;
 
+            @include media_rule_max($mobile) {
+                width: 100%;
+            }
+
             & div {
                 height: fit-content;
+
+                @include media_rule_max($mobile) {
+                    width: 100%;
+                }
             }
 
             & .datepick {
                 width: 40.375rem !important;
                 height: fit-content !important;
+
+                @include media_rule_max($mobile) {
+                    width: 100% !important;
+                }
 
                 & .datepick-month-header {
                     height: 2rem;
@@ -525,6 +512,12 @@
             width: 40.375rem;
             height: 1.25rem;
 
+            @include media_rule_max($mobile) {
+                flex-direction: column;
+                gap: 1rem;
+                height: fit-content;
+            }
+
             & li {
                 display: flex;
                 gap: 1rem;
@@ -552,7 +545,7 @@
 
             &-reserved {
                 &::before {
-                    background: #b0c4de;
+                    background: #f8d7d7;
                 }
             }
         }
@@ -573,6 +566,7 @@
                 object-fit: contain;
                 width: 1.5rem;
                 height: 1.5rem;
+                flex-shrink: 0;
 
                 fill: $green;
                 stroke: $green;

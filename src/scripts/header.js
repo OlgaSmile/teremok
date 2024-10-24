@@ -45,6 +45,7 @@ if (submenuMobile) {
 
 jQuery(document).ready(function ($) {
   const subMenu = $(".sub-menu");
+  const headerMobile = $(".header-mobile");
 
   subMenu.wrap("<div class='sub-menu_wrapper'></div>");
 });

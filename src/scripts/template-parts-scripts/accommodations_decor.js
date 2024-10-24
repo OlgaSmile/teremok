@@ -1012,7 +1012,7 @@ function getNightPriceText(number) {
   if (!number) {
     return "за ніч";
   }
-  let text = "";
+  let text = "за ";
 
   const lastDigit = number % 10;
   const lastTwoDigits = number % 100;
