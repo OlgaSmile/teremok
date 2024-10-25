@@ -6,9 +6,10 @@
   max-width: 61.12rem;
   border-radius: 0.5rem;
 
-  margin: 0 auto;
+  margin: 0 auto !important;
 
   background: url(../../assets/images/reserve-layout.png) repeat;
+
   @include media_rule($mobile) {
     display: flex;
     align-items: center;
@@ -54,10 +55,12 @@
           text-align: center;
         }
       }
+
       @include media_rule($mobile) {
         width: max-content;
         margin-right: 4rem;
       }
+
       br {
         display: none;
       }
@@ -84,6 +87,7 @@
           height: 8px;
         }
       }
+
       @include media_rule($mobile) {
         width: max-content;
         margin-right: 4rem;
@@ -92,6 +96,7 @@
       br {
         display: none;
       }
+
       label {
         position: relative;
         display: flex;
@@ -101,6 +106,7 @@
           @include media_rule_max($mobile) {
             display: none;
           }
+
           margin-left: 8px;
           content: "";
           background-image: url("../../assets/images/arrow-botton.svg");
@@ -109,14 +115,17 @@
           height: 8px;
         }
       }
+
       input {
         color: $main_text;
+
         &::placeholder {
           color: $main_text;
         }
       }
     }
-    & .mphb_sc_search-adults > label {
+
+    & .mphb_sc_search-adults>label {
       position: relative;
       display: flex;
       align-items: center;
@@ -125,6 +134,7 @@
         @include media_rule_max($mobile) {
           display: none;
         }
+
         margin-left: 8px;
         content: "";
         background-image: url("../../assets/images/arrow-botton.svg");
@@ -133,6 +143,7 @@
         height: 8px;
       }
     }
+
     & input[type="text"].mphb-datepick.is-datepick {
       width: max-content;
       max-width: 7.62rem;
@@ -150,6 +161,7 @@
       padding: 0;
       background-image: none;
     }
+
     & .mphb-required-fields-tip {
       display: none;
     }
@@ -157,9 +169,11 @@
     & .mphb_sc_search-form {
       width: 100%;
       margin: 0 auto;
+
       &:last-child {
         margin-bottom: 0;
       }
+
       & p {
         padding: 0;
 
@@ -169,6 +183,7 @@
           margin-bottom: 1rem;
         }
       }
+
       @include media_rule($mobile) {
         display: flex;
         justify-content: space-between;
@@ -181,6 +196,7 @@
         font-weight: 600;
         color: $main_text;
         font-size: 1rem !important;
+
         @include media_rule($mobile) {
           margin-bottom: 0.5rem;
         }
@@ -212,6 +228,7 @@
       width: 100%;
       height: 3rem;
       margin-bottom: 0 !important;
+
       @media screen and (min-width: $mobile) {
         &:hover {
           transition: 300ms ease-in-out;
