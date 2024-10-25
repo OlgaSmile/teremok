@@ -23,7 +23,6 @@ add_action('wp_enqueue_scripts', 'wp_teremok_scripts');
 
 function wp_teremok_scripts()
 {
-
     wp_enqueue_style('main', get_stylesheet_uri());
     wp_enqueue_style('wp-teremok-style', get_template_directory_uri() . '/assets/styles/main.css', array('main'));
     wp_enqueue_style('swiper-style', "https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css", array('main'));
@@ -34,7 +33,6 @@ function wp_teremok_scripts()
     wp_enqueue_script('masonry-scripts', 'https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js', array(), false, true);
 
     wp_enqueue_script('show-images-mobile-script', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/show-images-mobile.js', array(), false, true);
-
 
     if (is_page_template('templates/home.php')) {
         wp_enqueue_style('home-style', get_template_directory_uri() . '/assets/styles/template-styles/home.css', array('main'));
@@ -74,7 +72,12 @@ function wp_teremok_scripts()
     if (is_singular() && locate_template('templates/home/location-section.php')) {
         wp_enqueue_style('location-section-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/location-section.css', array('main'));
     }
-
+    if (is_singular() && locate_template('templates/food.php')) {
+        wp_enqueue_style('food-page-styles', get_template_directory_uri() . '/assets/styles/template-styles/food.css', array('main'));
+    }
+    if (is_singular() && locate_template('templates/blogs.php')) {
+        wp_enqueue_style('blogs-page-styles', get_template_directory_uri() . '/assets/styles/template-styles/blog.css', array('main'));
+    }
     if (is_singular() && locate_template('template-parts/search-reserv.php')) {
         wp_enqueue_script('booking-search-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/booking-search.js', array(), false, true);
     }
@@ -83,6 +86,10 @@ function wp_teremok_scripts()
         wp_enqueue_script('accommodations-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/accommodations.js', array(), false, true);
         wp_enqueue_script('accommodations-single-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/accommodations-single.js', array(), false, true);
         wp_enqueue_script('accommodations-booking-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/accommodations-booking.js', array(), false, true);
+        wp_enqueue_style('feedback-form-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/feedback-form.css', array('main'));
+        wp_enqueue_style('accommodations-style', get_template_directory_uri() . '/assets/styles/template-styles/accommodations.css', array('main'));
+        wp_enqueue_style('accommodations-single-style', get_template_directory_uri() . '/assets/styles/template-styles/accommodations-single.css', array('main'));
+        wp_enqueue_style('accommodations-booking-style', get_template_directory_uri() . '/assets/styles/template-styles/accommodations-booking.css', array('main'));
     }
     if (is_singular() && locate_template('templates/activities.php')) {
         wp_enqueue_script('activityNearby-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/activityNearby.js', array(), false, true);
@@ -90,7 +97,6 @@ function wp_teremok_scripts()
     if (is_singular() && locate_template('templates/services.php')) {
         wp_enqueue_script('services-page-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/service-page.js', array(), false, true);
     }
-
     if (is_singular() && locate_template('templates/business.php')) {
         wp_enqueue_script('business-page-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/details-agreement-form.js', array(), false, true);
 
@@ -126,8 +132,6 @@ require get_template_directory() . '/services/custom-post-feedbacks.php';
 require get_template_directory() . '/services/custom-post-apartments.php';
 require get_template_directory() . '/services/custom-post-activities-nearby.php';
 require get_template_directory() . '/services/custom-post-detalies.php';
-
-
 
 /** acf form registration */
 require get_template_directory() . '/services/feedback-form-register.php';
