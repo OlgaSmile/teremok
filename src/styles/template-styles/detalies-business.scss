@@ -1,0 +1,96 @@
+@import "../main/variables.scss";
+@import "../main/mixins.scss";
+
+.section-hero-detalies {
+  background-color: red;
+
+  height: 20rem;
+}
+
+.business-detalies-hero-wrapper {
+  position: relative;
+
+  &__password-wrapper {
+    position: absolute;
+    top: 5%;
+    @media screen and (min-width: $mobile) {
+      top: 25%;
+      left: 15%;
+    }
+
+    z-index: 99;
+    background: url(../../assets/images/reserve-layout.png) repeat;
+
+    max-width: 60.75rem;
+    padding: 1.87rem 2.68rem;
+
+    form {
+      p {
+        font-weight: 500;
+        font-size: 1.62rem;
+      }
+
+      label {
+        input {
+          background-color: transparent !important;
+          background-color: transparent;
+          border: 1px solid $main_text;
+
+          font-weight: 500;
+          font-size: 1rem;
+
+          &:hover {
+            background-color: transparent;
+            border: 1px solid $orange;
+            color: $orange;
+            transition: 300ms ease-in-out;
+          }
+
+          &:focus {
+            background-color: transparent;
+            border: 1px solid $orange;
+            color: $orange;
+            transition: 300ms ease-in-out;
+          }
+
+          &:active {
+            background-color: transparent;
+            border: 1px solid $orange;
+            color: $orange;
+            transition: 300ms ease-in-out;
+          }
+        }
+      }
+      input {
+        &:last-child {
+          border-radius: 0.34rem;
+          background-color: $yellow;
+          font-weight: 600;
+          font-size: 1rem;
+
+          padding: 1rem;
+
+          height: 3rem;
+          cursor: pointer;
+
+          @media screen and (min-width: $mobile) {
+            &:hover {
+              transition: 300ms ease-in-out;
+              background-color: $hovered_btn_yellow;
+            }
+
+            &:focus {
+              transition: 300ms ease-in-out;
+              background-color: $hovered_btn_yellow;
+            }
+          }
+
+          &:active {
+            transition: 300ms ease-in-out;
+            background-color: $pressed_btn_yellow;
+          }
+        }
+      }
+    }
+  }
+}
