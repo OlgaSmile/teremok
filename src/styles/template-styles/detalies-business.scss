@@ -2,13 +2,34 @@
 @import "../main/mixins.scss";
 
 .section-hero-detalies {
-  background-color: red;
+  position: relative;
+  height: 32rem;
+  padding-bottom: 5rem;
+  @include media_rule($mobile) {
+    padding-bottom: 10rem;
+  }
 
-  height: 20rem;
+  @include media_rule($mobile) {
+    height: 42.5rem;
+  }
+
+  &__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .business-detalies-hero-wrapper {
-  position: relative;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
 
   &__password-wrapper {
     position: absolute;
@@ -19,7 +40,7 @@
     }
 
     z-index: 99;
-    background: url(../../assets/images/reserve-layout.png) repeat;
+    background: url(../../assets/images/reserve-layout.png) #9a9595e6 repeat;
 
     max-width: 60.75rem;
     padding: 1.87rem 2.68rem;
@@ -89,6 +110,199 @@
             transition: 300ms ease-in-out;
             background-color: $pressed_btn_yellow;
           }
+        }
+      }
+    }
+  }
+}
+
+.section-buisness-detalies {
+  padding-bottom: 5rem;
+  @include media_rule($mobile) {
+    padding-bottom: 10rem;
+  }
+
+  &__wrapper {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 59.5rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-radius: 2px;
+    border: 1px solid var(--grey_green, #99b7a2);
+    padding: 1.5rem;
+
+    flex-direction: column;
+    @include media_rule($mobile) {
+      flex-direction: row;
+    }
+
+    margin-bottom: 2rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &-name {
+      width: 100%;
+      max-width: 17.5rem;
+      font-weight: 600;
+      font-size: 1.25rem;
+      letter-spacing: 0.05rem;
+      margin-bottom: 2.2rem;
+      @include media_rule($mobile) {
+        margin-bottom: 0;
+        margin-right: 3.5rem;
+        width: 100%;
+      }
+    }
+
+    &-desc {
+      width: 100%;
+      font-size: 1.12rem !important;
+      p {
+        font-size: 1.12rem;
+      }
+      & strong {
+        font-family: $font_inter;
+        font-weight: 600 !important;
+        font-size: 1.87rem;
+      }
+
+      ol {
+        list-style: decimal;
+      }
+
+      & .arrow-marker {
+        li {
+          position: relative;
+          margin-bottom: 1rem;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            top: 20%;
+            left: -5%;
+
+            @include media_rule($mobile) {
+              left: -3%;
+            }
+            background-image: url("../images/arrow-marker.svg");
+            background-repeat: no-repeat;
+            width: 0.75rem;
+            height: 0.75rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.section-detalies-contacts {
+  padding-bottom: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  @include media_rule($mobile) {
+    padding-bottom: 10rem;
+  }
+
+  & .section_title-secondary {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 27.56rem;
+  }
+
+  & .section_title--icon {
+    stroke: $green_light;
+  }
+
+  & .section_title--text {
+    color: $green_light;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  &__wrapper {
+    margin-top: 2rem;
+
+    max-width: 14.81rem;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    &-soccial {
+      margin-top: 1.75rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      a {
+        display: flex;
+        align-items: center;
+
+        &:hover {
+          & .viber-icon {
+            fill: $orange;
+            transition: 300ms ease-in-out;
+            scale: 1.1;
+          }
+
+          & .telegram-icon {
+            stroke: $orange;
+            transition: 300ms ease-in-out;
+            scale: 1.1;
+          }
+        }
+        svg {
+          width: 1.75rem;
+          height: 1.75rem;
+        }
+      }
+      span {
+        margin-left: 0.75rem;
+      }
+    }
+  }
+}
+
+.section-detalies-videos {
+  padding-bottom: 5rem;
+
+  @include media_rule($mobile) {
+    padding-bottom: 10rem;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 1.87rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+  & .video-container {
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+      margin-bottom: 2.5rem;
+      iframe {
+        width: 100%;
+        height: 20rem;
+        @include media_rule($mobile) {
+          height: 42.5rem;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
         }
       }
     }
