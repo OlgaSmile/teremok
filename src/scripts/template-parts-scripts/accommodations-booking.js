@@ -1,7 +1,16 @@
 jQuery(document).ready(function ($) {
   const bookingCheckout = $(".mphb_sc_checkout-wrapper ");
 
+  // Title
+
+  const pageTitle = bookingCheckout.find($(".mphb-booking-details-title"));
+  pageTitle.wrap(`<div class="mphb-booking-details-title_wrapper"></div>`);
+  $(`${trees3}`).insertAfter(pageTitle);
+  $(`${trees3}`).insertBefore(pageTitle);
+
   const roomName = bookingCheckout.find($(".mphb-room-type-title>a")).text();
+
+  // CheckIn - Checkout
 
   bookingCheckout
     .find($(".mphb-checkout-section"))
@@ -88,7 +97,7 @@ jQuery(document).ready(function ($) {
     "<p class='mphb-customer_desc'>Обов’язкові поля позначені *</p>"
   ).insertAfter($(".mphb-customer-note"));
   $(
-    "<p  class='mphb-customer_policy'>політика конфіденційності вьтоівотпдвтюптфіюлвтпвлдтплжваілдтжідлтпжідвлтажідтпжлвідтп</p>"
+    "<p  class='mphb-customer_policy'><a href='/privacy-policy'>політика конфіденційності</a></p >"
   ).insertAfter($(".mphb-customer_desc"));
 
   $(".mphb_sc_checkout-wrapper").css("display", "block");

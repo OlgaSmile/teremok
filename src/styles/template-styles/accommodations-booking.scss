@@ -89,46 +89,34 @@
     }
 
     & .mphb-booking-details-title {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        font-family: $font_inter;
-        font-weight: 200;
-        font-size: 2.5rem;
-        text-transform: uppercase;
-        color: $orange;
-        margin-bottom: 5rem;
-
-        @include media_rule_max($mobile) {
-            font-size: 1.5rem;
-            margin-bottom: 2.5rem;
-            text-align: center;
-        }
-
-        &::before,
-        &::after {
-            content: "";
+        &_wrapper {
             display: flex;
-            align-items: center;
-            width: 5.6875rem;
-            height: 4.125rem;
-            fill: $orange;
-            stroke: $orange;
+            align-items: flex-end;
+            justify-content: space-between;
+            font-family: $font_inter;
+            font-weight: 200;
+            font-size: 2.5rem;
+            text-transform: uppercase;
             color: $orange;
-            background: url("../../assets/images/trees_icon.svg");
-            background-size: cover;
-            object-fit: cover;
-
-            & svg {
-                fill: $orange;
-                stroke: $orange;
-            }
+            margin-bottom: 5rem;
 
             @include media_rule_max($mobile) {
-                width: 3.5625rem;
-                height: 2.625rem;
-                flex-shrink: 0;
+                font-size: 1.5rem;
+                margin-bottom: 2.5rem;
+                text-align: center;
             }
+
+            & svg {
+                width: 5.6875rem;
+                height: 4.125rem;
+
+                @include media_rule_max($mobile) {
+                    width: 3.5625rem;
+                    height: 2.625rem;
+                    flex-shrink: 0;
+                }
+            }
+
         }
     }
 
@@ -230,10 +218,7 @@
                     top: 0;
                     left: 0;
                 }
-
             }
-
-
         }
     }
 
@@ -431,6 +416,10 @@
             @include media_rule_max($mobile) {
                 margin-bottom: 0;
             }
+
+            & a:hover {
+                text-decoration: underline;
+            }
         }
     }
 
@@ -492,6 +481,14 @@
     & .mphb_sc_checkout-submit-wrapper {
         display: flex;
         justify-content: center;
+
+        & input {
+            transition: all 300ms linear;
+
+            &:hover {
+                background-color: $hovered_btn_yellow;
+            }
+        }
     }
 
     & .not_empty label {
