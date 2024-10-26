@@ -105,9 +105,10 @@ $detalies_videos = get_field('detalies_videos')
                 <div class="video-container">
                     <?php foreach ($detalies_videos as $row): ?>
                         <div class="video-container__item">
-                            <iframe width="560" height="315" src="<?php echo $row['video'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <iframe width="560" height="315" allowfullscreen src="<?php echo $row['video'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     <?php endforeach ?>
+
                 </div>
             </section>
         <?php endif ?>
