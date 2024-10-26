@@ -86,7 +86,7 @@ if (is_object($post) && property_exists($post, 'ID')) {
     <div class="watchmore_button">
       <?php
       $btn_name = get_field('watch_all', 'options');
-      $link_page = home_url() . '/vidguky';
+      $link_page = home_url() . '/reviews';
       get_template_part("template-parts/read-more-btn", null, ['btn_name' => $btn_name, 'link_name' => $link_page]); ?>
     </div>
 
