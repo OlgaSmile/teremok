@@ -1,6 +1,12 @@
 jQuery(document).ready(function ($) {
   const bookingCheckout = $(".mphb_sc_checkout-wrapper ");
 
+  const currentURL = window.location;
+
+  if (currentURL.pathname === "/pidtverdzhennya-bronyuvannya/") {
+    $(".header").addClass("booking-header");
+  }
+
   // Title
 
   const pageTitle = bookingCheckout.find($(".mphb-booking-details-title"));

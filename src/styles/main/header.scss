@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 1000;
   display: flex;
   color: $white;
   font-weight: 400;
@@ -142,9 +142,6 @@
           display: none;
         }
       }
-
-
-
     }
 
     .menu-item:has(ul):hover,
@@ -163,6 +160,10 @@
     }
   }
 
+  &__phone {
+    z-index: 500;
+  }
+
   .current-menu-item,
   .current-menu-parent {
     color: $white;
@@ -174,9 +175,26 @@
     }
   }
 
-
+  & .menu__icon_black {
+    display: none;
+  }
 }
 
+.booking-header {
+  color: $main_text;
+
+  & .menu__icon_black {
+    display: flex;
+
+    & .moon {
+      fill: transparent;
+    }
+  }
+
+  & .menu__icon_white {
+    display: none;
+  }
+}
 
 .header-mobile {
   position: absolute;
@@ -219,7 +237,6 @@
     &-logo {
       justify-self: center;
     }
-
   }
 
   &__close-btn {
@@ -356,7 +373,5 @@
         }
       }
     }
-
-
   }
 }
