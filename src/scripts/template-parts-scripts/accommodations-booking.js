@@ -1,12 +1,6 @@
 jQuery(document).ready(function ($) {
   const bookingCheckout = $(".mphb_sc_checkout-wrapper ");
 
-  const currentURL = window.location;
-
-  if (currentURL.pathname === "/pidtverdzhennya-bronyuvannya/") {
-    $(".header").addClass("booking-header");
-  }
-
   // Title
 
   const pageTitle = bookingCheckout.find($(".mphb-booking-details-title"));
@@ -122,24 +116,31 @@ function checkIfEmpty(element, wrapper) {
 }
 
 const textarea = document.getElementById("mphb_note");
-const textareaWrapper = document.querySelector(".mphb-customer-note");
-const guestInputWrapper = document.querySelector(".mphb-guest-name-wrapper");
+
+if (textarea) {
+  const textareaWrapper = document.querySelector(".mphb-customer-note");
+
+  textarea.addEventListener("input", () =>
+    checkIfEmpty(textarea, textareaWrapper)
+  );
+  textarea.addEventListener("blur", () =>
+    checkIfEmpty(textarea, textareaWrapper)
+  );
+
+  checkIfEmpty(textarea, textareaWrapper);
+}
+
 const guestInput = document.getElementById("mphb_room_details-0-guest-name");
 
-textarea.addEventListener("input", () =>
-  checkIfEmpty(textarea, textareaWrapper)
-);
-textarea.addEventListener("blur", () =>
-  checkIfEmpty(textarea, textareaWrapper)
-);
+if (guestInput) {
+  const guestInputWrapper = document.querySelector(".mphb-guest-name-wrapper");
 
-checkIfEmpty(textarea, textareaWrapper);
+  guestInput.addEventListener("input", () =>
+    checkIfEmpty(guestInput, guestInputWrapper)
+  );
+  guestInput.addEventListener("blur", () =>
+    checkIfEmpty(guestInput, guestInputWrapper)
+  );
 
-guestInput.addEventListener("input", () =>
-  checkIfEmpty(guestInput, guestInputWrapper)
-);
-guestInput.addEventListener("blur", () =>
-  checkIfEmpty(guestInput, guestInputWrapper)
-);
-
-checkIfEmpty(guestInput, guestInputWrapper);
+  checkIfEmpty(guestInput, guestInputWrapper);
+}
