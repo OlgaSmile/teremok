@@ -1,11 +1,8 @@
 @import "../main/mixins.scss";
 @import "../main/variables.scss";
 .reserve-section {
-  padding-bottom: 7.5rem;
+  padding-bottom: 5rem;
 
-  @include media_rule($mobile) {
-    padding-bottom: 11.25rem;
-  }
   &__wrapper {
     position: relative;
     height: 50.75rem;

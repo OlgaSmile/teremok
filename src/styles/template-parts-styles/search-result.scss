@@ -8,6 +8,10 @@
   height: 31.62rem;
   overflow: hidden;
   background-color: #f5f5f5;
+  clip-path: polygon(0 0, 100% 0%, 100% 77%, 52% 100%, 0 75%);
+  @include media_rule_max($mobile) {
+    clip-path: polygon(0 0, 100% 0%, 100% 87%, 52% 100%, 0 86%);
+  }
 }
 
 .wrapper-search-hero img {
