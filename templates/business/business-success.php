@@ -12,6 +12,7 @@ $business_rating_desc3 = get_field('business_rating_desc3');
 $business_rating_booking_link = get_field('business_rating_booking_link');
 $business_kitchen_title = get_field('business_kitchen_title');
 $business_kitchen_desc = get_field('business_kitchen_desc');
+$business_kitchen_title_bottom = get_field('business_kitchen_title_bottom');
 
 $business_autonomy_title = get_field('business_autonomy_title');
 $business_autonomy_desc  = get_field('business_autonomy_desc');
@@ -100,6 +101,25 @@ $business_client_title_final = get_field('business_client_title_final')
       </p>
     <?php endif ?>
   </div>
+
+  <?php if (!empty($business_kitchen_title_bottom)): ?>
+
+    <div class="section-business-success__container">
+      <div class="business-tree-title">
+        <svg width="34" height="67" viewBox="0 0 34 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16.9609 58.3437V0.90625" stroke="#3C4839" stroke-width="1.5" />
+          <path d="M16.9584 1.32812C15.9154 5.5535 12.2961 14.0353 6.16308 14.1594M16.9584 18.5388C15.7589 22.5023 11.2947 30.179 3.03394 29.1777M16.9584 37.3133C14.0379 41.7462 6.75752 50.1113 1 48.1086" stroke="#3C4839" stroke-width="1.5" />
+          <path d="M16.9557 1.32812C17.9987 5.5535 21.6179 14.0353 27.751 14.1594M16.9557 18.5388C18.1552 22.5023 22.6193 30.179 30.8801 29.1777M16.9557 37.3133C19.8762 41.7462 27.1565 50.1113 32.9141 48.1086" stroke="#3C4839" stroke-width="1.5" />
+        </svg>
+        <h3><?php echo $business_kitchen_title_bottom ?></h3>
+        <svg width="34" height="67" viewBox="0 0 34 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16.9609 58.3437V0.90625" stroke="#3C4839" stroke-width="1.5" />
+          <path d="M16.9584 1.32812C15.9154 5.5535 12.2961 14.0353 6.16308 14.1594M16.9584 18.5388C15.7589 22.5023 11.2947 30.179 3.03394 29.1777M16.9584 37.3133C14.0379 41.7462 6.75752 50.1113 1 48.1086" stroke="#3C4839" stroke-width="1.5" />
+          <path d="M16.9557 1.32812C17.9987 5.5535 21.6179 14.0353 27.751 14.1594M16.9557 18.5388C18.1552 22.5023 22.6193 30.179 30.8801 29.1777M16.9557 37.3133C19.8762 41.7462 27.1565 50.1113 32.9141 48.1086" stroke="#3C4839" stroke-width="1.5" />
+        </svg>
+      </div>
+    </div>
+  <?php endif ?>
 
   <div class="section-business-success__container">
     <?php if (!empty($business_autonomy_title)): ?>
