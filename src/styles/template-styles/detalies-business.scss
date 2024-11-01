@@ -29,6 +29,7 @@
     bottom: 0;
     font-weight: 500;
     color: $white;
+    background-color: red;
     @include media_rule($mobile) {
       font-size: 1.25rem;
     }
