@@ -45,7 +45,15 @@ if (submenuMobile) {
 
 jQuery(document).ready(function ($) {
   const subMenu = $(".sub-menu");
-  const headerMobile = $(".header-mobile");
+
+  const currentURL = window.location;
+  console.log("currentURL: ", currentURL);
+
+  if (currentURL.pathname === "/pidtverdzhennya-bronyuvannya/") {
+    $(".header").addClass("booking-header");
+  } else {
+    $(".header").removeClass("booking-header");
+  }
 
   subMenu.wrap("<div class='sub-menu_wrapper'></div>");
 });

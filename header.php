@@ -16,11 +16,16 @@
         <header class="header">
             <div class="header__content container">
                 <div class="header__menu menu">
-                    <div class="menu__icon icon-menu menu__round">
+                    <div class="menu__icon icon-menu menu__round menu__icon_white">
                         <a href="/">
                             <?php get_template_part("template-parts/logo");?>
                         </a>
                     </div>
+                </div>
+                <div class="menu__icon icon-menu menu__round menu__icon_black">
+                    <a href="/">
+                        <?php get_template_part("template-parts/logo_black");?>
+                    </a>
                 </div>
                 <div class="menu__nav">
                     <nav class="menu__body">

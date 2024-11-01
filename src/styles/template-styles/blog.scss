@@ -139,18 +139,6 @@
             justify-content: flex-end;
         }
     }
-
-    & .location-section {
-        @include media_rule($mobile) {
-            display: none;
-        }
-    }
-
-    & .location-section {
-        @include media_rule($mobile) {
-            display: none;
-        }
-    }
 }
 
 .single-blog {
@@ -221,12 +209,6 @@
 
             & p {
                 text-indent: 1.5rem;
-            }
-        }
-
-        &-location {
-            @include media_rule($mobile) {
-                display: none;
             }
         }
     }

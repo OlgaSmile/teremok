@@ -7,7 +7,7 @@ jQuery(document).ready(function ($) {
 
   const roomName = roomTitle.text();
 
-  $(treesTitleIcon).insertBefore(roomName);
+  $(treesTitleIcon).insertBefore(roomTitle);
 
   // Ціна
 
@@ -23,14 +23,10 @@ jQuery(document).ready(function ($) {
 
   const priseText = `${Number(priseNumber) / Number(prisePeriod)} грн/доба`;
 
-  roomPrice
-    .empty()
-    .append(
-      `<span class='price_text'>${priseText}<span class='price_notice-icon'> *</span></span>`
-    );
+  roomPrice.empty().append(`<span class='price_text'>${priseText}</span>`);
   if (prisePeriod > 1) {
     roomPrice.append(
-      `<div class='price_notice' id="price_notice"><span class='price_notice-icon'>*</span> Бронювання від ${prisePeriod} діб.</div>`
+      `<div class='price_notice' id="price_notice"><span class='price_notice-icon'></span> Бронювання від ${prisePeriod} діб</div>`
     );
   }
 
@@ -195,6 +191,8 @@ jQuery(document).ready(function ($) {
   );
 
   const submitForm = roomWrapper.find($(".mphb_sc_booking_form-wrapper"));
+
+  submitForm.find($(".mphb-confirm-reservation")).val("Забронювати");
 
   $(treesTitleIcon).insertBefore(bookingSectionTitle);
 
