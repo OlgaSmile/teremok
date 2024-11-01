@@ -48,7 +48,7 @@ $business_form_title = get_field('business_form_title')
         </div>
       </div>
       <a href="<?php echo home_url() . '/privacy-policy' ?>" class="secttion-details-agreement__form-policy"><span>
-          Відправляючи свої дані, Ви автоматично погоджуєтеся з Політикою конфіденційності (<?php echo home_url() ?>/privacy-policy)
+          Відправляючи свої дані, Ви автоматично погоджуєтеся з Політикою конфіденційності
         </span></a>
       <button class="secttion-details-agreement__form-submit">Надіслати</button>
       <input type="hidden" name="action" value="do_insert_detalies">

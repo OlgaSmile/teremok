@@ -6,6 +6,13 @@ Template Name: detalies-business
 get_header();
 
 
+//socials
+$facebook = get_field('facebook', 'option');
+$instagram = get_field('instagram', 'option');
+$telegram = get_field('telegram', 'option');
+$viber = get_field('viber', 'option');
+
+
 
 $hero_detalies_busuness = get_field('hero_detalies_busuness');
 $detalies_title = get_field('detalies_title');
@@ -36,9 +43,70 @@ $detalies_videos = get_field('detalies_videos')
             <?php endif ?>
         </div>
 
+
+
+        <ul class="hero__socials">
+            <?php if ($facebook) { ?>
+                <li class="hero__socials--item">
+                    <a href="<?php echo esc_attr($facebook['url']); ?>"
+                        target="<?php echo esc_attr($facebook['target']); ?>" aria-label="Facebook">
+                        <svg class="" width="28" height="28">
+                            <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#facebook"></use>
+                        </svg>
+                    </a>
+                    <div class="hero__socials--title-wrap">
+                        <p class="hero__socials--title"><?php echo esc_attr($facebook['title']); ?></p>
+                    </div>
+                </li>
+            <?php } ?>
+            <?php if ($instagram) { ?>
+                <li class="hero__socials--item">
+                    <a href="<?php echo esc_attr($instagram['url']); ?>" target="<?php echo $instagram['target']; ?>"
+                        aria-label="instagram">
+                        <svg class="" width="28" height="28">
+                            <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#instagram"></use>
+                        </svg>
+                    </a>
+                    <div class="hero__socials--title-wrap">
+                        <p class="hero__socials--title"><?php echo esc_attr($instagram['title']); ?></p>
+                    </div>
+                </li>
+            <?php } ?>
+            <?php if ($telegram) { ?>
+                <li class="hero__socials--item">
+                    <a href="<?php echo esc_attr($telegram['url']); ?>" target="<?php echo $telegram['target']; ?>"
+                        aria-label="telegram">
+                        <svg class="" width="28" height="28">
+                            <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#telegram"></use>
+                        </svg>
+                    </a>
+                    <div class="hero__socials--title-wrap">
+                        <p class="hero__socials--title"><?php echo esc_attr($telegram['title']); ?></p>
+                    </div>
+                </li>
+            <?php } ?>
+            <?php if ($viber) { ?>
+                <li class="hero__socials--item viber_item">
+                    <a href="<?php echo esc_attr($viber['url']); ?>" target="<?php echo $viber['target']; ?>"
+                        aria-label="viber">
+                        <svg class="hero__socials--viber" width="28" height="28">
+                            <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#viber">
+                            </use>
+                        </svg>
+                    </a>
+                    <div class="hero__socials--title-wrap">
+                        <p class="hero__socials--title"><?php echo esc_attr($viber['title']); ?></p>
+                    </div>
+                </li>
+            <?php } ?>
+        </ul>
+
         <?php get_template_part("template-parts/logo-detalies"); ?>
 
-        <a href="" class="section-hero-detalies__location"><?php echo get_field('location_address', 'options') ?></a>
+        <a href="" class="section-hero-detalies__location"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.0001 2C7.58908 2 4.00008 5.589 4.00008 9.995C3.97108 16.44 11.6961 21.784 12.0001 22C12.0001 22 20.0291 16.44 20.0001 10C20.0001 5.589 16.4111 2 12.0001 2ZM12.0001 14C9.79008 14 8.00008 12.21 8.00008 10C8.00008 7.79 9.79008 6 12.0001 6C14.2101 6 16.0001 7.79 16.0001 10C16.0001 12.21 14.2101 14 12.0001 14Z" fill="white" />
+            </svg>
+            <span><?php echo get_field('location_address', 'options') ?></span></a>
     </section>
 
 
