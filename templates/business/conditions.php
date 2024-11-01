@@ -61,6 +61,10 @@ $repeater_field =  get_field('conditions');
   <div class="teremok-section__mobile-wrapper">
     <?php if (have_rows("conditions")) : ?>
       <div class="special-offert-mobile">
+        <?php if (!empty($title)): ?>
+          <?php
+          get_template_part("template-parts/section-title", null, array('title' => $title)); ?>
+        <?php endif; ?>
         <?php
         $index = 0; // Індекс для циклу
         while (have_rows('conditions')) : the_row(); ?>

@@ -36,11 +36,20 @@ $business_client_title_final = get_field('business_client_title_final')
 
 
 <section class="section-business-success">
-  <?php if (!empty($title)): ?>
-    <?php
-    get_template_part("template-parts/section-title", null, array('title' => $title)) ?>
+  <div class="section-business-success__desktop-title">
+    <?php if (!empty($title)): ?>
+      <?php
+      get_template_part("template-parts/section-title", null, array('title' => $title)) ?>
 
-  <?php endif ?>
+    <?php endif ?>
+  </div>
+  <div class="section-business-success__mobile-title">
+    <?php if (!empty($title)): ?>
+      <?php
+      get_template_part("template-parts/section-title_small", null, array('title' => $title)) ?>
+
+    <?php endif ?>
+  </div>
   <?php if (!empty($text)): ?>
     <p class="section-business-success__desc-top">
       <?php echo $text ?>
@@ -71,7 +80,7 @@ $business_client_title_final = get_field('business_client_title_final')
     <?php endif ?>
     <?php if (!empty($business_rating_rating_points)): ?>
       <div class="section-business-success__rating-points">
-        <p> <?php echo $business_rating_rating_points ?></p>
+        <?php echo $business_rating_rating_points ?>
       </div>
     <?php endif ?>
     <?php if (!empty($business_rating_desc3)): ?>
