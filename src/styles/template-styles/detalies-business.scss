@@ -23,6 +23,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &__location {
+    position: absolute;
+    bottom: 0;
+    font-weight: 500;
+    color: $white;
+    @include media_rule($mobile) {
+      font-size: 1.25rem;
+    }
+  }
 }
 
 .business-detalies-hero-wrapper {

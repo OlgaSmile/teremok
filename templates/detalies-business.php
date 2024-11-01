@@ -37,6 +37,8 @@ $detalies_videos = get_field('detalies_videos')
         </div>
 
         <?php get_template_part("template-parts/logo-detalies"); ?>
+
+        <a href="" class="section-hero-detalies__location"><?php echo get_field('location_address', 'options') ?></a>
     </section>
 
 
