@@ -16,7 +16,7 @@ $infrastructures = get_field('business_infrastructures')
     <ul class="section-infrastructure__list">
       <?php foreach ($infrastructures as $index => $row): ?>
         <li class="section-infrastructure__item">
-          <img src="<?php echo get_field('tree_green', 'options')['url'] ?>" alt="">
+          <img src="<?php echo get_field('confirm_icon', 'options')['url'] ?>" alt="">
           <p>
             <?php echo $row['desc'] ?>
           </p>

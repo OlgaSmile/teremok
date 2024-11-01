@@ -10,11 +10,21 @@ $business_form_title = get_field('business_form_title')
   <?php endif ?>
   <div class="secttion-details-agreement__form-wrapper">
     <form id="form-details-agreement" method="post" enctype="multipart/form-data" class="secttion-details-agreement__form" action="<?php echo esc_url(admin_url('admin-ajax.php')); ?>">
-      <?php if (!empty($business_form_title)): ?>
-        <?php
-        get_template_part("template-parts/section-title", null, array('title' => $business_form_title)) ?>
+      <div class="form-title-desktop">
+        <?php if (!empty($business_form_title)): ?>
+          <?php
+          get_template_part("template-parts/section-title", null, array('title' => $business_form_title)) ?>
 
-      <?php endif ?>
+        <?php endif ?>
+      </div>
+
+      <div class="form-title-mobile">
+        <?php if (!empty($business_form_title)): ?>
+          <?php
+          get_template_part("template-parts/section-title-secondary", null, array('title' => $business_form_title)) ?>
+
+        <?php endif ?>
+      </div>
       <div class="secttion-details-agreement__form-input-container">
         <div class="secttion-details-agreement__form-input-wrapper">
           <label id="name-label" class="secttion-details-agreement-label">Ваше ім’я та прізвище<span class="asterisk">*</span></label>
@@ -37,7 +47,9 @@ $business_form_title = get_field('business_form_title')
           <p id="validation-text-details">Введіть не менше ніж 40 символів</p><span><span id="current-length-text">0</span>/1000</span>
         </div>
       </div>
-      <a href="<?php echo home_url() . '/privacy-policy' ?>" class="secttion-details-agreement__form-policy ">Політика конфеденційності</a>
+      <a href="<?php echo home_url() . '/privacy-policy' ?>" class="secttion-details-agreement__form-policy"><span>
+          Відправляючи свої дані, Ви автоматично погоджуєтеся з Політикою конфіденційності (<?php echo home_url() ?>/privacy-policy)
+        </span></a>
       <button class="secttion-details-agreement__form-submit">Надіслати</button>
       <input type="hidden" name="action" value="do_insert_detalies">
     </form>

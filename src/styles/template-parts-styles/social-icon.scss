@@ -12,6 +12,16 @@
       animation: move-up-down 1s linear 1;
     }
   }
+
+  svg {
+    width: 3.8rem;
+    height: 3.8rem;
+  }
+
+  & .social-icon-wrapper__text {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .social-icon-wrapper__text {
