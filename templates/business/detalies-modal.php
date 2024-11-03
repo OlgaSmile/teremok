@@ -12,7 +12,7 @@
   <div>
     <h3>Переходь за посиланням,
       якщо маєш код від адміністратора</h3>
-    <a tabindex="1" href="<?php echo home_url() . '/biznes-detali' ?>">Деталі угоди</a>
+    <a tabindex="1" href="<?php echo home_url() . '/business-details' ?>">Деталі угоди</a>
   </div>
 
 

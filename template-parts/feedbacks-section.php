@@ -52,7 +52,7 @@ wp_reset_postdata();?>
         <div class="feedbacks__section-btns">
 
             <?php
-$link_next_page = home_url() . '/vidguky';
+$link_next_page = home_url() . '/reviews';
 $watch_all_feedbacks = get_field('watch_all_feedbacks', 'options');
 get_template_part("template-parts/learn-more-btn", null, ['btn_name' => $watch_all_feedbacks, "link_name" => $link_next_page]);?>
 

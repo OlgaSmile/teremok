@@ -47,13 +47,32 @@
   }
 
   & .section_title {
-    margin-bottom: 1rem;
+    margin-bottom: 2.5rem;
+    @include media_rule($mobile) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  & .teremok-section__owner-block-img-box {
+    height: 15.12rem;
+    svg {
+      &:first-child {
+        width: 15.12rem;
+        height: 15.12rem;
+      }
+    }
+
+    img {
+      width: 12.5rem;
+      height: 12.5rem;
+    }
   }
 
   &__desc {
     text-align: center;
 
     p {
+      font-size: 1rem !important;
       margin-bottom: 1rem;
       &:last-child {
         margin-bottom: 0;
@@ -73,19 +92,37 @@
   }
 
   &__desc {
-    margin-top: 2.5rem;
-    margin-bottom: 7.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
     margin-left: auto;
     margin-right: auto;
     max-width: 50rem;
-    font-size: 1.25rem;
+
+    font-size: 1rem;
+
+    @include media_rule($mobile) {
+      font-size: 1.25rem !important;
+      margin-top: 2.5rem;
+      margin-bottom: 7.5rem;
+    }
+    p {
+      font-size: 1rem;
+
+      @include media_rule($mobile) {
+        font-size: 1.25rem;
+      }
+    }
     font-weight: 600;
     text-align: center;
   }
 
   & .houses-list {
     &__item {
-      margin-bottom: 7.5rem;
+      margin-bottom: 1rem;
+      @include media_rule($mobile) {
+        margin-bottom: 7.5rem;
+      }
+
       &:last-child {
         margin-bottom: 0;
       }
@@ -94,11 +131,17 @@
         max-width: 65rem;
         margin-left: auto;
         margin-right: auto;
+
+        padding-left: 1rem;
+        padding-right: 1rem;
       }
     }
 
     &__images-wrapper {
-      margin-top: 1.75rem;
+      margin-top: 1.12rem;
+      @include media_rule($mobile) {
+        margin-top: 1.75rem;
+      }
       position: relative;
       display: flex;
       width: 100%;
@@ -154,31 +197,32 @@
     &__title {
       font-weight: 700;
       text-align: center;
-      margin-bottom: 1rem;
-
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
       @include media_rule($mobile) {
         font-size: 1.5rem;
+        margin-bottom: 1rem;
       }
     }
 
     &__desc {
       text-align: center;
       margin-bottom: 1rem;
-
-      padding-right: 1rem;
-      padding-left: 1rem;
     }
     p {
       text-align: center;
       max-width: 43.75rem;
       margin-left: auto;
       margin-right: auto;
+      font-size: 1rem;
     }
 
     &__detalies-wrapper {
-      padding-left: 1rem;
-      padding-right: 1rem;
+      position: relative;
 
+      p {
+        font-size: 0.87rem;
+      }
       @include media_rule($mobile) {
         display: flex;
         flex-direction: column;
@@ -221,12 +265,13 @@
   }
 
   &__list {
-    margin-top: 1rem;
+    margin-top: 2.5rem;
     margin-left: auto;
     margin-right: auto;
     max-width: 65rem;
 
     @include media_rule($mobile) {
+      margin-top: 1rem;
       display: flex;
       flex-wrap: wrap;
       align-items: baseline;
@@ -235,8 +280,10 @@
   }
 
   &__item {
+    margin-bottom: 1rem;
     @include media_rule($mobile) {
       width: calc(100% / 2 - 5.34rem);
+      margin-bottom: 2.25rem;
     }
     img {
       width: 1.43rem;
@@ -247,7 +294,10 @@
       margin-top: 0.5rem;
       text-align: center;
     }
-    margin-bottom: 2.25rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -255,6 +305,14 @@
   padding-bottom: 5rem;
   @include media_rule($mobile) {
     padding-bottom: 11.25rem;
+  }
+
+  & .special-offert-mobile {
+    & .section_title {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      margin-bottom: 2.5rem;
+    }
   }
 
   & .teremok-section__desktop-wrapper {
@@ -310,8 +368,12 @@
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 600;
+
+    @include media_rule($mobile) {
+      font-size: 1.25rem;
+    }
   }
 
   &__list {
@@ -344,7 +406,8 @@
       }
       width: calc(100% / 3 - 2rem);
     }
-    svg {
+    img {
+      width: 1.37rem;
       margin-bottom: 0.5rem;
     }
 
@@ -360,28 +423,48 @@
     padding-bottom: 11.25rem;
   }
 
+  &__desktop-title {
+    display: none;
+    @include media_rule($mobile) {
+      display: block;
+    }
+  }
+  &__mobile-title {
+    display: block;
+    @include media_rule($mobile) {
+      display: none;
+    }
+  }
+
   &__desc-top {
-    margin-top: 2.5rem;
     margin-left: auto;
     margin-right: auto;
     max-width: 38rem;
     text-align: center;
-
-    margin-bottom: 5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
     @include media_rule($mobile) {
+      margin-top: 2.5rem;
       margin-bottom: 11.25rem;
+      font-size: 1.25rem;
     }
-
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 600;
   }
 
   &__title {
     text-align: center;
-    font-weight: $font_inter;
+    font-family: $font_inter;
     color: $main_text;
+    font-size: 1.5rem;
+
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
     margin-bottom: 1.5rem;
     @include media_rule($mobile) {
+      margin-bottom: 1.5rem;
       font-size: 1.87rem;
     }
   }
@@ -396,9 +479,9 @@
     text-align: center;
     max-width: 50rem;
 
-    padding-bottom: 5rem;
+    padding-bottom: 2.5rem;
     @include media_rule($mobile) {
-      padding-bottom: 11.25rem;
+      padding-bottom: 7.5rem;
     }
 
     & .client-base {
@@ -414,28 +497,62 @@
   }
 
   &__rating-desc {
-    margin-top: 1.5rem;
-  }
-
-  &__rating-points {
-    margin-top: 0.31rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: max-content;
-    p {
-      border-radius: 0.375rem;
-      padding: 0.25rem 0.5rem;
-      background-color: $green;
-      font-weight: 600;
+    margin-top: 1.75rem;
+    @include media_rule($mobile) {
+      margin-top: 1.5rem;
     }
   }
 
+  &__rating-points {
+    margin-left: auto;
+    margin-right: auto;
+    width: max-content;
+    margin-top: 0.75rem;
+    @include media_rule($mobile) {
+      margin-top: 0.31rem;
+    }
+    p {
+      strong {
+        font-weight: 600;
+      }
+      border-radius: 0.375rem;
+      padding: 0.25rem 0.5rem;
+      background-color: $green;
+    }
+  }
+
+  & .business-tree-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 50rem;
+    h3 {
+      max-width: 38rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1rem;
+
+      @include media_rule($mobile) {
+        font-size: 1.25rem;
+      }
+    }
+
+    svg {
+      display: none;
+
+      @include media_rule($mobile) {
+        display: block;
+        width: 2rem;
+        height: 4.12rem;
+      }
+    }
+  }
   .business_platforms__list {
     margin-top: 1.5rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
     max-width: 42.62rem;
     margin-left: auto;
@@ -507,18 +624,27 @@
     margin-top: 1.5rem;
     display: flex;
 
-    justify-content: space-between;
-
+    flex-direction: column;
     @include media_rule($mobile) {
       column-gap: 5.5rem;
+
       justify-content: center;
+      flex-direction: row;
     }
     a {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      margin-bottom: 1.25rem;
 
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @include media_rule($mobile) {
+        margin-bottom: 0;
+      }
       p {
         margin-top: 1rem;
         font-weight: 700;
@@ -534,11 +660,18 @@
       font-weight: 600;
       font-family: $primary_font;
       color: $main_text;
-      max-width: 30.37rem;
+      max-width: 36.37rem;
+    }
+
+    & .section_title {
+      align-items: self-start;
     }
 
     & .section_title--icon {
       stroke: $main_text;
+      @include media_rule($mobile) {
+        align-items: center;
+      }
     }
   }
 }
@@ -547,15 +680,23 @@
   position: relative;
   margin: 0 auto;
   width: 100%;
-
+  padding-left: 1rem;
+  padding-right: 1rem;
   z-index: 5;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   height: auto;
   padding-bottom: 5rem;
+  justify-content: center;
+  align-items: center;
   @include media_rule($mobile) {
     padding-bottom: 11.25rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    padding-left: 0;
+    padding-right: 0;
   }
 
   &__image {
@@ -580,6 +721,24 @@
     @include media_rule($mobile) {
       padding: 4.87rem 5.5rem;
     }
+
+    & .form-title-desktop {
+      display: none;
+
+      @include media_rule($mobile) {
+        display: block;
+      }
+    }
+
+    & .form-title-mobile {
+      display: block;
+      & .section_title--text {
+        font-size: 1.125rem;
+      }
+      @include media_rule($mobile) {
+        display: none;
+      }
+    }
   }
 
   &__form {
@@ -589,12 +748,13 @@
     }
 
     &-input-container {
-      margin-top: 3.5rem;
+      margin-top: 2.87rem;
       display: flex;
       flex-direction: column;
       align-items: center;
 
       @include media_rule($mobile) {
+        margin-top: 3.5rem;
         margin-bottom: 3.62rem;
         flex-direction: row;
         flex-wrap: wrap;
@@ -607,7 +767,8 @@
       position: relative;
       display: flex;
       flex-direction: column;
-      margin-bottom: 4rem;
+      margin-bottom: 3.62rem;
+
       &:last-child {
         margin-bottom: 0;
       }
@@ -625,9 +786,13 @@
       }
       label {
         position: absolute;
-        top: 0;
+        top: 14%;
         transition: top 1s;
         z-index: -1;
+
+        @include media_rule($mobile) {
+          top: 0;
+        }
       }
       input {
         outline: none;
@@ -667,12 +832,16 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      margin-top: 2rem;
+      margin-top: 3.62rem;
       label {
         position: absolute;
-        top: 22%;
+        top: 45%;
         transition: top 1s;
         z-index: -1;
+
+        @include media_rule($mobile) {
+          top: 22%;
+        }
       }
       textarea {
         width: 100%;
@@ -690,7 +859,6 @@
         letter-spacing: 0.04px;
         padding-bottom: 8px;
         padding-left: 0;
-        margin-bottom: 8px;
 
         &:active {
           border-bottom: 0.062rem solid $green_light;
@@ -713,12 +881,16 @@
     &-submit {
       margin-left: auto;
       margin-right: auto;
-      margin-top: 2.5rem;
+      margin-top: 2rem;
       border-radius: 0.37rem;
       background-color: $yellow;
       padding: 0.87rem 6.62rem;
       max-width: 19.06rem;
       font-weight: 600;
+
+      @media screen and (min-width: $mobile) {
+        margin-top: 2.5rem;
+      }
 
       @media screen and (min-width: $mobile) {
         &:hover {
@@ -737,6 +909,12 @@
         background-color: $pressed_btn_yellow;
       }
     }
+  }
+
+  &__form-policy {
+    width: 100%;
+    font-size: 0.75rem;
+    color: $disabled_text;
   }
 }
 
@@ -769,11 +947,19 @@
 .details-nema-max-length {
   position: absolute;
   width: 100%;
-  bottom: -80%;
+
   color: $grey_green;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  bottom: -60%;
+  p {
+    font-size: 0.75rem;
+  }
+
+  span {
+    font-size: 0.75rem;
+  }
 }
 
 .details-text-max-length {
@@ -784,6 +970,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  p {
+    font-size: 0.75rem;
+  }
+
+  span {
+    font-size: 0.75rem;
+  }
 }
 
 .details-phone-label {
@@ -804,16 +998,28 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 4.43rem;
+  margin-top: 2.25rem;
   width: 100%;
 
+  @media screen and (min-width: $mobile) {
+    margin-top: 4.43rem;
+  }
+
   &-detalies {
-    width: 20rem;
     font-weight: 600;
-    font-size: 1rem;
+    width: 17rem;
     text-align: center;
-    line-height: 1.21rem;
+
     color: $main_text;
+
+    font-size: 0.87rem;
+    line-height: 1.06rem;
+
+    @media screen and (min-width: $mobile) {
+      font-size: 1rem;
+      line-height: 1.21rem;
+      width: 20rem;
+    }
   }
 }
 
@@ -829,9 +1035,14 @@
   align-items: center;
 
   p {
-    font-weight: 500;
-    font-size: 1.62rem;
+    font-weight: 600;
+    font-size: 1rem;
     color: $orange;
+
+    @media screen and (min-width: $mobile) {
+      font-size: 1.62rem;
+      font-weight: 500;
+    }
   }
 
   & .detalies-link-wrapper__icon-left {
@@ -895,24 +1106,60 @@
 
 .business-hero {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  padding-bottom: 5rem;
+  @include media_rule($mobile) {
+    padding-bottom: 11.25rem;
+  }
+  img {
+    height: 50.75rem;
+    object-fit: cover;
+    width: 100%;
+  }
+  &__content {
+    position: absolute;
+    width: 100%;
+    top: 15.06rem;
+
+    h2 {
+      text-align: center;
+      font-family: $font_inter;
+      font-size: 2.87rem;
+      font-weight: 600;
+      color: $white;
+      text-transform: uppercase;
+
+      @include media_rule($mobile) {
+        font-size: 8rem;
+      }
+    }
+  }
 
   &__detalies-wrapper {
-    position: absolute;
-
-    top: 50%;
+    margin-top: 3.43rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 .detalies-modal {
   position: relative;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   border-radius: 0.5rem;
   background: url(../../assets/images/reserve-layout.png) repeat;
-  max-width: 60.75rem;
-  max-height: 11.75rem;
-  padding: 1.87rem 2.68rem;
+  max-width: 21.37rem;
+  height: 100%;
+  padding: 2.37rem 1.21rem;
+  @include media_rule($mobile) {
+    max-width: 60.75rem;
+    max-height: 11.75rem;
+    padding: 1.87rem 2.68rem;
+    flex-direction: row;
+    align-items: center;
+  }
+
   div {
     &:last-child {
       a {
@@ -920,6 +1167,7 @@
         border: 1px solid $main_text;
 
         font-weight: 500;
+
         font-size: 1rem;
 
         &:hover {
@@ -950,8 +1198,13 @@
     text-align: center;
 
     & h3 {
-      font-weight: 500;
-      font-size: 1.25rem;
+      font-weight: 600;
+      font-size: 1rem;
+      text-align: center;
+      @include media_rule($mobile) {
+        font-size: 1.25rem;
+        font-weight: 500;
+      }
     }
 
     a {
@@ -966,7 +1219,11 @@
       max-width: 20.68rem;
       height: 3rem;
       cursor: pointer;
-      margin-top: 2rem;
+
+      margin-top: 1rem;
+      @include media_rule($mobile) {
+        margin-top: 2rem;
+      }
 
       @media screen and (min-width: $mobile) {
         &:hover {
@@ -987,10 +1244,18 @@
     }
   }
   svg {
-    display: none;
+    width: 24.16rem;
+    height: 3.62rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 
     @include media_rule($mobile) {
-      display: block;
+      width: 3rem;
+      height: 7.28rem;
+      margin-bottom: 0;
+      margin-top: 0;
+      margin-left: 2rem;
+      margin-right: 2rem;
     }
   }
 }

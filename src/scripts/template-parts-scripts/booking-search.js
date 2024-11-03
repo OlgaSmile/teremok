@@ -1158,8 +1158,8 @@ jQuery(document).ready(function ($) {
 
     reserveBtn.text("Забронювати")
     if (
-      pathname.includes("rezul-taty-poshuku") ||
-      pathname.includes("/teremok/rezul-taty-poshuku/")
+      pathname.includes("search-results") ||
+      pathname.includes("/teremok/search-results/")
     ) {
       searchButton.val("Змінити й забронювати")
       const title = searchWrapper.find(".mphb-room-type-title").detach()

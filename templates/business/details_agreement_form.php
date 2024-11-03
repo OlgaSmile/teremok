@@ -10,11 +10,21 @@ $business_form_title = get_field('business_form_title')
   <?php endif ?>
   <div class="secttion-details-agreement__form-wrapper">
     <form id="form-details-agreement" method="post" enctype="multipart/form-data" class="secttion-details-agreement__form" action="<?php echo esc_url(admin_url('admin-ajax.php')); ?>">
-      <?php if (!empty($business_form_title)): ?>
-        <?php
-        get_template_part("template-parts/section-title", null, array('title' => $business_form_title)) ?>
+      <div class="form-title-desktop">
+        <?php if (!empty($business_form_title)): ?>
+          <?php
+          get_template_part("template-parts/section-title", null, array('title' => $business_form_title)) ?>
 
-      <?php endif ?>
+        <?php endif ?>
+      </div>
+
+      <div class="form-title-mobile">
+        <?php if (!empty($business_form_title)): ?>
+          <?php
+          get_template_part("template-parts/section-title-secondary", null, array('title' => $business_form_title)) ?>
+
+        <?php endif ?>
+      </div>
       <div class="secttion-details-agreement__form-input-container">
         <div class="secttion-details-agreement__form-input-wrapper">
           <label id="name-label" class="secttion-details-agreement-label">Ваше ім’я та прізвище<span class="asterisk">*</span></label>
@@ -37,12 +47,14 @@ $business_form_title = get_field('business_form_title')
           <p id="validation-text-details">Введіть не менше ніж 40 символів</p><span><span id="current-length-text">0</span>/1000</span>
         </div>
       </div>
-      <a href="<?php echo home_url() . '/privacy-policy' ?>" class="secttion-details-agreement__form-policy ">Політика конфеденційності</a>
+      <a href="<?php echo home_url() . '/privacy-policy' ?>" class="secttion-details-agreement__form-policy"><span>
+          Відправляючи свої дані, Ви автоматично погоджуєтеся з Політикою конфіденційності
+        </span></a>
       <button class="secttion-details-agreement__form-submit">Надіслати</button>
       <input type="hidden" name="action" value="do_insert_detalies">
     </form>
     <div class="secttion-details-agreement__bottom-wrapper">
-      <a href="<?php echo home_url() . '/biznes-detali' ?>" class="details-agreement-link">
+      <a href="<?php echo home_url() . '/business-details' ?>" class="details-agreement-link">
         <div class="detalies-link-wrapper">
           <svg class="detalies-link-wrapper__icon-left" viewBox="0 0 50 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M40.634 0.328125C41.3339 3.28027 44.0847 9.18457 49.4895 9.18457M49.4895 9.18457C41.0714 12.2587 40.1919 16.1764 40.1919 16.7022M49.4895 9.18457H17.6755M0.742188 9.18457H8.39307M8.39307 9.18457L0.742188 5.21062M8.39307 9.18457L0.742188 14.0511M8.39307 9.18457H13.108M13.108 9.18457L7.06701 5.21062M13.108 9.18457L7.06701 14.0511M13.108 9.18457H17.6755M17.6755 9.18457L13.108 5.21062M17.6755 9.18457L13.108 14.0511" stroke="#E67739" stroke-width="1.8" />
