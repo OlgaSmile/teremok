@@ -4,10 +4,6 @@
 .blog-page {
     margin-bottom: 0;
 
-    @include media_rule($mobile) {
-        margin-bottom: 5.75rem;
-    }
-
     &__hero {
         height: 32rem;
         margin-bottom: 5rem;
@@ -50,7 +46,7 @@
             @include media_rule($mobile) {
                 position: relative;
                 z-index: 100;
-                margin-bottom: 0;
+                margin-bottom: 10.75rem;
 
                 &-container {
                     margin-inline: auto;
@@ -142,6 +138,13 @@
 }
 
 .single-blog {
+
+    & ul,
+    & ol {
+        list-style: auto;
+        list-style-position: inside;
+    }
+
     &__svg {
         display: flex;
         justify-content: center;
@@ -197,7 +200,7 @@
             display: flex;
             flex-direction: column;
             gap: .625rem;
-            line-height: 1.0669rem;
+            line-height: 1.2188rem;
             letter-spacing: 0.04em;
             text-align: left;
 
@@ -209,6 +212,11 @@
 
             & p {
                 text-indent: 1.5rem;
+                line-height: inherit;
+            }
+
+            & li {
+                line-height: inherit;
             }
         }
     }
