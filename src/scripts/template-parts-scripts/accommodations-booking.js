@@ -19,7 +19,7 @@ jQuery(document).ready(function ($) {
   const checkInDate = bookingCheckout.find($(".mphb-check-in-date"));
   const checkOutDate = bookingCheckout.find($(".mphb-check-out-date"));
 
-  function formatCheckDates(element) {
+  function formatCheckDates(element, label) {
     const checkDateText = element.find($("time:first-of-type")).text();
     const checkDateTimeText = element
       .find($("time:not(:first-of-type)"))
@@ -29,7 +29,7 @@ jQuery(document).ready(function ($) {
     element.text("");
     element.append(
       $(
-        `<div class="mphb-check-in-date_label">Дата за'їзду:</div>
+        `<div class="mphb-check-in-date_label">${label}</div>
         <div class="mphb-check-in-date_text">
             <span>${checkDateText}</span>
             <span>з ${checkDateTimeText}</span>
@@ -38,8 +38,8 @@ jQuery(document).ready(function ($) {
     );
   }
 
-  formatCheckDates(checkInDate);
-  formatCheckDates(checkOutDate);
+  formatCheckDates(checkInDate, "Дата за'їзду:");
+  formatCheckDates(checkOutDate, "Дата виїзду:");
 
   const checkWrapper = $(`<div class='check-dates_wrapper'></div>`);
 
@@ -70,11 +70,19 @@ jQuery(document).ready(function ($) {
   const nameInput = bookingCheckout.find($(".mphb-customer-name > label"));
   nameInput.text("Ваше ім’я та прізвище");
 
+  const phoneInput = bookingCheckout.find($(".mphb-customer-phone > label"));
+  phoneInput.text("Ваш номер телефону");
+
+  const noteInput = bookingCheckout.find($(".mphb-customer-note > label"));
+  noteInput.text("Ваш коментар");
+
   bookingCheckout.find($("abbr")).remove();
 
-  bookingCheckout
+  const submitFormBtn = bookingCheckout
     .find($(".mphb_sc_checkout-submit-wrapper"))
     .addClass("plugin_submit-button");
+
+  submitFormBtn.find($("input")).val("Забронювати");
 
   $(".mphb-total-price output")
     .contents()

@@ -6,12 +6,15 @@
 
 html {
   font-size: 1.111vw;
+
   @media screen and (max-width: $tablet) {
     font-size: 1.613vw;
   }
+
   @media screen and (max-width: $mobile) {
     font-size: 4.267vw;
   }
+
   /* 1. Correct the line height in all browsers. */
   -webkit-text-size-adjust: 100%;
   /* 2. Prevent adjustments of font size after orientation changes in iOS. */
@@ -232,4 +235,8 @@ p {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+main .section {
+  padding: 0;
 }

@@ -4,7 +4,7 @@ get_header();
 
 ?>
 
-<main class="">
+<main class="single-blog">
 
     <section class="single-blog__hero">
         <img class="single-blog__hero-image" src="<?php the_field("blog_image");?>" />

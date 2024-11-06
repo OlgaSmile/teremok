@@ -3,7 +3,7 @@
 
 .mphb_sc_checkout-wrapper {
     padding-top: 6.25rem;
-    margin-bottom: 11.25rem;
+    margin-bottom: 10rem;
     display: none;
 
     @include media_rule_max($mobile) {
@@ -204,10 +204,12 @@
                 }
             }
 
+
+
             & label {
                 position: absolute;
                 top: 2.5rem;
-                left: 2.5rem;
+
                 transition: all 300ms linear;
 
                 font-weight: 600;
@@ -219,6 +221,10 @@
                     left: 0;
                 }
             }
+        }
+
+        & .not_empty label {
+            top: 0.65rem !important;
         }
     }
 
@@ -347,7 +353,7 @@
             }
 
             &:has(input:focus, input:valid) label {
-                transform: translateY(-3.125rem);
+                transform: translateY(-2.125rem);
 
                 @include media_rule_max($mobile) {
                     transform: translateY(-2.125rem);
@@ -494,4 +500,9 @@
     & .not_empty label {
         top: .625rem;
     }
+}
+
+main>.section>.container {
+    width: 100%;
+    padding: 0;
 }
