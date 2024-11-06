@@ -8,15 +8,22 @@
  * @package wp-teremok
  */
 
+$title_404 = get_field('title_404', 'options');
+$text_404 = get_field('text_404', 'options');
+$image = get_field('Image_404', 'options');
+
 get_header();
 ?>
 
 <main>
 
   <section class="error-404">
-    <img src="<?php echo get_template_directory_uri() ?>/assets/images/404.jpg' ?>" alt="">
+    <?php if (!empty($image)): ?>
+      <img src="<?php echo $image['url'] ?>" />
+    <?php endif ?>
     <div class="error-404__wrapper">
-      <h2>404</h2>
+
+      <h2><?php echo $title_404 ? $title_404 : '404' ?></h2>
       <div class="error-404__wrapper-content-box">
         <svg width="34" height="56" viewBox="0 0 34 56" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M17 56V0" stroke="#99B7A2" stroke-width="2.4" />
@@ -25,10 +32,9 @@ get_header();
         </svg>
 
         <div>
-          <p>Вибачте...</p>
-          <p>
-            Здається, сторінка, яку ви шукаєте,
-            не існує</p>
+          <?php if (!empty($text_404)): ?>
+            <?php echo $text_404 ?>
+          <?php endif ?>
         </div>
         <svg width="34" height="56" viewBox="0 0 34 56" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M17 56V0" stroke="#99B7A2" stroke-width="2.4" />
