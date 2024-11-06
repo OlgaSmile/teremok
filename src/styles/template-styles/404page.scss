@@ -1,0 +1,115 @@
+@import "../main/variables.scss";
+@import "../main/mixins.scss";
+
+.error-404 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__wrapper {
+    position: absolute;
+
+    width: 100%;
+    max-width: 44.25em;
+
+    background: url(../../assets/images/reserve-layout.png) repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    z-index: 999;
+
+    padding: 2.43rem;
+
+    @media screen and (min-width: $mobile) {
+      padding: 2.43rem 4.62rem;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      text-align: center;
+
+      font-family: Inter;
+      font-size: 8rem;
+      font-weight: 600;
+      line-height: 9.68rem;
+
+      color: $white;
+    }
+
+    &-content-box {
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        display: none;
+        @media screen and (min-width: $mobile) {
+          display: block;
+        }
+      }
+      p {
+        text-align: center;
+        font-weight: 500;
+        font-size: 1.25rem;
+
+        &:last-child {
+          margin-top: 1rem;
+
+          @media screen and (min-width: $mobile) {
+            padding-left: 3.31rem;
+            padding-right: 3.31rem;
+          }
+        }
+      }
+    }
+
+    a {
+      margin-top: 1.43rem;
+      background-color: transparent;
+      border: 1px solid $main_text;
+
+      font-weight: 500;
+      text-align: center;
+      font-size: 1rem;
+      padding: 0.875rem;
+      width: 100%;
+      max-width: 20.62rem;
+      @media screen and (min-width: $mobile) {
+        width: 20.62rem;
+        height: 3rem;
+      }
+
+      &:hover {
+        background-color: transparent;
+        border: 1px solid $orange;
+        color: $orange;
+        transition: 300ms ease-in-out;
+      }
+
+      &:focus {
+        background-color: transparent;
+        border: 1px solid $orange;
+        color: $orange;
+        transition: 300ms ease-in-out;
+      }
+
+      &:active {
+        background-color: transparent;
+        border: 1px solid $orange;
+        color: $orange;
+        transition: 300ms ease-in-out;
+      }
+    }
+  }
+}

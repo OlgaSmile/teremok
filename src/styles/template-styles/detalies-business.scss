@@ -48,6 +48,15 @@
       bottom: 7.5rem;
     }
   }
+
+  & .hero__socials {
+    display: none;
+
+    @include media_rule($mobile) {
+      display: flex;
+      top: 40%;
+    }
+  }
 }
 
 .business-detalies-hero-wrapper {
@@ -113,12 +122,17 @@
           background-color: $yellow;
           font-weight: 600;
           font-size: 1rem;
-
-          padding: 1rem;
+          padding-left: 1rem;
+          padding-right: 1rem;
 
           height: 3rem;
           cursor: pointer;
 
+          margin-top: 1rem;
+
+          @media screen and (min-width: $mobile) {
+            margin-top: 0;
+          }
           @media screen and (min-width: $mobile) {
             &:hover {
               transition: 300ms ease-in-out;
@@ -287,7 +301,6 @@
   &__wrapper {
     margin-top: 2rem;
 
-    max-width: 14.81rem;
     text-align: center;
     margin-right: auto;
     margin-left: auto;
@@ -295,12 +308,30 @@
       margin-top: 1.75rem;
 
       display: flex;
+
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      justify-content: space-between;
+      @include media_rule($mobile) {
+        width: 100%;
+        flex-direction: row;
+      }
 
       a {
         display: flex;
         align-items: center;
+
+        margin-bottom: 1.75rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        @include media_rule($mobile) {
+          margin-right: 3.28rem;
+          margin-bottom: 0;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
 
         &:hover {
           & .viber-icon {
@@ -314,10 +345,20 @@
             transition: 300ms ease-in-out;
             scale: 1.1;
           }
+
+          & .whatsApp-icon {
+            stroke: $orange;
+            transition: 300ms ease-in-out;
+            scale: 1.1;
+          }
         }
         svg {
           width: 1.75rem;
           height: 1.75rem;
+        }
+
+        .whatsApp-icon {
+          stroke: #3c4839;
         }
       }
       span {
