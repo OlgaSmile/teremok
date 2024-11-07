@@ -10,11 +10,12 @@
     height: 100vh;
     width: 100%;
     object-fit: cover;
+    animation: scaleImageAnimate 2s ease-in-out 1;
   }
 
   &__wrapper {
     position: absolute;
-
+    animation: opacityWrapper 2s ease-in-out 1;
     width: 100%;
     max-width: 44.25em;
 
@@ -25,7 +26,7 @@
     z-index: 999;
 
     padding: 2.43rem;
-
+    padding: 2.43rem 1.25rem;
     @media screen and (min-width: $mobile) {
       padding: 2.43rem 4.62rem;
     }
@@ -36,12 +37,17 @@
 
     h2 {
       text-align: center;
-
+      opacity: 0;
       font-family: Inter;
-      font-size: 8rem;
+      font-size: 8.75rem;
+      @media screen and (min-width: $mobile) {
+        font-size: 8rem;
+      }
+
       font-weight: 600;
       line-height: 9.68rem;
-
+      animation: opacityTitle 4s forwards 1;
+      animation-delay: 1.2s;
       color: $white;
     }
 
@@ -53,23 +59,52 @@
       justify-content: center;
 
       svg {
-        display: none;
+        width: 1.11125rem;
+        height: 2rem;
+        opacity: 0;
+        animation: transformTree 0.5s forwards 1;
+        animation-delay: 1.5s;
+      }
+
+      & .text-box-bottom {
+        margin-top: 0.5rem;
+        overflow: hidden;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
         @media screen and (min-width: $mobile) {
-          display: block;
+          padding-left: 2.5rem;
+          padding-right: 2.5rem;
+        }
+
+        p {
+          text-align: center;
+          font-weight: 500;
+          font-size: 1.125rem;
+          max-width: 18rem;
+          @media screen and (min-width: $mobile) {
+            font-size: 1.25rem;
+            max-width: 24rem;
+          }
+          opacity: 0;
+          animation: transformText 0.5s forwards 1;
+          animation-delay: 2.5s;
         }
       }
-      p {
-        text-align: center;
-        font-weight: 500;
-        font-size: 1.25rem;
+      & .text-box {
+        overflow: hidden;
 
-        &:last-child {
-          margin-top: 1rem;
-
+        p {
+          text-align: center;
+          font-weight: 500;
+          font-size: 1.125rem;
+          line-height: 1.37rem;
           @media screen and (min-width: $mobile) {
-            padding-left: 3.31rem;
-            padding-right: 3.31rem;
+            font-size: 1.25rem;
           }
+
+          opacity: 0;
+          animation: transformTextTop 0.5s forwards 1;
+          animation-delay: 2s;
         }
       }
     }
@@ -78,7 +113,9 @@
       margin-top: 1.43rem;
       background-color: transparent;
       border: 1px solid $main_text;
-
+      opacity: 0;
+      animation: opacityBtn 1s forwards 1;
+      animation-delay: 2.7s;
       font-weight: 500;
       text-align: center;
       font-size: 1rem;
@@ -111,5 +148,98 @@
         transition: 300ms ease-in-out;
       }
     }
+  }
+}
+
+@keyframes scaleImageAnimate {
+  0% {
+    scale: 1.4;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes opacityWrapper {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacityTitle {
+  0% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes transformTree {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(-20%);
+    transition: transform 0.5s;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 0.6s;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 0.6s;
+  }
+}
+
+@keyframes transformTextTop {
+  0% {
+    opacity: 1;
+    transform: translateY(4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes transformText {
+  0% {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes opacityBtn {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

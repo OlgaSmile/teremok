@@ -9,7 +9,8 @@
  */
 
 $title_404 = get_field('title_404', 'options');
-$text_404 = get_field('text_404', 'options');
+$text_404_top = get_field('text_404_top', 'options');
+$text_404_bottom = get_field('text_404_bottom', 'options');
 $image = get_field('Image_404', 'options');
 
 get_header();
@@ -32,9 +33,21 @@ get_header();
         </svg>
 
         <div>
-          <?php if (!empty($text_404)): ?>
-            <?php echo $text_404 ?>
-          <?php endif ?>
+          <div class="text-box">
+            <?php if (!empty($text_404_top)): ?>
+              <p> <?php echo $text_404_top ?></p>
+            <?php endif ?>
+          </div>
+
+
+
+          <div class="text-box-bottom">
+            <?php if (!empty($text_404_bottom)): ?>
+              <p> <?php echo $text_404_bottom ?></p>
+            <?php endif ?>
+          </div>
+
+
         </div>
         <svg width="34" height="56" viewBox="0 0 34 56" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M17 56V0" stroke="#99B7A2" stroke-width="2.4" />
