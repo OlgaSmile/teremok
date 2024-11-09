@@ -421,6 +421,16 @@
   }
 }
 
+.hero-summer {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  img {
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+}
 .reserv-position-hero {
   min-width: 100%;
   position: absolute;

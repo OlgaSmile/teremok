@@ -17,38 +17,57 @@ $telegram = get_field('telegram', 'option');
 $viber = get_field('viber', 'option');
 $whatsapp = get_field('whatsapp', 'options');
 
+
+
+$winter_summer_toggle = get_field('winter_summer_toggle', 'options');
+
+
+$winter_hero_image = get_field('winter_hero_image');
+
+
 ?>
 
+
+
 <section class="hero__section">
-    <div id="enter-parallax">
-        <?php if ($fourth_bg) { ?>
-            <div class="enter-parallax-bg hero__bg hero__bg--fourth">
-                <?php echo wp_get_attachment_image($fourth_bg, 'large'); ?>
-            </div>
-        <?php } ?>
-        <?php if ($third_bg) { ?>
-            <div class="enter-parallax-bg hero__bg hero__bg--third">
-                <?php echo wp_get_attachment_image($third_bg, 'medium_large'); ?>
-            </div>
-        <?php } ?>
-        <?php if ($main_bg) { ?>
-            <div class="enter-parallax-bg hero__bg hero__bg--main">
-                <?php echo wp_get_attachment_image($main_bg, 'large'); ?>
-            </div>
-        <?php } ?>
-        <?php if ($secondary_bg) { ?>
-            <div class="enter-parallax-bg hero__bg hero__bg--secondary">
-                <?php echo wp_get_attachment_image($secondary_bg, 'medium_large'); ?>
-            </div>
-        <?php } ?>
-        <?php if ($title_bg) { ?>
-            <div class="enter-parallax-bg hero__bg hero__title">
-                <img src="<?php echo esc_url($title_bg['sizes']['medium_large']); ?>"
-                    alt="<?php echo esc_attr($title_bg['alt']); ?>" />
-            </div>
-        <?php } ?>
-    </div>
+
+    <?php if (!empty($winter_summer_toggle)): ?>
+        <div class="hero-summer">
+            <img src="<?php echo esc_url($winter_hero_image['sizes']['medium_large']); ?>"
+                alt="<?php echo esc_attr($winter_hero_image['alt']); ?>" />
+        </div>
+    <?php else: ?>
+        <div id="enter-parallax">
+            <?php if ($fourth_bg) { ?>
+                <div class="enter-parallax-bg hero__bg hero__bg--fourth">
+                    <?php echo wp_get_attachment_image($fourth_bg, 'large'); ?>
+                </div>
+            <?php } ?>
+            <?php if ($third_bg) { ?>
+                <div class="enter-parallax-bg hero__bg hero__bg--third">
+                    <?php echo wp_get_attachment_image($third_bg, 'medium_large'); ?>
+                </div>
+            <?php } ?>
+            <?php if ($main_bg) { ?>
+                <div class="enter-parallax-bg hero__bg hero__bg--main">
+                    <?php echo wp_get_attachment_image($main_bg, 'large'); ?>
+                </div>
+            <?php } ?>
+            <?php if ($secondary_bg) { ?>
+                <div class="enter-parallax-bg hero__bg hero__bg--secondary">
+                    <?php echo wp_get_attachment_image($secondary_bg, 'medium_large'); ?>
+                </div>
+            <?php } ?>
+            <?php if ($title_bg) { ?>
+                <div class="enter-parallax-bg hero__bg hero__title">
+                    <img src="<?php echo esc_url($title_bg['sizes']['medium_large']); ?>"
+                        alt="<?php echo esc_attr($title_bg['alt']); ?>" />
+                </div>
+            <?php } ?>
+        </div>
+    <?php endif ?>
     <div class="hero__content">
+
         <div class="reserv-position-hero">
 
             <?php get_template_part("template-parts/search-reserv") ?>
