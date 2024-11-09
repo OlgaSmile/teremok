@@ -24,7 +24,7 @@
                 </div>
                 <div class="menu__icon icon-menu menu__round menu__icon_black">
                     <a href="/">
-                        <?php get_template_part("template-parts/logo_black");?>
+                        <?php get_template_part("template-parts/logo_footer");?>
                     </a>
                 </div>
                 <div class="menu__nav">
