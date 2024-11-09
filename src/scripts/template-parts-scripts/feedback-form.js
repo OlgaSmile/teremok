@@ -383,6 +383,7 @@ jQuery(document).ready(function ($) {
 
     const formData = new FormData(this)
 
+    formData.append("house_number", apartmen)
     if (newArray.length > 0) {
       newArray.forEach((file) => formData.append("feedback_images[]", file))
     }

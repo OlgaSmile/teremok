@@ -40,8 +40,9 @@
     @include media_rule($mobile) {
       font-size: 8rem;
     }
-
-    animation: animationTitleTransform 2s ease-in-out 1;
+    opacity: 0;
+    animation: animationTitleTransform 4s forwards 1;
+    animation-delay: 1s;
   }
 
   &__img {
@@ -53,13 +54,13 @@
     height: 100%;
     object-fit: cover;
     transform-origin: center;
-    animation: scaleImageAnimate 3s ease-in-out 1;
+    animation: scaleImageAnimate 4s ease-in-out 1;
   }
 }
 
 @keyframes animationScaleImage {
   0% {
-    transform: scale(1.4); /* Застосовуємо transform замість scale */
+    transform: scale(1.4);
   }
   40% {
     transform: scale(1.2);
@@ -71,10 +72,12 @@
 
 @keyframes animationTitleTransform {
   0% {
+    opacity: 1;
     transform: translateY(100%);
   }
 
   100% {
+    opacity: 1;
     transform: translateY(0);
   }
 }
