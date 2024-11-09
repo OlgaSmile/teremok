@@ -366,7 +366,6 @@ jQuery(document).ready(function ($) {
       return $("#apartment-error").text(validationError).addClass("error")
     }
 
-    console.log(apartmen, "apartmen")
     if (Number(rating) === 0 && !apartmen) {
       $("#apartment-error").text(validationError).addClass("error")
       $("#ratinge-error").text(validationError).addClass("error")
