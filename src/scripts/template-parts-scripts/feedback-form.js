@@ -239,7 +239,7 @@ jQuery(document).ready(function ($) {
     // Вибір опції
     const selectedOption = $(this).text()
     $("#current-option").text(selectedOption)
-    console.log(selectedOption, "selectedOption")
+
     // Закриваємо селект
     $(".custom-select__options-list").removeClass("open")
     $("#selected-open").removeClass("selected-open-icon---top")
