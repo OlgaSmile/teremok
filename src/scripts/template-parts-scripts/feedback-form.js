@@ -239,7 +239,7 @@ jQuery(document).ready(function ($) {
     // Вибір опції
     const selectedOption = $(this).text()
     $("#current-option").text(selectedOption)
-
+    console.log(selectedOption, "selectedOption")
     // Закриваємо селект
     $(".custom-select__options-list").removeClass("open")
     $("#selected-open").removeClass("selected-open-icon---top")
@@ -366,6 +366,7 @@ jQuery(document).ready(function ($) {
       return $("#apartment-error").text(validationError).addClass("error")
     }
 
+    console.log(apartmen, "apartmen")
     if (Number(rating) === 0 && !apartmen) {
       $("#apartment-error").text(validationError).addClass("error")
       $("#ratinge-error").text(validationError).addClass("error")
@@ -383,6 +384,7 @@ jQuery(document).ready(function ($) {
 
     const formData = new FormData(this)
 
+    formData.append("house_number", apartmen)
     if (newArray.length > 0) {
       newArray.forEach((file) => formData.append("feedback_images[]", file))
     }
