@@ -11,18 +11,17 @@ $history_img = get_field('business_introduction_owner_photo');
 get_header();
 ?>
 <main>
-  <section class="business-hero">
-    <img src="<?php echo $hero_reviews_image['url'] ?>" alt="">
-    <div class="business-hero__content">
-      <?php if (!empty($histry_title)): ?>
-        <h2><?php echo get_the_title() ?></h2>
-      <?php endif ?>
+  <div class="business-hero">
+
+    <?php get_template_part("template-parts/secondary-hero-section", null, ['img_array' => $hero_reviews_image, "title_section" => get_the_title()]); ?>
+
+
+    <div class="business-hero__bottom-wrapper">
       <div class="business-hero__detalies-wrapper">
         <?php get_template_part("templates/business/detalies-modal") ?>
       </div>
     </div>
-
-  </section>
+  </div>
   <section class="section-business-history">
     <?php if (!empty($histry_title)): ?>
       <?php

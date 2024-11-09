@@ -1,0 +1,242 @@
+@import "../main/variables.scss";
+@import "../main/mixins.scss";
+
+.error-404 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: 84%;
+    animation: scaleImageAnimate 3s ease-in-out 1;
+  }
+
+  &__wrapper {
+    position: absolute;
+    animation: opacityWrapper 3s ease-in-out 1;
+    width: 100%;
+    max-width: 44.25em;
+
+    background: url(../../assets/images/reserve-layout.png) repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    z-index: 999;
+
+    padding: 2.43rem;
+    padding: 2.43rem 1.25rem;
+    @media screen and (min-width: $mobile) {
+      padding: 2.43rem 4.62rem;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      text-align: center;
+      opacity: 0;
+      font-family: Inter;
+      font-size: 8.75rem;
+      @media screen and (min-width: $mobile) {
+        font-size: 8rem;
+      }
+
+      font-weight: 600;
+      line-height: 9.68rem;
+      animation: opacityTitle 4s forwards 1;
+      animation-delay: 1.2s;
+      color: $white;
+    }
+
+    &-content-box {
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 1.11125rem;
+        height: 2rem;
+        opacity: 0;
+        animation: transformTree 0.5s forwards 1;
+        animation-delay: 1.5s;
+      }
+
+      & .text-box-bottom {
+        margin-top: 0.5rem;
+        overflow: hidden;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        @media screen and (min-width: $mobile) {
+          padding-left: 2.5rem;
+          padding-right: 2.5rem;
+        }
+
+        p {
+          text-align: center;
+          font-weight: 500;
+          font-size: 1.125rem;
+          max-width: 18rem;
+          @media screen and (min-width: $mobile) {
+            font-size: 1.25rem;
+            max-width: 24rem;
+          }
+          opacity: 0;
+          animation: transformText 2s forwards 1;
+          animation-delay: 3s;
+        }
+      }
+      & .text-box {
+        overflow: hidden;
+
+        p {
+          text-align: center;
+          font-weight: 500;
+          font-size: 1.125rem;
+          line-height: 1.37rem;
+          @media screen and (min-width: $mobile) {
+            font-size: 1.25rem;
+          }
+
+          opacity: 0;
+          animation: transformTextTop 2s forwards 1;
+          animation-delay: 2s;
+        }
+      }
+    }
+
+    a {
+      margin-top: 1.43rem;
+      background-color: transparent;
+      border: 1px solid $main_text;
+      opacity: 0;
+      animation: opacityBtn 1s forwards 1;
+      animation-delay: 2.7s;
+      font-weight: 500;
+      text-align: center;
+      font-size: 1rem;
+      padding: 0.875rem;
+      width: 100%;
+      max-width: 20.62rem;
+      @media screen and (min-width: $mobile) {
+        width: 20.62rem;
+        height: 3rem;
+      }
+
+      &:hover {
+        background-color: transparent;
+        border: 1px solid $orange;
+        color: $orange;
+        transition: 300ms ease-in-out;
+      }
+
+      &:focus {
+        background-color: transparent;
+        border: 1px solid $orange;
+        color: $orange;
+        transition: 300ms ease-in-out;
+      }
+
+      &:active {
+        background-color: transparent;
+        border: 1px solid $orange;
+        color: $orange;
+        transition: 300ms ease-in-out;
+      }
+    }
+  }
+}
+
+@keyframes scaleImageAnimate {
+  0% {
+    scale: 1.4;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes opacityWrapper {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacityTitle {
+  0% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes transformTree {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-10%);
+    transition: transform 0.6s;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 0.6s;
+  }
+}
+
+@keyframes transformTextTop {
+  0% {
+    opacity: 1;
+    transform: translateY(4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes transformText {
+  0% {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes opacityBtn {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

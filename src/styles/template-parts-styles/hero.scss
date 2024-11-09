@@ -173,25 +173,6 @@
       animation: hideAnimation 30s infinite;
     }
 
-    /*     &:hover {
-      .location-text-hide {
-        top: -1rem !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-
-        transition: top 1.5s, opacity 1.5s, visibility 1.5s !important;
-        animation-play-state: paused;
-      }
-
-      .location-text-show {
-        top: 0 !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        transition: top 1s, opacity 1s, visibility 1s !important;
-        animation-play-state: paused;
-      }
-    } */
-
     .location-text-show {
       position: absolute;
       top: 2rem;
@@ -405,12 +386,9 @@
       }
     }
 
-    & .viber_item {
-      display: none;
-
-      @media screen and (max-width: $tablet) {
-        display: block;
-      }
+    & .whatsApp-icon {
+      width: 1.55rem;
+      height: 1.55rem;
     }
   }
 
@@ -443,6 +421,16 @@
   }
 }
 
+.hero-summer {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  img {
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+}
 .reserv-position-hero {
   min-width: 100%;
   position: absolute;
