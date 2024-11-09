@@ -35,13 +35,13 @@
             <ul class="footer__socials">
                 <?php if (get_field('social_links', 'option')): ?>
                 <?php while (has_sub_field('social_links', 'option')): ?>
+                <?php $icon_name = get_sub_field('social_name');?>
+
                 <li class="footer__socials-item">
                     <a href="<?php the_sub_field('social_link');?>">
-                        <svg class="footer__socials-svg footer__socials-<?php the_sub_field('social_name');?>">
-                            <use
-                                href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#<?php the_sub_field('social_name');?>">
-                            </use>
-                        </svg>
+                        <div class="footer__socials-svg footer__socials-<?php the_sub_field('social_name');?>">
+                            <?php get_template_part("./template-parts/social_icons", null, array('icon' => $icon_name));?>
+                        </div>
                     </a>
                 </li>
                 <?php endwhile;?>
@@ -49,7 +49,7 @@
             </ul>
         </div>
     </div>
-    <div class="footer__policy container">
+    <div class=" footer__policy container">
         <a href="<?php echo home_url() . '/privacy-policy' ?>" class="footer__policy-link"><span
                 class="footer__policy-item footer__policy-item_policy">Політика конфіденційності</span></a>
         <div class="footer__policy-item footer__policy-item_wrapper">

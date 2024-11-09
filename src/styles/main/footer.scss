@@ -123,23 +123,30 @@
     margin-bottom: 2rem;
 
     &-svg {
-      stroke: $main_text;
-      width: 1.75rem;
-      height: 1.8125rem;
 
-      &:hover {
-        stroke: $orange;
+      & svg {
+        // stroke: $main_text;
+        width: 1.75rem;
+        height: 1.8125rem;
       }
+
+      // &:hover svg {
+      //   stroke: $orange;
+      // }
     }
 
-    &-viber {
-      stroke: transparent;
+    // &-viber {
 
-      &:hover {
-        stroke: transparent;
-        fill: $orange;
-      }
-    }
+    //   & svg {
+    //     fill: $main_text;
+    //     stroke: transparent;
+    //   }
+
+    //   &:hover svg {
+    //     stroke: transparent;
+    //     fill: $orange;
+    //   }
+    // }
 
     & img:hover {
       fill: $orange;
