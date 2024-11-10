@@ -2,6 +2,17 @@
 @import "../main/variables.scss";
 
 .food {
+    &_page {
+        & .feedbacks__section {
+            margin-bottom: 11.25rem;
+
+            @include media_rule_max($mobile) {
+                margin-bottom: 5rem;
+            }
+
+        }
+    }
+
     &__hero-section {
         position: relative;
 
@@ -48,6 +59,15 @@
 
         &_threes {
             stroke: $main_text;
+            width: 51px;
+            height: 37px;
+
+            & div {
+                display: flex;
+                align-items: end;
+                height: 100%;
+
+            }
         }
 
         &_container {
@@ -154,10 +174,11 @@
     }
 
     &__menu-section {
-        margin-bottom: 5rem;
+        margin-bottom: 7.5rem;
 
         @include media_rule($mobile) {
             display: flex;
+            margin-bottom: 11.25rem;
         }
 
         &_decor {
