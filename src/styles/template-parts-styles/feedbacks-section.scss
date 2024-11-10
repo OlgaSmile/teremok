@@ -1,8 +1,11 @@
 @import "../main/variables.scss";
 
 .feedbacks__section {
-  & .container {
+  &__container {
     padding-right: 0.625rem;
+    max-width: 76.25rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   &-title {
