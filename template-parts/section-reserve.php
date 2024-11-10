@@ -1,27 +1,26 @@
 <?php
 
 if (isset($args['image'])) {
-  $image = $args['image'];
+    $image = $args['image'];
 } else {
-  $image =  get_field('find_and_book_image', 'options');
+    $image = get_field('find_and_book_image', 'options');
 }
-
 
 ?>
 
 
-<?php if (!empty($image)) : ?>
-  <section class="reserve-section">
+<?php if (!empty($image)): ?>
+<section class="reserve-section">
 
     <div class="reserve-section__wrapper">
 
-      <img src="<?php echo $image['url']  ?>" alt="<?php echo $image['alt']  ?>">
+        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>">
 
-      <div class="reserve-section__position-box-reserve">
-        <?php get_template_part("template-parts/search-reserv")  ?>
-      </div>
+        <div class="reserve-section__position-box-reserve">
+            <?php get_template_part("template-parts/search-reserv")?>
+        </div>
     </div>
-  </section>
+</section>
 
 
-<?php endif ?>
+<?php endif?>

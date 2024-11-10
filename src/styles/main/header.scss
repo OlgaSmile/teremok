@@ -46,16 +46,16 @@
       display: none;
     }
 
-    .header_list {
+    & .menu__list {
 
       & .current-menu-item,
       & .current-menu-parent {
         color: $main_text;
+      }
 
-        & .menu__list-trees {
-          & svg {
-            stroke: $main_text;
-          }
+      & .menu-item .menu__list-trees {
+        & svg {
+          stroke: $main_text;
         }
       }
     }
