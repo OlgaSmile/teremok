@@ -37,7 +37,6 @@
 }
 
 .icon_viber {
-
   fill: $main_text;
   stroke: transparent;
 
@@ -198,7 +197,6 @@
 
 .social-icon-wrapper-booking {
   display: flex;
-
   flex-direction: column-reverse;
   align-items: center;
 
@@ -339,7 +337,6 @@
 
   100% {
     transform: translateY(0%);
-
     opacity: 1;
   }
 }

@@ -11,7 +11,7 @@ $menu_icon = get_field('food_menu_item_icon');
 $certificates_title = get_field('food_menu_certificates_section_title');
 ?>
 
-<main>
+<main class="food_page">
     <div class="food__hero-section">
         <?php get_template_part("template-parts/secondary-hero-section", null, ['img_array' => $hero_food_image, "title_section" => get_the_title()]);?>
         <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>"
@@ -21,28 +21,9 @@ $certificates_title = get_field('food_menu_certificates_section_title');
     </div>
 
     <section class="food__introduction-section">
-
         <div class="food__introduction-section_container container">
-            <div class="section_title--icon_wrap food__introduction-section_threes">
-                <div class="anim-items">
-                    <svg class="section_title--icon small food__introduction-section_threes">
-                        <use href="#tree">
-                        </use>
-                    </svg>
-                </div>
-                <div class="anim-items">
-                    <svg class="section_title--icon big food__introduction-section_threes">
-                        <use href="#big-tree">
-                        </use>
-                    </svg>
-                </div>
-                <div class="anim-items">
-                    <svg class="section_title--icon small food__introduction-section_threes">
-                        <use href="#tree">
-                        </use>
-                    </svg>
-                </div>
-            </div>
+            <?php get_template_part("template-parts/animated_title_trees");?>
+
             <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch.png'; ?>"
                 class="food__introduction-section_decor-branch decor-branch" />
             <h2 class="food__introduction-section_title"><?php echo get_field('food_introduction_title'); ?></h2>
@@ -65,7 +46,6 @@ $certificates_title = get_field('food_menu_certificates_section_title');
     </section>
 
     <section class="food__menu-section">
-
         <div class="food__menu-section_img">
             <?php if (get_field('food_menu_photo_left')): ?>
             <?php while (has_sub_field('food_menu_photo_left')): ?>
@@ -171,10 +151,10 @@ $certificates_title = get_field('food_menu_certificates_section_title');
                 <?php endif;?>
             </div>
         </div>
-
     </section>
     <?php
-get_template_part('template-parts/feedbacks-section');
+get_template_part("template-parts/section-reserve");
+get_template_part("template-parts/feedbacks-section");
 get_template_part("template-parts/location-section");
 ?>
 </main>
