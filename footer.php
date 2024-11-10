@@ -38,7 +38,7 @@
                 <?php $icon_name = get_sub_field('social_name');?>
 
                 <li class="footer__socials-item">
-                    <a href="<?php the_sub_field('social_link');?>">
+                    <a href="<?php the_sub_field('social_link');?>" target="blank">
                         <div class="footer__socials-svg footer__socials-<?php the_sub_field('social_name');?>">
                             <?php get_template_part("./template-parts/social_icons", null, array('icon' => $icon_name));?>
                         </div>
