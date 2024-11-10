@@ -344,6 +344,44 @@
     &--item {
       position: relative;
 
+      & .icon_viber {
+        fill: $white;
+      }
+
+      & .icon_telegram {
+        stroke: $white;
+      }
+
+      & .icon_whatsapp {
+        stroke: $white;
+      }
+
+      a {
+        & .icon_viber {
+          fill: $white;
+          stroke: transparent;
+        }
+
+        & .icon_telegram {
+          stroke: $white;
+          fill: transparent;
+        }
+
+        & .icon_whatsapp {
+          stroke: $white;
+        }
+
+        & .icon_instagram {
+          stroke: $white;
+          fill: transparent;
+        }
+
+        & .icon_facebook {
+          stroke: $white;
+          fill: transparent;
+        }
+      }
+
       &:hover,
       &:focus {
         .hero__socials--title {
@@ -352,6 +390,28 @@
 
         & svg {
           scale: 1.1;
+        }
+
+        & .icon_viber {
+          fill: $white;
+        }
+
+        & .icon_telegram {
+          stroke: $white;
+        }
+
+        & .icon_whatsapp {
+          stroke: $white;
+        }
+
+        & .icon_instagram {
+          stroke: $white;
+          fill: transparent;
+        }
+
+        & .icon_facebook {
+          stroke: $white;
+          fill: transparent;
         }
       }
     }
@@ -384,11 +444,6 @@
       &.hero__socials--viber {
         stroke: transparent;
       }
-    }
-
-    & .whatsApp-icon {
-      width: 1.55rem;
-      height: 1.55rem;
     }
   }
 
@@ -431,6 +486,7 @@
     z-index: -1;
   }
 }
+
 .reserv-position-hero {
   min-width: 100%;
   position: absolute;
