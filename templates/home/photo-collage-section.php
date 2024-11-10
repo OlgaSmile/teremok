@@ -1,4 +1,14 @@
-<?php $collage = get_field('collage'); ?>
+<?php
+
+$winter_summer_toggle = get_field('winter_summer_toggle', 'options');
+
+
+$collage = $winter_summer_toggle ? get_field('collage_winter') : get_field('collage');
+
+
+?>
+
+
 <section class="photo-collage-section">
   <?php if (!empty($collage)) : ?>
     <div class="container-collage">

@@ -1,9 +1,19 @@
 <?php $teremok_title = get_field('teremok_title');
 $teremok_foto_gallery = get_field('teremok_foto-gallery');
 $repeater_field = get_field('teremok_repeating');
-$Images_left = get_field('teremok_foto-gallery_left');
-$Images_right = get_field('teremok_foto-gallery_right');
+
 $teremok_main_field = get_field('teremok_main_field');
+
+$winter_summer_toggle = get_field('winter_summer_toggle', 'options');
+
+if ($winter_summer_toggle) {
+  $Images_left = get_field('teremok_foto-gallery_left_winter');
+  $Images_right = get_field('teremok_foto-gallery_right_winter');
+} else {
+  $Images_left = get_field('teremok_foto-gallery_left');
+  $Images_right = get_field('teremok_foto-gallery_right');
+}
+
 ?>
 <section class="teremok-section">
   <img class="teremok-section__decor-left-popsition-b" src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch-left.png'; ?>">
