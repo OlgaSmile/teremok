@@ -31,10 +31,22 @@ $winter_hero_image = get_field('winter_hero_image');
 
 <section class="hero__section">
 
-    <?php if (!empty($winter_summer_toggle)): ?>
+    <?php if ($winter_summer_toggle): ?>
         <div class="hero-summer">
+
+            <div id="enter-parallax">
+
+                <?php if ($title_bg) { ?>
+                    <div class="enter-parallax-bg hero__bg hero__title">
+                        <img src="<?php echo esc_url($title_bg['sizes']['medium_large']); ?>"
+                            alt="<?php echo esc_attr($title_bg['alt']); ?>" />
+                    </div>
+                <?php } ?>
+            </div>
+
             <img src="<?php echo esc_url($winter_hero_image['sizes']['medium_large']); ?>"
                 alt="<?php echo esc_attr($winter_hero_image['alt']); ?>" />
+
         </div>
     <?php else: ?>
         <div id="enter-parallax">

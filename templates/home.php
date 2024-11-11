@@ -3,9 +3,16 @@
 Template Name: home
  */
 
-$gallery = get_field('gallery');
 
-$video_url = get_field('video');
+$winter_summer_toggle = get_field('winter_summer_toggle', 'options');
+
+if ($winter_summer_toggle) {
+  $gallery = get_field('gallery_winter');
+  $video_url = get_field('video_winter');
+} else {
+  $gallery = get_field('gallery');
+  $video_url = get_field('video');
+}
 get_header();
 ?>
 
@@ -24,4 +31,4 @@ get_template_part("template-parts/location-section");
 ?>
 
 
-<?php get_footer();?>
+<?php get_footer(); ?>
