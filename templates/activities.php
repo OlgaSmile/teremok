@@ -128,7 +128,9 @@ get_header();
             <?php endif ?>
             <div class="activity-nearby__item-bottom-wrapper">
 
-              <a href="#post-<?php echo $post_id ?>" class="activity-nearby__detalies-btn"><?php echo get_field('more-details', 'options') ? get_field('more-details', 'options') : 'Детальніше' ?></a>
+              <a href="#post-<?php echo $post_id ?>" class="activity-nearby__detalies-btn"><?php echo get_field('more-details', 'options') ? get_field('more-details', 'options') : 'Детальніше' ?> <svg class="activity-nearby__detalies-btn-mobile-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <path d="M12.5 5.48431C10.3365 5.99923 6.0094 8.02326 6.0094 12M6.0094 12C3.75648 5.80609 0.885307 5.15897 0.5 5.15897M6.0094 12L6.0094 -2.83713e-07" stroke="#E67739" />
+                </svg></a>
 
               <button id="activity-<?php echo $post_id ?>" class="activity-nearby__detalies-btn-mobile"><span id="text-more-<?php echo $post_id ?>"><?php echo get_field('more-details', 'options') ? get_field('more-details', 'options') : 'Детальніше' ?></span>
 
