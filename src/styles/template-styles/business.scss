@@ -42,6 +42,12 @@
 
   & .secondary-hero-section {
     padding: 0;
+
+    & .secondary-hero-section__img-wrapper {
+      @include media_rule_max($mobile) {
+        height: 50.75rem;
+      }
+    }
   }
 
   & .secondary-hero-section__wrapper-title {
