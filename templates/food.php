@@ -9,6 +9,17 @@ $food_title = get_field('hero_food_title');
 $menu_title = get_field('food_menu_title');
 $menu_icon = get_field('food_menu_item_icon');
 $certificates_title = get_field('food_menu_certificates_section_title');
+$mobile_photo_1 = get_field('food_menu_mobile_photo1');
+$mobile_photo_2 = get_field('food_menu_mobile_photo2');
+$mobile_photo_3 = get_field('food_menu_mobile_photo3');
+$mobile_photo_4 = get_field('food_menu_mobile_photo4');
+
+$breakfast = get_field('food_page_breakfast');
+$lunch = get_field('food_page_lunch');
+$dinner = get_field('food_page_dinner');
+$additional_fee = get_field('additional_fee_food');
+$previous_order = get_field('food_page_previous_order');
+$additionally = get_field('food_page_additionally');
 ?>
 
 <main class="food_page">
@@ -60,73 +71,257 @@ $certificates_title = get_field('food_menu_certificates_section_title');
                 class="food__menu-section_decor-trees2 decor-trees2" />
             <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>"
                 class="food__menu-section_decor-trees3 decor-trees2" />
+
             <?php get_template_part("template-parts/section-title", null, array('title' => $menu_title));?>
 
             <div class="food__menu-section_wrapper">
-                <?php if (get_field('food_option_item')): ?>
-                <?php while (has_sub_field('food_option_item')): ?>
-                <div class="food__menu-section-item">
-                    <div
-                        class="food-section__images-mobile food-section__images-mobile-top food__menu-section-item-img_mobile-top">
-                        <?php if (get_field('food_top_images', 'options')): ?>
-                        <?php while (has_sub_field('food_top_images', 'options') and get_row_index() <= 3): ?>
-                        <img class="food-section__images-mobile_item"
-                            src="<?php the_sub_field('food_top_image', 'options');?>" />
-                        <?php endwhile;?>
-                        <?php endif;?>
-                    </div>
-                    <div
-                        class="food-section__images-mobile food-section__images-mobile-bottom food__menu-section-item-img_mobile-bottom">
-                        <?php if (get_field('food_bottom_images', 'options')): ?>
-                        <?php while (has_sub_field('food_bottom_images', 'options') and get_row_index() <= 3): ?>
-                        <img class="food-section__images-mobile_item"
-                            src="<?php the_sub_field('food_bottom_img', 'options');?>" />
-                        <?php endwhile;?>
-                        <?php endif;?>
-                    </div>
+                <div class="food__menu_mobile-photo">
+                    <?php if (!empty($mobile_photo_1['photo1']) and !empty($mobile_photo_1['photo2']) and !empty($mobile_photo_1['photo3'])): ?>
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_1['photo1']; ?>" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_1['photo2']; ?>" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_1['photo3']; ?>" />
+                    <?php endif;?>
+                </div>
 
+                <div class="food__menu-section-item">
                     <img class="food__menu-section-item_icon" src="<?php echo $menu_icon; ?>" />
 
+                    <?php if (!empty($breakfast['breakfast_title'])): ?>
                     <h3 class="food__menu-section-item_title food__menu-section_container">
-                        <?php the_sub_field('food_option_item_title');?>
+                        <?php echo $breakfast['breakfast_title']; ?>
                     </h3>
-                    <p class="food__menu-section-item_subtitle food__menu-section_container">
-                        <?php the_sub_field('food_option_item_subtitle');?>
+                    <?php endif;?>
 
+                    <?php if (!empty($breakfast['breakfast_subtitle'])): ?>
+                    <p class="food__menu-section-item_subtitle food__menu-section_container">
+                        <?php echo $breakfast['breakfast_subtitle']; ?>
+                        <?php endif;?>
+
+                        <?php if (!empty($breakfast['breakfast_menu_item'])): ?>
                     <ul class="food__menu-section-item_text food__menu-section_container">
-                        <?php if (get_sub_field('food_option_item_menu')): ?>
-                        <?php while (has_sub_field('food_option_item_menu')): ?>
+
+                        <?php foreach ($breakfast['breakfast_menu_item'] as $item): ?>
                         <li>
                             <div class="food__menu-section-item_text-item_name">
-                                <?php the_sub_field('food_option_item_menu_name');?></div>
-                            <?php if (get_sub_field('food_option_item_menu_desc')): ?>
+                                <?php echo $item['breakfast_menu_item_name']; ?>
+                            </div>
+                            <?php if ($item['breakfast_menu_item_desc']): ?>
                             <div class="food__menu-section-item_text-item_desc">
-                                <?php the_sub_field('food_option_item_menu_desc');?>
+                                <?php echo $item['breakfast_menu_item_desc']; ?>
                             </div>
                             <?php endif;?>
                         </li>
-                        <?php endwhile;?>
+
+                        <?php endforeach;?>
+                    </ul>
+                    <?php endif;?>
+                    </p>
+                </div>
+
+                <div class="food__menu-section-item">
+                    <img class="food__menu-section-item_icon" src="<?php echo $menu_icon; ?>" />
+
+                    <?php if (!empty($lunch['lunch_title'])): ?>
+                    <h3 class="food__menu-section-item_title food__menu-section_container">
+                        <?php echo $lunch['lunch_title']; ?>
+                    </h3>
+                    <?php endif;?>
+
+                    <?php if (!empty($lunch['lunch_subtitle'])): ?>
+                    <p class="food__menu-section-item_subtitle food__menu-section_container">
+                        <?php echo $lunch['lunch_subtitle']; ?>
                         <?php endif;?>
 
-                    </ul>
-                    </p>
+                        <?php if (!empty($lunch['lunch_menu_item'])): ?>
+                    <ul class="food__menu-section-item_text food__menu-section_container">
 
+                        <?php foreach ($lunch['lunch_menu_item'] as $item): ?>
+                        <li>
+                            <div class="food__menu-section-item_text-item_name">
+                                <?php echo $item['lunch_menu_item_name']; ?>
+                            </div>
+                            <?php if ($item['lunch_menu_item_desc']): ?>
+                            <div class="food__menu-section-item_text-item_desc">
+                                <?php echo $item['lunch_menu_item_desc']; ?>
+                            </div>
+                            <?php endif;?>
+                        </li>
+
+                        <?php endforeach;?>
+                    </ul>
+                    <?php endif;?>
+                    </p>
                 </div>
-                <?php endwhile;?>
-                <?php endif;?>
+
+                <div class="food__menu_mobile-photo">
+                    <?php if (!empty($mobile_photo_2['photo1']) and !empty($mobile_photo_2['photo2']) and !empty($mobile_photo_2['photo3'])): ?>
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_2['photo1']; ?>" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_2['photo2']; ?>" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_2['photo3']; ?>" />
+                    <?php endif;?>
+                </div>
+
+                <div class="food__menu-section-item">
+                    <img class="food__menu-section-item_icon" src="<?php echo $menu_icon; ?>" />
+
+                    <?php if (!empty($dinner['dinner_title'])): ?>
+                    <h3 class="food__menu-section-item_title food__menu-section_container">
+                        <?php echo $dinner['dinner_title']; ?>
+                    </h3>
+                    <?php endif;?>
+
+                    <?php if (!empty($dinner['dinner_subtitle'])): ?>
+                    <p class="food__menu-section-item_subtitle food__menu-section_container">
+                        <?php echo $dinner['dinner_subtitle']; ?>
+                        <?php endif;?>
+
+                        <?php if (!empty($dinner['dinner_menu_item'])): ?>
+                    <ul class="food__menu-section-item_text food__menu-section_container">
+
+                        <?php foreach ($dinner['dinner_menu_item'] as $item): ?>
+                        <li>
+                            <div class="food__menu-section-item_text-item_name">
+                                <?php echo $item['dinner_menu_item_name']; ?>
+                            </div>
+                            <?php if ($item['dinner_menu_item_desc']): ?>
+                            <div class="food__menu-section-item_text-item_desc">
+                                <?php echo $item['dinner_menu_item_desc']; ?>
+                            </div>
+                            <?php endif;?>
+                        </li>
+
+                        <?php endforeach;?>
+                    </ul>
+                    <?php endif;?>
+                    </p>
+                </div>
+
+                <div class="food__menu-section-item">
+                    <img class="food__menu-section-item_icon" src="<?php echo $menu_icon; ?>" />
+
+                    <?php if (!empty($additional_fee['additional_fee_title'])): ?>
+                    <h3 class="food__menu-section-item_title food__menu-section_container">
+                        <?php echo $additional_fee['additional_fee_title']; ?>
+                    </h3>
+                    <?php endif;?>
+
+                    <?php if (!empty($additional_fee['additional_fee_subtitle'])): ?>
+                    <p class="food__menu-section-item_subtitle food__menu-section_container">
+                        <?php echo $additional_fee['additional_fee_subtitle']; ?>
+                        <?php endif;?>
+
+                        <?php if (!empty($additional_fee['additional_fee_menu_item'])): ?>
+                    <ul class="food__menu-section-item_text food__menu-section_container">
+
+                        <?php foreach ($additional_fee['additional_fee_menu_item'] as $item): ?>
+                        <li>
+                            <div class="food__menu-section-item_text-item_name">
+                                <?php echo $item['additional_fee__menu_item_name']; ?>
+                            </div>
+                            <?php if ($item['additional_fee_menu_item_desc']): ?>
+                            <div class="food__menu-section-item_text-item_desc">
+                                <?php echo $item['additional_fee_menu_item_desc']; ?>
+                            </div>
+                            <?php endif;?>
+                        </li>
+
+                        <?php endforeach;?>
+                    </ul>
+                    <?php endif;?>
+                    </p>
+                </div>
+
+                <div class="food__menu_mobile-photo">
+                    <?php if (!empty($mobile_photo_3['photo1']) and !empty($mobile_photo_3['photo2']) and !empty($mobile_photo_3['photo3'])): ?>
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_3['photo1']; ?>" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_3['photo2']; ?>" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_3['photo3']; ?>" />
+                    <?php endif;?>
+                </div>
+
+                <div class="food__menu-section-item">
+                    <img class="food__menu-section-item_icon" src="<?php echo $menu_icon; ?>" />
+
+                    <?php if (!empty($previous_order['previous_order_title'])): ?>
+                    <h3 class="food__menu-section-item_title food__menu-section_container">
+                        <?php echo $previous_order['previous_order_title']; ?>
+                    </h3>
+                    <?php endif;?>
+
+                    <?php if (!empty($previous_order['previous_order_subtitle'])): ?>
+                    <p class="food__menu-section-item_subtitle food__menu-section_container">
+                        <?php echo $previous_order['previous_order_subtitle']; ?>
+                        <?php endif;?>
+
+                        <?php if (!empty($previous_order['previous_order_menu_item'])): ?>
+                    <ul class="food__menu-section-item_text food__menu-section_container">
+
+                        <?php foreach ($previous_order['previous_order_menu_item'] as $item): ?>
+                        <li>
+                            <div class="food__menu-section-item_text-item_name">
+                                <?php echo $item['previous_order_menu_item_name']; ?>
+                            </div>
+                            <?php if ($item['previous_order_menu_item_desc']): ?>
+                            <div class="food__menu-section-item_text-item_desc">
+                                <?php echo $item['previous_order_menu_item_desc']; ?>
+                            </div>
+                            <?php endif;?>
+                        </li>
+
+                        <?php endforeach;?>
+                    </ul>
+                    <?php endif;?>
+                    </p>
+                </div>
+
+                <div class="food__menu-section-item">
+                    <img class="food__menu-section-item_icon" src="<?php echo $menu_icon; ?>" />
+
+                    <?php if (!empty($additionally['additionally_title'])): ?>
+                    <h3 class="food__menu-section-item_title food__menu-section_container">
+                        <?php echo $additionally['additionally_title']; ?>
+                    </h3>
+                    <?php endif;?>
+
+                    <?php if (!empty($additionally['additionally_subtitle'])): ?>
+                    <p class="food__menu-section-item_subtitle food__menu-section_container">
+                        <?php echo $additionally['additionally_subtitle']; ?>
+                        <?php endif;?>
+
+                        <?php if (!empty($additionally['additionally_menu_item'])): ?>
+                    <ul class="food__menu-section-item_text food__menu-section_container">
+
+                        <?php foreach ($additionally['additionally_menu_item'] as $item): ?>
+                        <li>
+                            <div class="food__menu-section-item_text-item_name">
+                                <?php echo $item['additionally_menu_item_name']; ?>
+                            </div>
+                            <?php if ($item['additionally_menu_item_desc']): ?>
+                            <div class="food__menu-section-item_text-item_desc">
+                                <?php echo $item['additionally_menu_item_desc']; ?>
+                            </div>
+                            <?php endif;?>
+                        </li>
+
+                        <?php endforeach;?>
+                    </ul>
+                    <?php endif;?>
+                    </p>
+                </div>
+
                 <p class="food__menu-section-desc "> <?php the_field('food_menu_note');?>
                 </p>
-                <div
-                    class="food-section__images-mobile food-section__images-mobile-bottom food__menu-section-item-img_mobile-end">
-                    <?php if (get_field('food_bottom_images', 'options')): ?>
-                    <?php while (has_sub_field('food_bottom_images', 'options') and get_row_index() <= 3): ?>
-                    <img class="food-section__images-mobile_item"
-                        src="<?php the_sub_field('food_bottom_img', 'options');?>" />
-                    <?php endwhile;?>
+
+                <div class="food__menu_mobile-photo">
+                    <?php if (!empty($mobile_photo_4['photo1']) and !empty($mobile_photo_4['photo2']) and !empty($mobile_photo_4['photo3'])): ?>
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_4['photo1']; ?>" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_4['photo2']; ?>" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_4['photo3']; ?>" />
                     <?php endif;?>
                 </div>
             </div>
         </div>
+
         <div class="food__menu-section_img">
             <?php if (get_field('food_menu_photo_right')): ?>
             <?php while (has_sub_field('food_menu_photo_right')): ?>

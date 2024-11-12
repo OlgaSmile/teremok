@@ -173,6 +173,17 @@
 
     }
 
+    &__menu_mobile-photo {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        height: 8.75rem;
+        width: 100%;
+
+        @include media_rule($mobile) {
+            display: none;
+        }
+    }
+
     &__menu-section {
         margin-bottom: 7.5rem;
 
@@ -286,7 +297,6 @@
                 line-height: 1.3713rem;
                 letter-spacing: 0.06em;
                 text-align: center;
-                margin-bottom: 2rem;
             }
 
             &_text {
@@ -298,6 +308,7 @@
                 line-height: 1.2188rem;
                 letter-spacing: 0.04em;
                 text-align: center;
+                margin-top: 2rem;
 
                 &-item {
                     &_desc {
