@@ -4,9 +4,14 @@
   &__container {
     padding-left: 0.625rem;
     padding-right: 0.625rem;
+
     max-width: 76.25rem;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 7.5rem;
+    @media screen and (min-width: $mobile) {
+      padding-bottom: 11.25rem;
+    }
   }
 
   &-title {
