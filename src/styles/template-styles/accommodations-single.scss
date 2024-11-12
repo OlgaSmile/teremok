@@ -173,6 +173,16 @@
             margin-bottom: 7.5rem;
         }
 
+        &>h5 {
+            text-align: center;
+
+            width: 42.125rem;
+            height: fit-content;
+            padding: 1.5rem;
+            border-radius: .125rem;
+            border: .0625rem solid $grey_green;
+        }
+
         &>h2 {
             display: flex;
             flex-direction: column;
