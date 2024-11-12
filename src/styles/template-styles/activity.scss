@@ -37,17 +37,22 @@
     margin-bottom: 2.5rem;
     margin-left: auto;
     margin-right: auto;
-    max-width: 60rem;
+    max-width: 50rem;
 
     text-align: center;
 
     padding-left: 1rem;
     padding-right: 1rem;
+
+    @include media_rule($mobile) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   padding-bottom: 5rem;
   @include media_rule($mobile) {
-    padding-bottom: 10rem;
+    padding-bottom: 11.25rem;
   }
 }
 
@@ -262,8 +267,12 @@
   }
 
   &__detalies-btn {
-    display: block;
+    display: flex;
+    align-items: center;
     color: $orange;
+    svg {
+      margin-left: 0.62rem;
+    }
     @include media_rule_max($mobile) {
       display: none;
     }
@@ -277,6 +286,8 @@
       align-items: center;
 
       svg {
+        width: 0.75rem;
+        height: 0.75rem;
         margin-left: 0.5rem;
       }
     }
@@ -292,7 +303,7 @@
 
   padding-bottom: 5rem;
   @include media_rule($mobile) {
-    padding-bottom: 10rem;
+    padding-bottom: 11.25rem;
   }
 
   &__item {

@@ -358,22 +358,21 @@
         }
 
         &:hover {
-          & .viber-icon {
+          & .icon_viber {
             fill: $orange;
             transition: 300ms ease-in-out;
             scale: 1.1;
           }
 
-          & .telegram-icon {
+          & .icon_telegram {
             stroke: $orange;
             transition: 300ms ease-in-out;
             scale: 1.1;
           }
 
-          & .whatsApp-icon {
+          & .icon_whatsapp {
             stroke: $orange;
             transition: 300ms ease-in-out;
-            scale: 1.1;
           }
         }
         svg {
@@ -422,10 +421,6 @@
       }
       iframe {
         width: 100%;
-
-        /*     @include media_rule($mobile) {
-          height: 42.5rem;
-        } */
 
         height: 100%;
 

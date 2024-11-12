@@ -65,8 +65,15 @@
 .section-services-page {
   padding-bottom: 7.5rem;
   position: relative;
+
+  & .teremok-section__box {
+    & .teremok-section__title {
+      padding-top: 0;
+    }
+  }
+
   @include media_rule($mobile) {
-    padding-bottom: 10rem;
+    padding-bottom: 11.25rem;
   }
   &__list {
     @include media_rule($tablet) {
@@ -179,7 +186,7 @@
     img {
       width: 2.25rem;
       @include media_rule($mobile) {
-        width: 2.68rem !important;
+        width: 2.75rem !important;
       }
     }
     h3 {
@@ -190,6 +197,7 @@
       margin-bottom: 1rem;
       letter-spacing: 0.07rem;
       @include media_rule($mobile) {
+        font-size: 1.62rem;
         margin-bottom: 1.5rem;
         max-width: 18.75rem;
       }
@@ -243,7 +251,7 @@
   padding-bottom: 7.5rem;
 
   @include media_rule($mobile) {
-    padding-bottom: 10rem;
+    padding-bottom: 11.25rem;
   }
   &__item-decor-1-position-t {
     position: absolute;
