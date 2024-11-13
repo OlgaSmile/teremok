@@ -21,7 +21,10 @@ jQuery(document).ready(function ($) {
 
   const priseNumber = priseByPeriod.split(",").join("");
 
-  const priseText = `${Number(priseNumber) / Number(prisePeriod)} грн/доба`;
+  const nFormat = new Intl.NumberFormat(undefined);
+
+  const priceByNight = Number(priseNumber) / Number(prisePeriod);
+  const priseText = `${nFormat.format(priceByNight)} грн/доба`;
 
   roomPrice.empty().append(`<span class='price_text'>${priseText}</span>`);
   if (prisePeriod > 1) {

@@ -20,6 +20,8 @@ $dinner = get_field('food_page_dinner');
 $additional_fee = get_field('additional_fee_food');
 $previous_order = get_field('food_page_previous_order');
 $additionally = get_field('food_page_additionally');
+$variant1 = get_field('menu_variant_1');
+$variant2 = get_field('menu_variant_2');
 ?>
 
 <main class="food_page">
@@ -60,7 +62,9 @@ $additionally = get_field('food_page_additionally');
         <div class="food__menu-section_img">
             <?php if (get_field('food_menu_photo_left')): ?>
             <?php while (has_sub_field('food_menu_photo_left')): ?>
-            <img class="" src="<?php the_sub_field('food_menu_photo_left_item');?>" />
+            <div class="food__menu-section_img-wrapper">
+                <img class="" src="<?php the_sub_field('food_menu_photo_left_item');?>" />
+            </div>
             <?php endwhile;?>
             <?php endif;?>
         </div>
@@ -84,6 +88,50 @@ $additionally = get_field('food_page_additionally');
                 </div>
 
                 <div class="food__menu-section-item">
+                    <div class="food__menu-section_variant-wrapper">
+                        <div class="food__menu-section_variant">
+                            <ul class="menu_variant-list">
+                                <?php if (get_field('menu_variant_1')): ?>
+                                <?php while (has_sub_field('menu_variant_1')): ?>
+                                <li class="menu_variant-item">
+                                    <div class="menu_variant_title">
+                                        <?php the_sub_field('menu_variant_title');?>
+                                    </div>
+                                    <div class="menu_variant_desc">
+                                        <?php the_sub_field('menu_variant_desc');?>
+                                    </div>
+                                </li>
+                                <?php endwhile;?>
+                                <?php endif;?>
+                            </ul>
+                        </div>
+
+                        <div class="food__menu-section_variant-divider">або</div>
+
+                        <div class="food__menu-section_variant">
+                            <ul class="menu_variant-list">
+                                <?php if (get_field('menu_variant_2')): ?>
+                                <?php while (has_sub_field('menu_variant_2')): ?>
+                                <li class="menu_variant-item">
+                                    <div class="menu_variant_title">
+                                        <?php the_sub_field('menu_variant_title');?>
+                                    </div>
+                                    <div class="menu_variant_desc">
+                                        <?php the_sub_field('menu_variant_desc');?>
+                                    </div>
+                                </li>
+                                <?php endwhile;?>
+                                <?php endif;?>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="food__menu-section_variant-price">
+                        <span class="food__menu-section_variant-price_title">Вартість:</span>
+                        <?php the_field('food_menu_note');?>
+                    </p>
+                </div>
+
+                <div class="food__menu-section-item">
                     <img class="food__menu-section-item_icon" src="<?php echo $menu_icon; ?>" />
 
                     <?php if (!empty($breakfast['breakfast_title'])): ?>
@@ -95,9 +143,10 @@ $additionally = get_field('food_page_additionally');
                     <?php if (!empty($breakfast['breakfast_subtitle'])): ?>
                     <p class="food__menu-section-item_subtitle food__menu-section_container">
                         <?php echo $breakfast['breakfast_subtitle']; ?>
-                        <?php endif;?>
+                    </p>
+                    <?php endif;?>
 
-                        <?php if (!empty($breakfast['breakfast_menu_item'])): ?>
+                    <?php if (!empty($breakfast['breakfast_menu_item'])): ?>
                     <ul class="food__menu-section-item_text food__menu-section_container">
 
                         <?php foreach ($breakfast['breakfast_menu_item'] as $item): ?>
@@ -130,9 +179,10 @@ $additionally = get_field('food_page_additionally');
                     <?php if (!empty($lunch['lunch_subtitle'])): ?>
                     <p class="food__menu-section-item_subtitle food__menu-section_container">
                         <?php echo $lunch['lunch_subtitle']; ?>
-                        <?php endif;?>
+                    </p>
+                    <?php endif;?>
 
-                        <?php if (!empty($lunch['lunch_menu_item'])): ?>
+                    <?php if (!empty($lunch['lunch_menu_item'])): ?>
                     <ul class="food__menu-section-item_text food__menu-section_container">
 
                         <?php foreach ($lunch['lunch_menu_item'] as $item): ?>
@@ -173,9 +223,10 @@ $additionally = get_field('food_page_additionally');
                     <?php if (!empty($dinner['dinner_subtitle'])): ?>
                     <p class="food__menu-section-item_subtitle food__menu-section_container">
                         <?php echo $dinner['dinner_subtitle']; ?>
-                        <?php endif;?>
+                    </p>
+                    <?php endif;?>
 
-                        <?php if (!empty($dinner['dinner_menu_item'])): ?>
+                    <?php if (!empty($dinner['dinner_menu_item'])): ?>
                     <ul class="food__menu-section-item_text food__menu-section_container">
 
                         <?php foreach ($dinner['dinner_menu_item'] as $item): ?>
@@ -208,9 +259,10 @@ $additionally = get_field('food_page_additionally');
                     <?php if (!empty($additional_fee['additional_fee_subtitle'])): ?>
                     <p class="food__menu-section-item_subtitle food__menu-section_container">
                         <?php echo $additional_fee['additional_fee_subtitle']; ?>
-                        <?php endif;?>
+                    </p>
+                    <?php endif;?>
 
-                        <?php if (!empty($additional_fee['additional_fee_menu_item'])): ?>
+                    <?php if (!empty($additional_fee['additional_fee_menu_item'])): ?>
                     <ul class="food__menu-section-item_text food__menu-section_container">
 
                         <?php foreach ($additional_fee['additional_fee_menu_item'] as $item): ?>
@@ -218,6 +270,7 @@ $additionally = get_field('food_page_additionally');
                             <div class="food__menu-section-item_text-item_name">
                                 <?php echo $item['additional_fee__menu_item_name']; ?>
                             </div>
+
                             <?php if ($item['additional_fee_menu_item_desc']): ?>
                             <div class="food__menu-section-item_text-item_desc">
                                 <?php echo $item['additional_fee_menu_item_desc']; ?>
@@ -228,7 +281,7 @@ $additionally = get_field('food_page_additionally');
                         <?php endforeach;?>
                     </ul>
                     <?php endif;?>
-                    </p>
+
                 </div>
 
                 <div class="food__menu_mobile-photo">
@@ -251,9 +304,10 @@ $additionally = get_field('food_page_additionally');
                     <?php if (!empty($previous_order['previous_order_subtitle'])): ?>
                     <p class="food__menu-section-item_subtitle food__menu-section_container">
                         <?php echo $previous_order['previous_order_subtitle']; ?>
-                        <?php endif;?>
+                    </p>
+                    <?php endif;?>
 
-                        <?php if (!empty($previous_order['previous_order_menu_item'])): ?>
+                    <?php if (!empty($previous_order['previous_order_menu_item'])): ?>
                     <ul class="food__menu-section-item_text food__menu-section_container">
 
                         <?php foreach ($previous_order['previous_order_menu_item'] as $item): ?>
@@ -286,9 +340,10 @@ $additionally = get_field('food_page_additionally');
                     <?php if (!empty($additionally['additionally_subtitle'])): ?>
                     <p class="food__menu-section-item_subtitle food__menu-section_container">
                         <?php echo $additionally['additionally_subtitle']; ?>
-                        <?php endif;?>
+                    </p>
+                    <?php endif;?>
 
-                        <?php if (!empty($additionally['additionally_menu_item'])): ?>
+                    <?php if (!empty($additionally['additionally_menu_item'])): ?>
                     <ul class="food__menu-section-item_text food__menu-section_container">
 
                         <?php foreach ($additionally['additionally_menu_item'] as $item): ?>
@@ -309,9 +364,6 @@ $additionally = get_field('food_page_additionally');
                     </p>
                 </div>
 
-                <p class="food__menu-section-desc "> <?php the_field('food_menu_note');?>
-                </p>
-
                 <div class="food__menu_mobile-photo">
                     <?php if (!empty($mobile_photo_4['photo1']) and !empty($mobile_photo_4['photo2']) and !empty($mobile_photo_4['photo3'])): ?>
                     <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_4['photo1']; ?>" />
@@ -325,7 +377,10 @@ $additionally = get_field('food_page_additionally');
         <div class="food__menu-section_img">
             <?php if (get_field('food_menu_photo_right')): ?>
             <?php while (has_sub_field('food_menu_photo_right')): ?>
-            <img class="food-section__images-mobile_item" src="<?php the_sub_field('food_menu_photo_right_item');?>" />
+            <div class="food__menu-section_img-wrapper">
+                <img class="" src="<?php the_sub_field('food_menu_photo_right_item');?>" />
+                <!-- <img class="food-section__images-mobile_item" src="<?php the_sub_field('food_menu_photo_right_item');?>" /> -->
+            </div>
             <?php endwhile;?>
             <?php endif;?>
         </div>
