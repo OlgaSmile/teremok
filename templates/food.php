@@ -87,7 +87,7 @@ $variant2 = get_field('menu_variant_2');
                     <?php endif;?>
                 </div>
 
-                <div class="food__menu-section-item">
+                <div class="food__menu-section-item container">
                     <div class="food__menu-section_variant-wrapper">
                         <div class="food__menu-section_variant">
                             <ul class="menu_variant-list">
@@ -129,6 +129,14 @@ $variant2 = get_field('menu_variant_2');
                         <span class="food__menu-section_variant-price_title">Вартість:</span>
                         <?php the_field('food_menu_note');?>
                     </p>
+                </div>
+
+                <div class="food__menu_mobile-photo">
+                    <?php if (!empty($mobile_photo_2['photo1']) and !empty($mobile_photo_2['photo2']) and !empty($mobile_photo_2['photo3'])): ?>
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_2['photo1']; ?>" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_2['photo2']; ?>" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_2['photo3']; ?>" />
+                    <?php endif;?>
                 </div>
 
                 <div class="food__menu-section-item">
@@ -199,14 +207,6 @@ $variant2 = get_field('menu_variant_2');
                         <?php endforeach;?>
 
                     </ul>
-                    <?php endif;?>
-                </div>
-
-                <div class="food__menu_mobile-photo">
-                    <?php if (!empty($mobile_photo_2['photo1']) and !empty($mobile_photo_2['photo2']) and !empty($mobile_photo_2['photo3'])): ?>
-                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_2['photo1']; ?>" />
-                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_2['photo2']; ?>" />
-                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_2['photo3']; ?>" />
                     <?php endif;?>
                 </div>
 
