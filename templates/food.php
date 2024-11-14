@@ -196,11 +196,10 @@ $variant2 = get_field('menu_variant_2');
                             </div>
                             <?php endif;?>
                         </li>
-
                         <?php endforeach;?>
+
                     </ul>
                     <?php endif;?>
-                    </p>
                 </div>
 
                 <div class="food__menu_mobile-photo">
@@ -244,7 +243,6 @@ $variant2 = get_field('menu_variant_2');
                         <?php endforeach;?>
                     </ul>
                     <?php endif;?>
-                    </p>
                 </div>
 
                 <div class="food__menu-section-item">
@@ -281,7 +279,6 @@ $variant2 = get_field('menu_variant_2');
                         <?php endforeach;?>
                     </ul>
                     <?php endif;?>
-
                 </div>
 
                 <div class="food__menu_mobile-photo">
@@ -325,7 +322,6 @@ $variant2 = get_field('menu_variant_2');
                         <?php endforeach;?>
                     </ul>
                     <?php endif;?>
-                    </p>
                 </div>
 
                 <div class="food__menu-section-item">
@@ -361,7 +357,6 @@ $variant2 = get_field('menu_variant_2');
                         <?php endforeach;?>
                     </ul>
                     <?php endif;?>
-                    </p>
                 </div>
 
                 <div class="food__menu_mobile-photo">
@@ -379,7 +374,6 @@ $variant2 = get_field('menu_variant_2');
             <?php while (has_sub_field('food_menu_photo_right')): ?>
             <div class="food__menu-section_img-wrapper">
                 <img class="" src="<?php the_sub_field('food_menu_photo_right_item');?>" />
-                <!-- <img class="food-section__images-mobile_item" src="<?php the_sub_field('food_menu_photo_right_item');?>" /> -->
             </div>
             <?php endwhile;?>
             <?php endif;?>
