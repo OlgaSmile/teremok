@@ -78,7 +78,7 @@
         left: 0;
         width: 100%;
         height: 1px;
-        background-color: $main_text;
+        background-color: $orange;
         opacity: 0;
         transform: scale(0);
         transition: opacity 300ms, transform 300ms;
@@ -108,14 +108,20 @@
       }
 
       &:hover,
-      &:focus img {
+      &:focus {
         transform: scale(1.1);
+        color: $orange;
+
+        & svg {
+          color: $orange;
+        }
       }
 
-      & img {
+      & svg {
         width: 1.5rem;
         height: 1.5rem;
         padding: .125rem .25rem;
+        color: $main_text;
       }
     }
 

@@ -44,6 +44,11 @@ jQuery(document).ready(function ($) {
 
     const prevOptionsList = facilities.find(".mphb-attribute-value").children();
 
+    const priceDaysText = searchWrapper.find($(".mphb-price-period")).text();
+    const prisePeriod = priceDaysText
+      .split(" ")
+      .filter((element) => Number(element))[0];
+
     searchWrapper.find(".mphb-regular-price").remove();
     searchWrapper.find(".mphb-loop-room-type-attributes").remove();
 
@@ -59,8 +64,16 @@ jQuery(document).ready(function ($) {
     );
     const descWrapper = $("<p></p>").addClass("accommodations_desc container");
     const NumberOfGuestsText = `${NumberOfGuests.text().trim()} гостей`;
+
     const prise = roomPrice.text().split("");
-    const priseText = `${prise.splice(1, prise.length).join("")} грн доба`;
+    const priseNumber = prise.splice(1, prise.length).join("").replace(",", "");
+
+    const priceByNight =
+      Number(priseNumber) / Number(prisePeriod ? prisePeriod : 1);
+
+    const nFormat = new Intl.NumberFormat(undefined);
+
+    const priseText = `${nFormat.format(priceByNight)} грн доба`;
 
     optionsItem.append(
       $(`<span>${guestIconItem}</span>`).addClass(

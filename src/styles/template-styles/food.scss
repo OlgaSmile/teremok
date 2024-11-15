@@ -99,6 +99,7 @@
             line-height: 1.2188rem;
             letter-spacing: 0.04em;
             text-align: center;
+
         }
 
         &_photo {
@@ -186,6 +187,8 @@
 
     &__menu-section {
         margin-bottom: 7.5rem;
+        height: fit-content;
+        align-items: stretch;
 
         @include media_rule($mobile) {
             display: flex;
@@ -250,10 +253,19 @@
             display: none;
 
             @include media_rule($mobile) {
-                display: flex;
-                flex-direction: column;
-                flex-shrink: 1;
+                display: grid;
+                grid-template-rows: auto;
                 width: 18.75rem;
+                min-height: 100%;
+            }
+
+            &-wrapper {
+                overflow: hidden;
+
+                & img {
+                    object-fit: cover;
+                    height: 100%;
+                }
             }
         }
 
@@ -270,6 +282,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 100%;
 
             &_icon {
                 width: 1.5rem;
@@ -340,6 +353,81 @@
 
                 &:nth-child(4n+3) .food__menu-section-item-img_mobile-bottom {
                     display: grid;
+                }
+            }
+        }
+
+        &_variant {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 20rem;
+            height: 9.875rem;
+            padding: 1rem .5rem 1rem .5rem;
+            border: .0625rem solid $grey_green;
+            border-radius: .125rem;
+
+            &-wrapper {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                margin-bottom: 2.5rem;
+
+                @include media_rule_max($mobile) {
+                    flex-direction: column;
+                    gap: 1rem;
+                    align-items: center;
+                }
+            }
+
+            &-divider {
+                flex-grow: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                color: $green_light;
+                font-weight: 500;
+            }
+
+            & .menu_variant-list {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            & .menu_variant-item {
+                margin-bottom: 1rem;
+            }
+
+            & .menu_variant_title {
+                font-size: 1rem;
+                font-weight: 500;
+                line-height: 1.2188rem;
+                text-align: center;
+
+            }
+
+            & .menu_variant_desc {
+                font-size: .875rem;
+                font-weight: 400;
+                line-height: 1.0669rem;
+                text-align: center;
+            }
+
+            &-price {
+                font-size: 1.125rem;
+                font-weight: 600;
+                line-height: 1.3713rem;
+                letter-spacing: 0.06em;
+
+                &_title {
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    line-height: 1.8288rem;
+                    letter-spacing: 0.04em;
                 }
             }
         }
