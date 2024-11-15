@@ -3,6 +3,7 @@ $apartments_description = get_field('apartments_description');
 $apartments_description_additional = get_field('apartments_description_additional');
 $apartments_gallery = get_field('apartments_gallery');
 $apartments_services = get_field('apartments_services');
+$link_page_house = get_field('link_page_house')
 ?>
 
 <article class="one-apartment">
@@ -70,9 +71,11 @@ $apartments_services = get_field('apartments_services');
       </div>
     </div>
   <?php } ?>
+
   <div class="one-apartment__learnmore learnmore_button">
-    <a href="<?php the_permalink(); ?>">
-      <?php the_field('learn_more', 'options'); ?></a>
+    <a href="<?php echo get_home_url() . ($link_page_house ? $link_page_house : '/residence/'); ?>">
+      <?php the_field('learn_more', 'options'); ?>
+    </a>
     <svg class="learnmore_button--icon">
       <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#big_arrow"></use>
     </svg>
