@@ -38,7 +38,8 @@ get_template_part("template-parts/section-title", null, array('title' => $servic
                 <?php while (has_sub_field('free_services_data', 'options')): ?>
 
                 <li class="services-section__service-item services-section__service-item_free">
-                    <img class="services-section__service-icon" src="<?php the_sub_field('free_services_icon');?>" />
+                    <?php $free_img = get_sub_field('free_services_icon');?>
+                    <?php get_template_part('template-parts/facilities_icon', null, array('img' => $free_img));?>
                     <div class="services-section__service-name">
                         <?php the_sub_field('free_services_name');?>
                     </div>
@@ -69,8 +70,8 @@ get_template_part("template-parts/section-title", null, array('title' => $servic
                 <?php while (has_sub_field('additional_service_data', 'options')): ?>
 
                 <li class="services-section__service-item services-section__service-item-additional">
-                    <img class="services-section__service-icon"
-                        src="<?php the_sub_field('additional_service_icon', 'options');?>" />
+                    <?php $add_img = get_sub_field('additional_service_icon', 'options');?>
+                    <?php get_template_part('template-parts/facilities_icon', null, array('img' => $add_img));?>
                     <div class="services-section__service-name">
                         <?php the_sub_field('additional_service_name', 'options');?>
                     </div>
