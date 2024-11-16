@@ -97,7 +97,7 @@ const iconsList = {
       <path d="M17.5 16.334H23.3333" stroke="#689762" stroke-width="1.1" stroke-linecap="round" />
     </svg>
     </div>`,
-};
+}
 
 const treesTitleIcon = `<div class="accommodations-single_trees_icon"><svg width="56" height="42" viewBox="0 0 56 42" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clip-path="url(#clip0_4536_60715)">
@@ -116,7 +116,7 @@ const treesTitleIcon = `<div class="accommodations-single_trees_icon"><svg width
         <rect width="56" height="42" fill="white" />
         </clipPath>
     </defs>
-    </svg></div>`;
+    </svg></div>`
 
 function getFacilitiesRandomIcon() {
   const defaultIcon = `<div class="facilities-icon_frame">
@@ -131,9 +131,9 @@ function getFacilitiesRandomIcon() {
         </clipPath>
       </defs>
     </svg>
-    </div>`;
+    </div>`
 
-  return defaultIcon;
+  return defaultIcon
 }
 
 const guestIconItem = `<div class="facilities-icon_frame">
@@ -143,7 +143,7 @@ const guestIconItem = `<div class="facilities-icon_frame">
       <path d="M9.54545 9.32336V13.0028C9.54737 13.135 9.51694 13.2662 9.45594 13.3886C9.39495 13.5111 9.30462 13.6223 9.19027 13.7158C9.07592 13.8093 8.93987 13.8832 8.7901 13.9331C8.64033 13.9829 8.47988 14.0078 8.31818 14.0063C8.15648 14.0078 7.99603 13.9829 7.84626 13.9331C7.69649 13.8832 7.56043 13.8093 7.44609 13.7158C7.33174 13.6223 7.24141 13.5111 7.18041 13.3886C7.11942 13.2662 7.08899 13.135 7.09091 13.0028V9.32336C7.09091 8.79108 7.34951 8.28061 7.80983 7.90423C8.27014 7.52785 8.89447 7.31641 9.54545 7.31641H14.4545C15.1055 7.31641 15.7299 7.52785 16.1902 7.90423C16.6505 8.28061 16.9091 8.79108 16.9091 9.32336V13.0028C16.911 13.135 16.8806 13.2662 16.8196 13.3886C16.7586 13.5111 16.6683 13.6223 16.5539 13.7158C16.4396 13.8093 16.3035 13.8832 16.1537 13.9331C16.004 13.9829 15.8435 14.0078 15.6818 14.0063C15.5201 14.0078 15.3597 13.9829 15.2099 13.9331C15.0601 13.8832 14.9241 13.8093 14.8097 13.7158C14.6954 13.6223 14.605 13.5111 14.5441 13.3886C14.4831 13.2662 14.4526 13.135 14.4545 13.0028V9.32336" stroke="#689762" stroke-miterlimit="10" stroke-linecap="round" />
       <path d="M12 5.31172C13.1297 5.31172 14.0455 4.56293 14.0455 3.63926C14.0455 2.71558 13.1297 1.9668 12 1.9668C10.8704 1.9668 9.95459 2.71558 9.95459 3.63926C9.95459 4.56293 10.8704 5.31172 12 5.31172Z" stroke="#689762" stroke-miterlimit="10" stroke-linecap="round" />
     </svg>
-    </div>`;
+    </div>`
 
 const sliderNavigation = `<div class="one-apartment__navigation">
       <div class="custom-prev-icon one-apartment__navigation--prev">
@@ -160,7 +160,7 @@ const sliderNavigation = `<div class="one-apartment__navigation">
             </g>
         </svg>
       </div>
-    </div>`;
+    </div>`
 
 const trees3 = `<svg width="56" height="42" viewBox="0 0 56 42" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
   <g clip-path="url(#clip0_4536_60715)">
@@ -179,7 +179,7 @@ const trees3 = `<svg width="56" height="42" viewBox="0 0 56 42" fill="none" stro
       <rect width="56" height="42" fill="white" />
     </clipPath>
   </defs>
-</svg>`;
+</svg>`
 
 const singleAccommodationBookingDatesTemplate = `
 <section class="accommodations-single__booking-section">
@@ -194,26 +194,26 @@ const singleAccommodationBookingDatesTemplate = `
  <div class="accommodations-single__booking-section_check"></div>
  <div class="accommodations-single__booking-section_btn-wrapper"></div>
 </section>
-`;
+`
 
 function getNightPriceText(number) {
   if (!number) {
-    return "за ніч";
+    return "за ніч"
   }
-  let text = "за ";
+  let text = "за "
 
-  const lastDigit = number % 10;
-  const lastTwoDigits = number % 100;
+  const lastDigit = number % 10
+  const lastTwoDigits = number % 100
 
   if (lastTwoDigits >= 11 && lastTwoDigits <= 14) {
-    text += number + " ночей";
+    text += number + " ночей"
   } else if (lastDigit === 1) {
-    text += number + " ніч";
+    text += number + " ніч"
   } else if (lastDigit >= 2 && lastDigit <= 4) {
-    text += number + " ночі";
+    text += number + " ночі"
   } else {
-    text += number + " ночей";
+    text += number + " ночей"
   }
 
-  return text;
+  return text
 }

@@ -66,6 +66,14 @@
       margin: 0 auto;
       margin-bottom: 0.5rem;
     }
+    @include media_rule($mobile) {
+      margin-bottom: 2.5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
     @include media_rule($tablet) {
       margin-bottom: 4rem;
 
