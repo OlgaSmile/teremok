@@ -1,18 +1,28 @@
+<?php
+$services_title = get_field('services_title', 'options');
+$is_winter = get_field('winter_summer_toggle', 'options');
+$learn_more = get_field('learn_more', 'options');
+
+?>
+
 <section class="services-section">
     <div class="services-section__image">
         <?php if (get_field('services-section-left-photos')): ?>
         <?php while (has_sub_field('services-section-left-photos')): ?>
-
-        <img class="services-section__image-item" src="<?php the_sub_field('services-section-left-photo');?>" />
+        <?php if ($is_winter) {
+    $img_url_left = get_sub_field('services-section-left-photo_winter');
+} else {
+    $img_url_left = get_sub_field('services-section-left-photo');
+}
+;?>
+        <img class="services-section__image-item" src="<?php echo $img_url_left; ?>" />
         <?php endwhile;?>
         <?php endif;?>
 
     </div>
 
     <div class="services-section__container">
-        <?php
-$services_title = get_field('services_title', 'options');
-get_template_part("template-parts/section-title", null, array('title' => $services_title));?>
+        <?php get_template_part("template-parts/section-title", null, array('title' => $services_title));?>
 
         <div class="services-section__content">
             <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees1.png'; ?>"
@@ -83,7 +93,7 @@ get_template_part("template-parts/section-title", null, array('title' => $servic
 
         <?php
 global $wp;
-$learn_more = get_field('learn_more', 'options');
+
 $link = add_query_arg($wp->query_vars, home_url()) . '/services';
 
 get_template_part("template-parts/learn-more-btn", null, array('btn_name' => $learn_more, 'link_name' => $link));?>
@@ -92,7 +102,13 @@ get_template_part("template-parts/learn-more-btn", null, array('btn_name' => $le
     <div class="services-section__image">
         <?php if (get_field('services-section-right-photos')): ?>
         <?php while (has_sub_field('services-section-right-photos')): ?>
-        <img class="services-section__image-item" src="<?php the_sub_field('services-section-right-photo');?>" />
+        <?php if ($is_winter) {
+    $img_url_right = get_sub_field('services-section-right-photo_winter');
+} else {
+    $img_url_right = get_sub_field('services-section-right-photo');
+}
+;?>
+        <img class="services-section__image-item" src="<?php echo $img_url_right; ?>" />
         <?php endwhile;?>
         <?php endif;?>
     </div>
