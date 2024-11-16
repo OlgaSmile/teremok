@@ -7,6 +7,7 @@ get_header();
 
 $accommodations_hero_image = get_field('accommodations_hero_image');
 $accommodation_rules = get_field('accommodation_rules');
+$accommodation_page_title = get_field('accommodations-page_title');
 
 $houses_title = get_field('houses_section_title');
 $family_rooms_title = get_field('family-rooms_section_title');
@@ -14,7 +15,7 @@ $double_rooms_title = get_field('double-rooms_section_title');
 ?>
 <main class="accommodations-main">
     <section class="accommodations-hero">
-        <?php get_template_part("template-parts/secondary-hero-section", null, ['img_array' => $accommodations_hero_image, "title_section" => get_the_title()]);?>
+        <?php get_template_part("template-parts/secondary-hero-section", null, ['img_array' => $accommodations_hero_image, "title_section" => $accommodation_page_title]);?>
 
         <div class="accommodations-hero_info">
             <div class="accommodations-hero_info-content">
