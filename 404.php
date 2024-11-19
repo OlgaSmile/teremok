@@ -13,6 +13,7 @@ $text_404_top = get_field('text_404_top', 'options');
 $text_404_bottom = get_field('text_404_bottom', 'options');
 $image = get_field('Image_404', 'options');
 
+get_header();
 ?>
 
 <main>
@@ -63,4 +64,4 @@ $image = get_field('Image_404', 'options');
 </main>
 
 <?php
-/* get_footer(); */
+get_footer();

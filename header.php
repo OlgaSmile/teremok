@@ -1,15 +1,15 @@
-<?php acf_form_head()?>
+<?php acf_form_head() ?>
 <!DOCTYPE html>
-<html <?php language_attributes();?>>
+<html <?php language_attributes(); ?>>
 
 <head>
-    <meta charset="<?php bloginfo('charset');?>">
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php wp_head();?>
+    <?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
     <div class="wrapper">
 
         <!-- Desktop HEADER START -->
@@ -18,23 +18,23 @@
                 <div class="header__menu menu">
                     <div class="menu__icon icon-menu menu__round menu__icon_white">
                         <a href="/">
-                            <?php get_template_part("template-parts/logo");?>
+                            <?php get_template_part("template-parts/logo"); ?>
                         </a>
                     </div>
                 </div>
                 <div class="menu__icon icon-menu menu__round menu__icon_black">
                     <a href="/">
-                        <?php get_template_part("template-parts/logo_footer");?>
+                        <?php get_template_part("template-parts/logo_footer"); ?>
                     </a>
                 </div>
                 <div class="menu__nav">
                     <nav class="menu__body">
                         <div class=" menu__container">
                             <?php wp_nav_menu([
-    'theme_location' => 'header',
-    'container' => false,
-    'menu_class' => 'menu__list',
-    'link_before' => '<div class="menu__list-trees">
+                                'theme_location' => 'header',
+                                'container' => false,
+                                'menu_class' => 'menu__list',
+                                'link_before' => '<div class="menu__list-trees">
     <svg width="33" height="58" viewBox="0 0 33 58" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M16.2109 57.5V0.0625" stroke-width="1.5" />
         <path
@@ -54,17 +54,17 @@
             stroke-width="1.5" />
     </svg>
 </div>',
-    'menu_id' => false,
-    'echo' => true,
-    'items_wrap' => '<ul id="%1$s" class="header_list %2$s">%3$s</ul>',
-]);
-?>
+                                'menu_id' => false,
+                                'echo' => true,
+                                'items_wrap' => '<ul id="%1$s" class="header_list %2$s">%3$s</ul>',
+                            ]);
+                            ?>
                         </div>
                     </nav>
                     <div class="burger-menu__overlay"></div>
                 </div>
                 <a type="phone" href="tel:
-<?php the_field('phone', "option");?>" class="header__phone"><?php the_field('phone', "option");?></a>
+<?php the_field('phone', "option"); ?>" class="header__phone"><?php the_field('phone', "option"); ?></a>
         </header>
         <!-- Desktop HEADER END -->
 
@@ -72,37 +72,37 @@
 
         <header class="header-mobile header-mobile__active">
 
-            <?php get_template_part("template-parts/header_mobile");?>
+            <?php get_template_part("template-parts/header_mobile"); ?>
 
 
         </header>
         <div class="header-mobile__menu" popover id="mobile-menu">
             <header class="header-mobile_menu">
-                <?php get_template_part("template-parts/header_mobile-menu");?>
+                <?php get_template_part("template-parts/header_mobile-menu"); ?>
             </header>
             <?php wp_nav_menu([
-    'theme_location' => 'header',
-    'container' => false,
-    'menu_class' => 'header-mobile__menu-list',
-    'menu_id' => false,
-    'echo' => true,
-    'items_wrap' => '<ul id="%1$s" class="header-mobile-list header-mobile_menu-list %2$s">%3$s</ul>',
-]);
-?>
+                'theme_location' => 'header',
+                'container' => false,
+                'menu_class' => 'header-mobile__menu-list',
+                'menu_id' => false,
+                'echo' => true,
+                'items_wrap' => '<ul id="%1$s" class="header-mobile-list header-mobile_menu-list %2$s">%3$s</ul>',
+            ]);
+            ?>
             <ul class="header-mobile__menu_socials">
                 <?php if (get_field('social_links', 'option')): ?>
-                <?php while (has_sub_field('social_links', 'option')): ?>
+                    <?php while (has_sub_field('social_links', 'option')): ?>
 
-                <li class="header-mobile__menu_socials-item">
-                    <a href="<?php the_sub_field('social_link');?>">
-                        <img src="<?php the_sub_field('social_icon');?>">
-                    </a>
-                </li>
-                <?php endwhile;?>
-                <?php endif;?>
+                        <li class="header-mobile__menu_socials-item">
+                            <a href="<?php the_sub_field('social_link'); ?>">
+                                <img src="<?php the_sub_field('social_icon'); ?>">
+                            </a>
+                        </li>
+                    <?php endwhile; ?>
+                <?php endif; ?>
             </ul>
-            <a type="phone" href="tel:<?php the_field('phone', "option");?>" class="header-mobile__menu_phone">
-                <?php the_field('phone', 'options');?>
+            <a type="phone" href="tel:<?php the_field('phone', "option"); ?>" class="header-mobile__menu_phone">
+                <?php the_field('phone', 'options'); ?>
             </a>
             <p class="header-mobile__menu_address">
                 <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -110,7 +110,7 @@
                         d="M12.5001 2C8.08908 2 4.50008 5.589 4.50008 9.995C4.47108 16.44 12.1961 21.784 12.5001 22C12.5001 22 20.5291 16.44 20.5001 10C20.5001 5.589 16.9111 2 12.5001 2ZM12.5001 14C10.2901 14 8.50008 12.21 8.50008 10C8.50008 7.79 10.2901 6 12.5001 6C14.7101 6 16.5001 7.79 16.5001 10C16.5001 12.21 14.7101 14 12.5001 14Z"
                         fill="#3C4839" />
                 </svg>
-                <?php the_field('location_address', 'options');?>
+                <?php the_field('location_address', 'options'); ?>
             </p>
 
         </div>
