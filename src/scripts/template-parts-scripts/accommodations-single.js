@@ -1,5 +1,6 @@
 jQuery(document).ready(function ($) {
   const roomWrapper = $(".single-room_wrapper");
+  const roomError = roomWrapper.find($(".mphb-errors-wrapper"));
 
   // Title
 
@@ -28,7 +29,7 @@ jQuery(document).ready(function ($) {
 
   roomPrice.empty().append(`<span class='price_text'>${priseText}</span>`);
   if (prisePeriod > 1) {
-    roomPrice.append(
+    roomError.append(
       `<div class='price_notice' id="price_notice"><span class='price_notice-icon'></span> Бронювання від ${prisePeriod} діб</div>`
     );
   }
