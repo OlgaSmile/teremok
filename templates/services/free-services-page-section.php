@@ -10,13 +10,16 @@
       get_template_part("template-parts/section-title", null, array('title' => get_field('free_service_title', 'option'))) ?>
 
     </div>
+
     <div class="free-services-section__wrapper">
+
       <ul class="services-section__free">
 
         <?php while (has_sub_field('free_services_data', 'options')) : ?>
 
           <li class="services-section__service-item">
-            <img class="services-section__service-icon" src="<?php the_sub_field('free_services_icon', 'options'); ?>" />
+            <?php $free_img = get_sub_field('free_services_icon'); ?>
+            <?php get_template_part('template-parts/facilities_icon', null, array('img' => $free_img)); ?>
             <div class="services-section__service-name">
               <?php the_sub_field('free_services_name', 'options'); ?>
             </div>

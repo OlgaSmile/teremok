@@ -170,6 +170,10 @@
     padding-left: 1rem;
     padding-right: 1rem;
     max-width: 59.5rem;
+    @include media_rule($mobile) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   &__item {
@@ -304,6 +308,8 @@
   padding-right: 1rem;
   @include media_rule($mobile) {
     padding-bottom: 10rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   & .section_title-secondary {
@@ -407,13 +413,15 @@
   & .video-container {
     display: flex;
     flex-direction: column;
-
+    max-width: 59.5rem;
+    margin-left: auto;
+    margin-right: auto;
     &__item {
       margin-bottom: 1rem;
       height: 12.5rem;
       @include media_rule($mobile) {
         margin-bottom: 2.5rem;
-        height: 42.5rem;
+        height: 33.4rem;
       }
 
       &:last-child {
