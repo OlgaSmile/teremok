@@ -27,6 +27,17 @@
   @include media_rule($mobile) {
     padding-bottom: 10rem;
   }
+
+  & .section_title--text {
+    margin-top: 0;
+    font-family: Montserrat;
+    font-weight: 500;
+    line-height: 180%;
+    font-size: 1.5rem;
+    @include media_rule($mobile) {
+      font-size: 2rem;
+    }
+  }
 }
 .search-result {
   & .mphb_sc_search_results-info {
@@ -219,6 +230,8 @@
           border-radius: 0.37rem;
           background: #43ca69;
           padding: 0.25rem 1.46rem;
+          font-weight: 600;
+          font-size: 1rem;
         }
       }
       @media (min-width: 1440px) {
