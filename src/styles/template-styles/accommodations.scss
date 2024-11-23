@@ -22,14 +22,27 @@
         position: relative;
 
         @include media_rule_max($mobile) {
+            & .secondary-hero-section__wrapper-title {
+                top: 16rem;
+            }
+
             & h2 {
                 font-size: 2.875rem;
-                top: 16.6875rem;
             }
+
+            margin-bottom: 7.5rem;
         }
 
         &>.secondary-hero-section {
             height: 50.75rem;
+
+            @include media_rule_max($mobile) {
+                padding-bottom: 0;
+
+                &__img-wrapper {
+                    height: 100%;
+                }
+            }
 
             &>img {
                 height: 100%;
@@ -37,6 +50,16 @@
                 @include media_rule_max($mobile) {
                     object-position: -14rem 2.5rem;
                 }
+            }
+        }
+
+
+
+        & .secondary-hero-section__img-wrapper {
+            @include media_rule_max($mobile) {
+                padding-bottom: 0;
+
+                height: 100%;
             }
         }
 
@@ -55,6 +78,7 @@
                 align-items: center;
                 margin-inline: auto;
                 background: url("../../../assets/images/bg.jpg") repeat;
+                opacity: .9;
                 backdrop-filter: blur(1.25rem);
 
                 border-radius: .5rem;
@@ -245,7 +269,7 @@
                     overflow-x: scroll;
                     overflow-y: hidden;
                     padding: 0.25rem 1rem;
-                    width: auto;
+                    width: 100%;
                     height: fit-content;
 
                     -ms-overflow-style: none;
@@ -291,6 +315,7 @@
                         width: 1.5rem;
                         height: 1.5rem;
                         margin-left: auto;
+                        flex-shrink: 0;
                     }
                 }
             }

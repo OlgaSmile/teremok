@@ -97,7 +97,24 @@ const iconsList = {
       <path d="M17.5 16.334H23.3333" stroke="#689762" stroke-width="1.1" stroke-linecap="round" />
     </svg>
     </div>`,
-}
+  Мангал: `<div class="facilities-icon_frame">
+    <svg width="28" height="28" class="facilities-icon_img" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.4745 6.57437L6.57496 16.4739C6.11935 16.9295 6.11935 17.6682 6.57496 18.1238L9.87479 21.4236C10.3304 21.8792 11.0691 21.8792 11.5247 21.4236L21.4242 11.5241C21.8798 11.0685 21.8798 10.3298 21.4242 9.87421L18.1244 6.57437C17.6688 6.11876 16.9301 6.11876 16.4745 6.57437Z" stroke="#689762" stroke-linejoin="round" />
+      <path d="M4.10156 23.8982L8.22637 19.7734" stroke="#689762" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M19.7734 8.22636L23.8982 4.10156" stroke="#689762" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M8.63672 14.4141L13.5865 19.3638" stroke="#689762" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M11.5234 11.5254L16.4732 16.4751" stroke="#689762" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M14.4141 8.63672L19.3638 13.5865" stroke="#689762" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M7.40234 15.6499L15.6519 7.40039" stroke="#689762" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M12.3516 20.5992L20.6011 12.3496" stroke="#689762" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </div>`,
+  "Wi-Fi": `<div class="facilities-icon_frame">
+    <svg width="22" height="16" class="facilities-icon_img" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10.9992 15.5172C10.5734 15.5172 10.2135 15.3702 9.91952 15.0762C9.62553 14.7822 9.47854 14.4223 9.47854 13.9965C9.47854 13.57 9.62553 13.2098 9.91952 12.9158C10.2135 12.6218 10.5734 12.4748 10.9992 12.4748C11.425 12.4748 11.7849 12.6218 12.0789 12.9158C12.3729 13.2098 12.5199 13.57 12.5199 13.9965C12.5199 14.4223 12.3729 14.7822 12.0789 15.0762C11.7849 15.3702 11.425 15.5172 10.9992 15.5172ZM5.41284 10.5013L4.40136 9.47796C5.25959 8.61973 6.24964 7.94772 7.37153 7.46192C8.49342 6.97546 9.70364 6.73223 11.0022 6.73223C12.3007 6.73223 13.5103 6.97612 14.6309 7.4639C15.7501 7.95233 16.7389 8.62764 17.5971 9.48982L16.5856 10.5013C15.8605 9.77623 15.0201 9.2077 14.0643 8.79573C13.1085 8.38375 12.0868 8.17777 10.9992 8.17777C9.91161 8.17777 8.88991 8.38375 7.93413 8.79573C6.97834 9.2077 6.13792 9.77623 5.41284 10.5013ZM1.2107 6.29916L0.199219 5.28768C1.57554 3.90345 3.18225 2.80924 5.01932 2.00507C6.85574 1.20221 8.84904 0.800781 10.9992 0.800781C13.1494 0.800781 15.1427 1.20287 16.9791 2.00704C18.8162 2.81056 20.4229 3.90443 21.7992 5.28867L20.7877 6.29916C19.5189 5.03028 18.0483 4.03758 16.376 3.32108C14.7037 2.60457 12.9114 2.24599 10.9992 2.24533C9.08766 2.24533 7.29573 2.60391 5.62344 3.32108C3.95116 4.03824 2.48024 5.03094 1.2107 6.29916Z" fill="#689762" />
+    </svg>
+  </div>`,
+};
 
 const treesTitleIcon = `<div class="accommodations-single_trees_icon"><svg width="56" height="42" viewBox="0 0 56 42" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clip-path="url(#clip0_4536_60715)">
@@ -116,7 +133,7 @@ const treesTitleIcon = `<div class="accommodations-single_trees_icon"><svg width
         <rect width="56" height="42" fill="white" />
         </clipPath>
     </defs>
-    </svg></div>`
+    </svg></div>`;
 
 function getFacilitiesRandomIcon() {
   const defaultIcon = `<div class="facilities-icon_frame">
@@ -131,9 +148,9 @@ function getFacilitiesRandomIcon() {
         </clipPath>
       </defs>
     </svg>
-    </div>`
+    </div>`;
 
-  return defaultIcon
+  return defaultIcon;
 }
 
 const guestIconItem = `<div class="facilities-icon_frame">
@@ -143,7 +160,7 @@ const guestIconItem = `<div class="facilities-icon_frame">
       <path d="M9.54545 9.32336V13.0028C9.54737 13.135 9.51694 13.2662 9.45594 13.3886C9.39495 13.5111 9.30462 13.6223 9.19027 13.7158C9.07592 13.8093 8.93987 13.8832 8.7901 13.9331C8.64033 13.9829 8.47988 14.0078 8.31818 14.0063C8.15648 14.0078 7.99603 13.9829 7.84626 13.9331C7.69649 13.8832 7.56043 13.8093 7.44609 13.7158C7.33174 13.6223 7.24141 13.5111 7.18041 13.3886C7.11942 13.2662 7.08899 13.135 7.09091 13.0028V9.32336C7.09091 8.79108 7.34951 8.28061 7.80983 7.90423C8.27014 7.52785 8.89447 7.31641 9.54545 7.31641H14.4545C15.1055 7.31641 15.7299 7.52785 16.1902 7.90423C16.6505 8.28061 16.9091 8.79108 16.9091 9.32336V13.0028C16.911 13.135 16.8806 13.2662 16.8196 13.3886C16.7586 13.5111 16.6683 13.6223 16.5539 13.7158C16.4396 13.8093 16.3035 13.8832 16.1537 13.9331C16.004 13.9829 15.8435 14.0078 15.6818 14.0063C15.5201 14.0078 15.3597 13.9829 15.2099 13.9331C15.0601 13.8832 14.9241 13.8093 14.8097 13.7158C14.6954 13.6223 14.605 13.5111 14.5441 13.3886C14.4831 13.2662 14.4526 13.135 14.4545 13.0028V9.32336" stroke="#689762" stroke-miterlimit="10" stroke-linecap="round" />
       <path d="M12 5.31172C13.1297 5.31172 14.0455 4.56293 14.0455 3.63926C14.0455 2.71558 13.1297 1.9668 12 1.9668C10.8704 1.9668 9.95459 2.71558 9.95459 3.63926C9.95459 4.56293 10.8704 5.31172 12 5.31172Z" stroke="#689762" stroke-miterlimit="10" stroke-linecap="round" />
     </svg>
-    </div>`
+    </div>`;
 
 const sliderNavigation = `<div class="one-apartment__navigation">
       <div class="custom-prev-icon one-apartment__navigation--prev">
@@ -160,7 +177,7 @@ const sliderNavigation = `<div class="one-apartment__navigation">
             </g>
         </svg>
       </div>
-    </div>`
+    </div>`;
 
 const trees3 = `<svg width="56" height="42" viewBox="0 0 56 42" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
   <g clip-path="url(#clip0_4536_60715)">
@@ -179,7 +196,7 @@ const trees3 = `<svg width="56" height="42" viewBox="0 0 56 42" fill="none" stro
       <rect width="56" height="42" fill="white" />
     </clipPath>
   </defs>
-</svg>`
+</svg>`;
 
 const singleAccommodationBookingDatesTemplate = `
 <section class="accommodations-single__booking-section">
@@ -194,26 +211,87 @@ const singleAccommodationBookingDatesTemplate = `
  <div class="accommodations-single__booking-section_check"></div>
  <div class="accommodations-single__booking-section_btn-wrapper"></div>
 </section>
-`
+`;
 
 function getNightPriceText(number) {
   if (!number) {
-    return "за ніч"
+    return "за ніч";
   }
-  let text = "за "
+  let text = "за ";
 
-  const lastDigit = number % 10
-  const lastTwoDigits = number % 100
+  const lastDigit = number % 10;
+  const lastTwoDigits = number % 100;
 
   if (lastTwoDigits >= 11 && lastTwoDigits <= 14) {
-    text += number + " ночей"
+    text += number + " ночей";
   } else if (lastDigit === 1) {
-    text += number + " ніч"
+    text += number + " ніч";
   } else if (lastDigit >= 2 && lastDigit <= 4) {
-    text += number + " ночі"
+    text += number + " ночі";
   } else {
-    text += number + " ночей"
+    text += number + " ночей";
   }
 
-  return text
+  return text;
+}
+
+function createSwiper() {
+  //  Галерея
+  console.log("Галерея: ", Галерея);
+
+  const galleryWrapper = roomWrapper.find($(".gallery"));
+  const galleryImages = galleryWrapper.find(
+    $(".gallery-item>.gallery-icon>a>img")
+  );
+
+  const slider = $("<div class='swiper accommodations-single__gallery'></div>");
+
+  const swiperWrapper = $(
+    "<div class='swiper-wrapper accommodations-single__gallery--wrapper'></div>"
+  );
+  slider.append(swiperWrapper);
+
+  $(galleryImages).each(function () {
+    item = $(this);
+    const swiperSlide = $(
+      "<div class='swiper-slide accommodations-single__gallery--slide'></div>"
+    );
+    $("#gallery-1").remove();
+    swiperSlide.append(item);
+    swiperWrapper.append(swiperSlide);
+  });
+
+  slider.append(sliderNavigation);
+  slider.insertAfter(roomWrapper.find($(".mphb-regular-price")));
+
+  const accommodationsSingleSwiper = new Swiper(
+    ".accommodations-single__gallery",
+    {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      speed: 500,
+      loop: true,
+      lazy: {
+        loadOnTransitionStart: true,
+        loadPrevNext: true,
+      },
+      navigation: {
+        nextEl: ".custom-next-icon",
+        prevEl: ".custom-prev-icon",
+      },
+      pagination: {
+        el: ".accommodations-single_swiper-pagination",
+        clickable: true,
+        slideToClickedSlide: true,
+      },
+      breakpoints: {
+        576: {
+          initialSlide: 1,
+          spaceBetween: 0,
+          centeredSlides: true,
+          slidesPerView: "auto",
+        },
+      },
+    }
+  );
 }

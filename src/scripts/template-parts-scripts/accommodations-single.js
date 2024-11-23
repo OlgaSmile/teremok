@@ -1,7 +1,6 @@
 jQuery(document).ready(function ($) {
   const roomWrapper = $(".single-room_wrapper");
-  const roomError = roomWrapper.find($(".mphb-errors-wrapper"));
-
+  roomWrapper.hide();
   // Title
 
   const roomTitle = roomWrapper.find($(".mphb-room-type-title"));
@@ -28,11 +27,6 @@ jQuery(document).ready(function ($) {
   const priseText = `${nFormat.format(priceByNight)} грн/доба`;
 
   roomPrice.empty().append(`<span class='price_text'>${priseText}</span>`);
-  if (prisePeriod > 1) {
-    roomError.append(
-      `<div class='price_notice' id="price_notice"><span class='price_notice-icon'></span> Бронювання від ${prisePeriod} діб</div>`
-    );
-  }
 
   //  Галерея
 
@@ -78,6 +72,7 @@ jQuery(document).ready(function ($) {
   );
 
   // -> Кількість гостей
+
   const NumberOfGuests = roomWrapper
     .find($(".mphb-room-type-total-capacity>.mphb-attribute-value"))
     .detach();
@@ -197,6 +192,20 @@ jQuery(document).ready(function ($) {
   const submitForm = roomWrapper.find($(".mphb_sc_booking_form-wrapper"));
 
   submitForm.find($(".mphb-confirm-reservation")).val("Забронювати");
+
+  // Observer for Form submit error
+
+  const errorWrapper = submitForm.find($(".mphb-errors-wrapper"));
+  const errorWrapperEl = submitForm.find($(".mphb-errors-wrapper"))[0];
+
+  const observer = new MutationObserver(function () {
+    errorWrapper.find($("p")).text(`Бронювання від ${prisePeriod} діб`);
+  });
+  if (errorWrapperEl) {
+    observer.observe(errorWrapperEl, {
+      childList: true,
+    });
+  }
 
   $(treesTitleIcon).insertBefore(bookingSectionTitle);
 
