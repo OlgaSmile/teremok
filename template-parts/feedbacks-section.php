@@ -1,4 +1,4 @@
-<section class="section feedbacks__section">
+<section class="feedbacks__section">
     <div class="feedbacks__section__container">
         <div class="feedbacks__section-title">
 
