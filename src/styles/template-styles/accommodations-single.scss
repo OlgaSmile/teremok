@@ -2,7 +2,7 @@
 @import "../main/variables.scss";
 
 .single-room_wrapper {
-    padding: 0 !important;
+    padding: 7.5rem 0 0 0 !important;
     width: 100%;
     display: none;
 
@@ -82,17 +82,19 @@
             overflow: hidden;
         }
 
-        & .price_notice {
+    }
+
+    & .mphb-errors-wrapper {
+        margin-bottom: 1rem;
+
+        & .mphb-error {
             display: block;
             width: fit-content;
             text-wrap: nowrap;
             color: $disabled_text;
-
-            &-icon {
-                color: red;
-            }
         }
     }
+
 
     & .accommodations_facilities-list {
         display: grid;
@@ -616,12 +618,13 @@
 
             & input {
                 background: transparent;
-                border: .125rem solid $yellow;
+                border: .125rem solid $main_text;
                 transition: all 500ms linear;
 
                 &:hover {
                     background: transparent;
-                    border-color: $main_text;
+                    border-color: $orange;
+                    color: $orange;
                 }
             }
         }

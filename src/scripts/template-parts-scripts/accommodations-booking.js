@@ -76,6 +76,12 @@ jQuery(document).ready(function ($) {
   const noteInput = bookingCheckout.find($(".mphb-customer-note > label"));
   noteInput.text("Ваш коментар");
 
+  bookingCheckout.find($(".mphb-customer-last-name>input")).val("Гість");
+  bookingCheckout
+    .find($(".mphb-customer-email>input"))
+    .val("teremok.welcome@gmail.com");
+  bookingCheckout.find($(".mphb-customer-country>input")).val("Ukraine");
+
   bookingCheckout.find($("abbr")).remove();
 
   const submitFormBtn = bookingCheckout

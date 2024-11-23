@@ -5,7 +5,7 @@ $proposition_image_winter = get_field('proposition_image_winter');
 $is_winter_season = get_field('winter_summer_toggle', 'options');
 $proposition_bg = get_field('proposition_bg');
 $learn_more = get_field('learn_more', 'options');
-
+$link = add_query_arg($wp->query_vars, home_url()) . '/activity';
 ?>
 
 <section class="proposition-section">
@@ -32,30 +32,21 @@ if ($proposition_bg) {
                 <?php get_template_part("template-parts/section-title_small", null, array('title' => $proposition_title));?>
 
             </div>
-            <div class="proposition-section__subtitle-wrapper">
-                <svg class="proposition-section__subtitle-icon">
-                    <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#mountain"></use>
-                </svg>
-                <h2 class="proposition-section__subtitle">
-                    <?php the_field('proposition_subtitle')?>
-                </h2>
-            </div>
+
             <div class="proposition-section__text-wrapper">
-                <p class="proposition-section__text">
-                    <?php the_field('proposition_text_first');?>
-                </p>
-                <p class="proposition-section__text proposition-section__text-next">
-                    <?php the_field('proposition_text_second');?>
-                </p>
-                <p class="proposition-section__text proposition-section__text-next">
-                    <?php the_field('proposition_text_third');?>
-                </p>
+                <?php if (get_field('proposition_text_wrapper')): ?>
+                <?php while (has_sub_field('proposition_text_wrapper')): ?>
+                <div class="proposition-section__text-wrapper_item">
+                    <img src="<?php the_sub_field('proposition_text-icon');?>" class="proposition_text-icon" />
+                    <?php the_sub_field('proposition_text');?>
+                </div>
+                <?php endwhile;?>
+                <?php endif;?>
             </div>
 
             <?php
 global $wp;
 
-$link = add_query_arg($wp->query_vars, home_url()) . '/activity';
 get_template_part("template-parts/learn-more-btn", null, array('btn_name' => $learn_more, 'link_name' => $link));?>
         </div>
     </div>

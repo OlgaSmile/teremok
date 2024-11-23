@@ -14,7 +14,7 @@ $family_rooms_title = get_field('family-rooms_section_title');
 $double_rooms_title = get_field('double-rooms_section_title');
 ?>
 <main class="accommodations-main">
-    <section class="accommodations-hero">
+    <div class="accommodations-hero">
         <?php get_template_part("template-parts/secondary-hero-section", null, ['img_array' => $accommodations_hero_image, "title_section" => $accommodation_page_title]);?>
 
         <div class="accommodations-hero_info">
@@ -42,7 +42,7 @@ $double_rooms_title = get_field('double-rooms_section_title');
 	                <?php endif;?>
             </div>
         </div>
-    </section>
+    </div>
 
     <section id="houses" class="accommodations-houses accommodations-section">
         <?php get_template_part("template-parts/section-title", null, array('title' => $houses_title));?>

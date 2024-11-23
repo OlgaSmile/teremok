@@ -13,9 +13,35 @@ jQuery(document).ready(function ($) {
     const roomGalleryThumb = searchWrapper
       .find($(".gallery-size-thumbnail"))
       .detach();
-    const roomGallery = searchWrapper
-      .find($(".mphb-room-type-images"))
-      .detach();
+
+    // Slider
+
+    const roomGalleryWrapper = searchWrapper.find($(".mphb-room-type-images"));
+    const roomImages = roomGalleryWrapper.find($(".gallery-item img"));
+
+    const slider = $(
+      "<div class='swiper accommodations-single__gallery'></div>"
+    );
+
+    const swiperWrapper = $(
+      "<div class='swiper-wrapper accommodations-single__gallery--wrapper'></div>"
+    );
+    slider.append(swiperWrapper);
+
+    $(roomImages).each(function () {
+      item = $(this);
+      const swiperSlide = $(
+        "<div class='swiper-slide accommodations-single__gallery--slide'></div>"
+      );
+      $("#gallery-1").remove();
+      swiperSlide.append(item);
+      swiperWrapper.append(swiperSlide);
+    });
+
+    slider.append(sliderNavigation);
+
+    // end Slider
+
     const roomDesc = searchWrapper.find($("p:first-of-type")).detach();
 
     const roomPrice = searchWrapper
@@ -121,7 +147,7 @@ jQuery(document).ready(function ($) {
     roomCard.append(roomName);
     roomCard.append(roomPrice.text(priseText));
     roomCard.append(descWrapper);
-    roomCard.append(roomGallery);
+    roomCard.append(slider);
     roomCard.append(roomGalleryThumb);
     roomCard.append(optionsList);
     roomCard.append(actionsWrapper);

@@ -14,7 +14,7 @@
 
   &__title-desktop {
     display: none;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 
     @include media_rule($mobile) {
       display: block;
@@ -29,7 +29,7 @@
     }
   }
 
-  & img {
+  & .proposition_bg_image {
     object-fit: cover;
     min-width: 100%;
     min-height: 100%;
@@ -73,48 +73,84 @@
     justify-content: center;
   }
 
-  &__subtitle-wrapper {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
+  // &__subtitle-wrapper {
+  //   text-align: center;
+  //   margin-bottom: 2rem;
+  // }
 
-  &__subtitle {
-    width: 100%;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
+  // &__subtitle {
+  //   width: 100%;
+  //   font-size: 1rem;
+  //   font-weight: 600;
+  //   letter-spacing: 0.04em;
 
-    @include media_rule($mobile) {
-      font-weight: 500;
-      font-size: 1.5rem;
-      letter-spacing: 0.04em;
-    }
+  //   @include media_rule($mobile) {
+  //     font-weight: 500;
+  //     font-size: 1.5rem;
+  //     letter-spacing: 0.04em;
+  //   }
 
-    &-icon {
-      width: 1.875rem;
-      height: 1.25rem;
-      padding: .1725rem .0437rem .0862rem 0rem;
-      margin-bottom: 0.5rem;
+  //   &-icon {
+  //     width: 1.875rem;
+  //     height: 1.25rem;
+  //     padding: .1725rem .0437rem .0862rem 0rem;
+  //     margin-bottom: 0.5rem;
 
-      @include media_rule($mobile) {
-        margin-bottom: 0.5rem;
-        width: 2.3125rem;
-        height: 1.5625rem;
-      }
-    }
-  }
+  //     @include media_rule($mobile) {
+  //       margin-bottom: 0.5rem;
+  //       width: 2.3125rem;
+  //       height: 1.5625rem;
+  //     }
+  //   }
+  // }
 
   &__text-wrapper {
-    font-size: .875rem;
-    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    font-size: 1rem;
+    font-weight: 500;
     line-height: 1.0669rem;
     letter-spacing: 0.04em;
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 
-    @include media_rule($mobile) {
-      margin-bottom: 2rem;
+    @include media_rule_max($mobile) {
+      margin-bottom: 1.5rem;
+      gap: 1.5rem;
     }
+
+    &_item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      width: 37.5rem;
+
+      @include media_rule_max($mobile) {
+        width: 100%;
+      }
+
+      & .proposition_text-icon {
+        width: 2.25rem;
+        height: 1.5rem;
+
+        @include media_rule_max($mobile) {
+          width: 1.875rem;
+          height: 1.25rem;
+        }
+      }
+
+      & .proposition_text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // width: 37.5rem;
+      }
+    }
+
   }
 
   &__text {

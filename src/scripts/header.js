@@ -36,18 +36,14 @@ const submenuMobileLink = document.querySelector(
   ".header-mobile-list > .menu-item-object-custom > a"
 );
 
-if (submenuMobile) {
-  submenuMobile.addEventListener("click", function () {
-    submenuMobileBlock.classList.toggle("show-menu");
-    submenuMobileLink.classList.toggle("b");
-  });
-}
-
 jQuery(document).ready(function ($) {
   const subMenu = $(".sub-menu");
 
+  subMenu.find($("a")).click(() => {
+    location.reload();
+  });
+
   const currentURL = window.location;
-  console.log("currentURL: ", currentURL);
 
   if (currentURL.pathname === "/pidtverdzhennya-bronyuvannya/") {
     $(".header").addClass("booking-header");
