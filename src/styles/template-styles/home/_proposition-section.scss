@@ -62,6 +62,19 @@
       background-color: $white;
       padding: 2rem 3.75rem;
     }
+
+    &>img {
+      object-fit: cover;
+      min-width: 100%;
+      min-height: 100%;
+      width: initial;
+      bottom: 0;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+    }
   }
 
   &__content {
