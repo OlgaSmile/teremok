@@ -68,6 +68,11 @@ jQuery(document).ready(function ($) {
       const price = searchWrapper.find(".mphb-regular-price").detach()
       const mphPrice = price.find(".mphb-price").detach()
 
+      const newPrice =
+        mphPrice.text().replace(",", " ").replace("₴", "").trim() + " грн"
+
+      /*       const updatePrice = mphPrice.text().replace(",", " ").replace("₴", " ")
+      const newPrice = `${updatePrice} грн` */
       const guests = searchWrapper
         .find(".mphb-room-type-total-capacity .mphb-attribute-value")
         .text()
@@ -115,7 +120,7 @@ jQuery(document).ready(function ($) {
         amenitiesList.append(listItem)
       })
 
-      if (price) price.append(mphPrice)
+      if (price) price.append(mphPrice.text(newPrice))
       titleWrapper.append(title)
       titleWrapper.append(price)
       topWrapper.append(titleWrapper)
