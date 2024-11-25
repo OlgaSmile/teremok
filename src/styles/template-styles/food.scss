@@ -2,16 +2,6 @@
 @import "../main/variables.scss";
 
 .food {
-    &_page {
-        & .feedbacks__section {
-            margin-bottom: 11.25rem;
-
-            @include media_rule_max($mobile) {
-                margin-bottom: 5rem;
-            }
-
-        }
-    }
 
     &__hero-section {
         position: relative;

@@ -31,7 +31,6 @@
         font-family: $secondary_font;
         font-weight: 600;
         font-size: 1.875rem;
-        margin-bottom: .8125rem;
 
         @include media_rule_max($mobile) {
             font-size: 1.25rem;
@@ -66,7 +65,8 @@
 
         width: fit-content;
         margin-inline: auto;
-        margin-bottom: 1rem;
+        margin-bottom: 2.5rem;
+        margin-top: 0.5rem;
 
         & .price_text {
             position: relative;
