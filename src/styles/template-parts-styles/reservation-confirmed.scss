@@ -1,0 +1,45 @@
+@import "../main/variables.scss";
+
+.page-template-reservation-confirmed {
+  footer {
+    display: none !important;
+  }
+}
+
+.reservation-confirmed {
+  padding-top: 4.17rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__wrapper {
+    margin: 0 auto;
+    h3 {
+      text-align: center;
+      max-width: 50rem;
+
+      font-size: 1rem;
+      font-weight: 500;
+
+      margin-bottom: 3.5rem;
+    }
+
+    & .secondary_button {
+      margin-left: auto;
+      margin-right: auto;
+
+      margin-bottom: 3.5rem;
+    }
+
+    & .feedback-response__modal-title {
+      & .section_title {
+        & .section_title--icon_wrap {
+          & .anim-items {
+            opacity: 1;
+            transform: translateY(0rem);
+          }
+        }
+      }
+    }
+  }
+}
