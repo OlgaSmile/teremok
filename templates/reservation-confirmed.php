@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Reservation-confirmed
+Template Name: ?step=booking
  */
 
 get_header();
