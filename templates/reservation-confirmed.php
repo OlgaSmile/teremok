@@ -6,8 +6,8 @@ Template Name: Reservation-confirmed
 get_header();
 
 
-$reservation_confirmed_text = get_field('reservation_confirmed_text')
-
+$reservation_confirmed_text = get_field('reservation_confirmed_text');
+$main_link = get_field('main_page_link', 'options')
 ?>
 
 <main class="reservation-confirmed">
@@ -21,11 +21,12 @@ $reservation_confirmed_text = get_field('reservation_confirmed_text')
 
       get_template_part("template-parts/section-title", null, ['title' => $thanks_feedback]); ?>
     </div>
-
-    <h3 id="positive-response"><?php echo $reservation_confirmed_text ?></h3>
-
-
-    <a class="secondary_button booking_btn-footer" href="<?php echo home_url() ?>"><?php echo get_field('main_page_link', 'options') ?></a>
+    <?php if (!empty($reservation_confirmed_text)): ?>
+      <h3 id="positive-response"><?php echo $reservation_confirmed_text ?></h3>
+    <?php endif ?>
+    <?php if (!empty($main_link)): ?>
+      <a class="secondary_button booking_btn-footer" href="<?php echo home_url() ?>"><?php echo $main_link ?></a>
+    <?php endif ?>
     <div class="feedback-response__logo">
       <?php get_template_part("template-parts/logo_footer"); ?>
     </div>
