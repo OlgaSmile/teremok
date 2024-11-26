@@ -177,12 +177,15 @@
 
         &>h5 {
             text-align: center;
-
             width: 42.125rem;
             height: fit-content;
             padding: 1.5rem;
             border-radius: .125rem;
             border: .0625rem solid $grey_green;
+
+            @include media_rule_max($mobile) {
+                width: 100%;
+            }
         }
 
         &>h2 {
