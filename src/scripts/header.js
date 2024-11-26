@@ -45,7 +45,10 @@ jQuery(document).ready(function ($) {
 
   const currentURL = window.location;
 
-  if (currentURL.pathname === "/pidtverdzhennya-bronyuvannya/") {
+  if (
+    currentURL.pathname === "/pidtverdzhennya-bronyuvannya/" ||
+    currentURL.pathname.includes("accommodation")
+  ) {
     $(".header").addClass("booking-header");
   } else {
     $(".header").removeClass("booking-header");

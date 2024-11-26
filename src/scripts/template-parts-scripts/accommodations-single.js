@@ -1,6 +1,7 @@
 jQuery(document).ready(function ($) {
   const roomWrapper = $(".single-room_wrapper");
   roomWrapper.hide();
+
   // Title
 
   const roomTitle = roomWrapper.find($(".mphb-room-type-title"));
@@ -31,9 +32,7 @@ jQuery(document).ready(function ($) {
   //  Галерея
 
   const galleryWrapper = roomWrapper.find($(".gallery"));
-  const galleryImages = galleryWrapper.find(
-    $(".gallery-item>.gallery-icon>a>img")
-  );
+  const galleryImages = galleryWrapper.find($(".gallery-item>.gallery-icon>a"));
 
   const slider = $("<div class='swiper accommodations-single__gallery'></div>");
 
@@ -43,12 +42,14 @@ jQuery(document).ready(function ($) {
   slider.append(swiperWrapper);
 
   $(galleryImages).each(function () {
-    item = $(this);
+    $item = $(this);
+    $item.attr("target", "blank");
+
     const swiperSlide = $(
       "<div class='swiper-slide accommodations-single__gallery--slide'></div>"
     );
     $("#gallery-1").remove();
-    swiperSlide.append(item);
+    swiperSlide.append($item);
     swiperWrapper.append(swiperSlide);
   });
 
@@ -76,13 +77,28 @@ jQuery(document).ready(function ($) {
   const NumberOfGuests = roomWrapper
     .find($(".mphb-room-type-total-capacity>.mphb-attribute-value"))
     .detach();
-  const NumberOfGuestsText = `${NumberOfGuests.text().trim()} гостей`;
-  optionsList.append(
-    optionsItem.append(NumberOfGuests.text(NumberOfGuestsText))
+  const facilitiesWrapper = roomWrapper.find(
+    $(".mphb-single-room-type-attributes")
   );
-  optionsList.append(
-    optionsItem.append(NumberOfGuests.text(NumberOfGuestsText))
-  );
+
+  const adultCount = facilitiesWrapper
+    .find($(".mphb-room-type-adults-capacity > .mphb-attribute-value"))
+    .text();
+
+  const childCount = facilitiesWrapper
+    .find($(".mphb-room-type-children-capacity > .mphb-attribute-value"))
+    .text();
+
+  if (NumberOfGuests.text()) {
+    optionsList.append(
+      optionsItem.append(`${NumberOfGuests.text().trim()} гостей`)
+    );
+  } else {
+    const additionGuestLabel = childCount ? `(+${childCount})` : "";
+    optionsList.append(
+      optionsItem.append(`${adultCount} ${additionGuestLabel}  гостей`)
+    );
+  }
 
   prevOptionsList.map((_, item) => {
     const text = item.children[0].text;
@@ -131,10 +147,10 @@ jQuery(document).ready(function ($) {
   const content = roomWrapper.find($(".single-room_content"));
 
   const linkToFoodSection = `<a href="/food" class="button mphb-view-details-button">Дізнатися більше
-  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="11" viewBox="0 0 50 18" fill="none">
-  <path d="M40.8531 1C41.5523 3.94928 44.3005 9.84785 49.7 9.84785M49.7 9.84785C41.29 12.919 40.4114 16.8329 40.4114 17.3582M49.7 9.84785H17.9169M1 9.84785H8.64346M8.64346 9.84785L1 5.87775M8.64346 9.84785L1 14.7096M8.64346 9.84785H13.3538M13.3538 9.84785L7.31868 5.87775M13.3538 9.84785L7.31868 14.7096M13.3538 9.84785H17.9169M17.9169 9.84785L13.3538 5.87775M17.9169 9.84785L13.3538 14.7096" stroke="#E67739" stroke-width="1.8"></path>
-</svg>
-  </a>`;
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="11" viewBox="0 0 50 18" fill="none">
+    <path d="M40.8531 1C41.5523 3.94928 44.3005 9.84785 49.7 9.84785M49.7 9.84785C41.29 12.919 40.4114 16.8329 40.4114 17.3582M49.7 9.84785H17.9169M1 9.84785H8.64346M8.64346 9.84785L1 5.87775M8.64346 9.84785L1 14.7096M8.64346 9.84785H13.3538M13.3538 9.84785L7.31868 5.87775M13.3538 9.84785L7.31868 14.7096M13.3538 9.84785H17.9169M17.9169 9.84785L13.3538 5.87775M17.9169 9.84785L13.3538 14.7096" stroke="#E67739" stroke-width="1.8"></path>
+  </svg>
+    </a>`;
 
   content.append(linkToFoodSection);
 
@@ -216,10 +232,10 @@ jQuery(document).ready(function ($) {
   bookingSection.append(calendarWrapper);
   bookingSection.append(
     $(`<ul class="accommodations-single__booking-section_labels">
-      <li class="accommodations-single__booking-section_labels-free">вільні дати</li>
-      <li class="accommodations-single__booking-section_labels-chosen">обрані дати</li>
-      <li class="accommodations-single__booking-section_labels-reserved">зарезервовані дати</li>
-      </ul>`)
+        <li class="accommodations-single__booking-section_labels-free">вільні дати</li>
+        <li class="accommodations-single__booking-section_labels-chosen">обрані дати</li>
+        <li class="accommodations-single__booking-section_labels-reserved">зарезервовані дати</li>
+        </ul>`)
   );
   bookingSection.append(submitForm);
 
