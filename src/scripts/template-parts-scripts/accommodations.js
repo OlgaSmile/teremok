@@ -29,12 +29,14 @@ jQuery(document).ready(function ($) {
     slider.append(swiperWrapper);
 
     $(roomImages).each(function () {
-      item = $(this);
+      $item = $(this);
+      $item.attr("target", "blank");
+
       const swiperSlide = $(
         "<div class='swiper-slide accommodations-single__gallery--slide'></div>"
       );
       $("#gallery-1").remove();
-      swiperSlide.append(item);
+      swiperSlide.append($item);
       swiperWrapper.append(swiperSlide);
     });
 
@@ -56,13 +58,25 @@ jQuery(document).ready(function ($) {
       .find(".mphb-to-book-btn-wrapper")
       .detach();
 
-    const NumberOfGuests = searchWrapper
+    const numberOfGuests = searchWrapper
       .find(
         $(
           ".mphb-loop-room-type-attributes > .mphb-room-type-total-capacity>.mphb-attribute-value"
         )
       )
       .detach();
+
+    const numberOfAdults = searchWrapper
+      .find($(".mphb-room-type-adults-capacity .mphb-attribute-value"))
+      .text();
+
+    const numberOfChildren = searchWrapper
+      .find($(".mphb-room-type-children-capacity .mphb-attribute-value"))
+      .text();
+
+    const additionGuestLabel = numberOfChildren ? `(+${numberOfChildren})` : "";
+
+    const numberOfGuestsText = `${numberOfAdults} ${additionGuestLabel}  гостей`;
 
     const facilities = searchWrapper
       .find($(".mphb-loop-room-type-attributes>.mphb-room-type-facilities"))
@@ -89,7 +103,6 @@ jQuery(document).ready(function ($) {
       "accommodations_actions-wrapper container"
     );
     const descWrapper = $("<p></p>").addClass("accommodations_desc container");
-    const NumberOfGuestsText = `${NumberOfGuests.text().trim()} гостей`;
 
     const prise = roomPrice.text().split("");
     const priseNumber = prise.splice(1, prise.length).join("").replace(",", "");
@@ -106,10 +119,14 @@ jQuery(document).ready(function ($) {
         "accommodations_facilities-icon"
       )
     );
-    optionsList.append(
-      optionsItem.append(NumberOfGuests.text(NumberOfGuestsText))
-    );
 
+    if (numberOfGuests.text()) {
+      optionsList.append(
+        optionsItem.append(`${numberOfGuests.text().trim()} гостей`)
+      );
+    } else {
+      optionsList.append(optionsItem.append(numberOfGuestsText));
+    }
     prevOptionsList.map((_, item) => {
       const text = item.children[0].text;
       const itemClassName = item.className;
