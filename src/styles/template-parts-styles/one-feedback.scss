@@ -57,8 +57,8 @@
     text-align: start;
     &-description {
       letter-spacing: 0.04em;
-      word-wrap: break-word;
-      word-break: break-all;
+      /*       word-wrap: break-word;
+      word-break: break-all; */
       @media screen and (max-width: $mobile) {
         display: none;
         font-size: 0.875rem;

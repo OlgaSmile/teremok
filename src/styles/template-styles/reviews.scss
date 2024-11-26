@@ -219,8 +219,8 @@
     align-items: inherit;
   }
   &__description {
-    word-wrap: break-word;
-    word-break: break-all;
+    /*     word-wrap: break-word;
+    word-break: break-all; */
     max-height: 10.71rem;
     @include media_rule($mobile) {
       font-size: 1.25rem;
