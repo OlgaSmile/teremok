@@ -5,7 +5,7 @@ $images_right = $special_offer['special_offer_photo_right'];
 $repeater_field = $special_offer['special_offer_item'];
 
 ?>
-<section class="section-services-page-speccial">
+<section id="special-offers" class="section-services-page-speccial">
   <div class="teremok-section__desktop-wrapper">
     <div class="teremok-section__box">
 
