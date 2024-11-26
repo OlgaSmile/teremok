@@ -216,3 +216,35 @@ function location_section_shortcode()
     return ob_get_clean();
 }
 add_shortcode('location_section', 'location_section_shortcode');
+
+
+function custom_rewrite_rules()
+{
+    add_rewrite_rule(
+        '^custom-page/([^/]*)/?',
+        'index.php?custom_page=$matches[1]',
+        'top'
+    );
+}
+add_action('init', 'custom_rewrite_rules');
+
+function custom_query_vars($vars)
+{
+    $vars[] = 'custom_page';
+    return $vars;
+}
+add_filter('query_vars', 'custom_query_vars');
+
+
+
+
+function render_template_for_step()
+{
+    // Перевіряємо наявність параметра 'step' у запиті
+    if (isset($_GET['step']) && $_GET['step'] === 'booking') {
+        // Підключаємо спеціальний шаблон
+        include get_template_directory() . '/templates/reservation-confirmed.php';
+        exit; // Зупиняємо подальшу обробку WordPress
+    }
+}
+add_action('template_redirect', 'render_template_for_step');
