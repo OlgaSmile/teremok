@@ -9,8 +9,7 @@
   margin: 0 auto !important;
 
   background: url(../../assets/images/reserve-layout.png) repeat;
-  backdrop-filter: 20px;
-
+  backdrop-filter: blur(4.5px);
   @include media_rule($mobile) {
     display: flex;
     align-items: center;
@@ -126,7 +125,7 @@
       }
     }
 
-    & .mphb_sc_search-adults>label {
+    & .mphb_sc_search-adults > label {
       position: relative;
       display: flex;
       align-items: center;
