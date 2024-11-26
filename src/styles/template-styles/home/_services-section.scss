@@ -40,7 +40,7 @@
   &__image {
     overflow: hidden;
     position: relative;
-    z-index: 20;
+    z-index: 9;
 
     @include media_rule_max($mobile) {
       display: none;
@@ -80,7 +80,6 @@
       }
     }
   }
-
 
   &__container {
     display: flex;
@@ -187,7 +186,7 @@
     text-align: center;
 
     @include media_rule_max($mobile) {
-      font-size: .875rem;
+      font-size: 0.875rem;
       line-height: 1.0669rem;
     }
   }
