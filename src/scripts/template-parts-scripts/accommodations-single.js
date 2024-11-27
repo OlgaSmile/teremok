@@ -74,31 +74,20 @@ jQuery(document).ready(function ($) {
 
   // -> Кількість гостей
 
-  const NumberOfGuests = roomWrapper
+  const additionBed = roomWrapper
+    .find($(".mphb-room-type-bed-type>.mphb-attribute-value"))
+    .text();
+
+  const numberOfGuests = roomWrapper
     .find($(".mphb-room-type-total-capacity>.mphb-attribute-value"))
-    .detach();
-  const facilitiesWrapper = roomWrapper.find(
-    $(".mphb-single-room-type-attributes")
-  );
+    .text()
+    .trim();
 
-  const adultCount = facilitiesWrapper
-    .find($(".mphb-room-type-adults-capacity > .mphb-attribute-value"))
-    .text();
+  const text = additionBed
+    ? `${numberOfGuests} (+${additionBed}) гостей`
+    : `${numberOfGuests} гостей`;
 
-  const childCount = facilitiesWrapper
-    .find($(".mphb-room-type-children-capacity > .mphb-attribute-value"))
-    .text();
-
-  if (NumberOfGuests.text()) {
-    optionsList.append(
-      optionsItem.append(`${NumberOfGuests.text().trim()} гостей`)
-    );
-  } else {
-    const additionGuestLabel = childCount ? `(+${childCount})` : "";
-    optionsList.append(
-      optionsItem.append(`${adultCount} ${additionGuestLabel}  гостей`)
-    );
-  }
+  optionsList.append(optionsItem.append(text));
 
   prevOptionsList.map((_, item) => {
     const text = item.children[0].text;

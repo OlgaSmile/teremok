@@ -58,29 +58,9 @@ jQuery(document).ready(function ($) {
       .find(".mphb-to-book-btn-wrapper")
       .detach();
 
-    const numberOfGuests = searchWrapper
-      .find(
-        $(
-          ".mphb-loop-room-type-attributes > .mphb-room-type-total-capacity>.mphb-attribute-value"
-        )
-      )
-      .detach();
-
-    const numberOfAdults = searchWrapper
-      .find($(".mphb-room-type-adults-capacity .mphb-attribute-value"))
-      .text();
-
-    const numberOfChildren = searchWrapper
-      .find($(".mphb-room-type-children-capacity .mphb-attribute-value"))
-      .text();
-
-    const additionGuestLabel = numberOfChildren ? `(+${numberOfChildren})` : "";
-
-    const numberOfGuestsText = `${numberOfAdults} ${additionGuestLabel}  гостей`;
-
-    const facilities = searchWrapper
-      .find($(".mphb-loop-room-type-attributes>.mphb-room-type-facilities"))
-      .detach();
+    const facilities = searchWrapper.find(
+      $(".mphb-loop-room-type-attributes>.mphb-room-type-facilities")
+    );
 
     const prevOptionsList = facilities.find(".mphb-attribute-value").children();
 
@@ -88,9 +68,6 @@ jQuery(document).ready(function ($) {
     const prisePeriod = priceDaysText
       .split(" ")
       .filter((element) => Number(element))[0];
-
-    searchWrapper.find(".mphb-regular-price").remove();
-    searchWrapper.find(".mphb-loop-room-type-attributes").remove();
 
     const roomCard = $("<div></div>").addClass("accommodations_roomCard");
     const optionsList = $("<ul></ul>").addClass(
@@ -114,19 +91,32 @@ jQuery(document).ready(function ($) {
 
     const priseText = `${nFormat.format(priceByNight)} грн доба`;
 
+    // Кількість гостей
+
+    const additionBed = searchWrapper
+      .find($(".mphb-room-type-bed-type>.mphb-attribute-value"))
+      .text();
+
+    const numberOfGuests = searchWrapper
+      .find(
+        $(
+          ".mphb-loop-room-type-attributes > .mphb-room-type-total-capacity>.mphb-attribute-value"
+        )
+      )
+      .text()
+      .trim();
+
+    const text = additionBed
+      ? `${numberOfGuests} (+${additionBed}) гостей`
+      : `${numberOfGuests} гостей`;
+
     optionsItem.append(
       $(`<span>${guestIconItem}</span>`).addClass(
         "accommodations_facilities-icon"
       )
     );
+    optionsList.append(optionsItem.append(text));
 
-    if (numberOfGuests.text()) {
-      optionsList.append(
-        optionsItem.append(`${numberOfGuests.text().trim()} гостей`)
-      );
-    } else {
-      optionsList.append(optionsItem.append(numberOfGuestsText));
-    }
     prevOptionsList.map((_, item) => {
       const text = item.children[0].text;
       const itemClassName = item.className;
@@ -156,6 +146,12 @@ jQuery(document).ready(function ($) {
     const kitchenField = $("<div></div>").addClass(
       "accommodations_kitchen container"
     );
+
+    // Видаляємо зайві поля
+
+    searchWrapper.find(".mphb-regular-price").remove();
+    searchWrapper.find(".mphb-loop-room-type-attributes").remove();
+
     kitchenField.append(view);
     actionsWrapper.append(bookingBtnWrapper);
     actionsWrapper.append(showMoreBtn.find("a"));
