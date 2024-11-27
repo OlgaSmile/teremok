@@ -213,6 +213,14 @@ const singleAccommodationBookingDatesTemplate = `
 </section>
 `;
 
+function badCountText(numberOfGuests, additionBed) {
+  if (additionBed) {
+    return `${numberOfGuests} (+${additionBed}) гостей`;
+  } else {
+    return `${numberOfGuests} гостей`;
+  }
+}
+
 function getNightPriceText(number) {
   if (!number) {
     return "за ніч";
