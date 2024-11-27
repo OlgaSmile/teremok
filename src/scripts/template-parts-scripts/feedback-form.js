@@ -12,6 +12,18 @@ const validationText = {
 
 const validationError = "Поле обов’язкове"
 
+const textFomatted = (text) => {
+  const newText = text
+    .replace(/\.([^\s]|$)/g, ". $1") // Крапка без пробілу -> додаємо пробіл
+    .replace(/,(\S)/g, ", $1") // Кома без пробілу -> додаємо пробіл
+    .replace(/\.{3}(?!\s)/g, "... ") // Три крапки без пробілу -> додаємо пробіл
+    .replace(/\. \.\./g, "... ") // Заміна ". .." на "... "
+    .replace(/\s+/g, " ") // Видаляємо зайві пробіли
+    .trim() // Забираємо пробіли на початку/кінці тексту
+
+  return newText
+}
+
 jQuery(document).ready(function ($) {
   const labelName = $("#feedback-name-placeholder")
   const userImgInput = $("#user-file")
@@ -380,13 +392,17 @@ jQuery(document).ready(function ($) {
       $("#apartment-error").text(validationError).addClass("error")
       return
     }
+    const formattedText = textFomatted(textarea.val())
 
     const formData = new FormData(this)
 
     formData.append("house_number", apartmen)
+
+    formData.append("feedback_text", formattedText)
     if (newArray.length > 0) {
       newArray.forEach((file) => formData.append("feedback_images[]", file))
     }
+
     formData.append("action", "do_insert")
 
     $("#feedback-form-submit").addClass("disabled").prop("disabled", true)
