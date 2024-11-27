@@ -93,6 +93,19 @@
             </div>
         </div>
     </div>
+    <!-- <dialog id="sliderModal">
+        <form method="dialog">
+            <p>
+                Loremdddddddddddddddddddddddv d ddddddddddddddddddddddddddddddddddd
+                Loremdddddddddddddddddddddddv d ddddddddddddddddddddddddddddddddddd
+
+                Loremdddddddddddddddddddddddv d ddddddddddddddddddddddddddddddddddd
+
+                Loremdddddddddddddddddddddddv d ddddddddddddddddddddddddddddddddddd
+
+            </p>
+        </form>
+    </dialog> -->
 </footer>
 <?php wp_footer();?>
 </div>

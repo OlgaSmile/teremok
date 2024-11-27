@@ -1,5 +1,7 @@
 jQuery(document).ready(function ($) {
   const roomWrapper = $(".single-room_wrapper");
+  const body = $("body");
+
   roomWrapper.hide();
 
   // Title
@@ -32,9 +34,14 @@ jQuery(document).ready(function ($) {
   //  Галерея
 
   const galleryWrapper = roomWrapper.find($(".gallery"));
-  const galleryImages = galleryWrapper.find($(".gallery-item>.gallery-icon>a"));
+  const galleryImages = galleryWrapper.find(
+    $(".gallery-item>.gallery-icon>a>img")
+  );
+  const galleryImagesList = galleryImages.clone();
 
-  const slider = $("<div class='swiper accommodations-single__gallery'></div>");
+  const slider = $(
+    "<div class='swiper accommodations-single__gallery' onclick='sliderModal1.showModal()'></div>"
+  );
 
   const swiperWrapper = $(
     "<div class='swiper-wrapper accommodations-single__gallery--wrapper'></div>"
@@ -43,7 +50,6 @@ jQuery(document).ready(function ($) {
 
   $(galleryImages).each(function () {
     $item = $(this);
-    $item.attr("target", "blank");
 
     const swiperSlide = $(
       "<div class='swiper-slide accommodations-single__gallery--slide'></div>"
@@ -55,6 +61,19 @@ jQuery(document).ready(function ($) {
 
   slider.append(sliderNavigation);
   slider.insertAfter(roomWrapper.find($(".mphb-regular-price")));
+
+  // Modal slider
+
+  body.append(modalTemplate(1));
+
+  const sliderWrapper = body.find($(".modal-slider-wrapper>.swiper-wrapper"));
+
+  $(galleryImagesList).each(function () {
+    const img = $(this);
+    const item = $('<div class="swiper-slide"></div>');
+    item.append(img);
+    sliderWrapper.append(item);
+  });
 
   // Удобства
 
@@ -171,6 +190,33 @@ jQuery(document).ready(function ($) {
       },
     }
   );
+  const accommodationsModalSwiper = new Swiper(".modal-slider-wrapper", {
+    slidesPerView: 1,
+    spaceBetween: "auto",
+    speed: 500,
+    loop: true,
+    lazy: {
+      loadOnTransitionStart: true,
+      loadPrevNext: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    // pagination: {
+    //   el: ".accommodations-single_swiper-pagination",
+    //   clickable: true,
+    //   slideToClickedSlide: true,
+    // },
+    breakpoints: {
+      576: {
+        initialSlide: 1,
+        spaceBetween: 0,
+        centeredSlides: true,
+        slidesPerView: "auto",
+      },
+    },
+  });
 
   // Booking form
 
@@ -225,7 +271,6 @@ jQuery(document).ready(function ($) {
         </ul>`)
   );
   bookingSection.append(submitForm);
-
   bookingSection.insertAfter(content);
 
   roomWrapper.css("display", "block");

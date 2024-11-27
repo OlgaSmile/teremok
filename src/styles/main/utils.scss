@@ -236,3 +236,40 @@ p {
 .overflow-hidden {
   overflow: hidden;
 }
+
+.modal-slider {
+  height: 100%;
+  margin-inline: auto;
+  margin-top: 1%;
+  background: #000;
+
+  & form {
+    height: 100%;
+    position: relative;
+
+    & .close-button {
+      position: absolute;
+      top: .625rem;
+      right: .625rem;
+      color: white;
+      z-index: 10;
+    }
+  }
+
+  & .modal-slider-wrapper {
+    height: 100%;
+  }
+
+
+  & .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    & img {
+      min-height: 100%;
+      width: auto;
+    }
+  }
+}
