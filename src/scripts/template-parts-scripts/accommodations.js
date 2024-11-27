@@ -106,9 +106,7 @@ jQuery(document).ready(function ($) {
       .text()
       .trim();
 
-    const text = additionBed
-      ? `${numberOfGuests} (+${additionBed}) гостей`
-      : `${numberOfGuests} гостей`;
+    const text = badCountText(numberOfGuests, additionBed);
 
     optionsItem.append(
       $(`<span>${guestIconItem}</span>`).addClass(
