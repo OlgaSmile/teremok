@@ -2,7 +2,7 @@ jQuery(document).ready(function ($) {
   const roomWrapper = $(
     ".accommodations-section > .mphb_sc_rooms-wrapper > .mphb-room-type"
   );
-  const body = $("main");
+  const main = $("main");
 
   $(roomWrapper).each(function (index) {
     const searchWrapper = $(this);
@@ -22,9 +22,7 @@ jQuery(document).ready(function ($) {
     const roomImagesList = roomImages.clone();
 
     const slider = $(
-      `<div class='swiper accommodations-single__gallery' onclick='sliderModal${
-        index + 2
-      }.showModal()'></div>`
+      `<div class='swiper accommodations-single__gallery'></div>`
     );
 
     const swiperWrapper = $(
@@ -36,11 +34,17 @@ jQuery(document).ready(function ($) {
       $item = $(this);
 
       const swiperSlide = $(
-        "<div class='swiper-slide accommodations-single__gallery--slide'></div>"
+        `<div class='swiper-slide swiper-slide${
+          index + 2
+        } accommodations-single__gallery--slide'></div>`
       );
       $("#gallery-1").remove();
       swiperSlide.append($item);
       swiperWrapper.append(swiperSlide);
+
+      swiperSlide.on("click", function () {
+        $(`#sliderModal${index + 2}`)[0].showModal();
+      });
     });
 
     slider.append(sliderNavigation);
@@ -49,15 +53,18 @@ jQuery(document).ready(function ($) {
 
     // Modal slider
 
-    body.append(modalTemplate(index + 2));
+    main.append(modalTemplate(index + 2));
 
-    const sliderWrapper = body.find($(".modal-slider-wrapper>.swiper-wrapper"));
+    const sliderWrapper = main.find($(".modal-slider-wrapper>.swiper-wrapper"));
 
     $(roomImagesList).each(function () {
       const img = $(this);
-      const item = $('<div class="swiper-slide"></div>');
+      const item = $(`<div class="swiper-slide"></div>`);
       item.append(img);
       sliderWrapper.append(item);
+    });
+    $(`.swiper-slide${index + 2}`).on("click", function () {
+      $(`#sliderModal${index + 2}`)[0].showModal();
     });
 
     const roomDesc = searchWrapper.find($("p:first-of-type")).detach();
