@@ -203,11 +203,6 @@ jQuery(document).ready(function ($) {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-    // pagination: {
-    //   el: ".accommodations-single_swiper-pagination",
-    //   clickable: true,
-    //   slideToClickedSlide: true,
-    // },
     breakpoints: {
       576: {
         initialSlide: 1,
