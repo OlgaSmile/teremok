@@ -2,8 +2,9 @@ jQuery(document).ready(function ($) {
   const roomWrapper = $(
     ".accommodations-section > .mphb_sc_rooms-wrapper > .mphb-room-type"
   );
+  const body = $("main");
 
-  $(roomWrapper).each(function () {
+  $(roomWrapper).each(function (index) {
     const searchWrapper = $(this);
     const view = searchWrapper
       .find($(".mphb-room-type-view>.mphb-attribute-value"))
@@ -18,9 +19,12 @@ jQuery(document).ready(function ($) {
 
     const roomGalleryWrapper = searchWrapper.find($(".mphb-room-type-images"));
     const roomImages = roomGalleryWrapper.find($(".gallery-item img"));
+    const roomImagesList = roomImages.clone();
 
     const slider = $(
-      "<div class='swiper accommodations-single__gallery'></div>"
+      `<div class='swiper accommodations-single__gallery' onclick='sliderModal${
+        index + 2
+      }.showModal()'></div>`
     );
 
     const swiperWrapper = $(
@@ -30,7 +34,6 @@ jQuery(document).ready(function ($) {
 
     $(roomImages).each(function () {
       $item = $(this);
-      $item.attr("target", "blank");
 
       const swiperSlide = $(
         "<div class='swiper-slide accommodations-single__gallery--slide'></div>"
@@ -43,6 +46,19 @@ jQuery(document).ready(function ($) {
     slider.append(sliderNavigation);
 
     // end Slider
+
+    // Modal slider
+
+    body.append(modalTemplate(index + 2));
+
+    const sliderWrapper = body.find($(".modal-slider-wrapper>.swiper-wrapper"));
+
+    $(roomImagesList).each(function () {
+      const img = $(this);
+      const item = $('<div class="swiper-slide"></div>');
+      item.append(img);
+      sliderWrapper.append(item);
+    });
 
     const roomDesc = searchWrapper.find($("p:first-of-type")).detach();
 

@@ -243,63 +243,91 @@ function getNightPriceText(number) {
   return text;
 }
 
-function createSwiper() {
-  //  Галерея
-  console.log("Галерея: ", Галерея);
+// function createSwiper() {
+//   //  Галерея
+//   console.log("Галерея: ", Галерея);
 
-  const galleryWrapper = roomWrapper.find($(".gallery"));
-  const galleryImages = galleryWrapper.find(
-    $(".gallery-item>.gallery-icon>a>img")
-  );
+//   const galleryWrapper = roomWrapper.find($(".gallery"));
+//   const galleryImages = galleryWrapper.find(
+//     $(".gallery-item>.gallery-icon>a>img")
+//   );
 
-  const slider = $("<div class='swiper accommodations-single__gallery'></div>");
+//   const slider = $("<div class='swiper accommodations-single__gallery'></div>");
 
-  const swiperWrapper = $(
-    "<div class='swiper-wrapper accommodations-single__gallery--wrapper'></div>"
-  );
-  slider.append(swiperWrapper);
+//   const swiperWrapper = $(
+//     "<div class='swiper-wrapper accommodations-single__gallery--wrapper'></div>"
+//   );
+//   slider.append(swiperWrapper);
 
-  $(galleryImages).each(function () {
-    item = $(this);
-    const swiperSlide = $(
-      "<div class='swiper-slide accommodations-single__gallery--slide'></div>"
-    );
-    $("#gallery-1").remove();
-    swiperSlide.append(item);
-    swiperWrapper.append(swiperSlide);
-  });
+//   $(galleryImages).each(function () {
+//     item = $(this);
+//     const swiperSlide = $(
+//       "<div class='swiper-slide accommodations-single__gallery--slide'></div>"
+//     );
+//     $("#gallery-1").remove();
+//     swiperSlide.append(item);
+//     swiperWrapper.append(swiperSlide);
+//   });
 
-  slider.append(sliderNavigation);
-  slider.insertAfter(roomWrapper.find($(".mphb-regular-price")));
+//   slider.append(sliderNavigation);
+//   slider.insertAfter(roomWrapper.find($(".mphb-regular-price")));
 
-  const accommodationsSingleSwiper = new Swiper(
-    ".accommodations-single__gallery",
-    {
-      slidesPerView: 1,
-      spaceBetween: 10,
-      speed: 500,
-      loop: true,
-      lazy: {
-        loadOnTransitionStart: true,
-        loadPrevNext: true,
-      },
-      navigation: {
-        nextEl: ".custom-next-icon",
-        prevEl: ".custom-prev-icon",
-      },
-      pagination: {
-        el: ".accommodations-single_swiper-pagination",
-        clickable: true,
-        slideToClickedSlide: true,
-      },
-      breakpoints: {
-        576: {
-          initialSlide: 1,
-          spaceBetween: 0,
-          centeredSlides: true,
-          slidesPerView: "auto",
-        },
-      },
-    }
-  );
-}
+//   const accommodationsSingleSwiper = new Swiper(
+//     ".accommodations-single__gallery",
+//     {
+//       slidesPerView: 1,
+//       spaceBetween: 10,
+//       speed: 500,
+//       loop: true,
+//       lazy: {
+//         loadOnTransitionStart: true,
+//         loadPrevNext: true,
+//       },
+//       navigation: {
+//         nextEl: ".custom-next-icon",
+//         prevEl: ".custom-prev-icon",
+//       },
+//       pagination: {
+//         el: ".accommodations-single_swiper-pagination",
+//         clickable: true,
+//         slideToClickedSlide: true,
+//       },
+//       breakpoints: {
+//         576: {
+//           initialSlide: 1,
+//           spaceBetween: 0,
+//           centeredSlides: true,
+//           slidesPerView: "auto",
+//         },
+//       },
+//     }
+//   );
+// }
+
+const modalTemplate = (index) => {
+  const id = `sliderModal${index}`;
+  return `<dialog id=${id} class="modal-slider">
+    <form method="dialog">
+      <div class="modal-slider-wrapper swiper">
+        <div class="swiper-wrapper">
+        </div>
+       <div class="swiper-button-next"></div>
+       <div class="swiper-button-prev"></div>
+      </div>
+      <button type="submit" class="close-button" >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0.960938 22.7536L22.6833 1.03125M23.0409 22.7536L1.31862 1.03125" stroke="#99B7A2" stroke-linecap="round" />
+      </svg>
+      </button>
+    </form>
+    </dialog>`;
+};
+
+// function addModalSlider(galleryImagesList, sliderWrapper) {
+//   $(galleryImagesList).each(function () {
+//     const img = $(this);
+//     const item = $('<div class="swiper-slide"></div>');
+//     item.append(img);
+//     sliderWrapper.append(item);
+//   });
+// }
