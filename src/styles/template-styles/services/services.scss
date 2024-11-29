@@ -212,6 +212,14 @@
     }
 
     @include media_rule($mobile) {
+      margin-bottom: 3.45rem;
+
+      :last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include media_rule($tablet) {
       margin-bottom: 5rem;
 
       :last-child {
@@ -221,6 +229,11 @@
   }
 
   &__image {
+    /*     @include media_rule($mobile) {
+      img {
+        height: 27.62rem;
+      }
+    } */
     @include media_rule($mobile) {
       img {
         height: 25.62rem;
