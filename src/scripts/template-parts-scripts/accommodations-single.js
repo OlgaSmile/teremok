@@ -39,9 +39,7 @@ jQuery(document).ready(function ($) {
   );
   const galleryImagesList = galleryImages.clone();
 
-  const slider = $(
-    "<div class='swiper accommodations-single__gallery' onclick='sliderModal1.showModal()'></div>"
-  );
+  const slider = $("<div class='swiper accommodations-single__gallery'></div>");
 
   const swiperWrapper = $(
     "<div class='swiper-wrapper accommodations-single__gallery--wrapper'></div>"
@@ -70,9 +68,12 @@ jQuery(document).ready(function ($) {
 
   $(galleryImagesList).each(function () {
     const img = $(this);
-    const item = $('<div class="swiper-slide"></div>');
+    const item = $("<div class='swiper-slide'></div>");
     item.append(img);
     sliderWrapper.append(item);
+    $(".swiper-slide").on("click", function () {
+      $("#sliderModal1")[0].showModal();
+    });
   });
 
   // Удобства

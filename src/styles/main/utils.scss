@@ -258,6 +258,16 @@ p {
       right: .625rem;
       color: white;
       z-index: 10;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 300ms linear;
+
+      &:hover {
+        transform: rotate(90deg);
+      }
     }
   }
 
