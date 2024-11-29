@@ -54,7 +54,7 @@ $repeater_field = $services['services'];
                   <?php
                   global $wp;
                   $learn_more = get_field('learn_more', 'options');
-                  $link = add_query_arg($wp->query_vars, home_url()) . '/harchuvannya';
+                  $link = add_query_arg($wp->query_vars, home_url()) . '/food';
 
                   get_template_part("template-parts/learn-more-btn", null, array('btn_name' => $learn_more, 'link_name' => $link)); ?>
                 </div>
