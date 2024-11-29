@@ -2,14 +2,10 @@ jQuery(document).ready(function ($) {
   const roomWrapper = $(".single-room_wrapper");
   const body = $("body");
 
-  roomWrapper.hide();
-
   // Title
 
   const roomTitle = roomWrapper.find($(".mphb-room-type-title"));
-
   const roomName = roomTitle.text();
-
   $(treesTitleIcon).insertBefore(roomTitle);
 
   // Ціна
@@ -21,11 +17,8 @@ jQuery(document).ready(function ($) {
     roomPrice.find($(".mphb-price-period")).text().split(" ")[1]
   );
   const priseByPeriod = `${prise.split("").splice(1, prise.length).join("")}`;
-
   const priseNumber = priseByPeriod.split(",").join("");
-
   const nFormat = new Intl.NumberFormat(undefined);
-
   const priceByNight = Number(priseNumber) / Number(prisePeriod);
   const priseText = `${nFormat.format(priceByNight)} грн/доба`;
 
@@ -63,7 +56,6 @@ jQuery(document).ready(function ($) {
   // Modal slider
 
   body.append(modalTemplate(1));
-
   const sliderWrapper = body.find($(".modal-slider-wrapper>.swiper-wrapper"));
 
   $(galleryImagesList).each(function () {
@@ -237,6 +229,12 @@ jQuery(document).ready(function ($) {
   const submitForm = roomWrapper.find($(".mphb_sc_booking_form-wrapper"));
 
   submitForm.find($(".mphb-confirm-reservation")).val("Забронювати");
+
+  // Search section
+  const searchSectionTitle = $(".accommodations-single_search-section_title");
+  console.log("searchSectionTitle: ", searchSectionTitle);
+
+  $(treesTitleIcon).insertBefore(searchSectionTitle);
 
   // Observer for Form submit error
 
