@@ -414,3 +414,9 @@
         }
     }
 }
+
+.accommodations-main {
+    & .accommodations-inner_swiper {
+        display: none;
+    }
+}
