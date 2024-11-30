@@ -253,6 +253,14 @@ const modalTemplate = (index) => {
         </div>
        <div class="swiper-button-next"></div>
        <div class="swiper-button-prev"></div>
+
+        <div thumbsSlider="" class="swiper inner_swiper">
+          <div class="swiper-wrapper inner_swiper-wrapper">
+          </div>
+
+          <div class="swiper-button-next_in"></div>
+          <div class="swiper-button-prev_in"></div>
+        </div>
       </div>
       <button type="submit" class="close-button" >
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -262,3 +270,40 @@ const modalTemplate = (index) => {
     </form>
     </dialog>`;
 };
+
+// const innerSwiper = new Swiper(".inner_swiper", {
+//   spaceBetween: 10,
+//   slidesPerView: "auto",
+//   freeMode: true,
+//   watchSlidesProgress: true,
+//   navigation: {
+//     nextEl: ".swiper-button-next_in",
+//     prevEl: ".swiper-button-prev_in",
+//   },
+// });
+
+// const accommodationsModalSwiper = new Swiper(".modal-slider-wrapper", {
+//   slidesPerView: 1,
+//   spaceBetween: "auto",
+//   speed: 500,
+//   loop: true,
+//   lazy: {
+//     loadOnTransitionStart: true,
+//     loadPrevNext: true,
+//   },
+//   thumbs: {
+//     swiper: innerSwiper,
+//   },
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+//   breakpoints: {
+//     576: {
+//       initialSlide: 1,
+//       spaceBetween: 0,
+//       centeredSlides: true,
+//       slidesPerView: "auto",
+//     },
+//   },
+// });

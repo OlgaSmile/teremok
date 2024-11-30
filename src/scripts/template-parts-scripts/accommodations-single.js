@@ -55,17 +55,36 @@ jQuery(document).ready(function ($) {
 
   // Modal slider
 
-  body.append(modalTemplate(1));
-  const sliderWrapper = body.find($(".modal-slider-wrapper>.swiper-wrapper"));
+  roomWrapper.append(modalTemplate(1));
+  roomWrapper.find($(".inner_swiper")).addClass("single_room-inner_swiper");
+  const s = roomWrapper
+    .find($(".modal-slider-wrapper"))
+    .addClass("single_room-modal-slider-wrapper");
+
+  const sliderWrapper = roomWrapper.find(
+    $(".modal-slider-wrapper>.swiper-wrapper")
+  );
+  const innerSliderWrapper = roomWrapper.find(
+    $(".modal-slider-wrapper .inner_swiper-wrapper")
+  );
 
   $(galleryImagesList).each(function () {
     const img = $(this);
-    const item = $("<div class='swiper-slide'></div>");
+    const innerImg = img.clone();
+
+    const item = $("<div class='swiper-slide modal-swiper-slide'></div>");
     item.append(img);
     sliderWrapper.append(item);
-    $(".swiper-slide").on("click", function () {
-      $("#sliderModal1")[0].showModal();
-    });
+
+    const innerSliderItem = $(
+      '<div class="swiper-slide inner_swiper-slide"></div>'
+    );
+    innerSliderItem.append(innerImg);
+    innerSliderWrapper.append(innerSliderItem);
+  });
+
+  $(".single-room_wrapper .swiper-slide").on("click", function () {
+    $("#sliderModal1")[0].showModal();
   });
 
   // Удобства
@@ -183,28 +202,46 @@ jQuery(document).ready(function ($) {
       },
     }
   );
-  const accommodationsModalSwiper = new Swiper(".modal-slider-wrapper", {
-    slidesPerView: 1,
-    spaceBetween: "auto",
-    speed: 500,
-    loop: true,
-    lazy: {
-      loadOnTransitionStart: true,
-      loadPrevNext: true,
-    },
+
+  const innerSwiper = new Swiper(".single_room-inner_swiper", {
+    spaceBetween: 10,
+    slidesPerView: "auto",
+    freeMode: true,
+    watchSlidesProgress: true,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      576: {
-        initialSlide: 1,
-        spaceBetween: 0,
-        centeredSlides: true,
-        slidesPerView: "auto",
-      },
+      nextEl: ".swiper-button-next_in",
+      prevEl: ".swiper-button-prev_in",
     },
   });
+
+  const accommodationsModalSwiper = new Swiper(
+    ".single_room-modal-slider-wrapper",
+    {
+      slidesPerView: 1,
+      spaceBetween: "auto",
+      speed: 500,
+      loop: true,
+      lazy: {
+        loadOnTransitionStart: true,
+        loadPrevNext: true,
+      },
+      thumbs: {
+        swiper: innerSwiper,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        576: {
+          initialSlide: 1,
+          spaceBetween: 0,
+          centeredSlides: true,
+          slidesPerView: "auto",
+        },
+      },
+    }
+  );
 
   // Booking form
 
@@ -232,7 +269,6 @@ jQuery(document).ready(function ($) {
 
   // Search section
   const searchSectionTitle = $(".accommodations-single_search-section_title");
-  console.log("searchSectionTitle: ", searchSectionTitle);
 
   $(treesTitleIcon).insertBefore(searchSectionTitle);
 

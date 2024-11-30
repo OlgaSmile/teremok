@@ -273,9 +273,38 @@ p {
 
   & .modal-slider-wrapper {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     min-height: 100dvh;
 
+  }
+
+  & .inner_swiper {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.25rem;
+
+
+    & .inner_swiper-slide {
+      width: 9.375rem;
+      height: 9.375rem;
+      border: .125rem solid transparent;
+      border-radius: .3125rem;
+      overflow: hidden;
+      transition: all 300ms linear;
+
+      &:hover {
+        border: .1875rem solid $white;
+      }
+
+      & img {
+        object-fit: cover;
+        min-width: 100%;
+        min-height: 100%;
+      }
+
+    }
   }
 
 

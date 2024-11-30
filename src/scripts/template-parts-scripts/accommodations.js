@@ -2,7 +2,7 @@ jQuery(document).ready(function ($) {
   const roomWrapper = $(
     ".accommodations-section > .mphb_sc_rooms-wrapper > .mphb-room-type"
   );
-  const main = $("main");
+  const main = $(".accommodations-main");
 
   $(roomWrapper).each(function (index) {
     const searchWrapper = $(this);
@@ -28,7 +28,6 @@ jQuery(document).ready(function ($) {
     const swiperWrapper = $(
       "<div class='swiper-wrapper accommodations-single__gallery--wrapper'></div>"
     );
-    slider.append(swiperWrapper);
 
     $(roomImages).each(function () {
       $item = $(this);
@@ -47,6 +46,7 @@ jQuery(document).ready(function ($) {
       });
     });
 
+    slider.append(swiperWrapper);
     slider.append(sliderNavigation);
 
     // end Slider
@@ -54,18 +54,79 @@ jQuery(document).ready(function ($) {
     // Modal slider
 
     main.append(modalTemplate(index + 2));
+    main.find($(".inner_swiper")).addClass("accommodations-inner_swiper");
+    main
+      .find($(".modal-slider-wrapper"))
+      .addClass("accommodations-modal-slider-wrapper");
 
     const sliderWrapper = main.find($(".modal-slider-wrapper>.swiper-wrapper"));
+    const innerSliderWrapper = main.find(
+      $(".modal-slider-wrapper> .inner_swiper> .inner_swiper-wrapper")
+    );
 
     $(roomImagesList).each(function () {
       const img = $(this);
-      const item = $(`<div class="swiper-slide"></div>`);
+      const innerImg = img.clone();
+
+      const item = $("<div class='swiper-slide modal-swiper-slide'></div>");
       item.append(img);
       sliderWrapper.append(item);
+
+      const innerSliderItem = $(
+        '<div class="swiper-slide inner_swiper-slide"></div>'
+      );
+      innerSliderItem.append(innerImg);
+      innerSliderWrapper.append(innerSliderItem);
     });
-    $(`.swiper-slide${index + 2}`).on("click", function () {
-      $(`#sliderModal${index + 2}`)[0].showModal();
+
+    $(`.accommodations-main .swiper-slide${index + 2}`).on(
+      "click",
+      function () {
+        $(`#sliderModal${index + 2}`)[0].showModal();
+      }
+    );
+
+    // -----------------------
+    const innerSwiperA = new Swiper(".accommodations-inner_swiper", {
+      spaceBetween: 10,
+      slidesPerView: "auto",
+      freeMode: true,
+      watchSlidesProgress: true,
+      navigation: {
+        nextEl: ".swiper-button-next_in",
+        prevEl: ".swiper-button-prev_in",
+      },
     });
+
+    const accommodationsModalSwiperA = new Swiper(
+      ".accommodations-modal-slider-wrapper",
+      {
+        slidesPerView: 1,
+        spaceBetween: "auto",
+        speed: 500,
+        loop: true,
+        lazy: {
+          loadOnTransitionStart: true,
+          loadPrevNext: true,
+        },
+        // thumbs: {
+        //   swiper: innerSwiperA,
+        // },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          576: {
+            initialSlide: 1,
+            spaceBetween: 0,
+            centeredSlides: true,
+            slidesPerView: "auto",
+          },
+        },
+      }
+    );
+    //-------------------------
 
     const roomDesc = searchWrapper.find($("p:first-of-type")).detach();
 
