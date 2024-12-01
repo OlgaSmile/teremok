@@ -219,6 +219,10 @@
   & .menu__icon_white {
     display: none;
   }
+
+  & .header_list .menu-item .menu__list-trees svg {
+    stroke: $main_text;
+  }
 }
 
 .header-mobile {

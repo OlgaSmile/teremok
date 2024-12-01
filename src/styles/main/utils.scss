@@ -241,16 +241,19 @@ p {
   margin: 0;
   background: rgba(0, 0, 0, 0.8);
   overflow: hidden;
-  min-width: 100%;
-  min-height: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
 
   .swiper-wrapper {
     align-items: center;
+    height: auto;
   }
 
   & form {
-    min-height: 100dvh;
+    height: 100%;
     position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
 
     & .close-button {
       position: absolute;
@@ -276,7 +279,7 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100dvh;
+    height: 100%;
 
   }
 
@@ -314,7 +317,7 @@ p {
     justify-content: center;
 
     & img {
-      min-height: 100%;
+      height: auto;
       width: auto;
     }
   }
