@@ -66,9 +66,11 @@ jQuery(document).ready(function ($) {
 
       // Modal slider
 
-      main.append(modalTemplate(index + 2));
-      main.find($(".inner_swiper")).addClass("accommodations-inner_swiper");
-      main
+      searchWrapper.append(modalTemplate(index + 2));
+      searchWrapper
+        .find($(".inner_swiper"))
+        .addClass("accommodations-inner_swiper");
+      searchWrapper
         .find($(".modal-slider-wrapper"))
         .addClass("accommodations-modal-slider-wrapper");
 
@@ -101,17 +103,21 @@ jQuery(document).ready(function ($) {
         }
       );
 
+      const s = searchWrapper
+        .find($(".accommodations-inner_swiper"))
+        .addClass(`accommodations-inner_swiper-${index}`);
+
       // -----------------------
-      // const innerSwiperA = new Swiper(".accommodations-inner_swiper", {
-      //   spaceBetween: 10,
-      //   slidesPerView: "auto",
-      //   freeMode: true,
-      //   watchSlidesProgress: true,
-      //   navigation: {
-      //     nextEl: ".swiper-button-next_in",
-      //     prevEl: ".swiper-button-prev_in",
-      //   },
-      // });
+      const innerSwiperA = new Swiper(`.accommodations-inner_swiper-${index}`, {
+        spaceBetween: 10,
+        slidesPerView: "auto",
+        freeMode: true,
+        watchSlidesProgress: true,
+        navigation: {
+          nextEl: ".swiper-button-next_in",
+          prevEl: ".swiper-button-prev_in",
+        },
+      });
 
       const accommodationsModalSwiperA = new Swiper(
         ".accommodations-modal-slider-wrapper",
@@ -124,9 +130,9 @@ jQuery(document).ready(function ($) {
             loadOnTransitionStart: true,
             loadPrevNext: true,
           },
-          // thumbs: {
-          //   swiper: innerSwiperA,
-          // },
+          thumbs: {
+            swiper: innerSwiperA,
+          },
           navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
