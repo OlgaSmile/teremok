@@ -86,12 +86,15 @@
 
     & .mphb-errors-wrapper {
         margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
 
         & .mphb-error {
             display: block;
             width: fit-content;
             text-wrap: nowrap;
-            color: $disabled_text;
+            color: $orange;
+            font-weight: 600;
         }
     }
 

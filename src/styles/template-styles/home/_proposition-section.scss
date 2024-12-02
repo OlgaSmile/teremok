@@ -3,10 +3,22 @@
 
 .proposition-section {
   position: relative;
-  height: 31.5rem;
+  height: 45rem;
   width: 100%;
   overflow: hidden;
   margin-bottom: 7.5rem;
+
+  &>img {
+    min-height: 100%;
+    width: auto;
+    object-fit: cover;
+    object-position: 100%;
+
+    @include media_rule($mobile) {
+      height: auto;
+      width: 100%;
+    }
+  }
 
   @include media_rule($mobile) {
     height: 50rem;
@@ -49,7 +61,7 @@
     transform: translate(-50%, -50%);
     z-index: 2;
     border-radius: 0.125rem;
-    height: 21.5rem;
+    height: 30.75rem;
     width: 21.4375rem;
     background-color: $white;
     padding: 1rem;
@@ -68,11 +80,11 @@
       min-width: 100%;
       min-height: 100%;
       width: initial;
-      bottom: 0;
 
       position: absolute;
       top: 0;
       left: 0;
+      bottom: 0;
       height: 100%;
     }
   }
@@ -84,38 +96,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100%;
   }
-
-  // &__subtitle-wrapper {
-  //   text-align: center;
-  //   margin-bottom: 2rem;
-  // }
-
-  // &__subtitle {
-  //   width: 100%;
-  //   font-size: 1rem;
-  //   font-weight: 600;
-  //   letter-spacing: 0.04em;
-
-  //   @include media_rule($mobile) {
-  //     font-weight: 500;
-  //     font-size: 1.5rem;
-  //     letter-spacing: 0.04em;
-  //   }
-
-  //   &-icon {
-  //     width: 1.875rem;
-  //     height: 1.25rem;
-  //     padding: .1725rem .0437rem .0862rem 0rem;
-  //     margin-bottom: 0.5rem;
-
-  //     @include media_rule($mobile) {
-  //       margin-bottom: 0.5rem;
-  //       width: 2.3125rem;
-  //       height: 1.5625rem;
-  //     }
-  //   }
-  // }
 
   &__text-wrapper {
     display: flex;
@@ -131,7 +113,7 @@
     margin-bottom: 2rem;
 
     @include media_rule_max($mobile) {
-      margin-bottom: 1.5rem;
+      margin-bottom: auto;
       gap: 1.5rem;
     }
 
@@ -144,6 +126,17 @@
 
       @include media_rule_max($mobile) {
         width: 100%;
+
+        display: none;
+
+        &:nth-child(1) {
+          display: flex;
+        }
+
+        &:nth-child(2) {
+          display: flex;
+        }
+
       }
 
       & .proposition_text-icon {
