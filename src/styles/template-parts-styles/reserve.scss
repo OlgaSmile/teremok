@@ -180,7 +180,11 @@
         margin-bottom: 0;
 
         @include media_rule_max($mobile) {
-          margin-bottom: 1rem;
+          margin-bottom: 2.75rem;
+
+          &:last-child {
+            margin-bottom: 1.87rem;
+          }
         }
       }
 
@@ -213,6 +217,7 @@
 
       @include media_rule_max($mobile) {
         text-align: end;
+        margin-right: 1.1rem;
       }
     }
 
