@@ -3,11 +3,19 @@
 Template Name: services
  */
 
-$hero_reviews_image = get_field('hero_services_img');
+
 $gallery_service = get_field('gallery_service');
 $gallery = $gallery_service['photos'];
 $video_url = $gallery_service['video'];
 $services_section_reserve = get_field('services_section_reserve');
+
+$winter_summer_toggle = get_field('winter_summer_toggle', 'options');
+
+if ($winter_summer_toggle) {
+    $hero_reviews_image = get_field('hero_services_img_winter');
+} else {
+    $hero_reviews_image =  get_field('hero_services_img');
+}
 
 get_header();
 ?>
