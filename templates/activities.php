@@ -6,15 +6,20 @@ Template Name: Activities
 
 
 
-$hero_active_image = get_field('hero_activity_image');
+
 $title_main = get_field('activity_introduction_title');
 $main_text = get_field('activity_introduction_text');
 $section_reserve_img = get_field('activity_reserve_Image');
 
 
 
+$winter_summer_toggle = get_field('winter_summer_toggle', 'options');
 
-
+if ($winter_summer_toggle) {
+  $hero_active_image =  get_field('hero_activity_image_winter');
+} else {
+  $hero_active_image = get_field('hero_activity_image');
+}
 get_header();
 ?>
 <main class="activities-main">
@@ -93,58 +98,67 @@ get_header();
               <div class="activity-nearby__item-mobile-gallery">
                 <?php if (!empty($activity_gallery_swiper)): ?>
                   <?php
-                  get_template_part('template-parts/images-activites-swiper', null, array('images' => $activity_gallery_swiper)); ?>
+                  get_template_part(
+                    'template-parts/images-activites-swiper',
+                    null,
+                    array(
+                      'images' => $activity_gallery_swiper,
+                      'mobile' => true
+                    )
+                  );
+                  ?>
                 <?php endif ?>
               </div>
             <?php endif ?>
-            <h3><?php echo the_title() ?></h3>
+            <div class="activity-nearby__item-text-box">
+              <h3><?php echo the_title() ?></h3>
 
-            <?php if (!empty($activity_distance_repeat)): ?>
-              <?php foreach ($activity_distance_repeat as  $rowDistance) : ?>
-                <div class="activity-nearby__distance-wrapper">
-                  <?php if (!empty(get_field("distance_icon", "options")['url'])): ?>
-                    <img width="24" height="24" src="<?php echo get_field("distance_icon", "options")['url'] ?>" alt="<?php echo get_field("distance_icon", "options")['alt'] ?>">
-                  <?php endif ?>
-                  <p><?php echo $rowDistance['from'] === true ? 'від' : '' ?> <?php echo $rowDistance['distance'] ?> <?php echo $rowDistance['select'] ?></p>
+              <?php if (!empty($activity_distance_repeat)): ?>
+                <?php foreach ($activity_distance_repeat as  $rowDistance) : ?>
+                  <div class="activity-nearby__distance-wrapper">
+                    <?php if (!empty(get_field("distance_icon", "options")['url'])): ?>
+                      <img width="24" height="24" src="<?php echo get_field("distance_icon", "options")['url'] ?>" alt="<?php echo get_field("distance_icon", "options")['alt'] ?>">
+                    <?php endif ?>
+                    <p><?php echo $rowDistance['from'] === true ? 'від' : '' ?> <?php echo $rowDistance['distance'] ?> <?php echo $rowDistance['select'] ?></p>
+                  </div>
+
+                <?php endforeach ?>
+              <?php endif ?>
+
+              <?php if (!empty($activity_text_contents)): ?>
+                <div id="activity-content-<?php echo $post_id ?>" class="activity-nearby__content-mobile">
+                  <?php foreach ($activity_text_contents as  $rowContent) : ?>
+
+                    <?php if (!empty(get_field("mountains_green_icon", "options")['url'])): ?>
+                      <img class="section-activity-content__item-content-img" src="<?php echo get_field("mountains_green_icon", "options")['url'] ?>" alt="<?php echo get_field("mountains_green_icon", "options")['alt'] ?>">
+                    <?php endif ?>
+                    <div>
+                      <p><?php echo $rowContent['text'] ?></p>
+                    </div>
+                  <?php endforeach ?>
+
                 </div>
 
-              <?php endforeach ?>
-            <?php endif ?>
+              <?php endif ?>
+              <div class="activity-nearby__item-bottom-wrapper">
 
-            <?php if (!empty($activity_text_contents)): ?>
-              <div id="activity-content-<?php echo $post_id ?>" class="activity-nearby__content-mobile">
-                <?php foreach ($activity_text_contents as  $rowContent) : ?>
+                <a href="#post-<?php echo $post_id ?>" class="activity-nearby__detalies-btn"><?php echo get_field('more-details', 'options') ? get_field('more-details', 'options') : 'Детальніше' ?> <svg class="activity-nearby__detalies-btn-mobile-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="30" viewBox="0 0 13 13" fill="none">
+                    <path d="M12.5 5.48431C10.3365 5.99923 6.0094 8.02326 6.0094 12M6.0094 12C3.75648 5.80609 0.885307 5.15897 0.5 5.15897M6.0094 12L6.0094 -2.83713e-07" stroke="#E67739" />
+                  </svg></a>
 
-                  <?php if (!empty(get_field("mountains_green_icon", "options")['url'])): ?>
-                    <img class="section-activity-content__item-content-img" src="<?php echo get_field("mountains_green_icon", "options")['url'] ?>" alt="<?php echo get_field("mountains_green_icon", "options")['alt'] ?>">
-                  <?php endif ?>
-                  <div>
-                    <p><?php echo $rowContent['text'] ?></p>
-                  </div>
-                <?php endforeach ?>
+                <button id="activity-<?php echo $post_id ?>" class="activity-nearby__detalies-btn-mobile"><span id="text-more-<?php echo $post_id ?>"><?php echo get_field('more-details', 'options') ? get_field('more-details', 'options') : 'Детальніше' ?></span>
 
+
+
+
+                  <svg id='activity-icon-<?php echo $post_id  ?>' class="activity-nearby__detalies-btn-mobile-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                    <path d="M12.5 5.48431C10.3365 5.99923 6.0094 8.02326 6.0094 12M6.0094 12C3.75648 5.80609 0.885307 5.15897 0.5 5.15897M6.0094 12L6.0094 -2.83713e-07" stroke="#E67739" />
+                  </svg> </button>
               </div>
 
-            <?php endif ?>
-            <div class="activity-nearby__item-bottom-wrapper">
 
-              <a href="#post-<?php echo $post_id ?>" class="activity-nearby__detalies-btn"><?php echo get_field('more-details', 'options') ? get_field('more-details', 'options') : 'Детальніше' ?> <svg class="activity-nearby__detalies-btn-mobile-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
-                  <path d="M12.5 5.48431C10.3365 5.99923 6.0094 8.02326 6.0094 12M6.0094 12C3.75648 5.80609 0.885307 5.15897 0.5 5.15897M6.0094 12L6.0094 -2.83713e-07" stroke="#E67739" />
-                </svg></a>
-
-              <button id="activity-<?php echo $post_id ?>" class="activity-nearby__detalies-btn-mobile"><span id="text-more-<?php echo $post_id ?>"><?php echo get_field('more-details', 'options') ? get_field('more-details', 'options') : 'Детальніше' ?></span>
-
-
-
-
-                <svg id='activity-icon-<?php echo $post_id  ?>' class="activity-nearby__detalies-btn-mobile-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
-                  <path d="M12.5 5.48431C10.3365 5.99923 6.0094 8.02326 6.0094 12M6.0094 12C3.75648 5.80609 0.885307 5.15897 0.5 5.15897M6.0094 12L6.0094 -2.83713e-07" stroke="#E67739" />
-                </svg> </button>
             </div>
-
-
           </div>
-
 
 
 
