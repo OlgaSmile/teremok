@@ -222,7 +222,7 @@ if ($winter_summer_toggle) {
       <?php if (!empty($repeater_field)) : ?>
         <ul class="teremok-section__list">
           <?php foreach ($repeater_field as $index => $row) : ?>
-            <?php if ($index > 2 && $index <= 4) :
+            <?php if ($index > 1 && $index <= 3) :
             ?>
               <li class="teremok-section__item">
                 <img class="teremok-section__img" src="<?php echo esc_attr($row['teremok_repeating_img']['url']); ?>" alt="<?php echo esc_attr($row['teremok_repeating_img']['alt']) ?: 'image'; ?>">
@@ -256,7 +256,7 @@ if ($winter_summer_toggle) {
       <?php if (!empty($repeater_field)) : ?>
         <ul class="teremok-section__list">
           <?php foreach ($repeater_field as $index => $row) : ?>
-            <?php if ($index > 4) :
+            <?php if ($index > 3) :
             ?>
               <li class="teremok-section__item">
                 <img class="teremok-section__img" src="<?php echo esc_attr($row['teremok_repeating_img']['url']); ?>" alt="<?php echo esc_attr($row['teremok_repeating_img']['alt']) ?: 'image'; ?>">
