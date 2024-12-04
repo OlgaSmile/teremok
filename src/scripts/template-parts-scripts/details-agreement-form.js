@@ -65,13 +65,11 @@ jQuery(document).ready(function ($) {
     const maxLength = 40
     let value = e.target.value || ""
 
-    // Видаляємо неприпустимі символи
+
     const sanitizedValue = value.replace(/[^a-zA-ZА-Яа-яЁёІіЇїЄє\s]/g, "")
-    console.log(sanitizedValue, "sanitizedValue")
-    // Оновлюємо значення поля після очищення
+
     e.target.value = sanitizedValue
 
-    // Оновлюємо довжину після очищення значення
     const length = sanitizedValue.trim().length
 
     if (length < 2) {
@@ -82,7 +80,6 @@ jQuery(document).ready(function ($) {
       $("#validation-name").text("")
     }
 
-    // Обмеження кількості символів
     if (length > maxLength) {
       e.target.value = sanitizedValue.substring(0, maxLength)
     }
