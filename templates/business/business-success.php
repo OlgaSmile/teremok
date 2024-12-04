@@ -20,6 +20,7 @@ $business_autonomy_desc  = get_field('business_autonomy_desc');
 $business_platforms_title = get_field('business_platforms_title');
 $business_platforms_desc_top = get_field('business_platforms_desc-top');
 $business_platforms = get_field('business_platforms');
+$business_platforms_bottom_text = get_field('business_platforms_bottom_text');
 
 $business_website_title = get_field('business_website_title');
 $business_website_desc = get_field('business_website_desc');
@@ -159,6 +160,14 @@ $business_client_title_final = get_field('business_client_title_final')
         <?php endforeach ?>
       </ul>
     <?php endif ?>
+
+    <?php if (!empty($business_platforms_bottom_text)): ?>
+      <p class="">
+        <?php echo $business_platforms_bottom_text ?>
+      </p>
+    <?php endif ?>
+
+
 
 
   </div>
