@@ -828,7 +828,11 @@
       display: flex;
       flex-direction: column;
       margin-bottom: 3.62rem;
+      outline: none !important;
 
+      #detalies-name {
+        padding-left: 0;
+      }
       &:last-child {
         margin-bottom: 0;
       }
@@ -855,11 +859,14 @@
         }
       }
       input {
-        outline: none;
-        border: none;
-        padding-bottom: 0.5rem;
-        border-bottom: 0.062rem solid $grey_green;
+        border-left: none !important;
+        border-right: none !important;
+        border-top: none !important;
+        border-bottom: 0.062rem solid $grey_green !important;
 
+        &:first-child {
+          padding-left: 0 !important;
+        }
         &:active {
           border-bottom: 0.062rem solid $green_light;
         }
@@ -992,7 +999,7 @@
 }
 
 .secttion-details-agreement-label.active {
-  top: -100%;
+  top: -30%;
   transition: top 1s;
 
   color: $disabled_text;

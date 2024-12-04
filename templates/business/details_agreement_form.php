@@ -28,7 +28,7 @@ $business_form_title = get_field('business_form_title')
       <div class="secttion-details-agreement__form-input-container">
         <div class="secttion-details-agreement__form-input-wrapper">
           <label id="name-label" class="secttion-details-agreement-label">Ваше ім’я та прізвище<span class="asterisk">*</span></label>
-          <input id="detalies-name" type="phone" name="name" required>
+          <input id="detalies-name" type="text" name="name" minlength="2" maxlength="40" required>
           <div class="details-nema-max-length">
             <p id='error-name' class="error"></p>
             <p id="validation-name">Введіть не менше ніж 2 символа</p><span><span id="current-length-name">0</span>/40</span></>
