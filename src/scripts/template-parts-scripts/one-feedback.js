@@ -106,7 +106,7 @@ function extractNumbersFromString(str) {
 
   $(".modal-swiper-backdrop").on("click", function (e) {
     if (e.target === e.currentTarget) {
-      console.log("click")
+
       closeIamgeModal()
     }
   })

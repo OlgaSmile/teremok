@@ -10,7 +10,7 @@
     overflow: hidden;
 
     @media screen and (max-width: $mobile) {
-      height: 50.75rem;
+      height: 54.75rem;
       margin-bottom: 7.5rem;
     }
   }
@@ -482,7 +482,6 @@
   height: 100%;
   width: 100%;
   img {
-    width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: -1;

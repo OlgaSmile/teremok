@@ -5,57 +5,50 @@ jQuery(document).ready(function ($) {
   const textarea = $("#text-details")
   const input = document.querySelector("#phone")
 
-  // Перевіряємо, чи існує елемент перед ініціалізацією
-  if (input) {
-    const iti = window.intlTelInput(input, {
-      initialCountry: "ua",
-      separateDialCode: true,
-      utilsScript:
-        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-    })
+  const iti = window.intlTelInput(input, {
+    initialCountry: "ua",
+    separateDialCode: true,
+    utilsScript:
+      "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+  })
 
-    input.addEventListener("input", function () {
-      const currentCountry = iti.getSelectedCountryData()
+  input.addEventListener("input", function () {
+    const currentCountry = iti.getSelectedCountryData()
 
-      if (currentCountry.dialCode === "380") {
-        const maxLength = 9
-        // Видаляємо всі символи, крім цифр, щоб працювати з чистим номером
-        var cleanedNumber = input.value.replace(/\D/g, "")
+    if (currentCountry.dialCode === "380") {
+      const maxLength = 9
 
-        // Обрізаємо, якщо введено більше, ніж потрібно
-        if (cleanedNumber.length > maxLength) {
-          cleanedNumber = cleanedNumber.substring(0, maxLength)
-        }
+      var cleanedNumber = input.value.replace(/\D/g, "")
 
-        // Встановлюємо обмежену версію номера назад у поле
-        input.value = cleanedNumber
-
-        // Якщо номер валідний, форматувати його
-
-        if (iti.isValidNumber()) {
-          var formattedNumber = iti.getNumber(
-            intlTelInputUtils.numberFormat.NATIONAL,
-          )
-          iti.setNumber(formattedNumber)
-          $("#error-phone").text("")
-        } else {
-          $("#error-phone").text("Не вірно введений номер")
-        }
-        return
-      } else {
-        if (iti.isValidNumber()) {
-          var formattedNumber = iti.getNumber(
-            intlTelInputUtils.numberFormat.NATIONAL,
-          )
-
-          iti.setNumber(formattedNumber)
-          $("#error-phone").text("")
-        } else {
-          $("#error-phone").text("Не вірно введений номер")
-        }
+      if (cleanedNumber.length > maxLength) {
+        cleanedNumber = cleanedNumber.substring(0, maxLength)
       }
-    })
-  }
+
+      input.value = cleanedNumber
+
+      if (iti.isValidNumber()) {
+        var formattedNumber = iti.getNumber(
+          intlTelInputUtils.numberFormat.NATIONAL,
+        )
+        iti.setNumber(formattedNumber)
+        $("#error-phone").text("")
+      } else {
+        $("#error-phone").text("Не вірно введений номер")
+      }
+      return
+    } else {
+      if (iti.isValidNumber()) {
+        var formattedNumber = iti.getNumber(
+          intlTelInputUtils.numberFormat.NATIONAL,
+        )
+
+        iti.setNumber(formattedNumber)
+        $("#error-phone").text("")
+      } else {
+        $("#error-phone").text("Не вірно введений номер")
+      }
+    }
+  })
 
   nameInput.on("input", (e) => {
     if (!e.target || typeof e.target.value !== "string") {
@@ -65,31 +58,23 @@ jQuery(document).ready(function ($) {
     const maxLength = 40
     let value = e.target.value || ""
 
-    // Видаляємо неприпустимі символи
     const sanitizedValue = value.replace(/[^a-zA-ZА-Яа-яЁёІіЇїЄє\s]/g, "")
-    console.log(sanitizedValue, "sanitizedValue")
-    // Оновлюємо значення поля після очищення
-    e.target.value = sanitizedValue
 
-    // Оновлюємо довжину після очищення значення
-    const length = sanitizedValue.trim().length
+    const trimmedValue = sanitizedValue.substring(0, maxLength)
+
+    e.target.value = trimmedValue
+
+    const length = trimmedValue.length
 
     if (length < 2) {
       $("#validation-name").text("Введіть не менше ніж 2 символа")
-    }
-
-    if (length >= 2) {
+    } else {
       $("#validation-name").text("")
     }
 
-    // Обмеження кількості символів
-    if (length > maxLength) {
-      e.target.value = sanitizedValue.substring(0, maxLength)
-    }
-
-    // Оновлюємо текст про поточну довжину
     $("#current-length-name").text(length)
   })
+
   nameInput.on("click", (e) => {
     nameLabel.addClass("active")
   })
@@ -152,7 +137,7 @@ jQuery(document).ready(function ($) {
     e.preventDefault()
 
     const formData = {
-      action: "do_insert_detalies", // Додайте action тут
+      action: "do_insert_detalies",
       name: e.target.name.value,
       phone: iti.getNumber(),
       text: e.target.text.value,
@@ -161,15 +146,12 @@ jQuery(document).ready(function ($) {
     if (formData.name.trim().length < 2) {
       return $("error-name").text("Поле обов’язкове для заповнення")
     }
-
-
     $.ajax({
       url: businessAjax.ajaxurl,
       type: "POST",
-      data: formData, 
+      data: formData,
       success: function (response) {
         $("#form-details-agreement")[0].reset()
-        resetForm()
       },
       error: function (xhr, status, error) {
         console.log(error)

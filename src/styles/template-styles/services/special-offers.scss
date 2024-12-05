@@ -5,13 +5,6 @@
     padding-bottom: 11.25rem;
   }
 
-  & .section_title {
-    @include media_rule($mobile) {
-      padding-right: 6.43rem;
-      padding-left: 6.43rem;
-    }
-  }
-
   .teremok-section__box {
     img {
       height: 36.43rem;
