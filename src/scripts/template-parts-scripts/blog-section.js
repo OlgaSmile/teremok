@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const blogSwiper = new Swiper(".blog__section-mobile-swiper", {
     slidesPerView: 1,
     spaceBetween: 10,
+    loop: true,
     pagination: {
       el: ".blog__swiper-pagination",
       clickable: true,

@@ -263,47 +263,10 @@ const modalTemplate = (index) => {
         </div>
       </div>
       <button type="submit" class="close-button" >
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0.960938 22.7536L22.6833 1.03125M23.0409 22.7536L1.31862 1.03125" stroke="#99B7A2" stroke-linecap="round" />
       </svg>
       </button>
     </form>
     </dialog>`;
 };
-
-// const innerSwiper = new Swiper(".inner_swiper", {
-//   spaceBetween: 10,
-//   slidesPerView: "auto",
-//   freeMode: true,
-//   watchSlidesProgress: true,
-//   navigation: {
-//     nextEl: ".swiper-button-next_in",
-//     prevEl: ".swiper-button-prev_in",
-//   },
-// });
-
-// const accommodationsModalSwiper = new Swiper(".modal-slider-wrapper", {
-//   slidesPerView: 1,
-//   spaceBetween: "auto",
-//   speed: 500,
-//   loop: true,
-//   lazy: {
-//     loadOnTransitionStart: true,
-//     loadPrevNext: true,
-//   },
-//   thumbs: {
-//     swiper: innerSwiper,
-//   },
-//   navigation: {
-//     nextEl: ".swiper-button-next",
-//     prevEl: ".swiper-button-prev",
-//   },
-//   breakpoints: {
-//     576: {
-//       initialSlide: 1,
-//       spaceBetween: 0,
-//       centeredSlides: true,
-//       slidesPerView: "auto",
-//     },
-//   },
-// });
