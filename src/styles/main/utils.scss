@@ -281,6 +281,17 @@ p {
     justify-content: center;
     height: 100%;
 
+    &>.swiper-button-next,
+    .swiper-button-prev {
+      height: calc(100% - 2.5rem);
+      top: 1.25rem;
+      width: 3.75rem;
+      outline-width: 0;
+    }
+  }
+
+  & .modal-swiper-slide {
+    pointer-events: none;
   }
 
   & .inner_swiper {
@@ -306,7 +317,6 @@ p {
         min-width: 100%;
         min-height: 100%;
       }
-
     }
   }
 

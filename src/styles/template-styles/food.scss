@@ -409,11 +409,19 @@
         line-height: 1.3713rem;
         letter-spacing: 0.06em;
 
+        @include media_rule_max($mobile) {
+          text-align: center;
+        }
+
         &_title {
           font-size: 1.5rem;
           font-weight: 700;
           line-height: 1.8288rem;
           letter-spacing: 0.04em;
+
+          @include media_rule_max($mobile) {
+            display: block;
+          }
         }
       }
     }
