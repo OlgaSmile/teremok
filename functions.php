@@ -98,7 +98,7 @@ function wp_teremok_scripts()
         wp_enqueue_script('services-page-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/service-page.js', array(), false, true);
     }
     if (is_singular() && locate_template('templates/business.php')) {
-        wp_enqueue_script('business-page-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/details-agreement-form.js', array(), false, true);
+        wp_enqueue_script('business-page-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/details-agreement-form.js', array('jquery'), false, true);
 
         wp_enqueue_style('intl-tel--style', 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css', array('main'), '17.0.8');
 
