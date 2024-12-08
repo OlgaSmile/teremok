@@ -178,17 +178,23 @@
                 display: flex;
                 gap: 1rem;
                 align-items: center;
+                justify-content: center;
                 font-family: $secondary_font;
                 font-weight: 600;
                 font-size: 1.875rem;
                 text-align: center;
                 margin-bottom: .75rem;
 
+                @include media_rule_max($mobile) {
+                    font-size: 1.25rem;
+                }
+
                 &::before {
                     content: "";
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    flex-shrink: 0;
                     width: 1.5rem;
                     height: 1.5rem;
                     background-size: 1.5rem;
@@ -265,13 +271,19 @@
                 @include media_rule_max($mobile) {
                     margin-top: 1.5rem;
                     margin-bottom: 1rem;
-                    grid-template-columns: 1fr 1fr;
-                    overflow-x: scroll;
+                    grid-template-rows: repeat(3, 1fr);
+                    grid-auto-flow: column;
+                    grid-template-columns: repeat(auto-fit, minmax(17.1875rem, 1fr));
                     overflow-y: hidden;
                     padding: 0.25rem 1rem;
-                    width: 100%;
                     height: fit-content;
+                    width: fit-content;
 
+                }
+
+                &_wrapper {
+                    overflow-x: scroll;
+                    width: 100%;
                     -ms-overflow-style: none;
                     scrollbar-width: none;
 
@@ -301,7 +313,7 @@
                     height: 3rem;
 
                     @include media_rule_max($mobile) {
-                        width: auto;
+                        width: 17.1875rem;
                         padding-left: 0;
                     }
 

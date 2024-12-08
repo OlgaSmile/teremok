@@ -21,7 +21,10 @@ jQuery(document).ready(function ($) {
         .find($(".mphb-room-type-view>.mphb-attribute-value"))
         .detach();
 
-      const roomName = searchWrapper.find($(".mphb-room-type-title")).detach();
+      const roomName = searchWrapper
+        .find($(".mphb-room-type-title"))
+        .addClass("container")
+        .detach();
       const roomGalleryThumb = searchWrapper
         .find($(".gallery-size-thumbnail"))
         .detach();
@@ -272,7 +275,11 @@ jQuery(document).ready(function ($) {
       roomCard.append(descWrapper);
       roomCard.append(slider);
       roomCard.append(roomGalleryThumb);
-      roomCard.append(optionsList);
+      roomCard.append(
+        $(
+          "<div class='accommodations_facilities-list_wrapper container'>"
+        ).append(optionsList)
+      );
       roomCard.append(actionsWrapper);
 
       searchWrapper.append(roomCard);

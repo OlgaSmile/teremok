@@ -4,7 +4,7 @@ if (isset($args['title'])) {
 }
 ?>
 
-<div class="section_title">
+<div class="section_title container">
     <div class="section_title--icon_wrap">
         <div class="anim-items">
             <svg class="section_title--icon small">
