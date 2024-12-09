@@ -109,7 +109,7 @@ $google_maps_address = get_field('google_maps_address', 'option');
 
                 <div class="section-detalies-contacts__wrapper-soccial">
                     <?php if (!empty($telegram)): ?>
-                        <a href="<?php echo $detalies_telegram ?>" target="blank">
+                        <a href="<?php echo $telegram['url'] ?>" target="blank">
                             <?php get_template_part("./template-parts/social_icons", null, array('icon' => 'telegram')); ?>
                             <span>Telegram</span></a>
                     <?php endif ?>
