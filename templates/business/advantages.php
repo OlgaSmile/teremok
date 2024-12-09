@@ -7,6 +7,10 @@ $business_advantages = get_field('business_advantages')
 
 
 <section class="section-advantages">
+  <img class="activities-main__decor-1" src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch-left.png'; ?>">
+
+  <img class="activity-nearby__decor-1" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees1.png'; ?>">
+  <img class="activity-nearby__decor-2" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>">
   <?php if (!empty($title)): ?>
     <?php
     get_template_part("template-parts/section-title", null, array('title' => $title)) ?>

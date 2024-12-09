@@ -7,7 +7,8 @@ $house = get_field('business_houses')
 
 ?>
 
-<section class="section-business-description ">
+<section class="section-business-description">
+
   <?php if (!empty($title)): ?>
     <?php
     get_template_part("template-parts/section-title", null, array('title' => $title)); ?>
@@ -21,8 +22,30 @@ $house = get_field('business_houses')
 
   <?php if (!empty($house)): ?>
     <ul class="houses-list">
-      <?php foreach ($house as $row): ?>
+      <?php foreach ($house as  $index => $row): ?>
         <li class="houses-list__item">
+          <?php if ($index === 0): ?>
+
+            <img class="activity-nearby__decor-1" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees1.png'; ?>">
+            <img class="activity-nearby__decor-2" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>">
+          <?php endif ?>
+
+          <?php if ($index === 2): ?>
+            <img class="section-activity__decor2" src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch.png'; ?>">
+
+          <?php endif ?>
+
+          <?php if ($index === 3): ?>
+            <img class="bussines-item__decor" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>">
+
+          <?php endif ?>
+
+          <?php if ($index === 5): ?>
+            <img class="activities-main__decor-1" src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch-left.png'; ?>">
+
+            <img class="bussines-item__decor2" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>">
+          <?php endif ?>
+
           <div class="houses-list__item-top-content">
             <h2 class="houses-list__title"><?php echo $row['house_name'] ?></h2>
             <p><?php echo $row['house_desc'] ?></p>

@@ -38,6 +38,9 @@ $business_client_title_final = get_field('business_client_title_final')
 
 
 <section class="section-business-success">
+  <img class="activity-nearby__decor-1" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees1.png'; ?>">
+  <img class="section-business-success__decor-1 activity-nearby__decor-1 " src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees1.png'; ?>">
+
   <div class="section-business-success__desktop-title">
     <?php if (!empty($title)): ?>
       <?php

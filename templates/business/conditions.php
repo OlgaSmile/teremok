@@ -10,6 +10,8 @@ $repeater_field =  get_field('conditions');
 
 
 <section class="section-conditions">
+  <img class="activity-nearby__decor-1" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees1.png'; ?>">
+  <img class="activity-nearby__decor-2" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>">
   <div class="teremok-section__desktop-wrapper">
     <div class="teremok-section__box">
 

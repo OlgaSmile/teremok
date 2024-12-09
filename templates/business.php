@@ -11,6 +11,7 @@ $history_img = get_field('business_introduction_owner_photo');
 get_header();
 ?>
 <main>
+
   <div class="business-hero">
 
     <?php get_template_part("template-parts/secondary-hero-section", null, ['img_array' => $hero_reviews_image, "title_section" => get_the_title()]); ?>
@@ -21,8 +22,16 @@ get_header();
         <?php get_template_part("templates/business/detalies-modal") ?>
       </div>
     </div>
+    <img class="activities-main__decor-1" src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch-left.png'; ?>">
   </div>
+
+
+
+
+
+
   <section class="section-business-history">
+    <img class="section-activity__decor2" src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch.png'; ?>">
     <?php if (!empty($histry_title)): ?>
       <?php
       get_template_part("template-parts/section-title", null, array('title' => $histry_title)) ?>
@@ -123,6 +132,9 @@ get_header();
     <?php if (!empty($history_desc)): ?>
       <div class="section-business-history__desc">
         <?php echo $history_desc ?>
+
+
+        <img class="activity-nearby__decor-2" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>">
       </div>
     <?php endif ?>
   </section>
