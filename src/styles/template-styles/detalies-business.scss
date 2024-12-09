@@ -75,7 +75,7 @@
 
     z-index: 99;
     background: url(../../assets/images/reserve-layout.png) #9a9595e6 repeat;
-
+    backdrop-filter: blur(4.5px);
     max-width: 60.75rem;
     padding: 1.87rem 2.68rem;
 
@@ -207,6 +207,9 @@
     right: 0;
     height: 7.43rem;
     width: 12.37rem;
+    @include media_rule_max($mobile) {
+      display: none;
+    }
   }
 
   & .section-activity__decor2-bottom {
