@@ -5,7 +5,11 @@ jQuery(document).ready(function ($) {
   const textarea = $("#text-details")
   const input = document.querySelector("#phone")
 
-  if (window.location.pathname.includes("business")) {
+  const resultPage = window.location.pathname
+    .split("/")
+    .find((el) => el === "business")
+
+  if (resultPage) {
     const iti = window.intlTelInput(input, {
       initialCountry: "ua",
       separateDialCode: true,
