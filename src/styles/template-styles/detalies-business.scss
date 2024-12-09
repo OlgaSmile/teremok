@@ -5,6 +5,10 @@
   position: relative;
   height: 32rem;
 
+  & .activities-main__decor-1 {
+    bottom: -15%;
+  }
+
   @include media_rule($mobile) {
     height: 42.5rem;
   }
@@ -152,7 +156,63 @@
 }
 
 .section-buisness-detalies {
+  position: relative;
   padding-top: 5rem;
+
+  & .section-activity__decor2 {
+    top: 6%;
+  }
+
+  & .activity-nearby__decor-2 {
+    bottom: 83%;
+    left: 4%;
+  }
+
+  & .activity-nearby__decor-2-next {
+    bottom: 70%;
+    left: 0;
+  }
+
+  & .activity-nearby__decor-2-next-2 {
+    bottom: 44%;
+    left: 16%;
+  }
+
+  & .activity-nearby__decor-2-next-3 {
+    bottom: 0;
+    left: 0;
+  }
+
+  & .activity-nearby__decor-1 {
+    bottom: 35%;
+    left: 0;
+  }
+
+  & .section-activity__decor2-right {
+    position: absolute;
+    bottom: 5%;
+    right: 0;
+
+    width: 8.06rem;
+    height: 6.36rem;
+
+    @include media_rule_max($mobile) {
+      display: none;
+    }
+  }
+
+  & .activity-nearby__decor-2-right {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 7.43rem;
+    width: 12.37rem;
+  }
+
+  & .section-activity__decor2-bottom {
+    bottom: 0;
+  }
+
   @include media_rule($mobile) {
     padding-top: 10rem;
   }

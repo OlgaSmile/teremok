@@ -29,6 +29,8 @@ $google_maps_address = get_field('google_maps_address', 'option');
 
 <main>
     <section class="section-hero-detalies">
+        <img class="activities-main__decor-1" src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch-left.png'; ?>">
+
         <img class="section-hero-detalies__img" src="<?php echo $hero_detalies_busuness['url'] ?>" alt="<?php echo esc_attr($hero_detalies_busuness['alt']) ?>">
         <div class="business-detalies-hero-wrapper">
             <?php if (!empty(post_password_required())): ?>
@@ -58,6 +60,15 @@ $google_maps_address = get_field('google_maps_address', 'option');
 
     <?php if (!post_password_required()): ?>
         <section class="section-buisness-detalies">
+            <img class="section-activity__decor2" src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch.png'; ?>">
+            <img class="activity-nearby__decor-2" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>">
+            <img class="activity-nearby__decor-2 activity-nearby__decor-2-next" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>">
+            <img class="activity-nearby__decor-2 activity-nearby__decor-2-next-2" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>">
+            <img class="activity-nearby__decor-1" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees1.png'; ?>">
+            <img class="activity-nearby__decor-2 activity-nearby__decor-2-next-3" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>">
+            <img class="section-activity__decor2 section-activity__decor2-bottom" src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch.png'; ?>">
+            <img class="section-activity__decor2-right" src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch.png'; ?>">
+            <img class="activity-nearby__decor-2-right" src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>">
             <?php if (!empty($detalies_title)): ?>
                 <?php
                 get_template_part("template-parts/section-title", null, array('title' => $detalies_title)) ?>
