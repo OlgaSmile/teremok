@@ -25,8 +25,6 @@ $learn_more = get_field('learn_more', 'options');
         <?php get_template_part("template-parts/section-title", null, array('title' => $services_title));?>
 
         <div class="services-section__content">
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees1.png'; ?>"
-                class="services-section__decor-trees1 decor-trees1" />
             <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>"
                 class="services-section__decor-trees2 decor-trees2" />
 

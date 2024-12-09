@@ -30,7 +30,10 @@
                     <?php the_field('email', 'option');?>
                 </a>
             </div>
-            <div class="footer__phone"><?php the_field('phone', 'option');?>
+            <div class="footer__phone">
+                <a class="footer__email-link" href="tel:<?php the_field('phone', 'option');?>">
+                    <?php the_field('phone', 'option');?>
+                </a>
             </div>
             <ul class="footer__socials">
                 <?php if (get_field('social_links', 'option')): ?>
@@ -93,19 +96,6 @@
             </div>
         </div>
     </div>
-    <!-- <dialog id="sliderModal">
-        <form method="dialog">
-            <p>
-                Loremdddddddddddddddddddddddv d ddddddddddddddddddddddddddddddddddd
-                Loremdddddddddddddddddddddddv d ddddddddddddddddddddddddddddddddddd
-
-                Loremdddddddddddddddddddddddv d ddddddddddddddddddddddddddddddddddd
-
-                Loremdddddddddddddddddddddddv d ddddddddddddddddddddddddddddddddddd
-
-            </p>
-        </form>
-    </dialog> -->
 </footer>
 <?php wp_footer();?>
 </div>
