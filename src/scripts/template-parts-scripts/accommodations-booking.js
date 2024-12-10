@@ -1,6 +1,8 @@
 jQuery(document).ready(function ($) {
   const bookingCheckout = $(".mphb_sc_checkout-wrapper ");
 
+  $("#primary > section").removeClass();
+
   // Title
 
   const pageTitle = bookingCheckout.find($(".mphb-booking-details-title"));
@@ -21,12 +23,10 @@ jQuery(document).ready(function ($) {
 
   function formatCheckDates(element, label, out) {
     const checkDateText = element.find($("time:first-of-type")).text();
-    console.log("checkDateText: ", checkDateText);
     const checkDateTimeText = element
       .find($("time:not(:first-of-type)"))
       .text()
       .split(" ")[0];
-    console.log("checkDateTimeText: ", checkDateTimeText);
 
     element.text("");
     element.append(

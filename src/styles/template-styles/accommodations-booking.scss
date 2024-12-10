@@ -226,7 +226,13 @@
 
         & .not_empty label {
             top: 0.65rem !important;
+
+            @include media_rule_max($mobile) {
+                top: -1.65rem !important;
+            }
         }
+
+
     }
 
     & .mphb-room-price-breakdown-wrapper {
@@ -392,6 +398,15 @@
                 width: 100%;
                 padding-bottom: 0;
             }
+        }
+
+        & .mphb-customer-note {
+            padding-top: 1rem;
+
+        }
+
+        & #mphb_note {
+            padding-top: 0;
         }
 
         & label {
