@@ -32,8 +32,15 @@ $learn_more = get_field('learn_more', 'options');
                 <?php if (get_field('services-section-left-photos')): ?>
                 <?php while (has_sub_field('services-section-left-photos') and get_row_index() <= 2): ?>
                 <div class="services-section__image-mobile-item_wrapper">
-                    <img class="services-section__image-mobile-item"
-                        src="<?php the_sub_field('services-section-left-photo');?>" />
+
+                    <?php if ($is_winter) {
+    $img_url_left_m = get_sub_field('services-section-left-photo_winter');
+} else {
+    $img_url_left_m = get_sub_field('services-section-left-photo');
+}
+;?>
+                    <img class="services-section__image-mobile-item" src="<?php echo $img_url_left_m; ?>" />
+
                 </div>
                 <?php endwhile;?>
                 <?php endif;?>
@@ -62,9 +69,15 @@ $learn_more = get_field('learn_more', 'options');
                 <?php if (get_field('services-section-right-photos')): ?>
                 <?php while (has_sub_field('services-section-right-photos')): ?>
                 <?php if (get_row_index() <= 2): ?>
+                <?php if ($is_winter) {
+    $img_url_right_m = get_sub_field('services-section-right-photo_winter');
+} else {
+    $img_url_right_m = get_sub_field('services-section-right-photo');
+}
+;?>
+
                 <div class="services-section__image-mobile-item_wrapper">
-                    <img class="services-section__image-mobile-item"
-                        src="<?php the_sub_field('services-section-right-photo');?>" />
+                    <img class="services-section__image-mobile-item" src="<?php echo $img_url_right_m; ?>" />
                 </div>
                 <?php endif;?>
 
