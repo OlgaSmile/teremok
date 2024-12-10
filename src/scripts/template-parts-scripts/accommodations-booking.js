@@ -56,6 +56,11 @@ jQuery(document).ready(function ($) {
   const roomNameWrapper = bookingCheckout.find(
     $(".mphb-price-breakdown-accommodation")
   );
+
+  $(".mphb-price-breakdown-accommodation-total")
+    .find("th:first-child()")
+    .text("Загальна вартість житла");
+
   const iconWrapper = roomNameWrapper.find($(".mphb-inner-icon"));
   iconWrapper.text("");
 
