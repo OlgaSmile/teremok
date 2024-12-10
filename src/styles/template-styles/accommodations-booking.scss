@@ -8,6 +8,7 @@
 
     @include media_rule_max($mobile) {
         margin-bottom: 7.5rem;
+        padding-inline: 1rem;
     }
 
     & .mphb-checkout-section,
@@ -363,7 +364,17 @@
             &:has(textarea:focus) label {
                 top: .625rem;
             }
+
+            &:has(#mphb_email:not(:placeholder-shown))label {
+                transform: translateY(-2.125rem);
+
+                @include media_rule_max($mobile) {
+                    transform: translateY(-2.125rem);
+                }
+            }
         }
+
+
 
         & .not_empty label {
             top: .625rem;
