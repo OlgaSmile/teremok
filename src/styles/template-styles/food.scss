@@ -220,6 +220,13 @@
       margin-top: 2.5rem;
 
       @include media_rule($mobile) {
+        width: 100%;
+        padding: 0rem 2rem;
+        margin-top: 5rem;
+        gap: 5rem;
+      }
+
+      @include media_rule($tablet) {
         width: 52.25rem;
         padding: 0rem 3.75rem;
         margin-top: 5rem;
@@ -242,6 +249,13 @@
       @include media_rule($mobile) {
         display: grid;
         grid-template-rows: auto;
+        width: auto;
+        min-height: 100%;
+      }
+
+      @include media_rule($tablet) {
+        display: grid;
+        grid-template-rows: auto;
         width: 18.75rem;
         min-height: 100%;
       }
@@ -260,6 +274,11 @@
       position: relative;
 
       @include media_rule($mobile) {
+        width: 38rem;
+        padding-top: 2.5rem;
+      }
+
+      @include media_rule($tablet) {
         width: 52.25rem;
         padding-top: 2.5rem;
       }

@@ -207,6 +207,9 @@
     right: 0;
     height: 7.43rem;
     width: 12.37rem;
+    @include media_rule_max($mobile) {
+      display: none;
+    }
   }
 
   & .section-activity__decor2-bottom {
