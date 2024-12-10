@@ -40,7 +40,7 @@ jQuery(document).ready(function ($) {
     );
   }
 
-  formatCheckDates(checkInDate, "Дата за'їзду:");
+  formatCheckDates(checkInDate, "Дата заїзду:");
   formatCheckDates(checkOutDate, "Дата виїзду:", true);
 
   const checkWrapper = $(`<div class='check-dates_wrapper'></div>`);
