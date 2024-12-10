@@ -289,6 +289,7 @@
     height: 100%;
     background: url("../../assets/images/bg.jpg") repeat;
     padding: 3.5rem 1rem;
+    overflow-y: scroll;
 
     @include media_rule($mobile) {
       display: none;
@@ -307,22 +308,16 @@
         &>a {
           display: flex;
           align-items: center;
+          text-align: center;
           gap: 1.25rem;
 
-          &::before {
-            content: '';
-            background-image: url('../../assets/images/trees_icon.svg');
-            background-size: cover;
-            display: inline-flex;
-            width: 3.5rem;
-            height: 2.625rem;
-          }
-
+          &::before,
           &::after {
             content: '';
             background-image: url('../../assets/images/trees_icon.svg');
             background-size: cover;
             display: inline-flex;
+            flex-shrink: 0;
             width: 3.5rem;
             height: 2.625rem;
           }

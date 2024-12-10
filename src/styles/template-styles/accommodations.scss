@@ -13,6 +13,10 @@
     &-section {
         @include media_rule_max($mobile) {
             margin-bottom: 5rem;
+
+            & .section_title {
+                padding: 1rem;
+            }
         }
 
         margin-bottom: 7.5rem;

@@ -19,12 +19,14 @@ jQuery(document).ready(function ($) {
   const checkInDate = bookingCheckout.find($(".mphb-check-in-date"));
   const checkOutDate = bookingCheckout.find($(".mphb-check-out-date"));
 
-  function formatCheckDates(element, label) {
+  function formatCheckDates(element, label, out) {
     const checkDateText = element.find($("time:first-of-type")).text();
+    console.log("checkDateText: ", checkDateText);
     const checkDateTimeText = element
       .find($("time:not(:first-of-type)"))
       .text()
       .split(" ")[0];
+    console.log("checkDateTimeText: ", checkDateTimeText);
 
     element.text("");
     element.append(
@@ -32,14 +34,14 @@ jQuery(document).ready(function ($) {
         `<div class="mphb-check-in-date_label">${label}</div>
         <div class="mphb-check-in-date_text">
             <span>${checkDateText}</span>
-            <span>з ${checkDateTimeText}</span>
+            <span>${out ? "до" : "з"} ${checkDateTimeText}</span>
         </div>`
       )
     );
   }
 
   formatCheckDates(checkInDate, "Дата за'їзду:");
-  formatCheckDates(checkOutDate, "Дата виїзду:");
+  formatCheckDates(checkOutDate, "Дата виїзду:", true);
 
   const checkWrapper = $(`<div class='check-dates_wrapper'></div>`);
 
@@ -56,6 +58,11 @@ jQuery(document).ready(function ($) {
   const roomNameWrapper = bookingCheckout.find(
     $(".mphb-price-breakdown-accommodation")
   );
+
+  $(".mphb-price-breakdown-accommodation-total")
+    .find("th:first-child()")
+    .text("Загальна вартість житла");
+
   const iconWrapper = roomNameWrapper.find($(".mphb-inner-icon"));
   iconWrapper.text("");
 
@@ -70,11 +77,19 @@ jQuery(document).ready(function ($) {
   const nameInput = bookingCheckout.find($(".mphb-customer-name > label"));
   nameInput.text("Ваше ім’я та прізвище");
 
+  bookingCheckout.find($(".mphb-customer-email > label")).text("Ваш email");
+  // emailInput.text("Ваш email");
+
   const phoneInput = bookingCheckout.find($(".mphb-customer-phone > label"));
   phoneInput.text("Ваш номер телефону");
 
   const noteInput = bookingCheckout.find($(".mphb-customer-note > label"));
   noteInput.text("Ваш коментар");
+
+  emailInput = bookingCheckout.find($(".mphb-customer-email > input"));
+  emailInputText = emailInput.val();
+
+  emailInput.attr("placeholder", " ");
 
   bookingCheckout.find($(".mphb-customer-last-name>input")).val("_");
   bookingCheckout.find($(".mphb-customer-country>input")).val("Ukraine");
@@ -114,10 +129,10 @@ jQuery(document).ready(function ($) {
   $(".mphb_sc_checkout-wrapper").css("display", "block");
 });
 
-function checkIfEmpty(element, wrapper) {
+function checkIfEmpty(element, wrapper, length) {
   if (element.value.trim() === "") {
     wrapper.classList.remove("not_empty");
-  } else if (element.value.trim().length < 10) {
+  } else if (element.value.trim().length < length) {
     wrapper.classList.add("not_empty");
     wrapper.classList.add("to_short");
   } else {
@@ -132,13 +147,13 @@ if (textarea) {
   const textareaWrapper = document.querySelector(".mphb-customer-note");
 
   textarea.addEventListener("input", () =>
-    checkIfEmpty(textarea, textareaWrapper)
+    checkIfEmpty(textarea, textareaWrapper, 10)
   );
   textarea.addEventListener("blur", () =>
-    checkIfEmpty(textarea, textareaWrapper)
+    checkIfEmpty(textarea, textareaWrapper, 10)
   );
 
-  checkIfEmpty(textarea, textareaWrapper);
+  checkIfEmpty(textarea, textareaWrapper, 10);
 }
 
 const guestInput = document.getElementById("mphb_room_details-0-guest-name");
@@ -147,11 +162,11 @@ if (guestInput) {
   const guestInputWrapper = document.querySelector(".mphb-guest-name-wrapper");
 
   guestInput.addEventListener("input", () =>
-    checkIfEmpty(guestInput, guestInputWrapper)
+    checkIfEmpty(guestInput, guestInputWrapper, 10)
   );
   guestInput.addEventListener("blur", () =>
-    checkIfEmpty(guestInput, guestInputWrapper)
+    checkIfEmpty(guestInput, guestInputWrapper, 10)
   );
 
-  checkIfEmpty(guestInput, guestInputWrapper);
+  checkIfEmpty(guestInput, guestInputWrapper, 10);
 }
