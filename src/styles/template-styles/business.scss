@@ -54,6 +54,18 @@
     top: 10.56rem;
   }
 
+  & .activities-main__decor-1 {
+    bottom: -6rem;
+
+    width: 8.06rem;
+    height: 6.36rem;
+
+    @include media_rule_max($mobile) {
+      width: 6.06rem;
+      bottom: -5rem;
+      height: 5.36rem;
+    }
+  }
   &__bottom-wrapper {
     display: flex;
     align-items: center;
@@ -70,7 +82,18 @@
 }
 
 .section-business-history {
+  position: relative;
   padding-top: 5rem;
+
+  & .section-activity__decor2 {
+    top: 13rem;
+  }
+
+  & .activity-nearby__decor-2 {
+    top: 50%;
+    left: 0;
+  }
+
   @include media_rule($mobile) {
     padding-top: 10rem;
   }
@@ -126,7 +149,9 @@
 }
 
 .section-business-description {
+  position: relative;
   padding-bottom: 5rem;
+
   @include media_rule($mobile) {
     padding-bottom: 11.25rem;
   }
@@ -159,11 +184,53 @@
 
   & .houses-list {
     &__item {
+      position: relative;
       margin-bottom: 1rem;
       @include media_rule($mobile) {
         margin-bottom: 7.5rem;
       }
 
+      & .activity-nearby__decor-1 {
+        top: 15%;
+        right: 20%;
+      }
+
+      & .activity-nearby__decor-2 {
+        top: 19%;
+        right: 20%;
+      }
+
+      & .section-activity__decor2 {
+        top: 25%;
+      }
+
+      & .bussines-item__decor {
+        position: absolute;
+        right: 0 !important;
+
+        height: 7.43rem;
+        width: 12.37rem;
+
+        @include media_rule_max($mobile) {
+          display: none;
+        }
+      }
+
+      & .bussines-item__decor2 {
+        position: absolute;
+        right: 2% !important;
+        top: 20%;
+        height: 7.43rem;
+        width: 12.37rem;
+
+        @include media_rule_max($mobile) {
+          display: none;
+        }
+      }
+
+      & .activities-main__decor-1 {
+        top: 0;
+      }
       &:last-child {
         margin-bottom: 0;
       }
@@ -343,6 +410,19 @@
 }
 
 .section-conditions {
+  position: relative;
+
+  & .activity-nearby__decor-2 {
+    top: -3%;
+    left: 75%;
+    z-index: -1;
+  }
+
+  & .activity-nearby__decor-1 {
+    bottom: 82%;
+    right: 74%;
+    z-index: -1;
+  }
   padding-bottom: 5rem;
   @include media_rule($mobile) {
     padding-bottom: 11.25rem;
@@ -414,7 +494,21 @@
 }
 
 .section-advantages {
+  position: relative;
   padding-bottom: 5rem;
+  & .activities-main__decor-1 {
+    bottom: 20rem;
+  }
+  & .activity-nearby__decor-2 {
+    bottom: 100%;
+  }
+
+  & .activity-nearby__decor-1 {
+    bottom: 62%;
+    right: 0;
+    height: 5.62rem;
+  }
+
   @include media_rule($mobile) {
     padding-bottom: 11.25rem;
   }
@@ -473,9 +567,21 @@
 }
 
 .section-business-success {
+  position: relative;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 5rem;
+
+  & .activity-nearby__decor-1 {
+    bottom: 90%;
+    right: 85%;
+  }
+
+  & .section-business-success__decor-1 {
+    bottom: 40%;
+    right: 0%;
+  }
+
   @include media_rule($mobile) {
     padding-bottom: 11.25rem;
   }
