@@ -58,6 +58,8 @@ jQuery(document).ready(function ($) {
         swiperWrapper.append(swiperSlide);
 
         swiperSlide.on("click", function () {
+          $("body").attr("style", "overflow:hidden");
+          document.addEventListener("keydown", closeDialog);
           $(`#sliderModal${index + 2}`)[0].showModal();
         });
       });
@@ -105,6 +107,26 @@ jQuery(document).ready(function ($) {
           $(`#sliderModal${index + 2}`)[0].showModal();
         }
       );
+
+      const closeDialog = (e) => {
+        if (e.code === "Escape") {
+          document.body.style.overflow = "";
+          document.removeEventListener("keydown", closeDialog);
+        }
+      };
+
+      const closeDialogModal = () => {
+        document.body.style.overflow = "";
+        document.removeEventListener("keydown", closeDialog);
+      };
+
+      const closeButton = document.querySelector(
+        `#sliderModal${index + 2}_close-button`
+      );
+
+      if (closeButton) {
+        closeButton.addEventListener("click", closeDialogModal);
+      }
 
       const s = searchWrapper
         .find($(".accommodations-inner_swiper"))

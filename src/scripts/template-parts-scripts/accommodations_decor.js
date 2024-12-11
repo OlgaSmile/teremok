@@ -262,7 +262,7 @@ const modalTemplate = (index) => {
           <div class="swiper-button-prev_in"></div>
         </div>
       </div>
-      <button type="submit" class="close-button" >
+      <button type="submit" id='${id}_close-button' class="close-button" >
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0.960938 22.7536L22.6833 1.03125M23.0409 22.7536L1.31862 1.03125" stroke="#99B7A2" stroke-linecap="round" />
       </svg>
