@@ -13,13 +13,21 @@ jQuery(document).ready(function ($) {
   const roomPrice = roomWrapper.find($(".mphb-regular-price"));
 
   const prise = roomPrice.find($(".mphb-price")).text();
-  const prisePeriod = Number(
-    roomPrice.find($(".mphb-price-period")).text().split(" ")[1]
-  );
+  const prisePeriod = roomPrice
+    .find($(".mphb-price-period"))
+    .text()
+    .split(" ")[1];
   const priseByPeriod = `${prise.split("").splice(1, prise.length).join("")}`;
   const priseNumber = priseByPeriod.split(",").join("");
   const nFormat = new Intl.NumberFormat(undefined);
-  const priceByNight = Number(priseNumber) / Number(prisePeriod);
+
+  let priceByNight;
+  if (typeof prisePeriod !== "number") {
+    priceByNight = priseNumber;
+  } else {
+    priceByNight = Number(priseNumber) / Number(prisePeriod);
+  }
+
   const priseText = `${nFormat.format(priceByNight)} грн/доба`;
 
   roomPrice.empty().append(`<span class='price_text'>${priseText}</span>`);
@@ -64,28 +72,37 @@ jQuery(document).ready(function ($) {
   const sliderWrapper = roomWrapper.find(
     $(".modal-slider-wrapper>.swiper-wrapper")
   );
-  const innerSliderWrapper = roomWrapper.find(
-    $(".modal-slider-wrapper .inner_swiper-wrapper")
-  );
 
   $(galleryImagesList).each(function () {
     const img = $(this);
-    const innerImg = img.clone();
 
     const item = $("<div class='swiper-slide modal-swiper-slide'></div>");
     item.append(img);
     sliderWrapper.append(item);
-
-    const innerSliderItem = $(
-      '<div class="swiper-slide inner_swiper-slide"></div>'
-    );
-    innerSliderItem.append(innerImg);
-    innerSliderWrapper.append(innerSliderItem);
   });
+
+  const closeDialog = (e) => {
+    if (e.code === "Escape") {
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", closeDialog);
+    }
+  };
+
+  const closeDialogModal = () => {
+    document.body.style.overflow = "";
+    document.removeEventListener("keydown", closeDialog);
+  };
 
   $(".single-room_wrapper .swiper-slide").on("click", function () {
+    $("body").attr("style", "overflow:hidden");
+    document.addEventListener("keydown", closeDialog);
     $("#sliderModal1")[0].showModal();
   });
+
+  const closeButton = document.querySelector("#sliderModal1_close-button");
+  if (closeButton) {
+    closeButton.addEventListener("click", closeDialogModal);
+  }
 
   // Удобства
 
@@ -224,9 +241,6 @@ jQuery(document).ready(function ($) {
       lazy: {
         loadOnTransitionStart: true,
         loadPrevNext: true,
-      },
-      thumbs: {
-        swiper: innerSwiper,
       },
       navigation: {
         nextEl: ".swiper-button-next",
