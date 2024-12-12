@@ -2,7 +2,7 @@
 $hero_reviews_image = get_field('reviews_main_photo');
 $feedbacks_full_name = get_field('feedbacks_full_name');
 
-$current_page = !empty($_GET['paged']) ? $_GET['paged'] : 1;
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 $btn_name = get_field('read_all', 'options');
 ?>
@@ -30,7 +30,7 @@ $btn_name = get_field('read_all', 'options');
       'posts_per_page' => 8,
       'orderby' => 'modified',
       'post_status' => 'publish',
-      'paged' => $current_page
+      'paged' => $paged
     );
 
     $query = new WP_Query($args);
