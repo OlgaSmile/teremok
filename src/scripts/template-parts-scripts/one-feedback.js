@@ -106,7 +106,6 @@ function extractNumbersFromString(str) {
 
   $(".modal-swiper-backdrop").on("click", function (e) {
     if (e.target === e.currentTarget) {
-
       closeIamgeModal()
     }
   })
@@ -149,24 +148,89 @@ function extractNumbersFromString(str) {
   })
 
   // description visable btn
+
   $(window).on("resize load", function () {
     const block = $(".reviews-section__description")
     const windowWidth = $(window).width()
 
     block.each((idx, el) => {
       const $el = $(el)
-      const visableLines = $el.data("lines") || windowWidth <= 575.98 ? 5 : 7
-      const lineHeight = parseFloat($el.css("line-height"))
 
-      const maxHeight = lineHeight * visableLines
+      // Визначаємо кількість видимих рядків
+      const visibleLines = $el.data("lines") || (windowWidth <= 575.98 ? 5 : 6)
+      const lineHeight = parseFloat($el.css("line-height")) // Висота одного рядка
+      const maxHeight = lineHeight * visibleLines // Максимальна висота
 
-      if ($el[0].scrollHeight > maxHeight) {
+      console.log(
+        `Елемент #${idx}: maxHeight=${maxHeight}, lineHeight=${lineHeight}`,
+      )
+
+      // Перевіряємо, чи потрібно обрізати текст
+      console.log($el[0].scrollHeight)
+
+      let scrollHeight = $el[0].scrollHeight - 20
+      if (scrollHeight > maxHeight) {
+        $el.css({
+          "max-height": maxHeight + "px",
+          overflow: "hidden",
+          display: "-webkit-box",
+          "-webkit-box-orient": "vertical",
+          "-webkit-line-clamp": visibleLines,
+        })
+
+        // Показуємо кнопку
         const id = extractNumbersFromString($el[0].id)
 
         $(`#btn-wrapper-${id}`).addClass("visable")
+      } else {
+        // Якщо текст не обрізаний, скидаємо стилі
+        $el.css({
+          "max-height": "",
+          overflow: "",
+          display: "",
+          "-webkit-box-orient": "",
+          "-webkit-line-clamp": "",
+        })
+
+        $el.next(".btn-wrapper").removeClass("visable")
       }
     })
   })
 })(window.jQuery)
 
 // 417 496
+
+/*   $(window).on("resize load", function () {
+    const block = $(".reviews-section__description")
+    const windowWidth = $(window).width()
+
+    block.each((idx, el) => {
+      const $el = $(el)
+      const visableLines = $el.data("lines") || windowWidth <= 575.98 ? 5 : 6
+      const lineHeight = parseFloat($el.css("line-height"))
+
+      const maxHeight = lineHeight * visableLines
+
+      /*       if ($el[0].scrollHeight > maxHeight) {
+        $(`desc-${id}`).addClass("reviews-text-hiddenn")
+        const id = extractNumbersFromString($el[0].id)
+
+        $(`#btn-wrapper-${id}`).addClass("visable")
+      } */
+
+/*       if ($el[0].scrollHeight > maxHeight) {
+        $(`desc-${id}`).css({
+          "max-height": maxHeight + "px",
+          overflow: "hidden",
+          display: "-webkit-box",
+          "-webkit-box-orient": "vertical",
+          "-webkit-line-clamp": visibleLines,
+        })
+
+        // Показуємо кнопку
+        const id = extractNumbersFromString($el[0].id)
+
+        $(`#btn-wrapper-${id}`).addClass("visable")
+      } */
+/*     })
+  }) */

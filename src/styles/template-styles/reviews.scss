@@ -292,7 +292,6 @@
   overflow: hidden;
   -webkit-line-clamp: 4;
   max-height: 4.56rem;
-
   @include media_rule($mobile) {
     -webkit-line-clamp: 6;
     max-height: 10.71rem;
