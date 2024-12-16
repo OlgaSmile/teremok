@@ -400,6 +400,10 @@
             }
         }
 
+        & .mphb-customer-note>textarea {
+            min-width: 100%;
+        }
+
         & .mphb-customer-note {
             padding-top: 1rem;
 
