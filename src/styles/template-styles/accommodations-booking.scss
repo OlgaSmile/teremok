@@ -8,7 +8,6 @@
 
     @include media_rule_max($mobile) {
         margin-bottom: 7.5rem;
-        padding-inline: 1rem;
     }
 
     & .mphb-checkout-section,
@@ -16,7 +15,7 @@
         width: 43.75rem;
         margin: 0 auto 2rem auto;
         padding: 1.5rem;
-        border: .0625rem solid $grey_green;
+        border: 0.0625rem solid $grey_green;
 
         @include media_rule_max($mobile) {
             width: 100%;
@@ -61,7 +60,7 @@
 
             & .mphb-check-in-date_text {
                 display: flex;
-                gap: .625rem;
+                gap: 0.625rem;
                 line-height: normal;
             }
         }
@@ -117,7 +116,6 @@
                     flex-shrink: 0;
                 }
             }
-
         }
     }
 
@@ -132,7 +130,7 @@
         .mphb-room-type-title {
             margin: 0 auto 2rem auto;
             padding: 1.5rem;
-            border: .0625rem solid $grey_green;
+            border: 0.0625rem solid $grey_green;
 
             @include media_rule_max($mobile) {
                 border: none;
@@ -160,7 +158,6 @@
                 font-weight: 500;
                 font-size: 1.125rem;
                 letter-spacing: 0.06em;
-
             }
         }
 
@@ -183,7 +180,7 @@
             position: relative;
 
             &:has(input:focus) label {
-                top: .625rem;
+                top: 0.625rem;
 
                 @include media_rule_max($mobile) {
                     top: -1.25rem;
@@ -192,7 +189,7 @@
 
             & input {
                 border: none;
-                border-bottom: .0625rem solid $grey_green;
+                border-bottom: 0.0625rem solid $grey_green;
                 width: 25rem;
                 height: 3.375rem;
                 min-height: 3.375rem;
@@ -204,8 +201,6 @@
                     padding: 0 !important;
                 }
             }
-
-
 
             & label {
                 position: absolute;
@@ -231,12 +226,9 @@
                 top: -1.65rem !important;
             }
         }
-
-
     }
 
     & .mphb-room-price-breakdown-wrapper {
-
         & tbody {
             transition: all 500ms linear;
 
@@ -283,11 +275,9 @@
             justify-content: flex-end;
         }
 
-
         & .mphb-price-breakdown-expand {
             display: flex;
             align-items: center;
-
 
             font-weight: 600;
             font-size: 1rem;
@@ -307,7 +297,13 @@
         & .mphb-price-breakdown {
             & tr {
                 height: 1.875rem;
-                padding-bottom: .5rem;
+                margin-bottom: 1rem;
+
+                @include media_rule_max($mobile) {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
             }
         }
 
@@ -324,7 +320,6 @@
             font-weight: 700;
             font-size: 1.125rem;
         }
-
 
         & .mphb-price-breakdown-rate {
             display: none;
@@ -368,7 +363,7 @@
             }
 
             &:has(textarea:focus) label {
-                top: .625rem;
+                top: 0.625rem;
             }
 
             &:has(#mphb_email:not(:placeholder-shown))label {
@@ -380,16 +375,14 @@
             }
         }
 
-
-
         & .not_empty label {
-            top: .625rem;
+            top: 0.625rem;
         }
 
         & input,
         textarea {
             border: none;
-            border-bottom: .0625rem solid $grey_green;
+            border-bottom: 0.0625rem solid $grey_green;
             width: 25rem;
             height: 3.375rem;
             min-height: 3.375rem;
@@ -406,7 +399,6 @@
 
         & .mphb-customer-note {
             padding-top: 1rem;
-
         }
 
         & #mphb_note {
@@ -437,14 +429,14 @@
         .mphb-customer_desc {
             @include media_rule_max($mobile) {
                 font-weight: 400;
-                font-size: .75rem;
-                margin-bottom: .5rem;
+                font-size: 0.75rem;
+                margin-bottom: 0.5rem;
             }
         }
 
         & .mphb-customer_policy {
             font-weight: 400;
-            font-size: .75rem;
+            font-size: 0.75rem;
             line-height: 130%;
             color: $grey_green;
 
@@ -496,8 +488,8 @@
             color: $green;
 
             @include media_rule_max($mobile) {
-                border-radius: .375rem;
-                padding: .25rem .625rem;
+                border-radius: 0.375rem;
+                padding: 0.25rem 0.625rem;
                 width: fit-content;
                 height: 2.5rem;
                 background-color: $green;
@@ -527,7 +519,7 @@
     }
 
     & .not_empty label {
-        top: .625rem;
+        top: 0.625rem;
     }
 }
 
