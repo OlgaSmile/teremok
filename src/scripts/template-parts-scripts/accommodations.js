@@ -145,7 +145,6 @@ jQuery(document).ready(function ($) {
           loop: true,
           simulateTouch: true,
           allowTouchMove: true,
-
           effect: effect || "slide",
           lazy: {
             loadOnTransitionStart: true,
@@ -174,7 +173,7 @@ jQuery(document).ready(function ($) {
               centeredSlides: true,
               slidesPerView: "auto",
               grabCursor: false,
-              speed: 1000,
+              speed: 700,
               keyboard: {
                 enabled: true,
                 onlyInViewport: true,
