@@ -244,6 +244,15 @@ p {
   min-width: 100vw;
   min-height: 100vh;
 
+  @include media_rule_max($mobile) {
+    background: #000;
+
+    & .swiper-slide {
+      padding: .3125rem;
+      background: #000;
+    }
+  }
+
   .swiper-wrapper {
     align-items: center;
     height: auto;
@@ -290,10 +299,6 @@ p {
     }
   }
 
-  & .modal-swiper-slide {
-    pointer-events: none;
-  }
-
   & .inner_swiper {
     display: flex;
     justify-content: center;
@@ -320,6 +325,15 @@ p {
     }
   }
 
+  & .swiper-button {
+
+    &-next,
+    &-prev {
+      @include media_rule_max($mobile) {
+        display: none;
+      }
+    }
+  }
 
   & .swiper-slide {
     display: flex;

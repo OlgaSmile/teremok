@@ -132,46 +132,58 @@ jQuery(document).ready(function ($) {
         .find($(".accommodations-inner_swiper"))
         .addClass(`accommodations-inner_swiper-${index}`);
 
-      // -----------------------
-      const innerSwiperA = new Swiper(`.accommodations-inner_swiper-${index}`, {
-        spaceBetween: 10,
-        slidesPerView: "auto",
-        freeMode: true,
-        watchSlidesProgress: true,
-        navigation: {
-          nextEl: ".swiper-button-next_in",
-          prevEl: ".swiper-button-prev_in",
-        },
-      });
+      // -----------------------  init slider -----------------
+
+      const screenWidth = window.innerWidth;
+      const effect = screenWidth < 576 ? "creative" : "slide";
 
       const accommodationsModalSwiperA = new Swiper(
         ".accommodations-modal-slider-wrapper",
         {
           slidesPerView: 1,
-          spaceBetween: "auto",
-          speed: 500,
+          spaceBetween: 10,
           loop: true,
+          simulateTouch: true,
+          allowTouchMove: true,
+
+          effect: effect || "slide",
           lazy: {
             loadOnTransitionStart: true,
             loadPrevNext: true,
-          },
-          thumbs: {
-            swiper: innerSwiperA,
           },
           navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
           },
           breakpoints: {
+            0: {
+              grabCursor: true,
+              creativeEffect: {
+                prev: {
+                  shadow: true,
+                  translate: ["-20%", 0, -1],
+                },
+                next: {
+                  translate: ["100%", 0, 0],
+                },
+              },
+            },
             576: {
               initialSlide: 1,
               spaceBetween: 0,
               centeredSlides: true,
               slidesPerView: "auto",
+              grabCursor: false,
+              speed: 1000,
+              keyboard: {
+                enabled: true,
+                onlyInViewport: true,
+              },
             },
           },
         }
       );
+
       //-------------------------
 
       const roomDesc = searchWrapper.find($("p:first-of-type")).detach();

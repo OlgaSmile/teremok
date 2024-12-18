@@ -109,9 +109,7 @@ jQuery(document).ready(function ($) {
   const facilities = roomWrapper.find($(".mphb-room-type-facilities")).detach();
 
   const prevOptionsList = facilities.find(".mphb-attribute-value").children();
-  const optionsList = $("<ul></ul>").addClass(
-    "accommodations_facilities-list container"
-  );
+  const optionsList = $("<ul></ul>").addClass("accommodations_facilities-list");
   const optionsItem = $("<li></li>").addClass("accommodations_facilities-item");
 
   optionsItem.append(
@@ -164,7 +162,9 @@ jQuery(document).ready(function ($) {
 
   roomWrapper.find($(".mphb-single-room-type-attributes")).remove();
 
-  optionsList.insertAfter(slider);
+  $("<div class='accommodations_facilities-list_wrapper container'>")
+    .append(optionsList)
+    .insertAfter(slider);
 
   // Опис
 
@@ -220,24 +220,21 @@ jQuery(document).ready(function ($) {
     }
   );
 
-  const innerSwiper = new Swiper(".single_room-inner_swiper", {
-    spaceBetween: 10,
-    slidesPerView: "auto",
-    freeMode: true,
-    watchSlidesProgress: true,
-    navigation: {
-      nextEl: ".swiper-button-next_in",
-      prevEl: ".swiper-button-prev_in",
-    },
-  });
+  //------------------------- init modal slider -----------------
+
+  const screenWidth = window.innerWidth;
+  const effect = screenWidth < 576 ? "creative" : "slide";
 
   const accommodationsModalSwiper = new Swiper(
     ".single_room-modal-slider-wrapper",
     {
       slidesPerView: 1,
-      spaceBetween: "auto",
-      speed: 500,
+      spaceBetween: 10,
       loop: true,
+      simulateTouch: true,
+      allowTouchMove: true,
+      speed: 1000,
+      effect: effect || "slide",
       lazy: {
         loadOnTransitionStart: true,
         loadPrevNext: true,
@@ -247,11 +244,28 @@ jQuery(document).ready(function ($) {
         prevEl: ".swiper-button-prev",
       },
       breakpoints: {
+        0: {
+          grabCursor: true,
+          creativeEffect: {
+            prev: {
+              shadow: true,
+              translate: ["-20%", 0, -1],
+            },
+            next: {
+              translate: ["100%", 0, 0],
+            },
+          },
+        },
         576: {
           initialSlide: 1,
           spaceBetween: 0,
           centeredSlides: true,
           slidesPerView: "auto",
+          grabCursor: false,
+          keyboard: {
+            enabled: true,
+            onlyInViewport: true,
+          },
         },
       },
     }
