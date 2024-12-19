@@ -200,6 +200,7 @@
             display: flex;
             flex-direction: column;
             gap: .625rem;
+            font-size: .875rem;
             line-height: 1.2188rem;
             letter-spacing: 0.04em;
             text-align: left;
@@ -213,10 +214,12 @@
             & p {
                 text-indent: 1.5rem;
                 line-height: inherit;
+                font-size: inherit;
             }
 
             & li {
                 line-height: inherit;
+                font-size: inherit;
             }
         }
     }
