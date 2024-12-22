@@ -42,10 +42,10 @@
 
                 <li class="footer__socials-item">
                     <a href="<?php the_sub_field('social_link');?>" target="blank"
-                        aria-label="<?php the_sub_field('social_name');?>"></a>
-                    <div class="footer__socials-svg footer__socials-<?php the_sub_field('social_name');?>">
-                        <?php get_template_part("./template-parts/social_icons", null, array('icon' => $icon_name));?>
-                    </div>
+                        aria-label="<?php the_sub_field('social_name');?>">
+                        <div class="footer__socials-svg footer__socials-<?php the_sub_field('social_name');?>">
+                            <?php get_template_part("./template-parts/social_icons", null, array('icon' => $icon_name));?>
+                        </div>
                     </a>
                 </li>
                 <?php endwhile;?>
@@ -59,7 +59,7 @@
         <div class="footer__policy-item footer__policy-item_wrapper">
             <span class="footer__policy-item footer__policy-item_date">ТЕРЕМОК &#169; 2024</span>
             <div class="footer__policy-item footer__policy-item_country">Cайт розроблено
-                <a href="https://webjungle.top" target="blank">
+                <a href="https://webjungle.top" target="blank" aria-label="розробник сайту">
                     <svg width="60" height="26" viewBox="0 0 60 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g filter="url(#filter0_d_1551_16073)">
                             <path
