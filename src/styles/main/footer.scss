@@ -125,28 +125,10 @@
     &-svg {
 
       & svg {
-        // stroke: $main_text;
         width: 1.75rem;
-        height: 1.8125rem;
+        height: 1.75rem;
       }
-
-      // &:hover svg {
-      //   stroke: $orange;
-      // }
     }
-
-    // &-viber {
-
-    //   & svg {
-    //     fill: $main_text;
-    //     stroke: transparent;
-    //   }
-
-    //   &:hover svg {
-    //     stroke: transparent;
-    //     fill: $orange;
-    //   }
-    // }
 
     & img:hover {
       fill: $orange;
@@ -161,6 +143,11 @@
     &-item {
       width: 1.75rem;
       height: 1.75rem;
+
+      & a {
+        width: 100%;
+        height: 100%;
+      }
     }
 
     &-icon {
