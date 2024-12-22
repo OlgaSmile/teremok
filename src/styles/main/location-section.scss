@@ -134,8 +134,11 @@
     }
 
     &-image {
-      width: auto;
-      height: 90%;
+      min-width: 100%;
+      min-height: 100%;
+      height: auto;
+      object-fit: cover;
+
 
       @include media_rule_max($mobile) {
         height: 150%

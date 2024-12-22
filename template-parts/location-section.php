@@ -13,7 +13,7 @@ get_template_part("template-parts/section-title", null, array('title' => $locati
     <div class="location-section__map">
         <a class="location-section__map-link" href="<?php echo esc_url($google_maps_address['url']); ?>"
             target="<?php echo $google_maps_address['target']; ?>">
-            <img class="location-section__map-image" src="<?php echo $location_image; ?>" />
+            <img class="location-section__map-image" src="<?php echo $location_image; ?>" alt="Мапа розташування" />
         </a>
         <a class="location-section__map-pin" href="<?php echo esc_url($google_maps_address['url']); ?>"
             target="<?php echo $google_maps_address['target']; ?>">
