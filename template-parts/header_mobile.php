@@ -31,7 +31,7 @@
             </div>
 
             <div class="header-mobile__open-btn">
-                <button popovertarget="mobile-menu">
+                <button popovertarget="mobile-menu" type="button" aria-label="Меню">
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_2151_9863)">
                             <line y1="-0.75" x2="38" y2="-0.75" transform="matrix(1 0 0 -1 1 30)" stroke="white"

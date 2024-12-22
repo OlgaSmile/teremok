@@ -15,7 +15,7 @@ $heroImg = get_field('search-result-img')
         <div class="wrapper-search-hero">
             <img src="<?php echo $heroImg['url'] ?>" alt="<?php echo $heroImg['alt'] ?>">
             <div class="reserve-section__position-box-reserve">
-                <?php get_template_part("template-parts/search-reserv") ?>
+                <?php get_template_part("template-parts/search-reserv")?>
             </div>
         </div>
     </section>
@@ -24,7 +24,7 @@ $heroImg = get_field('search-result-img')
 
     <section class="section-search-result">
         <?php
-        get_template_part("template-parts/section-title-secondary", null, array('title' => get_field('search_result_title', 'options'))) ?>
+get_template_part("template-parts/section-title-secondary", null, array('title' => get_field('search_result_title', 'options')))?>
 
         <div class="container">
             <?php echo do_shortcode('[mphb_search_results class="search-result"]'); ?>
@@ -36,10 +36,10 @@ $heroImg = get_field('search-result-img')
     </section>
 
     <?php
-    get_template_part("template-parts/feedbacks-section");
-    get_template_part("template-parts/location-section");
-    ?>
+get_template_part("template-parts/feedbacks-section");
+get_template_part("template-parts/location-section");
+?>
 </main>
 
 
-<?php get_footer(); ?>
+<?php get_footer();?>

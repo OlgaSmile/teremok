@@ -5,4 +5,4 @@ if (isset($args['text'])) {
 ;?>
 
 
-<button class="booking_btn"><?php echo $text; ?></button>
+<button type="button" class="booking_btn"><?php echo $text; ?></button>

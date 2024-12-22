@@ -30,9 +30,9 @@ $img_reserve = get_field('img_reserve')
     <div class="food__hero-section">
         <?php get_template_part("template-parts/secondary-hero-section", null, ['img_array' => $hero_food_image, "title_section" => get_the_title()]);?>
         <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>"
-            class="food__hero-section_decor-trees2 decor-trees2" />
+            class="food__hero-section_decor-trees2 decor-trees2" alt="" />
         <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-mount.png'; ?>"
-            class="food__hero-section_decor-mount decor-mount" />
+            class="food__hero-section_decor-mount decor-mount" alt="" />
     </div>
 
     <section class="food__introduction-section">
@@ -40,14 +40,14 @@ $img_reserve = get_field('img_reserve')
             <?php get_template_part("template-parts/animated_title_trees");?>
 
             <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch.png'; ?>"
-                class="food__introduction-section_decor-branch decor-branch" />
+                class="food__introduction-section_decor-branch decor-branch" alt="" />
             <h2 class="food__introduction-section_title"><?php echo get_field('food_introduction_title'); ?></h2>
             <div class="food__introduction-section_text"><?php echo get_field('food_introduction_text'); ?></div>
             <div class="food__introduction-section_photo-wrapper">
                 <img class="food__introduction-section_photo-frame"
-                    src="<?php echo get_template_directory_uri() . '/assets/images/frame.svg'; ?>" />
+                    src="<?php echo get_template_directory_uri() . '/assets/images/frame.svg'; ?>" alt="" />
                 <img class="food__introduction-section_photo"
-                    src="<?php echo get_field('food_introduction_owner_photo'); ?>" />
+                    src="<?php echo get_field('food_introduction_owner_photo'); ?>" alt="Фото власниці" />
             </div>
             <div class="food__introduction-section_owner-name"><?php echo get_field('food_introduction_owner_name'); ?>
             </div>
@@ -57,7 +57,7 @@ $img_reserve = get_field('img_reserve')
                 <?php echo get_field('food_introduction_owner_text'); ?></div>
         </div>
         <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>"
-            class="food__introduction-section_decor-trees2 decor-trees2" />
+            class="food__introduction-section_decor-trees2 decor-trees2" alt="" />
     </section>
 
     <section class="food__menu-section">
@@ -65,27 +65,30 @@ $img_reserve = get_field('img_reserve')
             <?php if (get_field('food_menu_photo_left')): ?>
             <?php while (has_sub_field('food_menu_photo_left')): ?>
             <div class="food__menu-section_img-wrapper">
-                <img class="" src="<?php the_sub_field('food_menu_photo_left_item');?>" />
+                <img class="" src="<?php the_sub_field('food_menu_photo_left_item');?>" alt="" />
             </div>
             <?php endwhile;?>
             <?php endif;?>
         </div>
         <div class="food__menu-section_content">
             <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees1.png'; ?>"
-                class="food__menu-section_decor-trees1 decor-trees1" />
+                class="food__menu-section_decor-trees1 decor-trees1" alt="" />
             <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>"
-                class="food__menu-section_decor-trees2 decor-trees2" />
+                class="food__menu-section_decor-trees2 decor-trees2" alt="" />
             <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-trees2.png'; ?>"
-                class="food__menu-section_decor-trees3 decor-trees2" />
+                class="food__menu-section_decor-trees3 decor-trees2" alt="" />
 
             <?php get_template_part("template-parts/section-title", null, array('title' => $menu_title));?>
 
             <div class="food__menu-section_wrapper">
                 <div class="food__menu_mobile-photo">
                     <?php if (!empty($mobile_photo_1['photo1']) and !empty($mobile_photo_1['photo2']) and !empty($mobile_photo_1['photo3'])): ?>
-                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_1['photo1']; ?>" />
-                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_1['photo2']; ?>" />
-                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_1['photo3']; ?>" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_1['photo1']; ?>"
+                        alt="" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_1['photo2']; ?>"
+                        alt="" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_1['photo3']; ?>"
+                        alt="" />
                     <?php endif;?>
                 </div>
 
@@ -135,14 +138,17 @@ $img_reserve = get_field('img_reserve')
 
                 <div class="food__menu_mobile-photo">
                     <?php if (!empty($mobile_photo_2['photo1']) and !empty($mobile_photo_2['photo2']) and !empty($mobile_photo_2['photo3'])): ?>
-                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_2['photo1']; ?>" />
-                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_2['photo2']; ?>" />
-                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_2['photo3']; ?>" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_2['photo1']; ?>"
+                        alt="" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_2['photo2']; ?>"
+                        alt="" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_2['photo3']; ?>"
+                        alt="" />
                     <?php endif;?>
                 </div>
 
                 <div class="food__menu-section-item">
-                    <img class="food__menu-section-item_icon" src="<?php echo $menu_icon; ?>" />
+                    <img class="food__menu-section-item_icon" src="<?php echo $menu_icon; ?>" alt="" />
 
                     <?php if (!empty($breakfast['breakfast_title'])): ?>
                     <h3 class="food__menu-section-item_title food__menu-section_container">
@@ -178,7 +184,7 @@ $img_reserve = get_field('img_reserve')
                 </div>
 
                 <div class="food__menu-section-item">
-                    <img class="food__menu-section-item_icon" src="<?php echo $menu_icon; ?>" />
+                    <img class="food__menu-section-item_icon" src="<?php echo $menu_icon; ?>" alt="" />
 
                     <?php if (!empty($lunch['lunch_title'])): ?>
                     <h3 class="food__menu-section-item_title food__menu-section_container">
@@ -213,7 +219,7 @@ $img_reserve = get_field('img_reserve')
                 </div>
 
                 <div class="food__menu-section-item">
-                    <img class="food__menu-section-item_icon" src="<?php echo $menu_icon; ?>" />
+                    <img class="food__menu-section-item_icon" src="<?php echo $menu_icon; ?>" alt="" />
 
                     <?php if (!empty($dinner['dinner_title'])): ?>
                     <h3 class="food__menu-section-item_title food__menu-section_container">
@@ -248,7 +254,7 @@ $img_reserve = get_field('img_reserve')
                 </div>
 
                 <div class="food__menu-section-item">
-                    <img class="food__menu-section-item_icon" src="<?php echo $menu_icon; ?>" />
+                    <img class="food__menu-section-item_icon" src="<?php echo $menu_icon; ?>" alt="" />
 
                     <?php if (!empty($additional_fee['additional_fee_title'])): ?>
                     <h3 class="food__menu-section-item_title food__menu-section_container">
@@ -285,14 +291,17 @@ $img_reserve = get_field('img_reserve')
 
                 <div class="food__menu_mobile-photo">
                     <?php if (!empty($mobile_photo_3['photo1']) and !empty($mobile_photo_3['photo2']) and !empty($mobile_photo_3['photo3'])): ?>
-                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_3['photo1']; ?>" />
-                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_3['photo2']; ?>" />
-                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_3['photo3']; ?>" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_3['photo1']; ?>"
+                        alt="" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_3['photo2']; ?>"
+                        alt="" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_3['photo3']; ?>"
+                        alt="" />
                     <?php endif;?>
                 </div>
 
                 <div class="food__menu-section-item">
-                    <img class="food__menu-section-item_icon" src="<?php echo $menu_icon; ?>" />
+                    <img class="food__menu-section-item_icon" src="<?php echo $menu_icon; ?>" alt="" />
 
                     <?php if (!empty($previous_order['previous_order_title'])): ?>
                     <h3 class="food__menu-section-item_title food__menu-section_container">
@@ -327,7 +336,7 @@ $img_reserve = get_field('img_reserve')
                 </div>
 
                 <div class="food__menu-section-item">
-                    <img class="food__menu-section-item_icon" src="<?php echo $menu_icon; ?>" />
+                    <img class="food__menu-section-item_icon" src="<?php echo $menu_icon; ?>" alt="" />
 
                     <?php if (!empty($additionally['additionally_title'])): ?>
                     <h3 class="food__menu-section-item_title food__menu-section_container">
@@ -363,9 +372,12 @@ $img_reserve = get_field('img_reserve')
 
                 <div class="food__menu_mobile-photo">
                     <?php if (!empty($mobile_photo_4['photo1']) and !empty($mobile_photo_4['photo2']) and !empty($mobile_photo_4['photo3'])): ?>
-                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_4['photo1']; ?>" />
-                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_4['photo2']; ?>" />
-                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_4['photo3']; ?>" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_4['photo1']; ?>"
+                        alt="" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_4['photo2']; ?>"
+                        alt="" />
+                    <img class="food-section__images-mobile_item" src="<?php echo $mobile_photo_4['photo3']; ?>"
+                        alt="" />
                     <?php endif;?>
                 </div>
             </div>
@@ -375,7 +387,7 @@ $img_reserve = get_field('img_reserve')
             <?php if (get_field('food_menu_photo_right')): ?>
             <?php while (has_sub_field('food_menu_photo_right')): ?>
             <div class="food__menu-section_img-wrapper">
-                <img class="" src="<?php the_sub_field('food_menu_photo_right_item');?>" />
+                <img class="" src="<?php the_sub_field('food_menu_photo_right_item');?>" alt="" />
             </div>
             <?php endwhile;?>
             <?php endif;?>
@@ -384,7 +396,7 @@ $img_reserve = get_field('img_reserve')
 
     <section class="food__certificates-section">
         <img src="<?php echo get_template_directory_uri() . '/assets/images/decor-branch.png'; ?>"
-            class="food__certificates-section_decor-branch1 decor-branch" />
+            class="food__certificates-section_decor-branch1 decor-branch" alt="" />
         <div class="food__certificates-section_container container">
             <?php get_template_part("template-parts/section-title", null, array('title' => $certificates_title));?>
             <div class="food__certificates-section-subtitle">
@@ -393,7 +405,7 @@ $img_reserve = get_field('img_reserve')
             <div class="food__certificates-section-images">
                 <?php if (get_field('food_menu_certificates_section_photos')): ?>
                 <?php while (has_sub_field('food_menu_certificates_section_photos')): ?>
-                <img class="" src="<?php the_sub_field('food_menu_certificates_section_photo');?>" />
+                <img class="" src="<?php the_sub_field('food_menu_certificates_section_photo');?>" alt="сертифікат" />
                 <?php endwhile;?>
                 <?php endif;?>
             </div>
