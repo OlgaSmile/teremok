@@ -35,7 +35,7 @@ if ($query->have_posts()) {
         ?>
             <div class="blog-page_blog">
                 <div class="blog-page_blog__image-wrapper">
-                    <img class="blog-page_blog__image" src="<?php the_field('blog_image', $query->ID);?>">
+                    <img class="blog-page_blog__image" src="<?php the_field('blog_image', $query->ID);?>" alt="">
                 </div>
                 <div class="blog-page_blog__content">
                     <h2 class="blog-page_blog__title"> <?php the_title();?><?php the_field('title', $query->ID);?>

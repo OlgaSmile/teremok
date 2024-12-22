@@ -17,13 +17,13 @@
             <div class="header__content container">
                 <div class="header__menu menu">
                     <div class="menu__icon icon-menu menu__round menu__icon_white">
-                        <a href="/">
+                        <a href="/" title="На головну" aria-label="На головну">
                             <?php get_template_part("template-parts/logo");?>
                         </a>
                     </div>
                 </div>
                 <div class="menu__icon icon-menu menu__round menu__icon_black">
-                    <a href="/">
+                    <a href="/" title="На головну" aria-label="на головну">
                         <?php get_template_part("template-parts/logo_footer");?>
                     </a>
                 </div>
@@ -74,7 +74,6 @@
 
             <?php get_template_part("template-parts/header_mobile");?>
 
-
         </header>
         <div class="header-mobile__menu" popover id="mobile-menu">
             <header class="header-mobile_menu">
@@ -94,8 +93,8 @@
                 <?php while (has_sub_field('social_links', 'option')): ?>
 
                 <li class="header-mobile__menu_socials-item">
-                    <a href="<?php the_sub_field('social_link');?>">
-                        <img src="<?php the_sub_field('social_icon');?>">
+                    <a href="<?php the_sub_field('social_link');?>" aria-label="<?php the_sub_field('social_name');?>">
+                        <img src="<?php the_sub_field('social_icon');?>" alt="">
                     </a>
                 </li>
 

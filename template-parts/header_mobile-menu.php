@@ -1,6 +1,6 @@
             <div></div>
             <div class="header-mobile_menu-logo">
-                <a href="/">
+                <a href="/" aria-label="на головну">
                     <svg width="85" height="60" viewBox="0 0 85 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8.7417 46.6404V20.2148" stroke="#3C4839" />
                         <path
@@ -53,7 +53,7 @@
             </div>
 
             <div class="header-mobile__close-btn">
-                <button popovertarget="mobile-menu">
+                <button type="button" aria-label="закрити меню" popovertarget="mobile-menu">
                     <svg class="header-mobile__icon-close" width="32" height="32" viewBox="0 0 32 32" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M1.28003 30.3381L30.2431 1.375M30.72 30.3381L1.75694 1.375" stroke-linecap="round" />

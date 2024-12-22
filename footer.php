@@ -1,7 +1,7 @@
 <footer class="footer">
     <?php get_template_part("template-parts/modal-cookie");?>
     <div class="top-to-scroll-wrapper">
-        <button class="top-to-scroll">
+        <button type="button" class="top-to-scroll" aria-label="на початок сторінки">
             <svg class="">
                 <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#icon-arrow-top"></use>
             </svg>
@@ -19,7 +19,7 @@
 ]);
 ?>
         <div class="footer__logo-block">
-            <a href="/">
+            <a href="/" aria-label="на головну">
                 <?php get_template_part("template-parts/logo_footer");?>
             </a>
             <a href="/residence" class="_button secondary_button booking_btn-footer">Забронювати проживання</a>
@@ -41,10 +41,11 @@
                 <?php $icon_name = get_sub_field('social_name');?>
 
                 <li class="footer__socials-item">
-                    <a href="<?php the_sub_field('social_link');?>" target="blank">
-                        <div class="footer__socials-svg footer__socials-<?php the_sub_field('social_name');?>">
-                            <?php get_template_part("./template-parts/social_icons", null, array('icon' => $icon_name));?>
-                        </div>
+                    <a href="<?php the_sub_field('social_link');?>" target="blank"
+                        aria-label="<?php the_sub_field('social_name');?>"></a>
+                    <div class="footer__socials-svg footer__socials-<?php the_sub_field('social_name');?>">
+                        <?php get_template_part("./template-parts/social_icons", null, array('icon' => $icon_name));?>
+                    </div>
                     </a>
                 </li>
                 <?php endwhile;?>

@@ -73,7 +73,7 @@ $double_rooms_title = get_field('double-rooms_section_title');
 
     <section class="accommodations_search-section">
         <img src="<?php echo get_field("accommodations-search_summer-photo"); ?>"
-            class="accommodations_search-section_img" />
+            class="accommodations_search-section_img" alt="" />
 
         <div class="accommodations_search-section_form">
             <?php get_template_part("template-parts/search-reserv")?>

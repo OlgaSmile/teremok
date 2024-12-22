@@ -24,16 +24,20 @@ $names_apartments_otions = get_field('form_user_apartments', 'options');
 
         <div class="feedback__modal-title">
             <?php
-            $add_feedback_title = get_field('add_feedback_title', 'options');
+$add_feedback_title = get_field('add_feedback_title', 'options');
 
-            get_template_part("template-parts/section-title", null, ['title' => $add_feedback_title]); ?>
+get_template_part("template-parts/section-title", null, ['title' => $add_feedback_title]);?>
         </div>
 
 
-        <form id="feedback-form" method="post" enctype="multipart/form-data" class="form-feedback" action="<?php echo esc_url(admin_url('admin-ajax.php')); ?>">
+        <form id="feedback-form" method="post" enctype="multipart/form-data" class="form-feedback"
+            action="<?php echo esc_url(admin_url('admin-ajax.php')); ?>">
             <div class="form-feedback__user-name">
-                <label id="feedback-name-placeholder" class="feedback-name-placeholder"><?php echo $user_name_placeholder ?><span class="asterisk">*</span></label>
-                <input id="feedback_name" type="text" name="feedback_name" placeholder="" minlength="2" min='2' max="10" required>
+                <label id="feedback-name-placeholder"
+                    class="feedback-name-placeholder"><?php echo $user_name_placeholder ?><span
+                        class="asterisk">*</span></label>
+                <input id="feedback_name" type="text" name="feedback_name" placeholder="" minlength="2" min='2' max="10"
+                    required>
                 <div class="form-feedback__warning-box">
                     <p id="name-error" class="feedback-error"></p>
                     <p id="name-max-length" class="feedback-max-length" name="text">0/10</p>
@@ -60,31 +64,31 @@ $names_apartments_otions = get_field('form_user_apartments', 'options');
 
             <div class="custom-select">
                 <?php if (!empty($names_apartments_otions)): ?>
-                    <div>
-                        <div class="custom-select__selected-option">
-                            <p id="current-option" class="current-option"><?php echo $user_house_placeholder ?><span
-                                    class="asterisk">*</span></p>
-                            <span><svg id="selected-open" class="" xmlns="http://www.w3.org/2000/svg" width="12" height="6"
-                                    viewBox="0 0 12 6" fill="">
-                                    <path
-                                        d="M5.71862 5.72151C5.87449 5.87578 6.12551 5.87578 6.28138 5.72151L11.3708 0.684298C11.6248 0.432914 11.4468 0 11.0894 0H0.910592C0.553235 0 0.375222 0.432913 0.629211 0.684297L5.71862 5.72151Z"
-                                        fill="" />
-                                </svg></span>
-                        </div>
-                        <div class="custom-select__options-list">
-                            <?php
-                            foreach ($names_apartments_otions as $row):
-                            ?>
-                                <div class="options-item">
-
-                                    <?php echo $row['option']; ?>
-                                </div>
-                            <?php
-                            endforeach
-                            ?>
-                        </div>
+                <div>
+                    <div class="custom-select__selected-option">
+                        <p id="current-option" class="current-option"><?php echo $user_house_placeholder ?><span
+                                class="asterisk">*</span></p>
+                        <span><svg id="selected-open" class="" xmlns="http://www.w3.org/2000/svg" width="12" height="6"
+                                viewBox="0 0 12 6" fill="">
+                                <path
+                                    d="M5.71862 5.72151C5.87449 5.87578 6.12551 5.87578 6.28138 5.72151L11.3708 0.684298C11.6248 0.432914 11.4468 0 11.0894 0H0.910592C0.553235 0 0.375222 0.432913 0.629211 0.684297L5.71862 5.72151Z"
+                                    fill="" />
+                            </svg></span>
                     </div>
-                <?php endif ?>
+                    <div class="custom-select__options-list">
+                        <?php
+foreach ($names_apartments_otions as $row):
+?>
+                        <div class="options-item">
+
+                            <?php echo $row['option']; ?>
+                        </div>
+                        <?php
+endforeach
+?>
+                    </div>
+                </div>
+                <?php endif?>
                 <div class="form-feedback__warning-box">
                     <p id="apartment-error" class="feedback-error"></p>
                 </div>
@@ -137,8 +141,11 @@ $names_apartments_otions = get_field('form_user_apartments', 'options');
             </div>
 
             <div class="form-feedback__text-box">
-                <label id="plahceholder-text" class="feedback-text-placeholder"><?php echo $user_reviews_desc_placeholder ?><span class="asterisk">*</span></label>
-                <textarea id="feedback-text" name="feedback_text" rows="1" minlength="40" maxlength="1000" placeholder="" required></textarea>
+                <label id="plahceholder-text"
+                    class="feedback-text-placeholder"><?php echo $user_reviews_desc_placeholder ?><span
+                        class="asterisk">*</span></label>
+                <textarea id="feedback-text" name="feedback_text" rows="1" minlength="40" maxlength="1000"
+                    placeholder="" required></textarea>
                 <div class="form-feedback__warning-box">
                     <p id="texterea-error" class="feedback-error"></p>
                     <p id="text-max-length" class="feedback-max-length" name="text">0/1000</p>
@@ -146,8 +153,10 @@ $names_apartments_otions = get_field('form_user_apartments', 'options');
             </div>
 
             <div class="form-feedback__btn_box">
-                <input id="feedback-form-submit" class="feedback-submit-btn" tabindex="0" type="submit" value="<?php echo get_field('send', 'options') ?>">
-                <button type='button' id="feedback-cancel" class="feedback-cancel" tabindex="0"><?php echo get_field('cancel', 'options') ?></button>
+                <input id="feedback-form-submit" class="feedback-submit-btn" tabindex="0" type="submit"
+                    value="<?php echo get_field('send', 'options') ?>">
+                <button type='button' id="feedback-cancel" class="feedback-cancel"
+                    tabindex="0"><?php echo get_field('cancel', 'options') ?></button>
             </div>
         </form>
 
@@ -167,14 +176,14 @@ $names_apartments_otions = get_field('form_user_apartments', 'options');
         </button>
         <div class="feedback-response__modal-title">
             <?php
-            $thanks_feedback = get_field('thanks-feedback', 'options');
+$thanks_feedback = get_field('thanks-feedback', 'options');
 
-            get_template_part("template-parts/section-title", null, ['title' => $thanks_feedback]); ?>
+get_template_part("template-parts/section-title", null, ['title' => $thanks_feedback]);?>
         </div>
         <h3 id="positive-response"><?php echo get_field('thanks-feedback-desc', 'options'); ?></h3>
         <h3 id="error-response"></h3>
         <div class="feedback-response__logo">
-            <?php get_template_part("template-parts/logo_footer"); ?>
+            <?php get_template_part("template-parts/logo_footer");?>
         </div>
     </div>
 </div>
