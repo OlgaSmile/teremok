@@ -189,3 +189,7 @@
 #mobile-video-player::-webkit-media-controls {
   display: none !important; /* Вимкнути контролери в Safari */
 }
+
+#mobile-video-player::-webkit-media-controls-fullscreen-button {
+  display: none !important; /* Приховує кнопку fullscreen у Safari */
+}
