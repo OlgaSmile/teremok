@@ -70,8 +70,7 @@
   }
 }
 
-.decor-mount {
-}
+.decor-mount {}
 
 .decor-branch {
   position: absolute;
@@ -96,4 +95,8 @@
     font-size: 1rem;
     letter-spacing: 0.04em;
   }
+}
+
+.header__hidden {
+  transform: translateY(-100%);
 }

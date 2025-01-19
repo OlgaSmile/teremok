@@ -142,7 +142,7 @@
         &>.accommodations_facilities-item {
             display: flex;
             align-items: center;
-            justify-content: start;
+            justify-content: flex-start;
             gap: .75rem;
             color: $dark_green;
 
