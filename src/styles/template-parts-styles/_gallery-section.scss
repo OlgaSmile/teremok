@@ -180,3 +180,12 @@
   display: none !important;
   /* приховування відображення часу */
 }
+
+#mobile-video-player::-webkit-media-controls,
+#mobile-video-player::-moz-media-controls {
+  display: none !important;
+}
+
+#mobile-video-player::-webkit-media-controls {
+  display: none !important; /* Вимкнути контролери в Safari */
+}

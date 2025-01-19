@@ -29,6 +29,11 @@
 ;(function ($) {
   const mobileVideoPlayer = $("#mobile-video-player")
 
+  // Видалення атрибута controls при завантаженні
+  if (mobileVideoPlayer.length) {
+    mobileVideoPlayer[0].removeAttribute("controls") // Використовуємо index [0], щоб отримати DOM-елемент
+  }
+
   const playBtn = $("#btn-play")
   const pauseBtn = $("#btn-pause")
 
@@ -72,7 +77,13 @@
   }
 
   $(window).on("resize", observeElements)
-  $(document).ready(observeElements)
+  $(document).ready(() => {
+    observeElements()
+    // Видалення атрибута controls під час завантаження сторінки
+    if (mobileVideoPlayer.length) {
+      mobileVideoPlayer[0].removeAttribute("controls")
+    }
+  })
 
   playBtn.on("click", function (e) {
     e.preventDefault()
