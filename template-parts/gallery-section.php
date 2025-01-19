@@ -58,7 +58,7 @@ if (isset($args['photos']) || isset($args['video'])) {
                     <?php if (!empty($video_url) && $index == 2): ?>
 
                         <div class="player-wrapper">
-                            <video id="mobile-video-player" class="custom-video-player" controls muted>
+                            <video id="mobile-video-player" class="custom-video-player" controls muted playsinline webkit-playsinline>
                                 <source src="<?php echo $video_url ?>" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
