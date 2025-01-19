@@ -4,27 +4,23 @@ const headerDiv = document.querySelector("header");
 const headerMobile = document.querySelector(".header-mobile");
 const headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
 
-window.onscroll = function () {
-  const currentScrollPos = window.scrollY;
+window.addEventListener("scroll", () => {
+  const currentScrollY = window.scrollY;
 
-  if (prevScrollpos <= currentScrollPos) {
-    headerDiv.classList.remove("header__active");
-    headerDiv.style.top = "-7.2rem";
-    headerMobile.classList.remove("header-mobile__active");
-    headerMobile.style.top = "-7.2rem";
+  if (currentScrollY > prevScrollpos) {
+    headerDiv.classList.add("header__hidden");
+    headerMobile.classList.add("header__hidden");
   } else {
+    headerDiv.classList.remove("header__hidden");
     headerDiv.classList.add("header__active");
-    headerDiv.style.top = "0";
-    headerMobile.classList.add("header-mobile__active");
-    headerMobile.style.top = "0";
+    headerMobile.classList.remove("header__hidden");
   }
 
-  prevScrollpos = currentScrollPos;
-
-  if (currentScrollPos === 0) {
-    document.querySelector(".header").classList.remove("header__active");
+  if (currentScrollY === 0) {
+    headerDiv.classList.remove("header__active");
   }
-};
+  prevScrollpos = currentScrollY;
+});
 
 const submenuMobile = document.querySelector(
   ".header-mobile-list > .menu-item-has-children"

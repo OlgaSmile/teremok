@@ -107,6 +107,7 @@
                 overflow: hidden;
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 4;
+                height: 4em;
 
                 &:not(:first-child) {
                     display: none;
