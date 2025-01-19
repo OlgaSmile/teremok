@@ -34,6 +34,9 @@
     mobileVideoPlayer[0].removeAttribute("controls") // Використовуємо index [0], щоб отримати DOM-елемент
   }
 
+  if (mobileVideoPlayer.length) {
+    mobileVideoPlayer[0].disablePictureInPicture = true // Вимкнути "картинка в картинці"
+  }
   const playBtn = $("#btn-play")
   const pauseBtn = $("#btn-pause")
 

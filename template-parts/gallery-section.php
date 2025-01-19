@@ -31,7 +31,7 @@ if (isset($args['photos']) || isset($args['video'])) {
         ?>">
 
                     <?php if (!empty($video_url) && $index == 3): ?>
-                        <video id="video-player" class="custom-video-player" autoplay muted loop>
+                        <video id="video-player" class="custom-video-player" disablePictureInPicture="true" autoplay muted loop>
                             <source src="<?php echo $video_url ?>" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
